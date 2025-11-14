@@ -1,0 +1,259 @@
+@use "../base/variables" as *;
+
+#footer {
+  display: flex;
+
+  padding-block: 80px;
+  padding-inline-start: 93px;
+  padding-inline-end: 78px;
+  @include table-big {
+    padding-inline: 60px;
+    gap: 40px;
+    justify-content: center;
+  }
+  @include tablet-mini {
+    padding-inline: 30px;
+    flex-direction: column;
+  }
+  @include phone {
+    padding-inline: 20px;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+.footer__body {
+  display: flex;
+  flex: 1;
+  gap: 66px;
+  @include tablet {
+    gap: 30px;
+  }
+  @include tablet-mini {
+    gap: 30px;
+    flex: inherit;
+    justify-content: center;
+  }
+  @include phone {
+    gap: 20px;
+    flex: inherit;
+    justify-content: center;
+  }
+}
+
+.footer__popular-title,
+.footer__contact-title {
+  font-size: 16px;
+  font-family: $Open;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: $colorGrey;
+  @include tablet {
+    font-size: 12px;
+  }
+  @include tablet-mini {
+    font-size: 12px;
+  }
+  @include phone {
+    font-size: 10px;
+    width: 100%;
+  }
+}
+
+.footer__contact-subtitle {
+  font-weight: 700;
+  font-size: 16px;
+  font-family: $Open;
+  @include tablet {
+    font-size: 12px;
+  }
+  @include tablet-mini {
+    font-size: 12px;
+  }
+  @include phone {
+    font-size: 10px;
+    width: 100%;
+  }
+}
+
+.footer__country {
+  display: flex;
+  gap: 43px;
+  @include tablet {
+    gap: 20px;
+  }
+  @include tablet-mini {
+    gap: 20px;
+  }
+  @include phone {
+    gap: 15px;
+  }
+}
+.footer__country__column {
+  display: flex;
+  flex-direction: column;
+  gap: 7.5px;
+  p {
+    font-size: 18px;
+    font-family: $Open;
+    @include tablet {
+      font-size: 12px;
+    }
+    @include tablet-mini {
+      font-size: 12px;
+    }
+    @include phone {
+      font-size: 10px;
+    }
+  }
+}
+
+.footer__contact,
+.footer__popular {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  @include tablet-mini {
+    gap: 10px;
+  }
+  @include tablet {
+    gap: 10px;
+    justify-content: flex-start;
+  }
+  @include phone {
+    gap: 10px;
+  }
+}
+.footer__contact {
+  flex: 1;
+  @include table-big {
+    flex: inherit;
+  }
+  @include phone {
+    justify-content: center;
+    align-items: center;
+  }
+}
+.footer__open,
+.footer__location,
+.footer__phone,
+.footer__email {
+  img {
+    width: 24px;
+    height: 24px;
+  }
+  @include phone {
+    font-size: 10px;
+    width: 100%;
+    img {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+
+.footer__open,
+.footer__location,
+.footer__phone,
+.footer__email,
+.footer__imdb {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-family: $Open;
+
+  @include table-big {
+    font-size: 12px;
+  }
+  @include tablet-mini {
+    font-size: 12px;
+  }
+  @include phone {
+    font-size: 10px;
+  }
+}
+.footer__email {
+  text-decoration: underline;
+  color: $colorBlue;
+}
+
+.footer__imdb {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  &::before {
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 100%;
+    background-color: $colorGrey;
+    opacity: 0.1;
+    left: -64px;
+    @include table-big {
+      left: -15px;
+    }
+    @include tablet {
+      display: none;
+    }
+    @include tablet-mini {
+      display: none;
+    }
+  }
+  @include tablet-mini {
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+  }
+  @include phone {
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.footer__instagram {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer__phone {
+  p {
+    text-decoration: underline;
+  }
+}
+.footer__number {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: $Roboto;
+  color: $colorBlue;
+  white-space: nowrap;
+  @include tablet {
+    flex-direction: column;
+    align-items: flex-start;
+    span {
+      display: none;
+    }
+  }
+  @include tablet-mini {
+    flex-direction: column;
+    align-items: flex-start;
+    span {
+      display: none;
+    }
+  }
+  @include phone {
+    flex-direction: column;
+    align-items: flex-start;
+    span {
+      display: none;
+    }
+  }
+}
+
+.footer__imdb-img {
+  width: 100%;
+  max-width: 332px;
+}
