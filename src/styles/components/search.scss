@@ -1,4 +1,4 @@
-@use "../base/variables" as *;
+@use '../base/variables' as *;
 
 .search {
   position: relative;
@@ -293,11 +293,11 @@ label {
 .search__calendar {
   position: absolute;
   cursor: pointer;
+  color: $colorGrey;
   top: 28px;
   right: 8px;
   width: 24px;
   height: 24px;
-  color: #a9a9a9;
   @include tablet {
     top: 19px;
     width: 18px;
@@ -404,7 +404,7 @@ label {
   color: black;
   &::after {
     position: absolute;
-    content: "";
+    content: '';
     background-color: black;
     opacity: 0.1;
     width: 100%;
@@ -561,7 +561,7 @@ label {
   margin-block-end: 25px;
   &::after {
     position: absolute;
-    content: "";
+    content: '';
     background-color: $colorGrey;
     width: 100%;
     max-width: 1098px;
@@ -644,7 +644,7 @@ $color: #ff8c00;
   user-select: none;
   font-family: $Open;
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     background-color: #cecece;
     width: 3px;
@@ -652,7 +652,7 @@ $color: #ff8c00;
     top: 28px;
   }
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     background-color: #cecece;
     width: 3px;

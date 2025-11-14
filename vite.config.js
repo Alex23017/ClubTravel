@@ -1,29 +1,54 @@
-// vite.config.js
-import { defineConfig } from "vite";
-import handlebars from "vite-plugin-handlebars";
-import { resolve } from "path";
+import { defineConfig } from 'vite'
+import path from 'path'
+import handlebars from 'vite-plugin-handlebars'
+import svgSpritePlugin from '@pivanov/vite-plugin-svg-sprite'
+
+const partialDirs = [
+  path.resolve(__dirname, 'src/html/components/header'),
+  path.resolve(__dirname, 'src/html/components/footer'),
+  path.resolve(__dirname, 'src/html/components/search'),
+  path.resolve(__dirname, 'src/html/components/consultation'),
+  path.resolve(__dirname, 'src/html/components/oneHotel'),
+]
 
 export default defineConfig({
-  root: "src",
-  appType: "mpa",
+  root: 'src',
+  appType: 'mpa',
   plugins: [
     handlebars({
-      partialDirectory: [
-        resolve(__dirname, "src/html/components/header"),
-        resolve(__dirname, "src/html/components/footer"),
-        resolve(__dirname, "src/html/components/search"),
-        resolve(__dirname, "src/html/components/consultation"),
-        resolve(__dirname, "src/html/components/oneHotel"),
-      ],
+      partialDirectory: partialDirs,
+      watch: true,
     }),
-  ],
+    svgSpritePlugin({
+      iconDirs: [path.resolve(process.cwd(), 'src/img/icons')],
+      symbolId: 'icon-[name]',
+      inject: 'body-last',
+      customDomId: 'svg-sprite',
+    }),
 
+    {
+      name: 'hmr-hbs-partials',
+      configureServer(server) {
+        server.watcher.add(partialDirs)
+        server.watcher.on('change', file => {
+          if (partialDirs.some(dir => file.startsWith(dir))) {
+            server.ws.send({ type: 'full-reload' })
+          }
+        })
+      },
+    },
+  ],
+  server: {
+    watch: {
+      usePolling: true,
+    },
+  },
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, "src/index.html"),
-        hotdeals: resolve(__dirname, "src/html/pages/hotdeals.html"),
+        main: path.resolve(__dirname, 'src/index.html'),
+        hotdeals: path.resolve(__dirname, 'src/html/pages/hotdeals.html'),
       },
     },
   },
-});
+})
