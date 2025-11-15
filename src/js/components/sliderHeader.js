@@ -1,24 +1,31 @@
-import Swiper from "swiper";
-import "swiper/css";
-import { Navigation, Pagination } from "swiper/modules";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+// Сначала статические импорты
+import Swiper from 'swiper'
+import 'swiper/css'
+import { Navigation, Pagination } from 'swiper/modules'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
+// Динамические импорты только внутри условий
+if (document.querySelector('[data-component="sliderHeader"]')) {
+  import('/styles/components/sliderHeader.scss')
+  import('/styles/base/reset.scss')
+}
 
 function initSlider() {
-  new Swiper(".mySwiper", {
+  new Swiper('.mySwiper', {
     modules: [Navigation, Pagination],
     loop: true,
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
     pagination: {
-      el: ".swiper-pagination",
+      el: '.swiper-pagination',
       clickable: true,
     },
     slidesPerView: 1,
     spaceBetween: 20,
-  });
+  })
 }
-initSlider();
+
+initSlider()
