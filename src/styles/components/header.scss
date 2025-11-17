@@ -65,6 +65,7 @@
     display: none;
   }
 }
+
 .topbar__items {
   position: relative;
   gap: 28px;
@@ -280,12 +281,18 @@
   color: $primaryColor;
   transition: color 0.3s;
   &:hover {
-    color: $colorOrange;
+    color: $colorOrange !important;
   }
 }
 .nav__link--company {
   gap: 6px;
   margin-inline-start: -8px;
+  @include tablet-mini {
+    margin-inline-start: 0px;
+  }
+  @include phone {
+    margin-inline-start: 0px;
+  }
 }
 
 .sale,
@@ -300,6 +307,14 @@
     min-height: 18px;
     min-width: 18px;
   }
+}
+.sale {
+  width: 24px;
+  height: 24px;
+}
+.clock {
+  width: 27px;
+  height: 24px;
 }
 // BURGER
 .burger {

@@ -2,11 +2,14 @@ import { defineConfig } from 'vite'
 import path from 'path'
 import handlebars from 'vite-plugin-handlebars'
 import svgSpritePlugin from '@pivanov/vite-plugin-svg-sprite'
+import { newsList } from './src/js/home/newsList'
+import { hotDealsList } from './src/js/home/hotDealsList'
 
 const partialDirs = [
   path.resolve(__dirname, 'src/html/components/header'),
   path.resolve(__dirname, 'src/html/components/footer'),
   path.resolve(__dirname, 'src/html/components/search'),
+  path.resolve(__dirname, 'src/html/components/home'),
   path.resolve(__dirname, 'src/html/components/consultation'),
   path.resolve(__dirname, 'src/html/components/oneHotel'),
 ]
@@ -18,6 +21,11 @@ export default defineConfig({
     handlebars({
       partialDirectory: partialDirs,
       watch: true,
+      // ІМПОРТ МАСИВІВ ДЛЯ РЕНДЕРУ
+      context: {
+        newsList,
+        hotDealsList,
+      },
     }),
     svgSpritePlugin({
       iconDirs: [path.resolve(process.cwd(), 'src/img/icons')],
@@ -44,6 +52,7 @@ export default defineConfig({
     },
   },
   build: {
+    outDir: 'dist',
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'src/index.html'),

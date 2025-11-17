@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="../../styles/base/reset.scss" />
   </head>
   <body>
-   
-    {{>header}} {{>sliderHeader}} {{>search}} {{>listHotDeals}}
-    {{>consultation}}
-    {{> footer}}
-  
+    <div class="wrapper">
+      {{>header}} {{>imgHeader}} {{>search title ="горящие предложения"}}
+      {{>listHotDeals}}
+
+      {{>consultation}}
+      {{> footer}}
+    </div>
     <script type="module" src="/js/main.js"></script>
   </body>
 </html>
