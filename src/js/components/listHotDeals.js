@@ -121,7 +121,7 @@ const hotDealsList = [
           },
         ],
       },
-     
+
     ],
   },
   {
@@ -635,8 +635,8 @@ function renderList(hotDealsList) {
         </div>
    
        ${openlistselect
-         .map(
-           ({ hotel, category, food, tour, price }) => `
+                .map(
+                  ({ hotel, category, food, tour, price }) => `
 
       <div class="list__select">
         <div class="list__select-hotel">
@@ -650,8 +650,8 @@ function renderList(hotDealsList) {
       </div>
 
     `
-         )
-         .join('')}
+                )
+                .join('')}
         <div class="list__body-hotel">
         <p class="list__hotel">${hotel}</p>
           <p class="list__category">${category}</p>
@@ -660,7 +660,7 @@ function renderList(hotDealsList) {
           <p class="list__price list__price--open">от <strong>${price}</strong>/чел.</p>
            <p class="list__body-close">Скрыть предложения
             <svg class='list__arrow-close'>
-            <use xlink:href='#icon-arrowClose'></use>
+            <use xlink:href='icon-arrowClose'></use>
             </svg>
           </p>
           </div>
@@ -717,7 +717,7 @@ function renderList(hotDealsList) {
 
       btn.classList.add('active')
       btn.innerHTML = `<span>Открыть предложения</span>  <svg class='list__arrow-close'>
-            <use xlink:href='#icon-arrowClose'></use>
+            <use xlink:href='icon-arrowClose'></use>
             </svg>`
 
       const currentOpen = btn.closest('.list__open')
