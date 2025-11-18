@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_services",
+  "info": {
+    "displayName": "services"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subServices": {
+      "type": "component",
+      "component": "shared.sub-services",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -471,10 +471,16 @@ export interface ApiHotDealHotDeal extends Struct.CollectionTypeSchema {
   attributes: {
     createdAt: Schema.Attribute.DateTime
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
+    data: Schema.Attribute.String
     hotelName: Schema.Attribute.String
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>
     locale: Schema.Attribute.String & Schema.Attribute.Private
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::hot-deal.hot-deal'> & Schema.Attribute.Private
+    location: Schema.Attribute.String
+    oldPrice: Schema.Attribute.BigInteger
+    price: Schema.Attribute.BigInteger
     publishedAt: Schema.Attribute.DateTime
+    stars: Schema.Attribute.Integer
     updatedAt: Schema.Attribute.DateTime
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
   }
@@ -493,10 +499,15 @@ export interface ApiHotelHotel extends Struct.CollectionTypeSchema {
   attributes: {
     createdAt: Schema.Attribute.DateTime
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
+    food: Schema.Attribute.String
+    from: Schema.Attribute.String
     hotelName: Schema.Attribute.String
     locale: Schema.Attribute.String & Schema.Attribute.Private
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::hotel.hotel'> & Schema.Attribute.Private
+    price: Schema.Attribute.BigInteger
     publishedAt: Schema.Attribute.DateTime
+    serviceLists: Schema.Attribute.Component<'shared.service-list', false>
+    stars: Schema.Attribute.Integer
     updatedAt: Schema.Attribute.DateTime
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
   }

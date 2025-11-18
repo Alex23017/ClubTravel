@@ -13,6 +13,31 @@
   "attributes": {
     "hotelName": {
       "type": "string"
+    },
+    "oldPrice": {
+      "type": "biginteger"
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "data": {
+      "type": "string"
+    },
+    "stars": {
+      "type": "integer"
     }
   }
 }

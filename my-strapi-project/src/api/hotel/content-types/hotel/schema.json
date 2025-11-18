@@ -13,6 +13,23 @@
   "attributes": {
     "hotelName": {
       "type": "string"
+    },
+    "from": {
+      "type": "string"
+    },
+    "food": {
+      "type": "string"
+    },
+    "stars": {
+      "type": "integer"
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "serviceLists": {
+      "type": "component",
+      "component": "shared.service-list",
+      "repeatable": false
     }
   }
 }

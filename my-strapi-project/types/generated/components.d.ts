@@ -11,6 +11,17 @@ export interface SharedMedia extends Struct.ComponentSchema {
   }
 }
 
+export interface SharedPosition extends Struct.ComponentSchema {
+  collectionName: 'components_shared_positions'
+  info: {
+    displayName: 'position'
+  }
+  attributes: {
+    description: Schema.Attribute.Text
+    name: Schema.Attribute.String
+  }
+}
+
 export interface SharedQuote extends Struct.ComponentSchema {
   collectionName: 'components_shared_quotes'
   info: {
@@ -50,6 +61,28 @@ export interface SharedSeo extends Struct.ComponentSchema {
   }
 }
 
+export interface SharedServiceList extends Struct.ComponentSchema {
+  collectionName: 'components_shared_service_lists'
+  info: {
+    displayName: 'serviceList'
+  }
+  attributes: {
+    list: Schema.Attribute.Component<'shared.services', false>
+    position: Schema.Attribute.Component<'shared.position', false>
+  }
+}
+
+export interface SharedServices extends Struct.ComponentSchema {
+  collectionName: 'components_shared_services'
+  info: {
+    displayName: 'services'
+  }
+  attributes: {
+    subServices: Schema.Attribute.Component<'shared.sub-services', true>
+    title: Schema.Attribute.String
+  }
+}
+
 export interface SharedSlider extends Struct.ComponentSchema {
   collectionName: 'components_shared_sliders'
   info: {
@@ -62,14 +95,28 @@ export interface SharedSlider extends Struct.ComponentSchema {
   }
 }
 
+export interface SharedSubServices extends Struct.ComponentSchema {
+  collectionName: 'components_shared_sub_services'
+  info: {
+    displayName: 'subServices'
+  }
+  attributes: {
+    name: Schema.Attribute.String
+  }
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'shared.media': SharedMedia
+      'shared.position': SharedPosition
       'shared.quote': SharedQuote
       'shared.rich-text': SharedRichText
       'shared.seo': SharedSeo
+      'shared.service-list': SharedServiceList
+      'shared.services': SharedServices
       'shared.slider': SharedSlider
+      'shared.sub-services': SharedSubServices
     }
   }
 }

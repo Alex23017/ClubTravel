@@ -1,4 +1,3 @@
-// import { getAll } from '../api/service/hotDeals';
 export const hotDealsList = [
   {
     title: 'Название Отеля здесь',
@@ -44,4 +43,3 @@ export const hotDealsList = [
   },
 ]
 
-// console.log(getAll());
