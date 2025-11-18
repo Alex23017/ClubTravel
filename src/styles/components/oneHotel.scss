@@ -1,4 +1,5 @@
 @use "../base/variables" as *;
+@use "../base/mixins" as *;
 
 .hotel {
   position: relative;
@@ -13,17 +14,30 @@
     background: rgba(255, 255, 255, 1);
     box-sizing: border-box;
     padding: 14px 14px 0 19px;
+    @include tablet{
+      left: 40px;
+    }
+    @include phone{
+      left: 18px;
+      top: -92px;
+      width: 300px;
+      height: 74px;
+      padding: 11px 15px 13px 19px;
+    }
   }
   &__card-name {
     display: flex;
     align-items: center;
     position: relative;
-    gap: 13px;
+    gap: 11px;
     color: var(--text, rgba(34, 34, 34, 1));
     font-family: Open Sans;
     font-size: 26px;
     font-weight: 700;
     line-height: 35px;
+    @include phone{
+      gap: 9px;
+    }
   }
   &__card-more {
     position: absolute;
@@ -34,14 +48,27 @@
 
     cursor: pointer;
     svg {
-      width: 12px;
-      height: 12px;
+      width: 100%;
+      height: 100%;
+      use{
+        width: 100%;
+        height: 100%;
+      }
     }
   }
   &__card-stars {
     display: flex;
     margin-top: -11px;
     gap: 4px;
+  
+  }
+  &__card-star{
+      width: 18px;
+      height: 18px;
+  }
+  &__card-pin{
+    width: 10px;
+    height: 14px;
   }
   &__card-location {
     margin-top: 4px;
@@ -54,20 +81,613 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 19px;
+    @include phone{
+      margin-top: -3px;
+    }
   }
 
   &__gallery-list {
-    margin-top: 16px;
+    margin-top: 19px;
+    padding-left: 2px;
+
     display: flex;
     gap: 16px;
+    @include phone{
+      gap: 5px;
+      margin-top: 8px;
+    }
   }
   &__content-top {
     display: flex;
-    padding: 40px 100px;
+    padding: 40px 100px 22px 100px;
+    gap: 69px;
+    @include huge{
+      padding: 40px 20%
+    }
+    @include big{
+      padding:40px 15%;
+    }
+    @include laptop{
+        padding: 40px 100px 22px 100px;
+
+      
+    }
+    @include table-big{
+      padding: 40px 60px;
+      gap: 40px;
+    }
+    @include tablet{
+      padding: 40px 20px;
+      gap: 20px;
+    }
+    @include tablet-mini{
+      flex-direction: column-reverse;
+    }
+    @include phone{
+      flex-direction: column-reverse;
+      padding: 0;
+      gap: 32px;
+
+    }
   }
   &__content-center {
     display: flex;
     padding: 0 100px 0 97px;
+    gap: 67px;
+    @include huge{
+      padding: 0 20%
+    }
+    @include big{
+      padding:0 15%;
+    }
+    @include laptop{
+    padding: 0 100px 0 97px;
+      
+    }
+    @include table-big{
+      padding: 0 60px 0 60px
+    }
+    @include tablet{
+      padding: 0 5px;
+      gap: 5px;
+    }
+    @include tablet-mini{
+      flex-direction: column;
+      margin-top: 25px;
+      padding: 0 20px;
+      gap: 30px;;
+    }
+    @include phone{
+      flex-direction: column;
+      padding: 0 0px 0 0px;
+      margin-top: 25px;
+      gap: 63px;
+      
+    }
   }
+  &__gallery-main{
+    width: 100%;
+    height: 499px;
+    img{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+    }
+    @include table-big{
+      height: 80%;
+    }
+    @include tablet{
+      height: 60%;
+    }
+  }
+  &__gallery-item{
+    width: 100%;
+    // height: 100%;
+    height: 97px;
+    @media (min-width:1500px) {
+      height: 130px;
+    }
+    @include tablet{
+      height: 75px;
+    }
+    @include phone{
+      height: 43px;
+    }
+    img{
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+  }
+  &__gallery{
+    @media (min-width: 1750px) {
+      width: 70%;
+    }
+    @include phone{
+      padding: 0 23px 0 17px;
+    }
+  }
+  &__offer{
+    // width: 30%;
+    min-width: 371px;
+    max-width: 371px;
+    margin-top: -70px;
+    box-sizing: border-box;
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 1);
+    @include tablet{
+      min-width: 300px;
+      max-width: 300px;
+      padding: 10px;
+    }
+    @include tablet-mini{
+      min-width: 100%;
+      max-width: 100%;
+      margin-top: -40px;
+      border-radius: none;
+    }
+    @include phone{
+      padding: 29px 18px 24px 21px;
+      min-width: 100%;
+      max-width: 100%;
+      margin-top: 0px;
+      border-radius: none;
+    }
+  }
+  &__offer-title{
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    color: rgba(34, 34, 34, 1);
+    font-family: Open Sans;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 27px;
+    
+    button{
+      color: $primaryColor;
+      font-family: Open Sans;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 19px;
+    }
+  }
+  &__offer-date{
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    svg{
+      width: 18px;
+      height: 18px;
+      color:$colorGrean;
+    }
+    span{
+      color: rgba(34, 34, 34, 1);
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    }
+  }
+  &__offer-raise{
+    
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    margin-top: 15px;
+    svg{
+      width: 18px;
+      height: 18px;
+      color:$colorGrean;
+    }
+    span{
+      color: rgba(34, 34, 34, 1);
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    }
+  }
+  &__offer-food{
+    
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    margin-top: 18px;
+    svg{
+      width: 18px;
+      height: 18px;
+      color:$colorGrean;
+    }
+    span{
+      color: rgba(34, 34, 34, 1);
+      font-family: Open Sans;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22px;
+    }
+  }
+  &__offer-houses{
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    margin-top: 15px;
+    svg{
+      width: 18px;
+      height: 18px;
+      color:$colorGrean;
+    }
+    span{
+      color: rgba(34, 34, 34, 1);
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    }
+  }
+  &__offer-price{
+    margin-top: 25px;
+    font-family: Open Sans;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 33px;
+  }
+  &__offer-description{
+    margin-top: 8px;
+    color: rgba(153, 153, 153, 1);
+    font-family: Open Sans;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+  &__offer-people{
+    margin-top: 2px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    @include phone{
+          margin-top: 10px;
+    margin-left: -6px;
+    }
+  }
+  &__offer-item{
+    color: var(--text, rgba(34, 34, 34, 1));
+    font-family: Open Sans;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    padding: 2px 10px;
+    box-sizing: border-box;
+    border: 1px solid rgba(226, 226, 226, 1);
+    border-radius: 6px;
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 1);
+
+  }
+  &__offer-total{
+    margin-top: 31px;
+    display: flex;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 33px;
+    @include phone{
+          margin-top: 30px;
+    margin-left: -6px;
+    }
+    span{
+      color: $colorGrean;
+      margin-left: 8px;
+      margin-top: -4px;
+
+      font-size: 24px;
+    }
+  }
+  &__offer-button{
+    margin-top: 11px;
+    width: 100%;
+    border-radius: 6px;
+    background: var(--primary, rgba(246, 133, 33, 1));
+    padding: 12px 80px;
+
+    color: rgba(255, 255, 255, 1);
+    font-family: Open Sans;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    cursor: pointer;
+    @include phone{
+          margin-top: 10px;
+    margin-left: -4px;
+    }
+
+  }
+  &__offer-policy {
+  display: flex;
+  color: rgba(153, 153, 153, 1);
+  margin-top: 17px;
+  font-family: Open Sans;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+
+  div {
+    flex: 1;
+    span{
+      color: rgba(85, 85, 85, 1);
+    }
+  }
+  }
+  &__title{
+    color: rgba(34, 34, 34, 1);
+    font-family: Open Sans;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+  }
+  &__description{
+    margin-top: 16px;
+    color: rgba(85, 85, 85, 1);
+    font-family: Open Sans;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+  &__info-list{
+    margin-top: 47px;
+    display: flex;
+    gap: 76px;
+    @include phone{
+      flex-direction: column;
+      gap: 32px;
+      
+    }
+
+  }
+  &__column{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  &__info{
+    padding: 0 23px 0 17px;
+  }
+  &__info-item{
+    max-width: 292px;
+  }
+  &__info-title{
+    color: rgba(34, 34, 34, 1);
+    font-family: Open Sans;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+  }
+  &__info-text{
+    margin-top: 16px;
+    color: rgba(85, 85, 85, 1);
+    font-family: Open Sans;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+  }
+  &__info-ul{
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    li {
+      
+      list-style: none;
+      position: relative;
+      padding-left: 17px;
+
+      color: rgba(85, 85, 85, 1);
+      font-family: Open Sans;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 19px;
+    }
+
+    li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 8px;
+      height: 1px;
+      background: #999;
+    }
+
+  }
+  &__advantages {
+        padding: 19px 10px 25px 22px;
+    margin-top: 26px;
+    box-sizing: border-box;
+  border: 3px solid var(--primary, rgba(246, 133, 33, 1));
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 1);
+  @include phone{
+        margin-left: 11px;
+    margin-right: 29px;
+    margin-top: 0px;
+        padding: 15px 10px 20px 17px
+  }
+  }
+  &__advantages-list{
+    margin-top: 23px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    @include phone{
+      margin-top: 12px;
+
+    }
+  }
+  &__advantages-item{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    @include phone{
+      align-items: start;
+    }
+    svg{
+      height: 24px;
+      width: 24px;
+     
+   
+    }
+  }
+  &__contact{
+    margin-top: 47px;
+    width: 371px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 1);
+    padding: 24px;
+    height: auto;
+    svg{
+      width: 24px;
+      height: 24px;
+      color: $colorGrean;
+    }
+    @include tablet-mini{
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @include phone{
+      width: 100%;
+     padding: 15px 15px 23px 15px;
+     margin-top: 64px;
+    }
+  }
+
+  &__advantages-title{
+    color: var(--text, rgba(34, 34, 34, 1));
+    font-family: Open Sans;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+    @include phone{
+      font-size: 16px;
+    }
+  }
+  &__advantages-item{
+    color: var(--text, rgba(34, 34, 34, 1));
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    @include phone{
+      font-size: 14px;
+    }
+  }
+  &__contact-title{
+    color: rgba(34, 34, 34, 1);
+    font-family: Open Sans;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+  }
+  &__contact-name{
+    margin-top: 18px;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+    b{
+      font-size: 18px;
+    }
+  }
+  &__contact-img{
+    margin-top: 14px;
+    width: 100%;
+    height: auto;
+  }
+  &__contact-phone,
+  &__contact-email,
+  &__contact-message,
+  &__contact-time{
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(34, 34, 34, 1);
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+  &__contact-time{
+    font-size: 14px;
+  }
+}
+.guests {
+  margin-top: 32px;
+  position: relative;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  @include phone{
+    margin-left: -4px;
+    margin-top: 22px;
+  }
+  label{
+    color: rgba(85, 85, 85, 1);
+font-family: Open Sans;
+font-size: 16px;
+font-weight: 400;
+line-height: 22px;
+  }
+ 
+}
+.dropdown {
+  margin-top: 8px;
+  display: flex;
+  color: rgba(34, 34, 34, 1);
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  padding: 8px 8px 12px 16px;
+  box-sizing: border-box;
+  border: 1px solid rgba(226, 226, 226, 1);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 1);
+  @include tablet {
+    font-size: 12px;
+  }
+  @include tablet-mini {
+    font-size: 10px;
+  }
+  @include phone {
+    font-size: 10px;
+        padding: 8px 5px 7px 14px;
+
+  }
+}
+.guests__button {
+  color: rgba(34, 34, 34, 1);
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+  width: 100%;
+  text-align: start;
+  position: relative;
+  z-index: 2;
 }
 

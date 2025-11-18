@@ -4,47 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
   <body>
     {{>header}}
+    {{>imgHeader}}
     <section class="hotel">
       <div class="hotel__content">
-        {{>oneHotelTitle}}
-        <div class="hotel__content-center">
-          <div class="hotel__info">
-            <div class="hotel__title">Рекомендуем для семейного и молодёжного отдыха.</div>
-            <div class="hotel__description">
-              Гости города Золотые пески, приехавшие в город по делам бизнеса или для отдыха, могут
-              остановиться в гостинце Ambassador (Амбассадор). Отель прекрасно сочетает в себе как
-              современный комфорт, так и высокий уровень обслуживания. Каждый номер оснащен всем
-              необходимым для комфортного отдыха (кондиционер, телевизор, письменный стол, сейф и
-              утренняя газета). Вы сможете воспользоваться услугами массажиста, баром, лифтом, спа,
-              сауной, рестораном, отдохнуть у бассейна, посетить фитнес зал и прогуляться по саду.
-              Ваш отдых в отеле Ambassador (Амбассадор) будет ярким и запоминающимся, вас не оставят
-              равнодушными первоклассный сервис и великолепное обслуживание. Отель находится в 27 км
-              от Международного аэропорта Варна (Varna International Airport), в 900 метрах от
-              центра курорта Золотые пески и в 150 метрах от пляжа. Отель принимает отдыхающих
-              круглый год и является прекрасным местом для отдыха, спорта и развлечений. В
-              бальнеологическом центре «Амбассадор» предлагаются свыше 100 видов услуг:
-              таласотерапия, ванные, массаж, электротерапия, грязелечение, водолечение, акупунктура,
-              медицинская косметика, сауна, открытый и крытый бассейны, фитнес зал, солярий и много
-              других.
-            </div>
-            <div class="hotel__info-list">
-              <div class="hotel__info-item">
-                <div class="hotel__info-title"></div>
-                <div class="hotel__info-text"></div>
-              </div>
-              <div class="hotel__info-item">
-                <div class="hotel__info-title"></div>
-                <ul class="hotel__info-ul"></ul>
-              </div>
-            </div>
-          </div>
+        {{> oneHotelTitle data=data }}
+        <div class="hotel__content-top">
+          {{>oneHotelGallery}}
+          {{>oneHotelOffer}}
         </div>
       </div>
+      <div class="hotel__content-center">
+        {{>oneHotelInfo}}
+        {{>oneHotelContact}}
+      </div>
+      <div class="hotel__slider">
+        
+      </div>
     </section>
+    
     {{> footer}}
     <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/pages/oneHotel.js"></script>
+    
   </body>
 </html>
