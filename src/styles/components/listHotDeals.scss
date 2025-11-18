@@ -1,19 +1,42 @@
-@use "../base/variables" as *;
+@use '../base/variables' as *;
 
 .list__hotdeals {
-  padding-inline: 98px;
+  position: relative;
   margin-block-start: -22px;
-  margin-block-end: 113px;
+  margin-block-end: 65px;
+  margin-inline: 98px;
+  @include tablet-mini {
+    margin-inline: 0px;
+  }
+
+  @include phone {
+    margin-block-start: 20px;
+    margin-inline: 0px;
+  }
 }
 
 .hotdeals__header {
   display: flex;
   align-items: center;
-  padding-inline: 28px;
+  padding-inline: 26px;
+  margin-inline-start: 3px;
   h3 {
     font-size: 14px;
     font-weight: 700;
     font-family: $Open;
+    @include tablet-mini {
+      font-size: 12px;
+    }
+    @include phone {
+      font-size: 10px;
+    }
+  }
+
+  @include table-big {
+    padding-inline: 0px;
+  }
+  @include phone {
+    padding-inline: 0px;
   }
 }
 
@@ -32,14 +55,22 @@
 
 .hotdeals__data {
   max-width: 150px;
+  @include table-big {
+    max-width: 120px;
+  }
 }
 .hotdeals__from {
   margin-inline-start: 99px;
   max-width: 172px;
+  letter-spacing: 0.7px;
+  @include table-big {
+    margin-inline-start: 0px;
+  }
 }
 .hotdeals__to {
   margin-inline-end: -10px;
   max-width: 211px;
+  letter-spacing: 1px;
 }
 .hotdeals__duration {
   max-width: 169px;
@@ -48,52 +79,78 @@ hotdeals__render {
   margin-block-start: 15px;
   font-size: 15px;
   font-family: $Open;
-  padding-inline: 24px;
-  padding-inline-end: 22px;
   display: flex;
   flex-direction: column;
 }
 .list__data {
   max-width: 150px;
+  margin-inline-start: 1px;
 }
 .list__from {
   max-width: 150px;
   margin-inline-start: 103px;
+  @include table-big {
+    margin-inline-start: 0px;
+  }
 }
 .list__to {
   margin-inline-start: 21px;
   max-width: 200px;
+  @include table-big {
+    margin-inline-start: 0px;
+  }
 }
 .list__duration {
   max-width: 170px;
   margin-inline-start: 2px;
+  @include table-big {
+    text-align: center;
+  }
 }
 .list__price {
-  max-width: 100px;
+  max-width: 90px;
 }
 .list__button {
   width: 100%;
   max-width: 200px;
   text-align: center;
-  margin-inline-start: 18px;
+  margin-inline-start: 30px;
   text-transform: uppercase;
   color: $primaryColor;
   font-size: 14px;
   letter-spacing: 1px;
   text-decoration: underline;
   cursor: pointer;
+  @include table-big {
+    margin-inline-start: 0px;
+  }
+  @include tablet-mini {
+    font-size: 12px;
+  }
+  @include phone {
+    font-size: 10px;
+  }
 }
 
 .list__button-close {
   width: 100%;
   max-width: 200px;
   text-align: center;
-  margin-inline-start: 18px;
+  margin-inline-start: 32px;
   text-transform: uppercase;
   font-size: 14px;
   letter-spacing: 1px;
   text-decoration: underline;
   cursor: pointer;
+  @include table-big {
+    margin-inline-start: 0px;
+  }
+  @include tablet-mini {
+    font-size: 10px;
+  }
+  @include phone {
+    font-size: 10px;
+  }
 }
 .list__body {
   position: relative;
@@ -101,10 +158,39 @@ hotdeals__render {
   white-space: nowrap;
   align-items: center;
   width: 100%;
-  height: 66px;
-  font-size: 14px;
-  padding-block-start: 22.5px;
+  font-size: 15px;
+  padding-block-start: 22px;
   padding-block-end: 21.5px;
+  @include table-big {
+    justify-content: center;
+    gap: 20px;
+  }
+  @include tablet-mini {
+    font-size: 12px;
+    gap: 10px;
+  }
+  @include phone {
+    font-size: 10px;
+    gap: 5px;
+    white-space: wrap;
+  }
+}
+.list__open {
+  padding-inline-start: 24px;
+  box-shadow:
+    0 -1px 3px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.1);
+  .list__body {
+    @include table-big {
+      padding-inline-end: 24px;
+    }
+    @include phone {
+      padding-inline: 10px;
+    }
+  }
+  @include phone {
+    padding-inline: 0px;
+  }
 }
 
 .list__openlist {
@@ -115,9 +201,15 @@ hotdeals__render {
   }
   .hotdeals__from {
     margin-inline-start: 102px;
+    @include table-big {
+      margin-inline-start: 0px;
+    }
   }
   .hotdeals__to {
     margin-inline-start: 4px;
+    @include table-big {
+      margin-inline-end: 0px;
+    }
   }
   .hotdeals__duration {
     margin-inline-start: -2px;
@@ -132,7 +224,210 @@ hotdeals__render {
     overflow: inherit;
   }
   &::after {
-    content: "";
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: $colorGrey;
+    width: 100%;
+    height: 1px;
+    opacity: 0.2;
+    @include tablet-mini {
+      display: none;
+    }
+    @include phone {
+      display: none;
+    }
+  }
+}
+.list__container > .list__body {
+  padding-inline-start: 24px;
+  padding-inline-end: 22px;
+  @include phone {
+    padding-inline: 10px;
+  }
+}
+
+.list__hotel,
+.list__category,
+.list__food,
+.list__tour,
+.list__price,
+.list__button-open,
+.list__button-close,
+.list__button-select {
+  width: 100%;
+}
+.list__category {
+  font-size: 24px;
+  color: f5c213;
+  max-width: 140px;
+  margin-inline-start: 70px;
+  @include table-big {
+    margin-inline-start: 0px;
+  }
+}
+.list__hotel {
+  text-decoration: underline;
+  color: $colorBlue;
+  font-size: 15px;
+  max-width: 180px;
+  @include table-big {
+    max-width: 120px;
+  }
+}
+.list__food {
+  margin-inline-start: 37px;
+  max-width: 200px;
+  @include table-big {
+    margin-inline-start: 10px;
+  }
+}
+.list__tour {
+  max-width: 150px;
+  margin-inline-start: -1px;
+}
+
+.list__button-open {
+  display: flex;
+  white-space: nowrap;
+  text-align: start;
+  border: solid 1px $primaryColor;
+  border-radius: 6px;
+  max-width: 200px;
+  height: 28px;
+  font-size: 12px;
+  padding-block-start: 6px;
+  text-transform: uppercase;
+  margin-inline-start: 28px;
+  margin-block-start: -5px;
+  padding-inline-start: 7px;
+  padding-inline-end: 14px;
+  letter-spacing: 0.3px;
+}
+.list__button-select,
+.href__button-select {
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: center;
+  background-color: $primaryColor;
+  color: white;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 200px;
+  height: 28px;
+  font-size: 12px;
+  padding-block-start: 6px;
+  text-transform: uppercase;
+  margin-inline-start: 34px;
+  margin-block-start: 2px;
+  padding-inline-start: 7px;
+  padding-inline-end: 14px;
+  letter-spacing: 0.3px;
+  &.active {
+    background-color: white;
+    border: 1px solid $primaryColor;
+    color: black;
+    display: flex;
+  }
+  @include table-big {
+    margin-inline-start: 0px;
+  }
+  @include tablet-mini {
+    padding-inline: 5px;
+  }
+  @include phone {
+    padding-inline: 5px;
+  }
+}
+
+.list__body-close {
+  cursor: pointer;
+  display: flex;
+  white-space: nowrap;
+  text-align: start;
+  border: solid 1px $primaryColor;
+  border-radius: 6px;
+  max-width: 200px;
+  height: 28px;
+  font-size: 12px;
+  padding-block-start: 6px;
+  text-transform: uppercase;
+  margin-inline-start: 38px;
+  margin-block-start: 0px;
+  padding-inline-start: 11px;
+  padding-inline-end: 14px;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  @include table-big {
+    max-width: 100px;
+    white-space: wrap;
+    text-align: center;
+    font-size: 10px;
+    height: 100%;
+    padding-inline: 10px;
+    padding-block: 5px;
+    margin-inline-start: 0px;
+  }
+}
+.list__price--open {
+  margin-inline-start: 23px;
+}
+.list__body-select {
+  display: flex;
+  flex-direction: column-reverse;
+  overflow: hidden;
+  height: 66px;
+  &.active {
+    overflow: inherit;
+    height: auto;
+  }
+  @include table-big {
+    padding-inline-end: 0px;
+  }
+}
+
+.list__select {
+  position: relative;
+  left: -10px;
+  width: 1149px;
+  @include table-big {
+    width: 100%;
+    left: inherit;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: $colorGrey;
+    width: 100%;
+    height: 1px;
+    opacity: 0.2;
+    @media (max-width: 400px) {
+      bottom: 2px;
+    }
+  }
+}
+
+.list__body-category {
+  position: relative;
+  display: flex;
+  padding-block: 15px;
+  align-items: center;
+  padding-inline-start: 2px;
+  .list__hotel {
+    letter-spacing: 0.4px;
+    margin-block-start: 4px;
+  }
+  .list__food,
+  .list__tour,
+  .list__price {
+    margin-block-start: 2px;
+  }
+  &::after {
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
@@ -143,45 +438,390 @@ hotdeals__render {
   }
 }
 
-.list__hotel,
-.list__category,
-.list__food,
-.list__tour,
-.list__price,
-.list__button_select {
-  width: 100%;
+.list__arrow-open {
+  min-width: 24px;
+  min-height: 24px;
+  margin-block-start: 4px;
+  margin-inline-start: 6px;
 }
-.list__category {
-  font-size: 24px;
-  color: f5c213;
-  max-width: 140px;
-  margin-inline-start: 70px;
-}
-.list__hotel {
-  text-decoration: underline;
-  color: $colorBlue;
-  font-size: 15px;
-  max-width: 180px;
-}
-.list__food {
-  margin-inline-start: 37px;
-  max-width: 200px;
-}
-.list__tour {
-  max-width: 160px;
+.list__arrow-close {
+  min-width: 24px;
+  min-height: 24px;
+  margin-block-start: 5px;
+  margin-inline-start: 11px;
+  @include table-big {
+    display: none;
+  }
 }
 
-.list__button_select {
-  text-align: center;
-  color: white;
-  background-color: $primaryColor;
-  border-radius: 6px;
-  max-width: 200px;
-  padding-block: 5px;
-  font-size: 12px;
-  text-transform: uppercase;
-  margin-inline-start: 28px;
+.list__body-select {
+  .list__body-hotel {
+    display: flex;
+    align-items: center;
+  }
 }
-.list__price--open {
-  margin-inline-start: 10px;
+
+.list__body-hotel {
+  padding-block: 15px;
+  margin-block-end: 8px;
+  .list__price {
+    margin-inline-start: 20px;
+    @include table-big {
+      margin: 0;
+    }
+  }
+}
+.list__select-hotel {
+  display: flex;
+  align-items: center;
+  padding-block-start: 22px;
+  padding-block-end: 24px;
+  margin-block-start: -14px;
+  background-color: $backgroundGrey;
+  border-radius: 6px;
+  padding-inline-start: 10px;
+  .list__hotel {
+    text-decoration: none;
+    opacity: 0.5;
+    color: $colorGrey;
+    @include table-big {
+      text-align: center;
+      font-size: 12px;
+    }
+  }
+
+  @include table-big {
+    padding-inline: 10px;
+  }
+}
+
+@include table-big {
+  .list__openlist {
+    .hotdeals__header {
+      display: flex;
+      justify-content: start;
+      gap: 40px;
+    }
+  }
+  .list__opendeals {
+    text-align: center;
+    .hotdeals__from,
+    .hotdeals__to {
+      max-width: 100px;
+    }
+    .hotdeals__duration {
+      max-width: 210px;
+    }
+    .hotdeals__price {
+      text-align: start;
+    }
+  }
+  .list__body-category {
+    justify-content: space-between;
+    .list__category,
+    .list__food,
+    .list__tour,
+    .list__price--open {
+      margin-inline-start: 0px;
+    }
+  }
+  .list__button-select {
+    max-width: 100px;
+    white-space: wrap;
+    font-size: 10px;
+  }
+  .list__body-category {
+    .list__button-select.active {
+      font-size: 10px;
+      height: 100%;
+      padding-inline: 10px;
+      padding-block: 5px;
+    }
+  }
+  .list__hotel,
+  .list__category,
+  .list__food,
+  .list__tour,
+  .list__price--open {
+    font-size: 12px;
+    text-align: center;
+    margin: 0px;
+  }
+  .list__select-hotel {
+    display: flex;
+  }
+}
+
+@include phone {
+  .list__food {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .list__duration,
+  .hotdeals__duration,
+  .list__to,
+  .hotdeals__to,
+  .hotdeals__from,
+  .list__price,
+  .list__from,
+  .list__data {
+    max-width: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .hotdeals__header {
+    padding-inline: 5px;
+  }
+  .hotdeals__price {
+    text-align: start;
+  }
+
+  .hotdeals__data {
+    max-width: 70px;
+  }
+  .hotdeals__duration,
+  .list__tour,
+  .list__duration {
+    display: none;
+  }
+  .list__button {
+    max-width: 100px;
+  }
+  .list__body {
+    justify-content: start;
+    padding-inline: 10px;
+    gap: 15px;
+    margin-inline-start: 30px;
+  }
+  .list__hotel,
+  .list__category,
+  .list__food,
+  .list__tour,
+  .list__price--open {
+    font-size: 10px;
+    text-align: center;
+    margin: 0px;
+  }
+
+  .list__food {
+    text-align: start;
+  }
+  .hotdeals__price {
+    max-width: 50px;
+  }
+  .hotdeals__to {
+    margin-inline-start: 5px;
+  }
+  .hotdeals__price {
+    margin-inline-start: 35px;
+  }
+}
+
+////////////////////////////////////
+@include table-big {
+  .hotdeals__header {
+    text-align: center;
+  }
+  .hotdeals__price {
+    text-align: start;
+  }
+
+  .list__body-category {
+    padding-inline: 10px;
+  }
+  .list__open {
+    padding: 0;
+  }
+  .href__button-select {
+    max-width: 100px;
+  }
+  .hotdeals__price {
+    max-width: 120px;
+  }
+  .hotdeals__duration {
+    max-width: 220px;
+  }
+}
+/////////////////////////////////////////////
+@include tablet {
+  .hotdeals__header {
+    text-align: start;
+  }
+  .hotdeals__to {
+    max-width: 100px;
+  }
+  .hotdeals__duration {
+    max-width: 150px;
+  }
+  .list__body-hotel {
+    text-align: start;
+  }
+}
+//////////////////////////////////////
+@include tablet-mini {
+  .hotdeals__header {
+    text-align: start;
+    margin-block-start: 40px;
+    padding-inline: 10px;
+  }
+
+  .hotdeals__from {
+    max-width: 110px;
+  }
+  .hotdeals__to {
+    max-width: 100px;
+  }
+  .hotdeals__duration {
+    max-width: 170px;
+  }
+}
+/////////////////////////////////////
+@include phone {
+  .list__button {
+    max-width: 100%;
+  }
+}
+.hotdeals__duration {
+  @media (max-width: 680px) {
+    max-width: 120px;
+  }
+}
+.hotdeals__header {
+  @media (max-width: 600px) {
+    justify-content: start;
+    text-align: start;
+    padding-inline: 10px;
+    margin-inline-start: 20px;
+    gap: 0px;
+  }
+}
+
+@media (max-width: 400px) {
+  .list__button {
+    max-width: 60px;
+  }
+  .list__body {
+    margin-inline: 5px;
+  }
+}
+
+@include table-big {
+  .list__body-hotel,
+  .list__select-hotel {
+    justify-content: space-between;
+    padding-inline: 10px;
+    text-align: start;
+  }
+  .list__opendeals {
+    .hotdeals__header {
+      justify-content: space-between;
+      gap: 20px;
+      padding-inline: 10px;
+      .hotdeals__price {
+        margin-inline-end: 70px;
+      }
+      .hotdeals__duration {
+        max-width: 150px;
+      }
+    }
+  }
+  .list__open {
+    .list__body {
+      padding-inline: 20px;
+    }
+  }
+}
+
+@include phone {
+  .list__open {
+    .list__body {
+      padding-inline: 10px;
+    }
+  }
+  .list__button,
+  .list__button-close {
+    max-width: 100px;
+  }
+  .list__body {
+    margin: 0px;
+  }
+}
+@media (max-width: 400px) {
+  .list__button,
+  .list__button-close,
+  .href__button-select {
+    max-width: 50px;
+    font-size: 8px;
+    padding-inline: 1px;
+  }
+  .list__body-close,
+  .list__button-select {
+    font-size: 8px;
+  }
+  .list__body {
+    gap: 5px;
+    justify-content: center;
+  }
+  .hotdeals__header {
+    justify-content: center;
+  }
+  .list__category,
+  .list__food {
+    max-width: 50px;
+  }
+  .list__select-hotel {
+    padding-inline: 5px;
+    .list__hotel {
+      font-size: 10px;
+      max-width: 80px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  .list__body-hotel {
+    .list__hotel {
+      white-space: wrap;
+      max-width: 100px;
+      margin-inline-start: 10px;
+    }
+    .list__category{
+      max-width: 60px;
+      margin-inline-start: 10px;
+    }
+  }
+  .hotdeals__price {
+    margin: 0;
+  }
+  .list__category,
+  .list__food {
+    max-width: 70px;
+  }
+  .list__hotel {
+    margin-inline-start: 8px;
+  }
+  .list__food {
+    max-width: 80px;
+  }
+  .list__body-select.active {
+    .list__button-select {
+      font-size: 8px;
+    }
+  }
+  .list__select {
+    .list__food {
+      max-width: 40px;
+    }
+    .list__category{
+      text-align: start;
+       max-width: 30px;
+    }
+  }
+  .list__body-close {
+    padding-inline: 5px;
+  }
+  .href__button-select {
+    margin-inline-end: 20px;
+  }
 }

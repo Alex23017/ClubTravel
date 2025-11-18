@@ -1,7 +1,8 @@
-@use "../base/variables" as *;
+@use '../base/variables' as *;
 
 header {
   padding-inline: 98px;
+  width: 100%;
   color: $colorGrey;
   font-family: $Open;
   font-size: 12px;
@@ -47,7 +48,7 @@ header {
     justify-content: flex-end;
     &::after {
       position: absolute;
-      content: "";
+      content: '';
       height: 1px;
       width: 100%;
       left: 0;
@@ -64,9 +65,12 @@ header {
     display: none;
   }
 }
+
 .topbar__items {
   position: relative;
-  gap: 24px;
+  gap: 28px;
+  margin-inline-start: -2px;
+  margin-block-start: 1px;
   @include tablet-mini {
     justify-content: center;
   }
@@ -77,7 +81,7 @@ header {
 
   &::after {
     position: absolute;
-    content: "";
+    content: '';
     height: 24px;
     width: 1px;
     right: 0px;
@@ -97,7 +101,7 @@ header {
   gap: 24px;
   &::after {
     position: absolute;
-    content: "";
+    content: '';
     height: 24px;
     width: 1px;
     right: -24px;
@@ -110,7 +114,7 @@ header {
 }
 
 .topbar__contact {
-  margin-inline-end: 1px;
+  margin-inline-end: 4px;
   gap: 24px;
   img {
     width: 16px;
@@ -227,6 +231,7 @@ header {
     align-items: center;
     gap: 24px;
     white-space: nowrap;
+    margin-inline-end: -10px;
     @include table-big {
       font-size: 12px;
       gap: 12px;
@@ -254,7 +259,7 @@ header {
   padding-block: 18px;
   &::after {
     position: absolute;
-    content: "";
+    content: '';
     height: 1px;
     width: 100%;
     left: 0;
@@ -271,15 +276,23 @@ header {
 .nav__link--sale {
   display: flex;
   font-weight: 600;
+  gap: 5px;
   cursor: pointer;
   color: $primaryColor;
   transition: color 0.3s;
   &:hover {
-    color: $colorOrange;
+    color: $colorOrange !important;
   }
 }
 .nav__link--company {
   gap: 6px;
+  margin-inline-start: -8px;
+  @include tablet-mini {
+    margin-inline-start: 0px;
+  }
+  @include phone {
+    margin-inline-start: 0px;
+  }
 }
 
 .sale,
@@ -294,6 +307,14 @@ header {
     min-height: 18px;
     min-width: 18px;
   }
+}
+.sale {
+  width: 24px;
+  height: 24px;
+}
+.clock {
+  width: 27px;
+  height: 24px;
 }
 // BURGER
 .burger {
@@ -319,12 +340,7 @@ header {
   opacity: 0;
   left: 50%;
   transform: translate(-50%);
-  background: linear-gradient(
-    to right,
-    rgb(37, 174, 233, 0.5),
-    rgb(81, 177, 250, 0.5),
-    rgb(162, 162, 224, 0.5)
-  );
+  background: linear-gradient(to right, rgb(37, 174, 233, 0.5), rgb(81, 177, 250, 0.5), rgb(162, 162, 224, 0.5));
   backdrop-filter: blur(4px);
   z-index: 99;
   width: 100%;

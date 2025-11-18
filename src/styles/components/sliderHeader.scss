@@ -1,0 +1,53 @@
+@use '../base/variables' as *;
+.swiper {
+  width: 100%;
+  max-width: 100%; // чтобы не было 1366px
+  display: block;
+}
+
+.slider__header {
+  max-width: 100%;
+}
+
+.hero__slider-img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.swiper-wrapper {
+  max-width: 100%;
+}
+
+.swiper-header-next,
+.swiper-header-prev {
+  width: 48px;
+  height: 48px;
+  color: white;
+  padding: 16px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+}
+
+.slider__header .swiper-header-next {
+  right: 20px;
+  top: 49.6%;
+}
+.slider__header .swiper-header-prev {
+  left: 20px;
+  top: 49.6%;
+}
+
+@include phone {
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 24px;
+    height: 24px;
+    padding: 8px;
+  }
+  .swiper-button-next {
+    right: 5px !important;
+  }
+  .swiper-button-prev {
+    left: 5px !important;
+  }
+}

@@ -2,8 +2,8 @@
 
 .search {
   position: relative;
-  top: -98px;
-  left: 50%;
+  top: -97px;
+  left: 49.6%;
   transform: translate(-50%);
   background-color: white;
   padding-block-start: 15px;
@@ -13,11 +13,15 @@
   width: 100%;
   max-width: 1170px;
   z-index: 15;
+  @include table-big {
+    left: 50%;
+  }
   @include tablet-mini {
     top: 0px;
   }
   @include phone {
     top: 0px;
+    left: 50%;
   }
 }
 
@@ -36,13 +40,19 @@
   gap: 8px;
   padding-inline: 32px;
   padding-block-start: 17px;
+  margin-block-start: -1px;
   align-items: center;
   line-height: 120%;
   cursor: pointer;
 }
 
-.clock {
+.clock__search {
   color: $colorOrange;
+  width: 24px;
+  height: 24px;
+  &.none {
+    display: none;
+  }
 }
 .advanced__search {
   color: $primaryColor;
@@ -56,7 +66,16 @@
   font-family: $Open;
   text-transform: uppercase;
   letter-spacing: 0.9px;
+  line-height: 120%;
+  margin-block-start: 3px;
+  margin-inline-start: 1px;
+  @media (max-width: 1365px) {
+    margin-block-start: 0px;
+    margin-inline-start: 0px;
+    line-height: 100%;
+  }
 }
+
 .search__body {
   display: flex;
   background: linear-gradient(fccb04, ee901b);
@@ -137,6 +156,15 @@ label {
   @include phone {
     padding-inline: 10px;
     padding-block: 5px;
+  }
+}
+.dropdown-menu {
+  position: relative;
+  z-index: 9999;
+  .dropdown-item {
+    @include phone {
+      font-size: 10px;
+    }
   }
 }
 .destinations {
@@ -412,6 +440,9 @@ searchSubmit {
     height: 1px;
     top: 12px;
     left: 241px;
+    @include table-big {
+      display: none;
+    }
   }
 }
 .adanced__close {
@@ -568,6 +599,9 @@ searchSubmit {
     height: 1px;
     bottom: -24px;
     opacity: 0.2;
+    @include table-big {
+      max-width: 90%;
+    }
   }
 }
 .advanced__food {
@@ -806,3 +840,116 @@ render__tour {
     display: none;
   }
 }
+
+@include table-big {
+  .tour__package-regions {
+    column-gap: 20px;
+  }
+  .advanced__body {
+    justify-content: center;
+    padding-inline: 10px;
+  }
+  .tour__region,
+  .tour__package,
+  .advanced__fly {
+    margin: 0;
+  }
+  .advanced__body {
+    justify-content: center;
+    gap: 50px;
+  }
+  .advanced__column {
+    justify-content: center;
+    gap: 50px;
+    margin-block-start: 70px;
+    padding-inline: 10px;
+  }
+  .tour__package-regions {
+    gap: 10px;
+  }
+  .advanced__footer {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .advanced__category {
+    gap: 20px;
+  }
+}
+.advanced__pointer {
+  margin: 0px;
+}
+
+@include tablet-mini {
+  .tour__region {
+    margin: 0;
+  }
+}
+@include phone {
+  .advanced__pointer,
+  .tour__package {
+    display: none;
+  }
+  .advanced__column {
+    justify-content: center;
+    gap: 20px;
+    p,
+    label {
+      font-size: 12px;
+    }
+  }
+  .advanced__body {
+    gap: 5px;
+    padding-inline: 0px;
+    p,
+    label {
+      font-size: 12px;
+    }
+  }
+  .tour__package-regions {
+    gap: 10px;
+    column-gap: 0px;
+    place-items: start;
+    max-width: 170px;
+  }
+  .type {
+    max-width: 110px;
+  }
+  .tour__region {
+  }
+  .advanced__footer {
+    p,
+    label {
+      font-size: 10px;
+    }
+  }
+  .departure,
+  .destinations {
+    max-width: 80px;
+  }
+  .search__body {
+    justify-content: center;
+    padding-inline-start: 25px;
+  }
+  .adanced__title,
+  .adanced__close {
+    align-items: center;
+    font-size: 12px;
+    img {
+      width: 10px;
+      height: 10px;
+    }
+  }
+  .tour__body__region {
+    max-width: 80px;
+    white-space: wrap;
+    place-items: center;
+    height: 100%;
+    .tour__img {
+      height: 100%;
+    }
+  }
+  .search__title {
+    font-size: 16px;
+  }
+}
+
