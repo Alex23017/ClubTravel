@@ -36,7 +36,7 @@ function renderCard(data) {
   let stars = '';
   for (let i = 1; i < data.rating; i++) {
     stars += ` <svg class="hotel__card-star">
-        <use xlink:href='icon-star-shiny'></use>
+        <use xlink:href='#icon-star-shiny'></use>
       </svg>`;
   }
   return container.innerHTML = `
@@ -44,7 +44,7 @@ function renderCard(data) {
       ${data.hotelName}
     <div class="hotel__card-more">
       <svg>
-        <use xlink:href='icon-plus-shiny'></use>
+        <use xlink:href='#icon-plus-shiny'></use>
       </svg>
     </div>
     <div class="hotel__card-stars">
@@ -54,7 +54,7 @@ function renderCard(data) {
   <div class="hotel__card-location">
    
     <svg class="hotel__card-pin">
-        <use xlink:href='icon-pin-grean'></use>
+        <use xlink:href='#icon-pin-grean'></use>
       </svg>
       ${data.address}
   </div>

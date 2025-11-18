@@ -75,7 +75,7 @@
 .hotdeals__duration {
   max-width: 169px;
 }
-hotdeals__render {
+#hotdeals__render {
   margin-block-start: 15px;
   font-size: 15px;
   font-family: $Open;
@@ -260,7 +260,7 @@ hotdeals__render {
 }
 .list__category {
   font-size: 24px;
-  color: f5c213;
+  color: #f5c213;
   max-width: 140px;
   margin-inline-start: 70px;
   @include table-big {
