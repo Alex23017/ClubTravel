@@ -660,7 +660,7 @@ function renderList(hotDealsList) {
           <p class="list__price list__price--open">от <strong>${price}</strong>/чел.</p>
            <p class="list__body-close">Скрыть предложения
             <svg class='list__arrow-close'>
-            <use xlink:href='icon-arrowClose'></use>
+            <use xlink:href='#icon-arrowClose'></use>
             </svg>
           </p>
           </div>
@@ -717,7 +717,7 @@ function renderList(hotDealsList) {
 
       btn.classList.add('active')
       btn.innerHTML = `<span>Открыть предложения</span>  <svg class='list__arrow-close'>
-            <use xlink:href='icon-arrowClose'></use>
+            <use xlink:href='#icon-arrowClose'></use>
             </svg>`
 
       const currentOpen = btn.closest('.list__open')

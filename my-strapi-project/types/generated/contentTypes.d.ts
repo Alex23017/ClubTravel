@@ -458,6 +458,28 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   }
 }
 
+export interface ApiHotDealHotDeal extends Struct.CollectionTypeSchema {
+  collectionName: 'hot_deals'
+  info: {
+    displayName: 'hot deals'
+    pluralName: 'hot-deals'
+    singularName: 'hot-deal'
+  }
+  options: {
+    draftAndPublish: true
+  }
+  attributes: {
+    createdAt: Schema.Attribute.DateTime
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
+    hotelName: Schema.Attribute.String
+    locale: Schema.Attribute.String & Schema.Attribute.Private
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::hot-deal.hot-deal'> & Schema.Attribute.Private
+    publishedAt: Schema.Attribute.DateTime
+    updatedAt: Schema.Attribute.DateTime
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
+  }
+}
+
 export interface ApiHotelHotel extends Struct.CollectionTypeSchema {
   collectionName: 'hotels'
   info: {
@@ -892,6 +914,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser
       'api::about.about': ApiAboutAbout
       'api::global.global': ApiGlobalGlobal
+      'api::hot-deal.hot-deal': ApiHotDealHotDeal
       'api::hotel.hotel': ApiHotelHotel
       'plugin::content-releases.release': PluginContentReleasesRelease
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction

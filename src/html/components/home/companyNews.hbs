@@ -1,23 +1,23 @@
 <section data-component='companyNews' class='company__news'>
   <div class='company__header'>
     <svg class='company__header-img'>
-      <use xlink:href='icon-sale'></use>
+      <use xlink:href='#icon-sale'></use>
     </svg>
     <h2 class='company__header-title'>кампании<span> и Новости</span></h2>
   </div>
   <div class='swiper mySwiperNews'>
     <div class='news__container swiper-wrapper'>
-      {{each newsList}}
+      {{#each newsList}}
         <div class='news__card swiper-slide'>
           <img class='news__img' src={{img}} alt='hero' />
-          {{if iconCount}}
+          {{#if iconCount}}
             <svg class='news__icon-price'>
               <use xlink:href={{iconCount}}></use>
             </svg>
           {{/if}}
           <div class='news__data'>
             <svg class='news__data-clock'>
-              <use xlink:href='icon-newsClock'></use>
+              <use xlink:href='#icon-newsClock'></use>
             </svg>
             <p class='news__data-text'>{{data}}</p>
           </div>
@@ -29,7 +29,7 @@
     <div class='company__footer'>
       <a href='' class='company__footer-link'>Все кампании и новости</a>
       <svg class='company__footer-img'>
-        <use xlink:href='icon-arrowNews'></use>
+        <use xlink:href='#icon-arrowNews'></use>
       </svg>
     </div>
   </div>

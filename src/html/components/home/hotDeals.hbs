@@ -3,7 +3,7 @@
 
     <div class='hotdeals__header-title'>
       <svg class='hotdeals__clock'>
-        <use xlink:href='icon-clock'></use>
+        <use xlink:href='#icon-clock'></use>
       </svg>
       <h2>горящие предложения</h2>
     </div>
@@ -12,19 +12,19 @@
   </div>
   <div class='swiper mySwiperHotDeals'>
     <div class='hotdeals__container swiper-wrapper'>
-      {{each hotDealsList}}
+      {{#each hotDealsList}}
         <div class='hotdeals__card swiper-slide'>
           <img class='hotdeals__img' src={{img}} alt='hero' />
 
           <div class='hotdeals__data'>
             <svg class='hotdeals__data-clock'>
-              <use xlink:href='icon-newsClock'></use>
+              <use xlink:href='#icon-newsClock'></use>
             </svg>
             <p class='hotdeals__data-text'>{{data}}</p>
           </div>
           <div class='hotdeals__location'>
             <svg class='hotdeals__location-icon'>
-              <use xlink:href='icon-hotLocation'></use>
+              <use xlink:href='#icon-hotLocation'></use>
             </svg>
             <p class='hotdeals__location-text'>{{location}}</p>
           </div>
@@ -32,9 +32,9 @@
             <div class='hotdeals__footer-column'>
               <p class='hotdeals__data-title'>{{title}}</p>
               <div class='hotdeals__category'>
-                {{each stars}}
+                {{#each stars}}
                   <svg class='hotdeals__category-star'>
-                    <use xlink:href='icon-star-shiny'></use>
+                    <use xlink:href='#icon-star-shiny'></use>
                   </svg>
                 {{/each}}
               </div>
@@ -42,7 +42,7 @@
 
             <div class='hotdeals__footer-column hotdeals__footer-column--second'>
               <div class='hotdeals__body-price'>
-                {{if price}}
+                {{#if price}}
                   <p class='hotdeals__price'><span>{{price}}€</span>/чел</p>
                 {{else}}
                   <p class='hotdeals__price'><span>Цена не указана</span></p>
@@ -50,7 +50,7 @@
                 <p class='hotdeals__price-old'>{{oldPrice}} €/чел</p>
               </div>
 
-              {{if priceCount}}
+              {{#if priceCount}}
                 <svg class='hotdeals__icon-count'>
                   <use xlink:href={{priceCount}}></use>
                 </svg>
@@ -64,7 +64,7 @@
     <div class='company__footer'>
       <a href='' class='company__footer-link'>Все горящие предложения</a>
       <svg class='company__footer-img'>
-        <use xlink:href='icon-arrowNews'></use>
+        <use xlink:href='#icon-arrowNews'></use>
       </svg>
     </div>
 
