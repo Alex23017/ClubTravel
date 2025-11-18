@@ -59,7 +59,7 @@
 }
 .search__body {
   display: flex;
-  background: linear-gradient(#fccb04, #ee901b);
+  background: linear-gradient(fccb04, ee901b);
   padding-block: 15px;
   padding-inline: 32px;
   height: 90px;
@@ -192,10 +192,10 @@ label {
   }
 }
 
-#destinations,
-#duration,
-#departure,
-#guests,
+destinations,
+duration,
+departure,
+guests,
 .search__data {
   border: none;
   outline: none;
@@ -256,7 +256,7 @@ label {
   align-items: center;
   justify-content: center;
   gap: 4px;
-  background-color: #13882d;
+  background-color: 13882d;
   width: 100%;
   max-width: 171px;
   border-top-right-radius: 6px;
@@ -282,7 +282,7 @@ label {
     height: 10px;
   }
 }
-#searchSubmit {
+searchSubmit {
   font-family: $Open;
   font-size: 14px;
   @include phone {
@@ -517,10 +517,10 @@ label {
   margin-block-start: 40px;
 }
 .rater-star {
-  color: #ffe489;
+  color: ffe489;
   font-size: 25px;
   &.active {
-    color: #f5c213;
+    color: f5c213;
   }
 }
 .rater {
@@ -634,7 +634,7 @@ label {
 
 $min: 200;
 $max: 3000;
-$color: #ff8c00;
+$color: ff8c00;
 
 .price-range {
   position: relative;
@@ -646,7 +646,7 @@ $color: #ff8c00;
   &::before {
     content: '';
     position: absolute;
-    background-color: #cecece;
+    background-color: cecece;
     width: 3px;
     height: 20px;
     top: 28px;
@@ -654,7 +654,7 @@ $color: #ff8c00;
   &::after {
     content: '';
     position: absolute;
-    background-color: #cecece;
+    background-color: cecece;
     width: 3px;
     height: 20px;
     right: -3px;
@@ -670,7 +670,7 @@ $color: #ff8c00;
   justify-content: space-between;
   margin-bottom: 12px;
   font-size: 16px;
-  color: #555;
+  color: 555;
 
   &.top {
     margin-bottom: 14px;
@@ -690,7 +690,7 @@ $color: #ff8c00;
 .slider {
   position: relative;
   height: 2px;
-  background: #cecece;
+  background: cecece;
 }
 
 .track,
@@ -702,7 +702,7 @@ $color: #ff8c00;
 
 .track {
   width: 100%;
-  background: #cecece;
+  background: cecece;
 }
 
 .range {
@@ -768,14 +768,14 @@ $color: #ff8c00;
   align-items: center;
   margin-block-start: -3px;
 }
-#render__category {
+render__category {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 8px;
 }
 
 .selected__rating {
-  border: 1px solid #e2e2e2;
+  border: 1px solid e2e2e2;
   padding-inline: 11px;
   padding-block-start: 2px;
   padding-block-end: 4px;
@@ -785,7 +785,7 @@ $color: #ff8c00;
   text-align: center;
 }
 
-#render__tour {
+render__tour {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   text-align: center;
@@ -794,7 +794,7 @@ $color: #ff8c00;
     display: none;
   }
   label {
-    border: 1px solid #e2e2e2;
+    border: 1px solid e2e2e2;
     padding-inline: 9.5px;
     padding-block-start: 2px;
     padding-block-end: 4px;

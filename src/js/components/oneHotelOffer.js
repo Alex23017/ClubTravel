@@ -24,25 +24,25 @@ function renderOffer(data) {
     <div class="hotel__offer-dates">
       <div class="hotel__offer-date">
         <svg>
-        <use xlink:href='#icon-calendar'></use>
+        <use xlink:href='icon-calendar'></use>
       </svg>
         <span>18 июня 2020 г. | ${data.night} ночей</span>
       </div>
       <div class="hotel__offer-raise">
         <svg>
-        <use xlink:href='#icon-departure'></use>
+        <use xlink:href='icon-departure'></use>
       </svg>
         <span>Вылет из ${data.from}</span>
       </div>
       <div class="hotel__offer-food">
         <svg>
-        <use xlink:href='#icon-food'></use>
+        <use xlink:href='icon-food'></use>
       </svg>
         <span>${data.food}</span>
       </div>
       <div class="hotel__offer-houses">
         <svg>
-        <use xlink:href='#icon-apartment'></use>
+        <use xlink:href='icon-apartment'></use>
       </svg>
         <span>${data.houses}</span>
       </div>
@@ -92,7 +92,7 @@ function renderOffer(data) {
     </button>
     <div class="hotel__offer-policy">
     <svg>
-      <use xlink:href='#icon-policy-lock'></use>
+      <use xlink:href='icon-policy-lock'></use>
     </svg>
       <div>
       Ваши данные надежно защищены и обрабатываются согласно с 
