@@ -1,25 +1,29 @@
 @use '../base/variables' as *;
 
 #header {
-  padding-inline: 98px;
   width: 100%;
-  color: $colorGrey;
   font-family: $Open;
   font-size: 12px;
   font-weight: 400;
-  @media (max-width: 1240px) {
+  color: $colorGrey;
+  padding-inline: 98px;
+
+  @media (width <= 1240px) {
     padding-inline: 60px;
   }
+
   @include tablet {
     padding-inline: 20px;
   }
+
   @include tablet-mini {
-    padding-inline: 15px;
     font-size: 10px;
-  }
-  @include phone {
     padding-inline: 15px;
+  }
+
+  @include phone {
     font-size: 8px;
+    padding-inline: 15px;
   }
 }
 
@@ -36,31 +40,35 @@
 .topbar {
   position: relative;
   justify-content: flex-end;
+  gap: 48px;
   line-height: 100%;
   padding-block: 8px;
-  gap: 48px;
 
   @include tablet-mini {
     gap: 12px;
   }
+
   @include phone {
-    gap: 12px;
     justify-content: flex-end;
+    gap: 12px;
+
     &::after {
-      position: absolute;
       content: '';
-      height: 1px;
-      width: 100%;
-      left: 0;
-      bottom: 0;
-      background-color: $colorGrey;
       opacity: 0.1;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $colorGrey;
     }
   }
 }
+
 .topbar__list {
   width: 221px;
   margin-inline-end: -25px;
+
   @include phone {
     display: none;
   }
@@ -71,25 +79,29 @@
   gap: 28px;
   margin-inline-start: -2px;
   margin-block-start: 1px;
+
   @include tablet-mini {
     justify-content: center;
   }
+
   @include phone {
     justify-content: flex-start;
     gap: 8px;
   }
 
   &::after {
-    position: absolute;
     content: '';
-    height: 24px;
-    width: 1px;
-    right: 0px;
-    background-color: $colorGrey;
     opacity: 0.1;
+    position: absolute;
+    right: 0;
+    width: 1px;
+    height: 24px;
+    background-color: $colorGrey;
+
     @include tablet-mini {
       right: 17px;
     }
+
     @include phone {
       right: 14px;
     }
@@ -99,14 +111,16 @@
 .email__body {
   position: relative;
   gap: 24px;
+
   &::after {
-    position: absolute;
     content: '';
-    height: 24px;
-    width: 1px;
-    right: -24px;
-    background-color: $colorGrey;
     opacity: 0.1;
+    position: absolute;
+    right: -24px;
+    width: 1px;
+    height: 24px;
+    background-color: $colorGrey;
+
     @include phone {
       right: -10px;
     }
@@ -114,27 +128,33 @@
 }
 
 .topbar__contact {
-  margin-inline-end: 4px;
   gap: 24px;
+  margin-inline-end: 4px;
+
   img {
     width: 16px;
     height: 16px;
   }
+
   @include tablet-mini {
     gap: 12px;
   }
+
   @include phone {
     gap: 8px;
+
     img {
       width: 12px;
       height: 12px;
     }
   }
 }
+
 .phone__body,
 .email__body {
   gap: 8px;
   white-space: nowrap;
+
   @include phone {
     gap: 4px;
   }
@@ -142,12 +162,15 @@
 
 .profile__body {
   gap: 24px;
+
   img {
     width: 24px;
     height: 24px;
   }
+
   @include phone {
     gap: 8px;
+
     img {
       width: 16px;
       height: 16px;
@@ -160,17 +183,20 @@
   top: -40px;
   left: -48px;
   z-index: 10;
+
   @include tablet {
+    top: -20px;
     left: 0;
-    top: -20px;
   }
+
   @include tablet-mini {
-    left: -10px;
     top: -20px;
+    left: -10px;
   }
+
   @include phone {
-    left: 10px;
     top: -15px;
+    left: 10px;
   }
 }
 
@@ -181,22 +207,25 @@
   z-index: 4;
   width: 82px;
   height: 114px;
+
   @include tablet {
+    left: 16px;
     width: 60px;
     height: 80px;
-    left: 16px;
   }
+
   @include tablet-mini {
+    top: 20px;
+    left: 8px;
     width: 40px;
     height: 50px;
-    left: 8px;
-    top: 20px;
   }
+
   @include phone {
+    top: 20px;
+    left: 8px;
     width: 40px;
     height: 50px;
-    left: 8px;
-    top: 20px;
   }
 }
 
@@ -204,14 +233,17 @@
   position: absolute;
   width: 189px;
   height: 154px;
+
   @include tablet {
     width: 100px;
     height: 115px;
   }
+
   @include tablet-mini {
     width: 60px;
     height: 90px;
   }
+
   @include phone {
     width: 60px;
     height: 90px;
@@ -222,32 +254,38 @@
   display: flex;
   justify-content: flex-end;
   font-family: $Open;
-  font-weight: 400;
   font-size: 16px;
-  text-transform: uppercase;
+  font-weight: 400;
   color: $colorBlue;
+  text-transform: uppercase;
+
   &__items {
     display: flex;
     align-items: center;
     gap: 24px;
     white-space: nowrap;
     margin-inline-end: -10px;
+
     @include table-big {
-      font-size: 12px;
       gap: 12px;
+      font-size: 12px;
     }
+
     @include tablet {
-      font-size: 10px;
       gap: 10px;
-    }
-    @include tablet-mini {
       font-size: 10px;
-      gap: 5px;
     }
+
+    @include tablet-mini {
+      gap: 5px;
+      font-size: 10px;
+    }
+
     @include phone {
       display: none;
     }
   }
+
   &__link {
     display: flex;
     align-items: center;
@@ -257,15 +295,17 @@
 .nav__list {
   position: relative;
   padding-block: 18px;
+
   &::after {
-    position: absolute;
     content: '';
-    height: 1px;
-    width: 100%;
-    left: 0;
-    top: 0;
-    background-color: $colorGrey;
     opacity: 0.1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $colorGrey;
+
     @include phone {
       display: none;
     }
@@ -274,24 +314,28 @@
 
 .nav__link--company,
 .nav__link--sale {
-  display: flex;
-  font-weight: 600;
-  gap: 5px;
   cursor: pointer;
+  display: flex;
+  gap: 5px;
+  font-weight: 600;
   color: $primaryColor;
   transition: color 0.3s;
+
   &:hover {
     color: $colorOrange !important;
   }
 }
+
 .nav__link--company {
   gap: 6px;
   margin-inline-start: -8px;
+
   @include tablet-mini {
-    margin-inline-start: 0px;
+    margin-inline-start: 0;
   }
+
   @include phone {
-    margin-inline-start: 0px;
+    margin-inline-start: 0;
   }
 }
 
@@ -301,74 +345,85 @@
     width: 18px;
     height: 18px;
   }
+
   @include phone {
     max-width: 18px;
+    min-width: 18px;
     max-height: 18px;
     min-height: 18px;
-    min-width: 18px;
   }
 }
+
 .sale {
   width: 24px;
   height: 24px;
 }
+
 .clock {
   width: 27px;
   height: 24px;
 }
 // BURGER
 .burger {
-  position: relative;
   cursor: pointer;
-  margin-inline-end: 20px;
+  position: relative;
   display: none;
   z-index: 100;
+  margin-inline-end: 20px;
+
   @include phone {
     display: flex;
   }
 }
+
 .burger__img {
   width: 24px;
   height: 24px;
 }
+
 .burger__menu {
-  position: fixed;
   visibility: hidden;
-  display: flex;
-  justify-content: center;
-  top: 0;
   opacity: 0;
+  position: fixed;
+  display: flex;
+  top: 0;
   left: 50%;
-  transform: translate(-50%);
-  background: linear-gradient(to right, rgb(37, 174, 233, 0.5), rgb(81, 177, 250, 0.5), rgb(162, 162, 224, 0.5));
-  backdrop-filter: blur(4px);
+  justify-content: center;
   z-index: 99;
   width: 100%;
   height: auto;
   padding: 70px;
+  background: linear-gradient(to right, rgb(37, 174, 233, 0.5), rgb(81, 177, 250, 0.5), rgb(162, 162, 224, 0.5));
+  transform: translate(-50%);
+  backdrop-filter: blur(4px);
+
   &.open {
-    opacity: 1;
     visibility: visible;
+    opacity: 1;
   }
 }
+
 .burger__body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  white-space: nowrap;
-  color: black;
   width: 100%;
   max-width: 350px;
+  color: black;
+  white-space: nowrap;
+
   .nav__link {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
     font-size: 10px;
     background-color: white;
-    border-radius: 5px;
-    padding: 10px;
-    cursor: pointer;
+
     &:active {
       transform: translateY(2px);
     }
   }
+
   .nav__link--sale {
     gap: 8px;
   }

@@ -1,70 +1,76 @@
-@use "../base/variables" as *;
+@use '../base/variables' as *;
 
 .hotel {
   position: relative;
+
   &__card {
-    width: 304px;
-    height: 85px;
     position: absolute;
     top: -126px;
-    left: 98px;
     right: 0;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 1);
-    box-sizing: border-box;
+    left: 98px;
+    width: 304px;
+    height: 85px;
     padding: 14px 14px 0 19px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background: rgb(255, 255, 255, 1);
   }
+
   &__card-name {
+    position: relative;
     display: flex;
     align-items: center;
-    position: relative;
     gap: 13px;
-    color: var(--text, rgba(34, 34, 34, 1));
-    font-family: Open Sans;
+    font-family: "Open Sans";
     font-size: 26px;
-    font-weight: 700;
     line-height: 35px;
+    font-weight: 700;
+    color: var(--text, rgb(34, 34, 34, 1));
   }
+
   &__card-more {
+    cursor: pointer;
     position: absolute;
-    top: 0px;
-    right: 0px;
+    top: 0;
+    right: 0;
     width: 12px;
     height: 12px;
 
-    cursor: pointer;
     svg {
       width: 12px;
       height: 12px;
     }
   }
+
   &__card-stars {
     display: flex;
-    margin-top: -11px;
     gap: 4px;
+    margin-top: -11px;
   }
+
   &__card-location {
-    margin-top: 4px;
     display: flex;
     align-items: center;
     gap: 9px;
-
-    color: var(--text, rgba(34, 34, 34, 1));
-    font-family: Open Sans;
+    margin-top: 4px;
+    font-family: "Open Sans";
     font-size: 14px;
-    font-weight: 400;
     line-height: 19px;
+    font-weight: 400;
+    color: var(--text, rgb(34, 34, 34, 1));
   }
 
   &__gallery-list {
-    margin-top: 16px;
     display: flex;
     gap: 16px;
+    margin-top: 16px;
   }
+
   &__content-top {
     display: flex;
     padding: 40px 100px;
   }
+
   &__content-center {
     display: flex;
     padding: 0 100px 0 97px;
