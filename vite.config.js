@@ -2,15 +2,19 @@ import { defineConfig } from 'vite'
 import path from 'path'
 import handlebars from 'vite-plugin-handlebars'
 import svgSpritePlugin from '@pivanov/vite-plugin-svg-sprite'
+import string from "vite-plugin-string";
+
+import { hulakPlugins } from 'vite-plugin-hulak-tools'
 import { newsList } from './src/js/home/newsList'
 import { hotDealsList } from './src/js/home/hotDealsList'
 
+
 const partialDirs = [
-  path.resolve(__dirname, 'src/html/components/header'),
-  path.resolve(__dirname, 'src/html/components/footer'),
-  path.resolve(__dirname, 'src/html/components/search'),
+  path.resolve(__dirname, 'src/html/components/base'),
+  path.resolve(__dirname, 'src/html/components/base/footer'),
+  path.resolve(__dirname, 'src/html/components/base/search'),
   path.resolve(__dirname, 'src/html/components/home'),
-  path.resolve(__dirname, 'src/html/components/consultation'),
+  path.resolve(__dirname, 'src/html/components/base/consultation'),
   path.resolve(__dirname, 'src/html/components/oneHotel'),
 ]
 
@@ -18,6 +22,7 @@ export default defineConfig({
   root: 'src',
   appType: 'mpa',
   plugins: [
+    
     handlebars({
       partialDirectory: partialDirs,
       watch: true,
@@ -26,6 +31,15 @@ export default defineConfig({
         newsList,
         hotDealsList,
       },
+    }),
+    hulakPlugins({
+      enableHandlebars: true,
+      handlebarsOptions: {
+        partialDirectory: './src/components'
+      }
+    }),
+    string({
+      include: ["**/*.html"],
     }),
     svgSpritePlugin({
       iconDirs: [path.resolve(process.cwd(), 'src/img/icons')],

@@ -1,1 +1,1 @@
-import '/styles/pages/oneHotel.scss'
+import '/styles/pages/oneHotel.scss';
