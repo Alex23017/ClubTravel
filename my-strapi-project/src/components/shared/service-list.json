@@ -8,9 +8,14 @@
     "list": {
       "type": "component",
       "component": "shared.services",
-      "repeatable": false
+      "repeatable": true
     },
     "position": {
+      "type": "component",
+      "component": "shared.position",
+      "repeatable": false
+    },
+    "listPosition": {
       "type": "component",
       "component": "shared.position",
       "repeatable": false

@@ -1,0 +1,140 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+
+.news {
+    padding-top: 58px;
+
+    &__title{
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        font-family: $Open;
+        font-size: 26px;
+        letter-spacing: 3px;
+        font-weight: 700;
+        color: $colorOrange;
+        text-transform: uppercase;
+
+        span {
+            font-family: $Open;
+            font-size: 26px;
+            color: black;
+        }
+
+        @include phone{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        
+    }
+    
+    &__list{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 24px;
+        margin-top: 43px;
+        padding: 0 88px 0 93px;
+
+        @include phone{
+            padding: 0 20px;
+        }
+    }
+
+   
+
+    
+
+    &__img {
+    width: 35px;
+    height: 35px;
+    color: $colorOrange;
+    }
+
+    &__card{
+        position: relative;
+        width: 379px;
+        padding-bottom: 40px;
+        border-radius: 10px;
+        box-sizing: border-box;
+        background: rgb(255, 255, 255, 1);
+        box-shadow: 0 5px 10px 0 rgb(0, 0, 0, 0.1);
+
+        @include phone{
+            width: 100%;
+        }
+
+        img{
+            width: 100%;
+        }
+    }
+
+    &__price {
+        position: absolute;
+        display: inline-block;
+        top: 29px;
+        right: 0;
+        height: 31px;
+        padding: 4px 14px ;
+        background: $colorOrange;
+
+        span{
+            font-family: $Open;
+            font-size: 16px;
+            line-height: 22px;
+            font-weight: 400;
+            color: rgb(255, 255, 255, 1);
+        }
+        clip-path: polygon(7px 0, 0 14.5%, 7px 25%, 0 36.5%, 7px 49%, 0 62.5%, 7px 75%, 0 88.5%, 7px 100%, 100% 100%, 100% 0)
+    }
+
+    &__card-title{
+        padding: 16px 0 0 21px;
+        font-family: $Open;
+        font-size: 16px;
+        line-height: 150%;
+        font-weight: 400;
+    }
+
+    &__data {
+        position: absolute;
+        display: flex;
+        bottom: 92px;
+        left: 14px;
+        align-items: center;
+        gap: 8px;
+        height: 32px;
+        border-radius: 6px;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+        background-color: rgb(0, 0, 0, 0.5);
+        padding-block: 5.5px;
+        padding-inline: 8px 15px;
+    }
+
+    &__data-clock{
+        width: 16px;
+        height: 16px;
+        color: white;
+    }
+
+    &__data-text{
+        font-family: $Open;
+        font-size: 14px;
+        font-weight: 400;
+        color: #fff
+    }
+
+}
+
+
+ 
+
+

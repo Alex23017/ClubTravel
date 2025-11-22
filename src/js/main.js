@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap'
 
+
 document.querySelectorAll('[data-component]').forEach(el => {
   const name = el.dataset.component
   if (!name) return
@@ -9,3 +10,4 @@ document.querySelectorAll('[data-component]').forEach(el => {
     console.warn(`Компонент ${name}.js не найден`, err)
   })
 })
+

@@ -67,7 +67,8 @@ export interface SharedServiceList extends Struct.ComponentSchema {
     displayName: 'serviceList'
   }
   attributes: {
-    list: Schema.Attribute.Component<'shared.services', false>
+    list: Schema.Attribute.Component<'shared.services', true>
+    listPosition: Schema.Attribute.Component<'shared.position', false>
     position: Schema.Attribute.Component<'shared.position', false>
   }
 }

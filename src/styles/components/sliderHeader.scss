@@ -1,8 +1,9 @@
 @use '../base/variables' as *;
+
 .swiper {
+  display: block;
   width: 100%;
   max-width: 100%; // чтобы не было 1366px
-  display: block;
 }
 
 .slider__header {
@@ -10,8 +11,8 @@
 }
 
 .hero__slider-img {
-  object-fit: cover;
   width: 100%;
+  object-fit: cover;
 }
 
 .swiper-wrapper {
@@ -22,19 +23,20 @@
 .swiper-header-prev {
   width: 48px;
   height: 48px;
-  color: white;
   padding: 16px;
-  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 50px;
+  color: white;
+  background-color: rgb(255, 255, 255, 0.2);
 }
 
 .slider__header .swiper-header-next {
+  top: 49.6%;
   right: 20px;
-  top: 49.6%;
 }
+
 .slider__header .swiper-header-prev {
-  left: 20px;
   top: 49.6%;
+  left: 20px;
 }
 
 @include phone {
@@ -44,9 +46,11 @@
     height: 24px;
     padding: 8px;
   }
+
   .swiper-button-next {
     right: 5px !important;
   }
+
   .swiper-button-prev {
     left: 5px !important;
   }
