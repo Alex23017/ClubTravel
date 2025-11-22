@@ -12,7 +12,7 @@ import { hotDealsList } from './src/js/home/hotDealsList'
 const partialDirs = [
   path.resolve(__dirname, 'src/html/components/base'),
   path.resolve(__dirname, 'src/html/components/base/footer'),
-  path.resolve(__dirname, 'src/html/components/base/search'),
+  path.resolve(__dirname, 'src/html/components/hotdeals'),
   path.resolve(__dirname, 'src/html/components/home'),
   path.resolve(__dirname, 'src/html/components/base/consultation'),
   path.resolve(__dirname, 'src/html/components/oneHotel'),
