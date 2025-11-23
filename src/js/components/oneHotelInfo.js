@@ -1,3 +1,4 @@
+import OneHotelInfo from '../../html/components/oneHotel/oneHotelInfo.html'
 import { getHotelById } from '../api/service/hotels';
 // const dataHotel = {
 //   hotelName: 'AMBASSADOR',
@@ -84,13 +85,10 @@ import { getHotelById } from '../api/service/hotels';
 // };
 const dataHotel = await getHotelById('xfmhd9zt1s4qrghz8unla56q');
  function  renderInfo(data) {
-  console.log(data);
   
   const container = document.querySelector('.hotel__info');
   if (!container) return;
   const lists = data.serviceLists.list;
-  console.log(lists);
-  
   const leftList = lists.slice(0, 3);
   const rightList = lists.slice(3);
 
@@ -107,29 +105,18 @@ const dataHotel = await getHotelById('xfmhd9zt1s4qrghz8unla56q');
       .join('');
   }
   
-  container.innerHTML = `
-    <div class="hotel__title">${data.serviceLists.position.name}</div>
+    const hotelInfo = OneHotelInfo({
+      title: data.serviceLists.position.name ,
+      description: data.serviceLists.position.description,
+      itemTitle: data.serviceLists.listPosition.name,
+      itemDescription: data.serviceLists.listPosition.description,
+      leftList: createInfoBlocks(leftList),
+      rightList: createInfoBlocks(rightList),
+  
+  
+    })
 
-    <div class="hotel__description">${data.serviceLists.position.description}</div>
+    container.appendChild(hotelInfo)
 
-    <div class="hotel__info-list">
-
-      
-      <div class="hotel__column">
-          <div class="hotel__info-item">
-            <div class="hotel__info-title">${data.serviceLists.listPosition.name}</div>
-            <div class="hotel__info-text">${data.serviceLists.listPosition.description}</div>
-          </div>
-
-          ${createInfoBlocks(leftList)}
-      </div>
-
-      
-      <div class="hotel__column">
-          ${createInfoBlocks(rightList)}
-      </div>
-
-    </div>
-  `;
 }
 renderInfo(dataHotel);

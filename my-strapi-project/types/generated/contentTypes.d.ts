@@ -499,11 +499,14 @@ export interface ApiHotelHotel extends Struct.CollectionTypeSchema {
   attributes: {
     createdAt: Schema.Attribute.DateTime
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
+    flyFrom: Schema.Attribute.String
     food: Schema.Attribute.String
     from: Schema.Attribute.String
     hotelName: Schema.Attribute.String
+    houses: Schema.Attribute.String
     locale: Schema.Attribute.String & Schema.Attribute.Private
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::hotel.hotel'> & Schema.Attribute.Private
+    nights: Schema.Attribute.Integer
     price: Schema.Attribute.BigInteger
     publishedAt: Schema.Attribute.DateTime
     serviceLists: Schema.Attribute.Component<'shared.service-list', false>

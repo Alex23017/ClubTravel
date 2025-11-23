@@ -76,10 +76,7 @@
       height: 18px;
   }
 
-  &__card-pin{
-    width: 10px;
-    height: 14px;
-  }
+  
 
   &__card-location {
     display: flex;
@@ -723,6 +720,11 @@
     font-size: 14px;
   }
 }
+
+.hotel__card-pin{
+    width: 10px;
+    height: 14px;
+  }
 
 .guests {
   position: relative;

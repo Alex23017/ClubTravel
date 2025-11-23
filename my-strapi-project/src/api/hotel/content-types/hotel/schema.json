@@ -30,6 +30,15 @@
       "type": "component",
       "component": "shared.service-list",
       "repeatable": false
+    },
+    "nights": {
+      "type": "integer"
+    },
+    "houses": {
+      "type": "string"
+    },
+    "flyFrom": {
+      "type": "string"
     }
   }
 }

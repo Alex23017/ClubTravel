@@ -1,8 +1,8 @@
-if (document.querySelector('[data-component="oneHotelTitle"]')) {
-  import('/styles/components/oneHotel.scss');
-  import('/styles/base/reset.scss');
-}
-
+// if (document.querySelector('[data-component="oneHotelTitle"]')) {
+//   import('/styles/components/oneHotel.scss');
+//   import('/styles/base/reset.scss');
+// }
+import OneHotelTitle from '../../html/components/oneHotel/oneHotelTitle.html'
 
 function setupDropdown(dropdownId) {
   const btn = document.getElementById(dropdownId);
@@ -39,25 +39,32 @@ function renderCard(data) {
         <use xlink:href='#icon-star-shiny'></use>
       </svg>`;
   }
-  return container.innerHTML = `
-     <div class="hotel__card-name">
-      ${data.hotelName}
-    <div class="hotel__card-more">
-      <svg>
-        <use xlink:href='#icon-plus-shiny'></use>
-      </svg>
-    </div>
-    <div class="hotel__card-stars">
-      ${stars}
-    </div>
-  </div>
-  <div class="hotel__card-location">
+  const oneHotelTitle = OneHotelTitle({
+    name:data.hotelName,
+    stars: stars,
+    address:data.address
+
+  }) 
+  container.appendChild(oneHotelTitle)
+  // return container.innerHTML = `
+  //    <div class="hotel__card-name">
+  //     ${data.hotelName}
+  //   <div class="hotel__card-more">
+  //     <svg>
+  //       <use xlink:href='#icon-plus-shiny'></use>
+  //     </svg>
+  //   </div>
+  //   <div class="hotel__card-stars">
+  //     ${stars}
+  //   </div>
+  // </div>
+  // <div class="hotel__card-location">
    
-    <svg class="hotel__card-pin">
-        <use xlink:href='#icon-pin-grean'></use>
-      </svg>
-      ${data.address}
-  </div>
-  `;
+  //   <svg class="hotel__card-pin">
+  //       <use xlink:href='#icon-pin-grean'></use>
+  //     </svg>
+  //     ${data.address}
+  // </div>
+  // `;
 }
 renderCard(dataHotel);

@@ -13,14 +13,24 @@
     {{>imgHeader}}
     <section class="hotel">
       <div class="hotel__content">
-        {{> oneHotelTitle data=data }}
+        <!-- {{> oneHotelTitle data=data }} -->
+         <div data-component="oneHotelTitle" class="hotel__card">
+ 
+        </div>
+
         <div class="hotel__content-top">
           {{>oneHotelGallery}}
-          {{>oneHotelOffer}}
+          <!-- {{>oneHotelOffer}} -->
+           <div class="hotel__offer"> 
+            
+           </div>
         </div>
       </div>
       <div class="hotel__content-center">
-        {{>oneHotelInfo}}
+        <div data-component="oneHotelInfo" class="hotel__info">
+         
+        </div>
+        <!-- {{>oneHotelInfo}} -->
         {{>oneHotelContact}}
       </div>
       <div class="hotel__slider">
