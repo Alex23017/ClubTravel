@@ -1,18 +1,15 @@
 import '../../styles/pages/company.scss';
-import Greeting from '../../html/components/greeting.html';
-import Handlebars from 'handlebars/dist/handlebars.min.js';
+import Greeting from '../../html/components/base/greeting.html';
 
 
 
 // Create component with props
-const template = Handlebars.compile(Greeting);
-const greeting = template({ 
+const greeting = Greeting({ 
   title: 'Hello World!',
   message: 'Welcome t'
 })
-const div = document.createElement('div');
-div.innerHTML = greeting;
-document.body.appendChild(div.firstElementChild);
+console.log(greeting);
+
 
 
 

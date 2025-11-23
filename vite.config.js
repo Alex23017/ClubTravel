@@ -2,11 +2,10 @@ import { defineConfig } from 'vite'
 import path from 'path'
 import handlebars from 'vite-plugin-handlebars'
 import svgSpritePlugin from '@pivanov/vite-plugin-svg-sprite'
-import string from "vite-plugin-string";
-
+import { createHtmlPlugin } from 'vite-plugin-html'
 import { hulakPlugins } from 'vite-plugin-hulak-tools'
-import { newsList } from './src/js/home/newsList'
-import { hotDealsList } from './src/js/home/hotDealsList'
+// import { newsList } from './src/js/home/newsList'
+// import { hotDealsList } from './src/js/home/hotDealsList'
 
 
 const partialDirs = [
@@ -22,25 +21,33 @@ export default defineConfig({
   root: 'src',
   appType: 'mpa',
   plugins: [
-    
+    hulakPlugins({
+      enableHandlebars: true,
+      handlebarsOptions: {
+        partialDirectory: 'src/html/components'
+      }
+    }),
     handlebars({
       partialDirectory: partialDirs,
       watch: true,
       // ІМПОРТ МАСИВІВ ДЛЯ РЕНДЕРУ
-      context: {
-        newsList,
-        hotDealsList,
-      },
+      // context: {
+      //   newsList,
+      //   hotDealsList,
+      // },
     }),
-    hulakPlugins({
-      enableHandlebars: true,
-      handlebarsOptions: {
-        partialDirectory: './src/components'
-      }
+    
+    createHtmlPlugin({
+      minify: true,
+      // @ts-ignore
+      collapseWhitespace: true,
+      removeComments: true,
+      removeEmptyAttributes: true,
+      removeRedundantAttributes: true,
+      minifyCSS: true,
+      minifyJS: true,
     }),
-    string({
-      include: ["**/*.html"],
-    }),
+    
     svgSpritePlugin({
       iconDirs: [path.resolve(process.cwd(), 'src/img/icons')],
       symbolId: 'icon-[name]',
@@ -65,6 +72,8 @@ export default defineConfig({
       usePolling: true,
     },
   },
+  assetsInclude: ['**/*.html'],
+  
   build: {
     outDir: 'dist',
     rollupOptions: {
