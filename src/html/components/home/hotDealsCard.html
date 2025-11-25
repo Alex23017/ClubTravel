@@ -1,0 +1,32 @@
+<div class="hotdeals__card swiper-slide">
+  <img class="hotdeals__img" src={{img}} alt="" />
+  <div class="hotdeals__data">
+    <svg class="hotdeals__data-clock">
+      <use xlink:href="#icon-newsClock"></use>
+    </svg>
+    <p class="hotdeals__data-text">{{data}}</p>
+  </div>
+  <div class="hotdeals__location">
+    <svg class="hotdeals__location-icon">
+      <use xlink:href="#icon-hotLocation"></use>
+    </svg>
+    <p class="hotdeals__location-text">{{location}}</p>
+  </div>
+  <div class="hotdeals__footer">
+    <div class="hotdeals__footer-column">
+      <p class="hotdeals__data-title">{{title}}</p>
+      <div class="hotdeals__category">
+        {{stars}}
+      </div>
+    </div>
+    <div class="hotdeals__footer-column hotdeals__footer-column--second">
+      <div class="hotdeals__body-price">
+        <p class="hotdeals__price"><span>{{price}}€</span>/чел</p>
+        <p class="hotdeals__price-old">{{oldPrice}} €/чел</p>
+      </div>
+      <svg class="hotdeals__icon-count">
+        <use xlink:href={{priceCount}}></use>
+      </svg>
+    </div>
+  </div>
+</div>

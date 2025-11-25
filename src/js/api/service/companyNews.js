@@ -2,10 +2,9 @@ import { API_VARIABLES } from '../variables.js';
 import { getResource } from '../api';
 
 
-
-export async function getHotDeals() {
+export async function getCompanyNews() {
     try {
-        const res = await getResource(`${API_VARIABLES.BASE_URL}/api/hot-deals?populate=*`);
+        const res = await getResource(`${API_VARIABLES.BASE_URL}/api/company-news?populate=*`);
 
         return res.data;
     }
@@ -14,4 +13,3 @@ export async function getHotDeals() {
 
     }
 }
-

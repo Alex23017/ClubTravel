@@ -15,3 +15,4 @@ export async function getResource(url) {
         throw new Error(`Could not fetch ${url}, status: ${status}`);
     }
 }
+
