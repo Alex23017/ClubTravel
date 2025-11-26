@@ -2,6 +2,7 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 
 import { Navigation, Pagination } from 'swiper/modules'
+import { API_VARIABLES } from '../api/variables.js'
 import Swiper from 'swiper'
 if (document.querySelector('[data-component="hotDeals"]')) {
   import('/styles/components/hotDeals.scss')
@@ -9,7 +10,6 @@ if (document.querySelector('[data-component="hotDeals"]')) {
 }
 import { getHotDeals } from '../api/service/hotDeals.js'
 import hotDealsCard from '../../html/components/home/hotDealsCard.html'
-import { API_VARIABLES } from '../api/variables.js'
 
 function sliderInit() {
   const slider = document.querySelector('.mySwiperHotDeals')
