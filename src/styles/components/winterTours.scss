@@ -1,0 +1,131 @@
+@use '../base/variables' as *;
+
+.wintertours {
+  padding-inline: 93px;
+}
+.winter__header {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: center;
+  margin-block-start: 2px;
+  margin-inline-start: 24px;
+  margin-block-end: 38px;
+}
+.winter__header-title {
+  font-family: $Open;
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: 2.8px;
+}
+.winter__header-subtitle {
+  font-family: $Open;
+  font-weight: 400;
+  font-size: 14px;
+  color: $colorGrey;
+  opacity: 0.7;
+  margin-inline-start: -26px;
+}
+
+.winter__card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: $Open;
+  box-shadow: -1px 0px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 4px 8px rgba(34, 60, 80, 0.2);
+  border-radius: 10px;
+  padding-block-end: 16px;
+  max-height: 364px;
+  margin-block-end: 40px;
+}
+
+.winter__img {
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 250px;
+}
+.winter__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 16px;
+  gap: 20px;
+  white-space: nowrap;
+}
+.winter__footer-location {
+  min-width: 20px;
+  min-height: 20px;
+  max-width: 20px;
+  max-height: 20px;
+  color: $colorGreen;
+  opacity: 0.6;
+}
+.winter__footer-price {
+  font-size: 16px;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 0.5px;
+  span {
+    font-weight: 700;
+  }
+}
+.winter__link {
+  margin-inline: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $colorWhite;
+  background-color: $primaryColor;
+  border-radius: 6px;
+  padding-block-start: 12px;
+  padding-block-end: 10px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+}
+.winter__town {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-inline-start: 2px;
+  letter-spacing: 0.5px;
+}
+
+.winter__town-text {
+  font-size: 16px;
+}
+
+.winter__all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-block-end: 104px;
+}
+
+.winter__all-link {
+  color: $colorGrey;
+  font-family: $Open;
+  letter-spacing: 0.3px;
+  margin-inline-start: -2px;
+}
+.winter__all-img {
+  width: 24px;
+  height: 24px;
+  color: #f68521;
+}
+
+@include tablet {
+  .winter__town-text,
+  .winter__footer-price,
+  .winter__link {
+    font-size: 12px;
+  }
+}
+
+@include phone {
+  .wintertours {
+    padding-inline: 15px;
+  }
+}

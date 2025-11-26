@@ -9,7 +9,7 @@ export async function getCompanyNews() {
         return res.data;
     }
     catch (error) {
-        console.error('Error fetching hot deals:', error);
+        console.error('Error fetching company news:', error);
 
     }
 }

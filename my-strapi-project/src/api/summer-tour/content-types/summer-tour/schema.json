@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "summer_tours",
+  "info": {
+    "singularName": "summer-tour",
+    "pluralName": "summer-tours",
+    "displayName": "SummerTours"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "town": {
+      "type": "string"
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "img": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
