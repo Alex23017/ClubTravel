@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_shared_hotels_opens",
+  "info": {
+    "displayName": "hotelsOpen"
+  },
+  "options": {},
+  "attributes": {
+    "hotel": {
+      "type": "string"
+    },
+    "category": {
+      "type": "integer"
+    },
+    "food": {
+      "type": "string"
+    },
+    "tour": {
+      "type": "string"
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "openListSelect": {
+      "type": "component",
+      "component": "shared.hotel-select",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

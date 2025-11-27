@@ -543,6 +543,33 @@ export interface ApiHotelHotel extends Struct.CollectionTypeSchema {
   }
 }
 
+export interface ApiListHotelListHotel extends Struct.CollectionTypeSchema {
+  collectionName: 'list_hotels'
+  info: {
+    displayName: 'ListHotel'
+    pluralName: 'list-hotels'
+    singularName: 'list-hotel'
+  }
+  options: {
+    draftAndPublish: true
+  }
+  attributes: {
+    createdAt: Schema.Attribute.DateTime
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
+    data: Schema.Attribute.String
+    duration: Schema.Attribute.Integer
+    from: Schema.Attribute.String
+    locale: Schema.Attribute.String & Schema.Attribute.Private
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::list-hotel.list-hotel'> & Schema.Attribute.Private
+    openList: Schema.Attribute.Component<'shared.hotels-open', true>
+    price: Schema.Attribute.BigInteger
+    publishedAt: Schema.Attribute.DateTime
+    to: Schema.Attribute.String
+    updatedAt: Schema.Attribute.DateTime
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
+  }
+}
+
 export interface ApiSummerTourSummerTour extends Struct.CollectionTypeSchema {
   collectionName: 'summer_tours'
   info: {
@@ -1006,6 +1033,7 @@ declare module '@strapi/strapi' {
       'api::global.global': ApiGlobalGlobal
       'api::hot-deal.hot-deal': ApiHotDealHotDeal
       'api::hotel.hotel': ApiHotelHotel
+      'api::list-hotel.list-hotel': ApiListHotelListHotel
       'api::summer-tour.summer-tour': ApiSummerTourSummerTour
       'api::winter-tour.winter-tour': ApiWinterTourWinterTour
       'plugin::content-releases.release': PluginContentReleasesRelease

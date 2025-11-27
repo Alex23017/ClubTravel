@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_hotdealslists",
+  "info": {
+    "displayName": "hotdealslist"
+  },
+  "options": {},
+  "attributes": {
+    "hotel": {
+      "type": "string"
+    },
+    "category": {
+      "type": "biginteger"
+    },
+    "food": {
+      "type": "string"
+    },
+    "tour": {
+      "type": "string"
+    },
+    "price": {
+      "type": "biginteger"
+    }
+  },
+  "config": {}
+}

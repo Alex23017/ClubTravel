@@ -14,12 +14,15 @@
     margin-inline: 0px;
   }
 }
+.list__hotdeals .hotdeals__header {
+  margin-inline-start: 3px;
+  margin-block-end: 8px;
+}
 
 .hotdeals__header {
   display: flex;
   align-items: center;
   padding-inline: 26px;
-  margin-inline-start: 3px;
   h3 {
     font-size: 14px;
     font-weight: 700;
@@ -59,6 +62,9 @@
     max-width: 120px;
   }
 }
+.list__opendeals .hotdeals__header {
+  margin-inline-start: 0px;
+}
 .hotdeals__from {
   margin-inline-start: 99px;
   max-width: 172px;
@@ -75,7 +81,7 @@
 .hotdeals__duration {
   max-width: 169px;
 }
-#hotdeals__render {
+.hotdeals__render {
   margin-block-start: 15px;
   font-size: 15px;
   font-family: $Open;
@@ -247,7 +253,15 @@
     padding-inline: 10px;
   }
 }
-
+.list__category {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.hotdeals__category-star {
+  width: 18px;
+  height: 18px;
+}
 .list__hotel,
 .list__category,
 .list__food,
@@ -278,6 +292,9 @@
 }
 .list__food {
   margin-inline-start: 37px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
   max-width: 200px;
   @include table-big {
     margin-inline-start: 10px;
@@ -286,6 +303,9 @@
 .list__tour {
   max-width: 150px;
   margin-inline-start: -1px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .list__button-open {
@@ -395,6 +415,9 @@
     width: 100%;
     left: inherit;
   }
+  @media (max-width: 1360px) {
+    width: 100%;
+  }
 
   &::after {
     content: '';
@@ -464,6 +487,9 @@
 .list__body-hotel {
   padding-block: 15px;
   margin-block-end: 8px;
+  @media (max-width: 1366px) {
+    padding-inline-end: 10px;
+  }
   .list__price {
     margin-inline-start: 20px;
     @include table-big {
@@ -786,7 +812,7 @@
       max-width: 100px;
       margin-inline-start: 10px;
     }
-    .list__category{
+    .list__category {
       max-width: 60px;
       margin-inline-start: 10px;
     }
@@ -813,9 +839,9 @@
     .list__food {
       max-width: 40px;
     }
-    .list__category{
+    .list__category {
       text-align: start;
-       max-width: 30px;
+      max-width: 30px;
     }
   }
   .list__body-close {
