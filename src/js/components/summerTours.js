@@ -1,31 +1,27 @@
-if (document.querySelector('[data-component="companyNews"]')) {
-  import('/styles/components/companyNews.scss')
+if (document.querySelector('[data-component="summerTours"]')) {
+  import('/styles/components/summerTours.scss')
   import('/styles/base/reset.scss')
 }
-import companyCard from '../../html/components/home/companyCard.html'
-import { getCompanyNews } from '../api/service/companyNews.js'
-import { API_VARIABLES } from '../api/variables.js'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
 
 import { Navigation, Pagination } from 'swiper/modules'
+import { API_VARIABLES } from '../api/variables.js'
 import Swiper from 'swiper'
 
+import { getSummerTours } from '../api/service/summerTours.js'
+import summerToursCard from '../../html/components/home/summerToursCard.html'
+
 function sliderInit() {
-  const slider = document.querySelector('.mySwiperNews')
+  const slider = document.querySelector('.mySwiperSummerTours')
 
   if (slider) {
-    new Swiper('.mySwiperNews', {
+    new Swiper('.mySwiperSummerTours', {
       modules: [Navigation, Pagination],
       loop: true,
-      slidesPerView: 3,
-      spaceBetween: 28,
-
-      navigation: {
-        nextEl: '.swiper__news-next',
-        prevEl: '.swiper__news-prev',
-      },
+      slidesPerView: 4,
+      spaceBetween: 25,
 
       pagination: {
         el: '.swiper-pagination',
@@ -36,30 +32,35 @@ function sliderInit() {
           slidesPerView: 1,
           spaceBetween: 15,
         },
-        768: {
+        500: {
           slidesPerView: 2,
           spaceBetween: 28,
         },
-        1200: {
+        768: {
           slidesPerView: 3,
           spaceBetween: 28,
+        },
+        1200: {
+          slidesPerView: 4,
+          spaceBetween: 20,
         },
       },
     })
   }
 }
-const data = await getCompanyNews()
+const data = await getSummerTours()
 
 export function renderOffer() {
-  const container = document.querySelector('.news__container')
+  const container = document.querySelector('.summertours__container')
   if (!container) return
+
   data.forEach(item => {
-    const offerCard = companyCard({
-      title: item.title,
+    const offerCard = summerToursCard({
       img: API_VARIABLES.IMG_URL + item.img[0].url,
-      data: item.data,
-      iconCount: item.iconCount,
+      town: item.town,
+      price: item.price,
     })
+
     container.appendChild(offerCard)
   })
 }

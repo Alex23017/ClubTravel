@@ -4,9 +4,6 @@ import handlebars from 'vite-plugin-handlebars'
 import svgSpritePlugin from '@pivanov/vite-plugin-svg-sprite'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import { hulakPlugins } from 'vite-plugin-hulak-tools'
-// import { newsList } from './src/js/home/newsList'
-// import { hotDealsList } from './src/js/home/hotDealsList'
-
 
 const partialDirs = [
   path.resolve(__dirname, 'src/html/components/base'),
@@ -30,11 +27,6 @@ export default defineConfig({
     handlebars({
       partialDirectory: partialDirs,
       watch: true,
-      // ІМПОРТ МАСИВІВ ДЛЯ РЕНДЕРУ
-      // context: {
-      //   newsList,
-      //   hotDealsList,
-      // },
     }),
     
     createHtmlPlugin({

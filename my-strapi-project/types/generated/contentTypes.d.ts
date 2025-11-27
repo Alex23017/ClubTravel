@@ -432,6 +432,31 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   }
 }
 
+export interface ApiCompanyNewCompanyNew extends Struct.CollectionTypeSchema {
+  collectionName: 'company_news'
+  info: {
+    displayName: 'CompanyNews'
+    pluralName: 'company-news'
+    singularName: 'company-new'
+  }
+  options: {
+    draftAndPublish: true
+  }
+  attributes: {
+    createdAt: Schema.Attribute.DateTime
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
+    data: Schema.Attribute.String
+    iconCount: Schema.Attribute.String
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>
+    locale: Schema.Attribute.String & Schema.Attribute.Private
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::company-new.company-new'> & Schema.Attribute.Private
+    publishedAt: Schema.Attribute.DateTime
+    title: Schema.Attribute.String
+    updatedAt: Schema.Attribute.DateTime
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
+  }
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals'
   info: {
@@ -473,12 +498,13 @@ export interface ApiHotDealHotDeal extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
     data: Schema.Attribute.String
     hotelName: Schema.Attribute.String
-    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>
     locale: Schema.Attribute.String & Schema.Attribute.Private
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::hot-deal.hot-deal'> & Schema.Attribute.Private
     location: Schema.Attribute.String
     oldPrice: Schema.Attribute.BigInteger
     price: Schema.Attribute.BigInteger
+    priceCount: Schema.Attribute.String
     publishedAt: Schema.Attribute.DateTime
     stars: Schema.Attribute.Integer
     updatedAt: Schema.Attribute.DateTime
@@ -504,6 +530,7 @@ export interface ApiHotelHotel extends Struct.CollectionTypeSchema {
     from: Schema.Attribute.String
     hotelName: Schema.Attribute.String
     houses: Schema.Attribute.String
+    isHotDeals: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>
     locale: Schema.Attribute.String & Schema.Attribute.Private
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::hotel.hotel'> & Schema.Attribute.Private
     nights: Schema.Attribute.Integer
@@ -511,6 +538,54 @@ export interface ApiHotelHotel extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime
     serviceLists: Schema.Attribute.Component<'shared.service-list', false>
     stars: Schema.Attribute.Integer
+    updatedAt: Schema.Attribute.DateTime
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
+  }
+}
+
+export interface ApiSummerTourSummerTour extends Struct.CollectionTypeSchema {
+  collectionName: 'summer_tours'
+  info: {
+    displayName: 'SummerTours'
+    pluralName: 'summer-tours'
+    singularName: 'summer-tour'
+  }
+  options: {
+    draftAndPublish: true
+  }
+  attributes: {
+    createdAt: Schema.Attribute.DateTime
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>
+    locale: Schema.Attribute.String & Schema.Attribute.Private
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::summer-tour.summer-tour'> & Schema.Attribute.Private
+    price: Schema.Attribute.BigInteger
+    publishedAt: Schema.Attribute.DateTime
+    town: Schema.Attribute.String
+    updatedAt: Schema.Attribute.DateTime
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
+  }
+}
+
+export interface ApiWinterTourWinterTour extends Struct.CollectionTypeSchema {
+  collectionName: 'winter_tours'
+  info: {
+    displayName: 'WinterTours'
+    pluralName: 'winter-tours'
+    singularName: 'winter-tour'
+  }
+  options: {
+    draftAndPublish: true
+  }
+  attributes: {
+    createdAt: Schema.Attribute.DateTime
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>
+    locale: Schema.Attribute.String & Schema.Attribute.Private
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::winter-tour.winter-tour'> & Schema.Attribute.Private
+    price: Schema.Attribute.BigInteger
+    publishedAt: Schema.Attribute.DateTime
+    town: Schema.Attribute.String
     updatedAt: Schema.Attribute.DateTime
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
   }
@@ -927,9 +1002,12 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission
       'admin::user': AdminUser
       'api::about.about': ApiAboutAbout
+      'api::company-new.company-new': ApiCompanyNewCompanyNew
       'api::global.global': ApiGlobalGlobal
       'api::hot-deal.hot-deal': ApiHotDealHotDeal
       'api::hotel.hotel': ApiHotelHotel
+      'api::summer-tour.summer-tour': ApiSummerTourSummerTour
+      'api::winter-tour.winter-tour': ApiWinterTourWinterTour
       'plugin::content-releases.release': PluginContentReleasesRelease
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction
       'plugin::i18n.locale': PluginI18NLocale
