@@ -4,305 +4,380 @@
   position: relative;
   width: 100%;
   height: 100%;
+
   &__cover {
-    height: 100%;
-    width: 100%;
     position: absolute;
     z-index: -1;
+    width: 100%;
+    height: 100%;
+
     img {
-      object-fit: cover;
       width: 100%;
       height: 100%;
+      object-fit: cover;
     }
   }
+
   &__content {
-    // position: absolute;
-    padding: 80px 128px 98px 205px;
+    display: flex;
     top: 0;
     right: 0;
     left: 0;
-    height: 100%;
-    width: 100%;
     z-index: 1;
-    display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
+    // position: absolute;
+    padding: 80px 128px 98px 205px;
+
     @include huge {
-      padding: 60px 20% 95px 20%;
+      padding: 60px 20% 95px;
     }
+
     @include laptop {
       padding: 60px 80px 45px 100px;
     }
+
     @include table-big {
-      padding: 40px 40px 45px 40px;
+      padding: 40px 40px 45px;
     }
+
     @include phone {
-      padding: 30px 10px 45px 10px;
+      padding: 30px 10px 45px;
     }
   }
+
   &__header {
-    width: 93%;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    width: 93%;
+
     @include phone {
       width: 100%;
     }
   }
+
   &__title {
-    color: rgba(255, 255, 255, 1);
-    font-family: Open Sans;
+    font-family: $Open;
     font-size: 26px;
-    font-weight: 700;
     line-height: 35px;
     letter-spacing: 1.28px;
+    font-weight: 700;
+    color: rgb(255, 255, 255, 1);
     text-transform: uppercase;
+
     @include phone {
-      text-align: center;
       padding: 0 50px;
+      text-align: center;
     }
   }
+
   &__text {
+    width: 60%;
     margin-top: 16px;
-    color: rgba(255, 255, 255, 1);
-    font-family: Open Sans;
+    font-family: $Open;
     font-size: 16px;
-    font-weight: 400;
     line-height: 22px;
     letter-spacing: 0%;
-    width: 60%;
+    font-weight: 400;
+    color: rgb(255, 255, 255, 1);
     text-align: center;
+
     @include phone {
       width: 100%;
       margin-top: 26px;
     }
   }
+
   &__main {
-    display: flex;
-    margin-top: 96px;
-    justify-content: space-between;
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 96px;
     box-sizing: border-box;
+
     @include table-big {
       margin-top: 40px;
     }
+
     @include tablet {
-      flex-direction: column;
       align-items: center;
+      flex-direction: column;
     }
+
     @include tablet-mini {
-      flex-direction: column;
       align-items: center;
+      flex-direction: column;
     }
+
     @include phone {
-      flex-direction: column;
       align-items: center;
+      flex-direction: column;
       margin-top: 7px;
     }
   }
+
   &__left {
     width: 36%;
     margin-top: 25px;
-    color: rgba(255, 255, 255, 1);
-    font-family: Open Sans;
+    font-family: $Open;
     font-size: 18px;
-    font-weight: 400;
     line-height: 25px;
     letter-spacing: 0%;
+    font-weight: 400;
+    color: rgb(255, 255, 255, 1);
     text-align: center;
+
     @include tablet {
       width: 70%;
     }
+
     @include tablet-mini {
       width: 70%;
     }
+
     @include phone {
       width: 100%;
     }
   }
+
   &__button {
-    margin-top: 36px;
-    border-radius: 6px;
-    background: var(--primary, rgba(246, 133, 33, 1));
     width: 378px;
     height: 42px;
+    margin-top: 36px;
     border: none;
-    color: rgba(255, 255, 255, 1);
-    font-family: Open Sans;
+    border-radius: 6px;
+    font-family: $Open;
     font-size: 14px;
-    font-weight: 400;
     line-height: 19px;
     letter-spacing: 0.77px;
+    font-weight: 400;
+    color: rgb(255, 255, 255, 1);
     text-align: center;
     text-transform: uppercase;
+    background: var(--primary, rgb(246, 133, 33, 1));
+
     @include table-big {
       width: 100%;
     }
   }
+
   &__center {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
     padding: 4px 0;
+
     @include tablet {
       flex-direction: row;
       margin: 24px 0;
     }
+
     @include tablet-mini {
       flex-direction: row;
       margin: 24px 0;
     }
+
     @include phone {
       flex-direction: row;
-      margin: 27px 0 29px 0;
+      margin: 27px 0 29px;
     }
+
     span {
-      color: rgba(255, 255, 255, 1);
-      font-family: Open Sans;
+      font-family: $Open;
       font-size: 14px;
-      font-weight: 400;
       line-height: 19px;
+      font-weight: 400;
+      color: rgb(255, 255, 255, 1);
     }
   }
+
   &__line {
+    opacity: 0.5;
     width: 2px;
     height: 77px;
-    background-color: rgba(255, 255, 255, 0.6);
-    opacity: 0.5;
+    background-color: rgb(255, 255, 255, 0.6);
+
     @include tablet {
       width: 77px;
       height: 2px;
     }
+
     @include tablet-mini {
       width: 77px;
       height: 2px;
     }
+
     @include phone {
       width: 77px;
       height: 2px;
     }
+
     &:nth-child(1) {
       margin-bottom: 12px;
+
       @include tablet {
         margin-bottom: 0;
         margin-right: 12px;
       }
+
       @include tablet-mini {
         margin-bottom: 0;
         margin-right: 12px;
       }
+
       @include phone {
         margin-bottom: 0;
         margin-right: 12px;
       }
     }
+
     &:nth-child(3) {
       margin-top: 12px;
+
       @include tablet {
         margin-top: 0;
         margin-left: 12px;
       }
+
       @include tablet-mini {
         margin-top: 0;
         margin-right: 12px;
       }
+
       @include phone {
         margin-top: 0;
         margin-right: 12px;
       }
     }
   }
+
   &__right {
     p {
-      color: rgba(255, 255, 255, 1);
-      font-family: Open Sans;
+      font-family: $Open;
       font-size: 18px;
-      font-weight: 400;
       line-height: 25px;
+      font-weight: 400;
+      color: rgb(255, 255, 255, 1);
+
       @include tablet {
         text-align: center;
       }
+
       @include tablet-mini {
         text-align: center;
       }
+
       @include phone {
         text-align: center;
       }
     }
   }
+
   &__card-info {
     margin-top: -10px;
   }
+
   &__card {
     display: flex;
-    margin-top: 25px;
     gap: 32px;
+    margin-top: 25px;
+
     @include phone {
       flex-direction: column;
-      margin-top: 17px;
       gap: 25px;
+      margin-top: 17px;
     }
+
     img {
       height: 152px;
+
       @include phone {
-        height: 181px;
         width: 88%;
+        height: 181px;
       }
     }
   }
+
   &__card-name {
     margin-bottom: 3px;
-    color: rgba(255, 255, 255, 1);
-    font-family: Open Sans;
+    font-family: $Open;
     font-size: 22px;
-    font-weight: 400;
     line-height: 30px;
+    font-weight: 400;
+    color: rgb(255, 255, 255, 1);
   }
+
   &__card-position {
     margin-bottom: 26px;
     margin-left: 1px;
-    color: rgba(255, 255, 255, 1);
-    font-family: Open Sans;
+    font-family: $Open;
     font-size: 14px;
-    font-weight: 400;
     line-height: 19px;
+    font-weight: 400;
+    color: rgb(255, 255, 255, 1);
   }
+
   &__card-phone {
-    margin-bottom: 6px;
     display: flex;
     align-items: center;
     gap: 15px;
-    color: rgba(255, 255, 255, 1);
-    font-family: Open Sans;
+    margin-bottom: 6px;
+    font-family: $Open;
     font-size: 16px;
-    font-weight: 400;
     line-height: 22px;
+    font-weight: 400;
+    color: rgb(255, 255, 255, 1);
+
+    svg{
+      width: 24px;
+      height: 24px;
+      color: white;
+    }
+
     @include phone {
       margin-bottom: 15px;
     }
   }
+
   &__card-email {
-    margin-bottom: 9px;
     display: flex;
     align-items: center;
     gap: 15px;
-    color: rgba(255, 255, 255, 1);
-    font-family: Open Sans;
+    margin-bottom: 9px;
+    font-family: $Open;
     font-size: 16px;
-    font-weight: 400;
     line-height: 22px;
+    font-weight: 400;
+    color: rgb(255, 255, 255, 1);
+
+    svg{
+      width: 24px;
+      height: 24px;
+      color: white;
+    }
+
     @include phone {
       margin-bottom: 16px;
     }
   }
+
   &__card-massager {
     display: flex;
     align-items: center;
     gap: 15px;
-    color: rgba(255, 255, 255, 1);
-    font-family: Open Sans;
+    font-family: $Open;
     font-size: 16px;
-    font-weight: 400;
     line-height: 22px;
+    font-weight: 400;
+    color: rgb(255, 255, 255, 1);
+
+    svg{
+      width: 24px;
+      height: 24px;
+      color: white;
+    }
   }
 }

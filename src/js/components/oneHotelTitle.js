@@ -30,6 +30,7 @@ const dataHotel = {
 
 };
 function renderCard(data) {
+
   const container = document.querySelector('.hotel__card');
 
   if (!container) return;
@@ -42,10 +43,15 @@ function renderCard(data) {
   const oneHotelTitle = OneHotelTitle({
     name:data.hotelName,
     stars: stars,
-    address:data.address
-
+    address:data.address,
+    items: [
+    { name: 'Laptop', price: 999 },
+    { name: 'Mouse', price: 29 },
+    { name: 'Keyboard', price: 79 }
+  ]
   }) 
-  container.appendChild(oneHotelTitle)
+  container.appendChild(oneHotelTitle);
+  console.log(oneHotelTitle);
   // return container.innerHTML = `
   //    <div class="hotel__card-name">
   //     ${data.hotelName}
@@ -68,3 +74,8 @@ function renderCard(data) {
   // `;
 }
 renderCard(dataHotel);
+
+
+
+
+
