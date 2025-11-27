@@ -14,6 +14,7 @@
     margin-inline: 0px;
   }
 }
+
 .list__hotdeals .hotdeals__header {
   margin-inline-start: 3px;
   margin-block-end: 8px;
@@ -82,15 +83,19 @@
   max-width: 169px;
 }
 .hotdeals__render {
-  margin-block-start: 15px;
+  margin-block-start: 16px;
   font-size: 15px;
   font-family: $Open;
   display: flex;
   flex-direction: column;
+  min-width: 650px;
+  @media (max-width: 760px) {
+  min-width: inherit;
+  }
 }
 .list__data {
   max-width: 150px;
-  margin-inline-start: 1px;
+  margin-inline-start: -1px;
 }
 .list__from {
   max-width: 150px;
@@ -142,7 +147,7 @@
   width: 100%;
   max-width: 200px;
   text-align: center;
-  margin-inline-start: 32px;
+  margin-inline-start: 28px;
   text-transform: uppercase;
   font-size: 14px;
   letter-spacing: 1px;
@@ -156,6 +161,20 @@
   }
   @include phone {
     font-size: 10px;
+  }
+}
+.list__select-hotel {
+  overflow: hidden;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: $colorGrey;
+    width: 100%;
+    height: 1px;
+    opacity: 0.2;
   }
 }
 .list__body {
@@ -232,7 +251,7 @@
   &::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     left: 0;
     background-color: $colorGrey;
     width: 100%;
@@ -291,7 +310,7 @@
   }
 }
 .list__food {
-  margin-inline-start: 37px;
+  margin-inline-start: 35px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -339,8 +358,8 @@
   font-size: 12px;
   padding-block-start: 6px;
   text-transform: uppercase;
-  margin-inline-start: 34px;
-  margin-block-start: 2px;
+  margin-inline-start: 38px;
+  margin-block-start: 4px;
   padding-inline-start: 7px;
   padding-inline-end: 14px;
   letter-spacing: 0.3px;
@@ -373,8 +392,8 @@
   font-size: 12px;
   padding-block-start: 6px;
   text-transform: uppercase;
-  margin-inline-start: 38px;
-  margin-block-start: 0px;
+  margin-inline-start: 40px;
+  margin-block-start: -3px;
   padding-inline-start: 11px;
   padding-inline-end: 14px;
   letter-spacing: 0.3px;
@@ -391,7 +410,7 @@
   }
 }
 .list__price--open {
-  margin-inline-start: 23px;
+  margin-inline-start: 20px;
 }
 .list__body-select {
   display: flex;
@@ -411,6 +430,7 @@
   position: relative;
   left: -10px;
   width: 1149px;
+
   @include table-big {
     width: 100%;
     left: inherit;
@@ -418,41 +438,43 @@
   @media (max-width: 1360px) {
     width: 100%;
   }
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-color: $colorGrey;
-    width: 100%;
-    height: 1px;
-    opacity: 0.2;
-    @media (max-width: 400px) {
-      bottom: 2px;
-    }
-  }
 }
 
 .list__body-category {
   position: relative;
   display: flex;
-  padding-block: 15px;
+  padding-block: 12px;
   align-items: center;
   padding-inline-start: 2px;
+  margin-block-start: 8px;
+  @media (max-width: 1366px) {
+    padding-inline-end: 12px;
+  }
   .list__hotel {
     letter-spacing: 0.4px;
-    margin-block-start: 4px;
   }
   .list__food,
   .list__tour,
   .list__price {
-    margin-block-start: 2px;
+    margin-block-start: -2px;
   }
   &::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
+    left: 0;
+    background-color: $colorGrey;
+    width: 100%;
+    height: 1px;
+    opacity: 0.2;
+  }
+}
+
+.list__body-select.active .list__body-category {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 3px;
     left: 0;
     background-color: $colorGrey;
     width: 100%;
@@ -485,8 +507,8 @@
 }
 
 .list__body-hotel {
-  padding-block: 15px;
-  margin-block-end: 8px;
+  padding-block: 13px;
+  margin-block: 12px;
   @media (max-width: 1366px) {
     padding-inline-end: 10px;
   }
@@ -497,15 +519,17 @@
     }
   }
 }
+.list__body-select.active .list__select-hotel {
+  background-color: $backgroundGrey;
+}
 .list__select-hotel {
   display: flex;
   align-items: center;
-  padding-block-start: 22px;
-  padding-block-end: 24px;
-  margin-block-start: -14px;
-  background-color: $backgroundGrey;
+  padding-block: 12px;
+  padding-block-end: 23px;
   border-radius: 6px;
-  padding-inline-start: 10px;
+  padding-inline-start: 12px;
+
   .list__hotel {
     text-decoration: none;
     opacity: 0.5;
@@ -616,7 +640,7 @@
     max-width: 100px;
   }
   .list__body {
-    justify-content: start;
+    justify-content: space-between;
     padding-inline: 10px;
     gap: 15px;
     margin-inline-start: 30px;
@@ -684,6 +708,10 @@
   .list__body-hotel {
     text-align: start;
   }
+  .list__button-close,
+  .list__button  {
+    font-size: 10px;
+  }
 }
 //////////////////////////////////////
 @include tablet-mini {
@@ -716,7 +744,7 @@
 }
 .hotdeals__header {
   @media (max-width: 600px) {
-    justify-content: start;
+    justify-content: space-between;
     text-align: start;
     padding-inline: 10px;
     margin-inline-start: 20px;
@@ -773,6 +801,35 @@
   .list__body {
     margin: 0px;
   }
+
+  .hotdeals__category-star {
+    max-width: 12px;
+    max-height: 12px;
+    min-width: 12px;
+    min-height: 12px;
+  }
+  .list__opendeals {
+    .hotdeals__to,
+    .list__food {
+      display: none;
+    }
+  }
+  .list__category {
+    justify-content: center;
+  }
+  .hotdeals__header {
+    text-align: center;
+    gap: 10px;
+  }
+  .hotdeals__data {
+    max-width: 50px;
+  }
+  .list__hotel {
+    max-width: 70px;
+  }
+  .list__select-hotel .list__hotel {
+    font-size: 10px;
+  }
 }
 @media (max-width: 400px) {
   .list__button,
@@ -809,8 +866,8 @@
   .list__body-hotel {
     .list__hotel {
       white-space: wrap;
-      max-width: 100px;
-      margin-inline-start: 10px;
+      max-width: 60px;
+      margin-inline-start: 0px;
     }
     .list__category {
       max-width: 60px;
@@ -824,9 +881,7 @@
   .list__food {
     max-width: 70px;
   }
-  .list__hotel {
-    margin-inline-start: 8px;
-  }
+
   .list__food {
     max-width: 80px;
   }
@@ -849,5 +904,17 @@
   }
   .href__button-select {
     margin-inline-end: 20px;
+  }
+  .list__body-category {
+    gap: 10px;
+  }
+
+  .list__select-hotel {
+    gap: 10px;
+  }
+  .href__button-select {
+    margin-inline-end: 5px;
+  }
+  .list__category {
   }
 }
