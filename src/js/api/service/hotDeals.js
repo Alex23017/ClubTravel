@@ -3,7 +3,7 @@ import { getResource } from '../api';
 
 
 
-export async function getAllHotDeals() {
+export async function getHotDeals() {
     try {
         const res = await getResource(`${API_VARIABLES.BASE_URL}/api/hot-deals?populate=*`);
 

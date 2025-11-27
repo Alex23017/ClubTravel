@@ -1,24 +1,18 @@
 {
   "kind": "collectionType",
-  "collectionName": "hot_deals",
+  "collectionName": "company_news",
   "info": {
-    "singularName": "hot-deal",
-    "pluralName": "hot-deals",
-    "displayName": "hot deals"
+    "singularName": "company-new",
+    "pluralName": "company-news",
+    "displayName": "CompanyNews"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "hotelName": {
+    "title": {
       "type": "string"
-    },
-    "oldPrice": {
-      "type": "biginteger"
-    },
-    "price": {
-      "type": "biginteger"
     },
     "img": {
       "type": "media",
@@ -30,16 +24,10 @@
         "audios"
       ]
     },
-    "location": {
-      "type": "string"
-    },
     "data": {
       "type": "string"
     },
-    "stars": {
-      "type": "integer"
-    },
-    "priceCount": {
+    "iconCount": {
       "type": "string"
     }
   }

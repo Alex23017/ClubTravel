@@ -39,6 +39,10 @@
     },
     "flyFrom": {
       "type": "string"
+    },
+    "isHotDeals": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
