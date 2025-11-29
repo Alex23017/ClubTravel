@@ -1,0 +1,1129 @@
+.list__hotdeals {
+  position: relative;
+  -webkit-margin-before: -22px;
+          margin-block-start: -22px;
+  -webkit-margin-after: 65px;
+          margin-block-end: 65px;
+  margin-inline: 98px;
+}
+@media (max-width: 768px) and (min-width: 601px) {
+  .list__hotdeals {
+    margin-inline: 0px;
+  }
+}
+@media (max-width: 600px) {
+  .list__hotdeals {
+    -webkit-margin-before: 20px;
+            margin-block-start: 20px;
+    margin-inline: 0px;
+  }
+}
+
+.list__hotdeals .hotdeals__header {
+  -webkit-margin-start: 3px;
+          margin-inline-start: 3px;
+  -webkit-margin-after: 8px;
+          margin-block-end: 8px;
+}
+
+.hotdeals__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-inline: 26px;
+}
+.hotdeals__header h3 {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: "Open Sans", sans-serif;
+}
+@media (max-width: 768px) and (min-width: 601px) {
+  .hotdeals__header h3 {
+    font-size: 12px;
+  }
+}
+@media (max-width: 600px) {
+  .hotdeals__header h3 {
+    font-size: 10px;
+  }
+}
+@media (max-width: 1200px) {
+  .hotdeals__header {
+    padding-inline: 0px;
+  }
+}
+@media (max-width: 600px) {
+  .hotdeals__header {
+    padding-inline: 0px;
+  }
+}
+
+.hotdeals__data,
+.hotdeals__from,
+.hotdeals__to,
+.hotdeals__duration,
+.hotdeals__price,
+.list__data,
+.list__from,
+.list__to,
+.list__duration,
+.list__price {
+  width: 100%;
+}
+
+.hotdeals__data {
+  max-width: 150px;
+}
+@media (max-width: 1200px) {
+  .hotdeals__data {
+    max-width: 120px;
+  }
+}
+
+.list__opendeals .hotdeals__header {
+  -webkit-margin-start: 0px;
+          margin-inline-start: 0px;
+}
+
+.hotdeals__from {
+  -webkit-margin-start: 99px;
+          margin-inline-start: 99px;
+  max-width: 172px;
+  letter-spacing: 0.7px;
+}
+@media (max-width: 1200px) {
+  .hotdeals__from {
+    -webkit-margin-start: 0px;
+            margin-inline-start: 0px;
+  }
+}
+
+.hotdeals__to {
+  -webkit-margin-end: -10px;
+          margin-inline-end: -10px;
+  max-width: 211px;
+  letter-spacing: 1px;
+}
+
+.hotdeals__duration {
+  max-width: 169px;
+}
+
+.hotdeals__render {
+  -webkit-margin-before: 16px;
+          margin-block-start: 16px;
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-width: 650px;
+}
+@media (max-width: 760px) {
+  .hotdeals__render {
+    min-width: inherit;
+  }
+}
+
+.list__data {
+  max-width: 150px;
+  -webkit-margin-start: -1px;
+          margin-inline-start: -1px;
+}
+
+.list__from {
+  max-width: 150px;
+  -webkit-margin-start: 103px;
+          margin-inline-start: 103px;
+}
+@media (max-width: 1200px) {
+  .list__from {
+    -webkit-margin-start: 0px;
+            margin-inline-start: 0px;
+  }
+}
+
+.list__to {
+  -webkit-margin-start: 21px;
+          margin-inline-start: 21px;
+  max-width: 200px;
+}
+@media (max-width: 1200px) {
+  .list__to {
+    -webkit-margin-start: 0px;
+            margin-inline-start: 0px;
+  }
+}
+
+.list__duration {
+  max-width: 170px;
+  -webkit-margin-start: 2px;
+          margin-inline-start: 2px;
+}
+@media (max-width: 1200px) {
+  .list__duration {
+    text-align: center;
+  }
+}
+
+.list__price {
+  max-width: 90px;
+}
+
+.list__button {
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+  -webkit-margin-start: 30px;
+          margin-inline-start: 30px;
+  text-transform: uppercase;
+  color: #f68521;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+@media (max-width: 1200px) {
+  .list__button {
+    -webkit-margin-start: 0px;
+            margin-inline-start: 0px;
+  }
+}
+@media (max-width: 768px) and (min-width: 601px) {
+  .list__button {
+    font-size: 12px;
+  }
+}
+@media (max-width: 600px) {
+  .list__button {
+    font-size: 10px;
+  }
+}
+
+.list__button-close {
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+  -webkit-margin-start: 28px;
+          margin-inline-start: 28px;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+@media (max-width: 1200px) {
+  .list__button-close {
+    -webkit-margin-start: 0px;
+            margin-inline-start: 0px;
+  }
+}
+@media (max-width: 768px) and (min-width: 601px) {
+  .list__button-close {
+    font-size: 10px;
+  }
+}
+@media (max-width: 600px) {
+  .list__button-close {
+    font-size: 10px;
+  }
+}
+
+.list__select-hotel {
+  overflow: hidden;
+  position: relative;
+}
+
+.list__body {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  white-space: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  font-size: 15px;
+  -webkit-padding-before: 22px;
+          padding-block-start: 22px;
+  -webkit-padding-after: 21.5px;
+          padding-block-end: 21.5px;
+}
+@media (max-width: 1200px) {
+  .list__body {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 20px;
+  }
+}
+@media (max-width: 768px) and (min-width: 601px) {
+  .list__body {
+    font-size: 12px;
+    gap: 10px;
+  }
+}
+@media (max-width: 600px) {
+  .list__body {
+    font-size: 10px;
+    gap: 5px;
+    white-space: wrap;
+  }
+}
+
+.list__open {
+  -webkit-padding-start: 24px;
+          padding-inline-start: 24px;
+  -webkit-box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 1200px) {
+  .list__open .list__body {
+    -webkit-padding-end: 24px;
+            padding-inline-end: 24px;
+  }
+}
+@media (max-width: 600px) {
+  .list__open .list__body {
+    padding-inline: 10px;
+  }
+}
+@media (max-width: 600px) {
+  .list__open {
+    padding-inline: 0px;
+  }
+}
+
+.list__openlist {
+  -webkit-margin-before: 20px;
+          margin-block-start: 20px;
+  -webkit-margin-after: 11px;
+          margin-block-end: 11px;
+}
+.list__openlist .hotdeals__header {
+  padding: 0;
+}
+.list__openlist .hotdeals__from {
+  -webkit-margin-start: 102px;
+          margin-inline-start: 102px;
+}
+@media (max-width: 1200px) {
+  .list__openlist .hotdeals__from {
+    -webkit-margin-start: 0px;
+            margin-inline-start: 0px;
+  }
+}
+.list__openlist .hotdeals__to {
+  -webkit-margin-start: 4px;
+          margin-inline-start: 4px;
+}
+@media (max-width: 1200px) {
+  .list__openlist .hotdeals__to {
+    -webkit-margin-end: 0px;
+            margin-inline-end: 0px;
+  }
+}
+.list__openlist .hotdeals__duration {
+  -webkit-margin-start: -2px;
+          margin-inline-start: -2px;
+}
+
+.list__container {
+  position: relative;
+  overflow: hidden;
+  height: 60px;
+}
+.list__container.active {
+  height: auto;
+  overflow: inherit;
+}
+.list__container::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  background-color: #666666;
+  width: 100%;
+  height: 1px;
+  opacity: 0.2;
+}
+@media (max-width: 768px) and (min-width: 601px) {
+  .list__container::after {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .list__container::after {
+    display: none;
+  }
+}
+
+.list__container > .list__body {
+  -webkit-padding-start: 24px;
+          padding-inline-start: 24px;
+  -webkit-padding-end: 22px;
+          padding-inline-end: 22px;
+}
+@media (max-width: 600px) {
+  .list__container > .list__body {
+    padding-inline: 10px;
+  }
+}
+
+.list__category {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4px;
+}
+
+.hotdeals__category-star {
+  width: 18px;
+  height: 18px;
+}
+
+.list__hotel,
+.list__category,
+.list__food,
+.list__tour,
+.list__price,
+.list__button-open,
+.list__button-close,
+.list__button-select {
+  width: 100%;
+}
+
+.list__category {
+  font-size: 24px;
+  color: #f5c213;
+  max-width: 140px;
+  -webkit-margin-start: 70px;
+          margin-inline-start: 70px;
+}
+@media (max-width: 1200px) {
+  .list__category {
+    -webkit-margin-start: 0px;
+            margin-inline-start: 0px;
+  }
+}
+
+.list__hotel {
+  text-decoration: underline;
+  color: #255296;
+  font-size: 15px;
+  max-width: 180px;
+}
+@media (max-width: 1200px) {
+  .list__hotel {
+    max-width: 120px;
+  }
+}
+
+.list__food {
+  -webkit-margin-start: 35px;
+          margin-inline-start: 35px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 200px;
+}
+@media (max-width: 1200px) {
+  .list__food {
+    -webkit-margin-start: 10px;
+            margin-inline-start: 10px;
+  }
+}
+
+.list__tour {
+  max-width: 150px;
+  -webkit-margin-start: -1px;
+          margin-inline-start: -1px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.list__button-open {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  white-space: nowrap;
+  text-align: start;
+  border: solid 1px #f68521;
+  border-radius: 6px;
+  max-width: 200px;
+  height: 28px;
+  font-size: 12px;
+  -webkit-padding-before: 6px;
+          padding-block-start: 6px;
+  text-transform: uppercase;
+  -webkit-margin-start: 28px;
+          margin-inline-start: 28px;
+  -webkit-margin-before: -5px;
+          margin-block-start: -5px;
+  -webkit-padding-start: 7px;
+          padding-inline-start: 7px;
+  -webkit-padding-end: 14px;
+          padding-inline-end: 14px;
+  letter-spacing: 0.3px;
+}
+
+.list__button-select,
+.href__button-select {
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: center;
+  background-color: #f68521;
+  color: white;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 200px;
+  height: 28px;
+  font-size: 12px;
+  -webkit-padding-before: 6px;
+          padding-block-start: 6px;
+  text-transform: uppercase;
+  -webkit-margin-start: 38px;
+          margin-inline-start: 38px;
+  -webkit-margin-before: 4px;
+          margin-block-start: 4px;
+  -webkit-padding-start: 7px;
+          padding-inline-start: 7px;
+  -webkit-padding-end: 14px;
+          padding-inline-end: 14px;
+  letter-spacing: 0.3px;
+}
+.list__button-select.active,
+.href__button-select.active {
+  background-color: white;
+  border: 1px solid #f68521;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (max-width: 1200px) {
+  .list__button-select,
+  .href__button-select {
+    -webkit-margin-start: 0px;
+            margin-inline-start: 0px;
+  }
+}
+@media (max-width: 768px) and (min-width: 601px) {
+  .list__button-select,
+  .href__button-select {
+    padding-inline: 5px;
+  }
+}
+@media (max-width: 600px) {
+  .list__button-select,
+  .href__button-select {
+    padding-inline: 5px;
+  }
+}
+
+.list__body-close {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  white-space: nowrap;
+  text-align: start;
+  border: solid 1px #f68521;
+  border-radius: 6px;
+  max-width: 200px;
+  height: 28px;
+  font-size: 12px;
+  -webkit-padding-before: 6px;
+          padding-block-start: 6px;
+  text-transform: uppercase;
+  -webkit-margin-start: 40px;
+          margin-inline-start: 40px;
+  -webkit-margin-before: -3px;
+          margin-block-start: -3px;
+  -webkit-padding-start: 11px;
+          padding-inline-start: 11px;
+  -webkit-padding-end: 14px;
+          padding-inline-end: 14px;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+}
+@media (max-width: 1200px) {
+  .list__body-close {
+    max-width: 100px;
+    white-space: wrap;
+    text-align: center;
+    font-size: 10px;
+    height: 100%;
+    padding-inline: 10px;
+    padding-block: 5px;
+    -webkit-margin-start: 0px;
+            margin-inline-start: 0px;
+  }
+}
+
+.list__price--open {
+  -webkit-margin-start: 20px;
+          margin-inline-start: 20px;
+}
+
+.list__body-select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  overflow: hidden;
+  height: 66px;
+}
+.list__body-select.active {
+  overflow: inherit;
+  height: auto;
+}
+@media (max-width: 1200px) {
+  .list__body-select {
+    -webkit-padding-end: 0px;
+            padding-inline-end: 0px;
+  }
+}
+
+.list__select {
+  position: relative;
+  left: -10px;
+  width: 1149px;
+}
+@media (max-width: 1200px) {
+  .list__select {
+    width: 100%;
+    left: inherit;
+  }
+}
+@media (max-width: 1360px) {
+  .list__select {
+    width: 100%;
+  }
+}
+
+.list__body-category {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-block: 12px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-padding-start: 2px;
+          padding-inline-start: 2px;
+  -webkit-margin-before: 8px;
+          margin-block-start: 8px;
+}
+@media (max-width: 1366px) {
+  .list__body-category {
+    -webkit-padding-end: 12px;
+            padding-inline-end: 12px;
+  }
+}
+.list__body-category .list__hotel {
+  letter-spacing: 0.4px;
+}
+.list__body-category .list__food,
+.list__body-category .list__tour,
+.list__body-category .list__price {
+  -webkit-margin-before: -2px;
+          margin-block-start: -2px;
+}
+.list__body-category::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  background-color: #666666;
+  width: 100%;
+  height: 1px;
+  opacity: 0.2;
+}
+
+.list__body-select.active .list__body-category::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 0;
+  background-color: #666666;
+  width: 100%;
+  height: 1px;
+  opacity: 0.2;
+}
+
+.list__arrow-open {
+  min-width: 24px;
+  min-height: 24px;
+  -webkit-margin-before: 4px;
+          margin-block-start: 4px;
+  -webkit-margin-start: 6px;
+          margin-inline-start: 6px;
+}
+
+.list__arrow-close {
+  min-width: 24px;
+  min-height: 24px;
+  -webkit-margin-before: 5px;
+          margin-block-start: 5px;
+  -webkit-margin-start: 11px;
+          margin-inline-start: 11px;
+}
+@media (max-width: 1200px) {
+  .list__arrow-close {
+    display: none;
+  }
+}
+
+.list__body-select .list__body-hotel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.list__body-hotel {
+  padding-block: 13px;
+  margin-block: 12px;
+}
+@media (max-width: 1366px) {
+  .list__body-hotel {
+    -webkit-padding-end: 10px;
+            padding-inline-end: 10px;
+  }
+}
+.list__body-hotel .list__price {
+  -webkit-margin-start: 20px;
+          margin-inline-start: 20px;
+}
+@media (max-width: 1200px) {
+  .list__body-hotel .list__price {
+    margin: 0;
+  }
+}
+
+.list__body-select.active .list__select-hotel {
+  background-color: #f4f6fa;
+}
+
+.list__select-hotel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-block: 12px;
+  -webkit-padding-after: 23px;
+          padding-block-end: 23px;
+  border-radius: 6px;
+  -webkit-padding-start: 12px;
+          padding-inline-start: 12px;
+}
+.list__select-hotel .list__hotel {
+  text-decoration: none;
+  opacity: 0.5;
+  color: #666666;
+}
+@media (max-width: 1200px) {
+  .list__select-hotel .list__hotel {
+    text-align: center;
+    font-size: 12px;
+  }
+}
+@media (max-width: 1200px) {
+  .list__select-hotel {
+    padding-inline: 10px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .list__openlist .hotdeals__header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    gap: 40px;
+  }
+  .list__opendeals {
+    text-align: center;
+  }
+  .list__opendeals .hotdeals__from,
+  .list__opendeals .hotdeals__to {
+    max-width: 100px;
+  }
+  .list__opendeals .hotdeals__duration {
+    max-width: 210px;
+  }
+  .list__opendeals .hotdeals__price {
+    text-align: start;
+  }
+  .list__body-category {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .list__body-category .list__category,
+  .list__body-category .list__food,
+  .list__body-category .list__tour,
+  .list__body-category .list__price--open {
+    -webkit-margin-start: 0px;
+            margin-inline-start: 0px;
+  }
+  .list__button-select {
+    max-width: 100px;
+    white-space: wrap;
+    font-size: 10px;
+  }
+  .list__body-category .list__button-select.active {
+    font-size: 10px;
+    height: 100%;
+    padding-inline: 10px;
+    padding-block: 5px;
+  }
+  .list__hotel,
+  .list__category,
+  .list__food,
+  .list__tour,
+  .list__price--open {
+    font-size: 12px;
+    text-align: center;
+    margin: 0px;
+  }
+  .list__select-hotel {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+@media (max-width: 600px) {
+  .list__food {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .list__duration,
+  .hotdeals__duration,
+  .list__to,
+  .hotdeals__to,
+  .hotdeals__from,
+  .list__price,
+  .list__from,
+  .list__data {
+    max-width: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .hotdeals__header {
+    padding-inline: 5px;
+  }
+  .hotdeals__price {
+    text-align: start;
+  }
+  .hotdeals__data {
+    max-width: 70px;
+  }
+  .hotdeals__duration,
+  .list__tour,
+  .list__duration {
+    display: none;
+  }
+  .list__button {
+    max-width: 100px;
+  }
+  .list__body {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-inline: 10px;
+    gap: 15px;
+    -webkit-margin-start: 30px;
+            margin-inline-start: 30px;
+  }
+  .list__hotel,
+  .list__category,
+  .list__food,
+  .list__tour,
+  .list__price--open {
+    font-size: 10px;
+    text-align: center;
+    margin: 0px;
+  }
+  .list__food {
+    text-align: start;
+  }
+  .hotdeals__price {
+    max-width: 50px;
+  }
+  .hotdeals__to {
+    -webkit-margin-start: 5px;
+            margin-inline-start: 5px;
+  }
+  .hotdeals__price {
+    -webkit-margin-start: 35px;
+            margin-inline-start: 35px;
+  }
+}
+@media (max-width: 1200px) {
+  .hotdeals__header {
+    text-align: center;
+  }
+  .hotdeals__price {
+    text-align: start;
+  }
+  .list__body-category {
+    padding-inline: 10px;
+  }
+  .list__open {
+    padding: 0;
+  }
+  .href__button-select {
+    max-width: 100px;
+  }
+  .hotdeals__price {
+    max-width: 120px;
+  }
+  .hotdeals__duration {
+    max-width: 220px;
+  }
+}
+@media (max-width: 1000px) and (min-width: 769px) {
+  .hotdeals__header {
+    text-align: start;
+  }
+  .hotdeals__to {
+    max-width: 100px;
+  }
+  .hotdeals__duration {
+    max-width: 150px;
+  }
+  .list__body-hotel {
+    text-align: start;
+  }
+  .list__button-close,
+  .list__button {
+    font-size: 10px;
+  }
+}
+@media (max-width: 768px) and (min-width: 601px) {
+  .hotdeals__header {
+    text-align: start;
+    -webkit-margin-before: 40px;
+            margin-block-start: 40px;
+    padding-inline: 10px;
+  }
+  .hotdeals__from {
+    max-width: 110px;
+  }
+  .hotdeals__to {
+    max-width: 100px;
+  }
+  .hotdeals__duration {
+    max-width: 170px;
+  }
+}
+@media (max-width: 600px) {
+  .list__button {
+    max-width: 100%;
+  }
+}
+@media (max-width: 680px) {
+  .hotdeals__duration {
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hotdeals__header {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    text-align: start;
+    padding-inline: 10px;
+    -webkit-margin-start: 20px;
+            margin-inline-start: 20px;
+    gap: 0px;
+  }
+}
+
+@media (max-width: 400px) {
+  .list__button {
+    max-width: 60px;
+  }
+  .list__body {
+    margin-inline: 5px;
+  }
+}
+@media (max-width: 1200px) {
+  .list__body-hotel,
+  .list__select-hotel {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-inline: 10px;
+    text-align: start;
+  }
+  .list__opendeals .hotdeals__header {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    gap: 20px;
+    padding-inline: 10px;
+  }
+  .list__opendeals .hotdeals__header .hotdeals__price {
+    -webkit-margin-end: 70px;
+            margin-inline-end: 70px;
+  }
+  .list__opendeals .hotdeals__header .hotdeals__duration {
+    max-width: 150px;
+  }
+  .list__open .list__body {
+    padding-inline: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .list__open .list__body {
+    padding-inline: 10px;
+  }
+  .list__button,
+  .list__button-close {
+    max-width: 100px;
+  }
+  .list__body {
+    margin: 0px;
+  }
+  .hotdeals__category-star {
+    max-width: 12px;
+    max-height: 12px;
+    min-width: 12px;
+    min-height: 12px;
+  }
+  .list__opendeals .hotdeals__to,
+  .list__opendeals .list__food {
+    display: none;
+  }
+  .list__category {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .hotdeals__header {
+    text-align: center;
+    gap: 10px;
+  }
+  .hotdeals__data {
+    max-width: 50px;
+  }
+  .list__hotel {
+    max-width: 70px;
+  }
+  .list__select-hotel .list__hotel {
+    font-size: 10px;
+  }
+}
+@media (max-width: 400px) {
+  .list__button,
+  .list__button-close,
+  .href__button-select {
+    max-width: 50px;
+    font-size: 8px;
+    padding-inline: 1px;
+  }
+  .list__body-close,
+  .list__button-select {
+    font-size: 8px;
+  }
+  .list__body {
+    gap: 5px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .hotdeals__header {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .list__category,
+  .list__food {
+    max-width: 50px;
+  }
+  .list__select-hotel {
+    padding-inline: 5px;
+  }
+  .list__select-hotel .list__hotel {
+    font-size: 10px;
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .list__body-hotel .list__hotel {
+    white-space: wrap;
+    max-width: 60px;
+    -webkit-margin-start: 0px;
+            margin-inline-start: 0px;
+  }
+  .list__body-hotel .list__category {
+    max-width: 60px;
+    -webkit-margin-start: 10px;
+            margin-inline-start: 10px;
+  }
+  .hotdeals__price {
+    margin: 0;
+  }
+  .list__category,
+  .list__food {
+    max-width: 70px;
+  }
+  .list__food {
+    max-width: 80px;
+  }
+  .list__body-select.active .list__button-select {
+    font-size: 8px;
+  }
+  .list__select .list__food {
+    max-width: 40px;
+  }
+  .list__select .list__category {
+    text-align: start;
+    max-width: 30px;
+  }
+  .list__body-close {
+    padding-inline: 5px;
+  }
+  .href__button-select {
+    -webkit-margin-end: 20px;
+            margin-inline-end: 20px;
+  }
+  .list__body-category {
+    gap: 10px;
+  }
+  .list__select-hotel {
+    gap: 10px;
+  }
+  .href__button-select {
+    -webkit-margin-end: 5px;
+            margin-inline-end: 5px;
+  }
+}/*# sourceMappingURL=listHotDeals.css.map */

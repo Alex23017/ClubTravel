@@ -1,0 +1,185 @@
+.summertours {
+  padding-inline: 93px;
+}
+
+.summer__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+  text-align: center;
+  -webkit-margin-before: 2px;
+          margin-block-start: 2px;
+  -webkit-margin-start: 24px;
+          margin-inline-start: 24px;
+  -webkit-margin-after: 38px;
+          margin-block-end: 38px;
+}
+
+.summer__header-title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: 1.2px;
+  -webkit-margin-start: -20px;
+          margin-inline-start: -20px;
+}
+
+.summer__header-subtitle {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #666666;
+  opacity: 0.7;
+  -webkit-margin-start: -26px;
+          margin-inline-start: -26px;
+}
+
+.summer__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+  font-family: "Open Sans", sans-serif;
+  -webkit-box-shadow: -1px 0px 8px 0px rgba(34, 60, 80, 0.2);
+          box-shadow: -1px 0px 8px 0px rgba(34, 60, 80, 0.2);
+  -webkit-box-shadow: 0px 4px 8px rgba(34, 60, 80, 0.2);
+          box-shadow: 0px 4px 8px rgba(34, 60, 80, 0.2);
+  border-radius: 10px;
+  -webkit-padding-after: 16px;
+          padding-block-end: 16px;
+  max-height: 364px;
+  -webkit-margin-after: 40px;
+          margin-block-end: 40px;
+}
+
+.summer__img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 100%;
+  max-height: 250px;
+}
+
+.summer__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-inline: 16px;
+  white-space: nowrap;
+  gap: 10px;
+}
+
+.summer__footer-location {
+  min-width: 20px;
+  min-height: 20px;
+  max-width: 20px;
+  max-height: 20px;
+  color: #3E7739;
+  opacity: 0.6;
+}
+
+.summer__footer-price {
+  font-size: 16px;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 0.5px;
+}
+.summer__footer-price span {
+  font-weight: 700;
+}
+
+.summer__link {
+  margin-inline: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #f68521;
+  border-radius: 6px;
+  -webkit-padding-before: 12px;
+          padding-block-start: 12px;
+  -webkit-padding-after: 10px;
+          padding-block-end: 10px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+}
+
+.summer__town {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 6px;
+  -webkit-margin-start: 2px;
+          margin-inline-start: 2px;
+  letter-spacing: 0.5px;
+}
+
+.summer__town-text {
+  font-size: 16px;
+}
+
+.summer__all {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 8px;
+  -webkit-margin-after: 101px;
+          margin-block-end: 101px;
+}
+
+.summer__all-link {
+  color: #666666;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0.3px;
+  -webkit-margin-start: -2px;
+          margin-inline-start: -2px;
+}
+
+.summer__all-img {
+  width: 24px;
+  height: 24px;
+  color: #f68521;
+}
+
+@media (max-width: 1000px) and (min-width: 769px) {
+  .summer__town-text,
+  .summer__footer-price,
+  .summer__link {
+    font-size: 12px;
+  }
+  .summer__footer {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 5px;
+  }
+}
+@media (max-width: 600px) {
+  .summertours {
+    padding-inline: 15px;
+  }
+}/*# sourceMappingURL=summerTours.css.map */

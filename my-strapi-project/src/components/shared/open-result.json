@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_shared_open_results",
+  "info": {
+    "displayName": "openResult"
+  },
+  "options": {},
+  "attributes": {
+    "dataOpen": {
+      "type": "string"
+    },
+    "durationOpen": {
+      "type": "string"
+    },
+    "foodOpen": {
+      "type": "string"
+    },
+    "typeOpen": {
+      "type": "string"
+    },
+    "placeOpen": {
+      "type": "string"
+    },
+    "priceOpen": {
+      "type": "biginteger"
+    }
+  },
+  "config": {}
+}

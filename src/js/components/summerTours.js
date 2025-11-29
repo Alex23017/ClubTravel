@@ -60,7 +60,7 @@ export function renderOffer() {
       town: item.town,
       price: item.price,
     })
-
+    
     container.appendChild(offerCard)
   })
 }

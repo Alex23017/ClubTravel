@@ -2,15 +2,15 @@ if (document.querySelector('[data-component="companyNews"]')) {
   import('/styles/components/companyNews.scss')
   import('/styles/base/reset.scss')
 }
-import companyCard from '../../html/components/home/companyCard.html'
-import { getCompanyNews } from '../api/service/companyNews.js'
-import { API_VARIABLES } from '../api/variables.js'
-
 import 'swiper/css'
 import 'swiper/css/pagination'
-
 import { Navigation, Pagination } from 'swiper/modules'
+import { API_VARIABLES } from '../api/variables.js'
 import Swiper from 'swiper'
+import companyCard from '../../html/components/home/companyCard.html'
+import { getCompanyNews } from '../api/service/companyNews.js'
+
+
 
 function sliderInit() {
   const slider = document.querySelector('.mySwiperNews')

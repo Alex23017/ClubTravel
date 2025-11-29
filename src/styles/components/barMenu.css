@@ -1,0 +1,143 @@
+.bar {
+  padding-inline: 97px;
+  -webkit-padding-end: 95px;
+          padding-inline-end: 95px;
+  position: relative;
+}
+.bar.open {
+  -webkit-margin-before: 472px;
+          margin-block-start: 472px;
+}
+@media (max-width: 1200px) {
+  .bar.open {
+    -webkit-margin-before: 572px;
+            margin-block-start: 572px;
+  }
+}
+
+.bar,
+.bar__calendar,
+.bar__sort {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bar__title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 24px;
+  letter-spacing: 0.6px;
+  text-wrap: balance;
+}
+
+.bar__calendar {
+  -webkit-margin-start: 40px;
+          margin-inline-start: 40px;
+  gap: 12px;
+  color: #f68521;
+  border: solid 1px #f68521;
+  border-radius: 6px;
+  -webkit-padding-start: 13px;
+          padding-inline-start: 13px;
+  -webkit-padding-end: 16px;
+          padding-inline-end: 16px;
+  padding-block: 7px;
+  -webkit-margin-before: -1px;
+          margin-block-start: -1px;
+  cursor: pointer;
+}
+
+.bar__calendar-icon {
+  min-width: 25px;
+  min-height: 25px;
+  max-width: 25px;
+  max-height: 25px;
+  -webkit-margin-before: 2px;
+          margin-block-start: 2px;
+  -webkit-margin-start: -1px;
+          margin-inline-start: -1px;
+}
+
+.bar__calendar-text {
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0.3px;
+  font-size: 14px;
+}
+
+.bar__sort {
+  -webkit-margin-start: 26px;
+          margin-inline-start: 26px;
+  letter-spacing: 0.5px;
+}
+
+.bar__sort-text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  color: #666666;
+}
+
+.bar__dropdown {
+  -webkit-padding-start: 16px;
+          padding-inline-start: 16px;
+  -webkit-margin-before: -3px;
+          margin-block-start: -3px;
+  padding-block: 11px;
+  border-radius: 6px;
+  border: solid 1px #e2e2e2;
+}
+
+.bar__dropdown > div {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  margin: 0;
+}
+
+.bar__dropdown--price {
+  -webkit-margin-start: 12px;
+          margin-inline-start: 12px;
+  width: 100%;
+  width: 149px;
+}
+
+.bar__dropdown--low {
+  -webkit-margin-start: 10px;
+          margin-inline-start: 10px;
+  width: 200px;
+}
+
+.barprice__button {
+  width: 100%;
+  text-align: start;
+  cursor: pointer;
+}
+
+.bar__dropdown .search__arrow {
+  right: 6px;
+}
+
+@media (max-width: 1000px) and (min-width: 769px) {
+  .bar {
+    padding-inline: 20px;
+  }
+  .bar__dropdown > div,
+  .bar__calendar-text,
+  .bar__sort-text {
+    font-size: 12px;
+  }
+  .bar__title {
+    font-size: 20px;
+  }
+  .bar__dropdown--low {
+    width: 140px;
+  }
+  .bar__dropdown--price {
+    width: 90px;
+  }
+  .dropdown-item {
+    font-size: 12px;
+    padding-block: 4px;
+  }
+}/*# sourceMappingURL=barMenu.css.map */

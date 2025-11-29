@@ -1,5 +1,4 @@
 import { getListHotel } from '../api/service/listHotel'
-import listHotelsCard from '../../html/components/hotDeals/listHotel.html'
 if (document.querySelector('[data-component="listHotDeals"]')) {
   import('/styles/components/listHotDeals.scss')
   import('/styles/base/reset.scss')
@@ -16,7 +15,7 @@ function renderOffer() {
   const getStarsHtml = category => {
     let stars = ''
     for (let i = 0; i < category; i++) {
-      stars += '<svg class="hotdeals__category-star"><use xlink:href="#icon-star-shiny"></use></svg>'
+      stars += '<svg class="hotdeals__category-star">< use xlink: href = "#icon-star-shiny" ></ ></svg > '
     }
     return stars
   }

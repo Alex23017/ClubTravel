@@ -57,6 +57,16 @@ export interface SharedHotopenlist extends Struct.ComponentSchema {
   }
 }
 
+export interface SharedList extends Struct.ComponentSchema {
+  collectionName: 'components_shared_lists'
+  info: {
+    displayName: 'list'
+  }
+  attributes: {
+    opa: Schema.Attribute.String
+  }
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media'
   info: {
@@ -65,6 +75,21 @@ export interface SharedMedia extends Struct.ComponentSchema {
   }
   attributes: {
     file: Schema.Attribute.Media<'images' | 'files' | 'videos'>
+  }
+}
+
+export interface SharedOpenResult extends Struct.ComponentSchema {
+  collectionName: 'components_shared_open_results'
+  info: {
+    displayName: 'openResult'
+  }
+  attributes: {
+    dataOpen: Schema.Attribute.String
+    durationOpen: Schema.Attribute.String
+    foodOpen: Schema.Attribute.String
+    placeOpen: Schema.Attribute.String
+    priceOpen: Schema.Attribute.BigInteger
+    typeOpen: Schema.Attribute.String
   }
 }
 
@@ -170,7 +195,9 @@ declare module '@strapi/strapi' {
       'shared.hotel-select': SharedHotelSelect
       'shared.hotels-open': SharedHotelsOpen
       'shared.hotopenlist': SharedHotopenlist
+      'shared.list': SharedList
       'shared.media': SharedMedia
+      'shared.open-result': SharedOpenResult
       'shared.position': SharedPosition
       'shared.quote': SharedQuote
       'shared.rich-text': SharedRichText

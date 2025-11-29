@@ -1,0 +1,454 @@
+.consultation {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.consultation__cover {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+.consultation__cover img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.consultation__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 80px 128px 98px 205px;
+}
+@media (min-width: 2000px) {
+  .consultation__content {
+    padding: 60px 20% 95px;
+  }
+}
+@media (max-width: 1440px) {
+  .consultation__content {
+    padding: 60px 80px 45px 100px;
+  }
+}
+@media (max-width: 1200px) {
+  .consultation__content {
+    padding: 40px 40px 45px;
+  }
+}
+@media (max-width: 600px) {
+  .consultation__content {
+    padding: 30px 10px 45px;
+  }
+}
+.consultation__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 93%;
+}
+@media (max-width: 600px) {
+  .consultation__header {
+    width: 100%;
+  }
+}
+.consultation__title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 26px;
+  line-height: 35px;
+  letter-spacing: 1.28px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+}
+@media (max-width: 600px) {
+  .consultation__title {
+    padding: 0 50px;
+    text-align: center;
+  }
+}
+.consultation__text {
+  width: 60%;
+  margin-top: 16px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0%;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .consultation__text {
+    width: 100%;
+    margin-top: 26px;
+  }
+}
+.consultation__main {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 96px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+@media (max-width: 1200px) {
+  .consultation__main {
+    margin-top: 40px;
+  }
+}
+@media (max-width: 1000px) and (min-width: 769px) {
+  .consultation__main {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+@media (max-width: 768px) and (min-width: 601px) {
+  .consultation__main {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+@media (max-width: 600px) {
+  .consultation__main {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 7px;
+  }
+}
+.consultation__left {
+  width: 36%;
+  margin-top: 25px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0%;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+@media (max-width: 1000px) and (min-width: 769px) {
+  .consultation__left {
+    width: 70%;
+  }
+}
+@media (max-width: 768px) and (min-width: 601px) {
+  .consultation__left {
+    width: 70%;
+  }
+}
+@media (max-width: 600px) {
+  .consultation__left {
+    width: 100%;
+  }
+}
+.consultation__button {
+  width: 378px;
+  height: 42px;
+  margin-top: 36px;
+  border: none;
+  border-radius: 6px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0.77px;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-transform: uppercase;
+  background: var(--primary, rgb(246, 133, 33));
+}
+@media (max-width: 1200px) {
+  .consultation__button {
+    width: 100%;
+  }
+}
+.consultation__center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 4px 0;
+}
+@media (max-width: 1000px) and (min-width: 769px) {
+  .consultation__center {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 24px 0;
+  }
+}
+@media (max-width: 768px) and (min-width: 601px) {
+  .consultation__center {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 24px 0;
+  }
+}
+@media (max-width: 600px) {
+  .consultation__center {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 27px 0 29px;
+  }
+}
+.consultation__center span {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+}
+.consultation__line {
+  opacity: 0.5;
+  width: 2px;
+  height: 77px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+@media (max-width: 1000px) and (min-width: 769px) {
+  .consultation__line {
+    width: 77px;
+    height: 2px;
+  }
+}
+@media (max-width: 768px) and (min-width: 601px) {
+  .consultation__line {
+    width: 77px;
+    height: 2px;
+  }
+}
+@media (max-width: 600px) {
+  .consultation__line {
+    width: 77px;
+    height: 2px;
+  }
+}
+.consultation__line:nth-child(1) {
+  margin-bottom: 12px;
+}
+@media (max-width: 1000px) and (min-width: 769px) {
+  .consultation__line:nth-child(1) {
+    margin-bottom: 0;
+    margin-right: 12px;
+  }
+}
+@media (max-width: 768px) and (min-width: 601px) {
+  .consultation__line:nth-child(1) {
+    margin-bottom: 0;
+    margin-right: 12px;
+  }
+}
+@media (max-width: 600px) {
+  .consultation__line:nth-child(1) {
+    margin-bottom: 0;
+    margin-right: 12px;
+  }
+}
+.consultation__line:nth-child(3) {
+  margin-top: 12px;
+}
+@media (max-width: 1000px) and (min-width: 769px) {
+  .consultation__line:nth-child(3) {
+    margin-top: 0;
+    margin-left: 12px;
+  }
+}
+@media (max-width: 768px) and (min-width: 601px) {
+  .consultation__line:nth-child(3) {
+    margin-top: 0;
+    margin-right: 12px;
+  }
+}
+@media (max-width: 600px) {
+  .consultation__line:nth-child(3) {
+    margin-top: 0;
+    margin-right: 12px;
+  }
+}
+.consultation__right p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+}
+@media (max-width: 1000px) and (min-width: 769px) {
+  .consultation__right p {
+    text-align: center;
+  }
+}
+@media (max-width: 768px) and (min-width: 601px) {
+  .consultation__right p {
+    text-align: center;
+  }
+}
+@media (max-width: 600px) {
+  .consultation__right p {
+    text-align: center;
+  }
+}
+.consultation__card-info {
+  margin-top: -10px;
+}
+.consultation__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 32px;
+  margin-top: 25px;
+}
+@media (max-width: 600px) {
+  .consultation__card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 25px;
+    margin-top: 17px;
+  }
+}
+.consultation__card img {
+  height: 152px;
+}
+@media (max-width: 600px) {
+  .consultation__card img {
+    width: 88%;
+    height: 181px;
+  }
+}
+.consultation__card-name {
+  margin-bottom: 3px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+}
+.consultation__card-position {
+  margin-bottom: 26px;
+  margin-left: 1px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+}
+.consultation__card-phone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  margin-bottom: 6px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+}
+.consultation__card-phone svg {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+@media (max-width: 600px) {
+  .consultation__card-phone {
+    margin-bottom: 15px;
+  }
+}
+.consultation__card-email {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  margin-bottom: 9px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+}
+.consultation__card-email svg {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+@media (max-width: 600px) {
+  .consultation__card-email {
+    margin-bottom: 16px;
+  }
+}
+.consultation__card-massager {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+}
+.consultation__card-massager svg {
+  width: 24px;
+  height: 24px;
+  color: white;
+}/*# sourceMappingURL=consultation.css.map */

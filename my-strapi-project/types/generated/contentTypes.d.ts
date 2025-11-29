@@ -570,6 +570,38 @@ export interface ApiListHotelListHotel extends Struct.CollectionTypeSchema {
   }
 }
 
+export interface ApiResultSearchResultSearch extends Struct.CollectionTypeSchema {
+  collectionName: 'result_searches'
+  info: {
+    displayName: 'ResultSearch'
+    pluralName: 'result-searches'
+    singularName: 'result-search'
+  }
+  options: {
+    draftAndPublish: true
+  }
+  attributes: {
+    beach: Schema.Attribute.String
+    createdAt: Schema.Attribute.DateTime
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
+    description: Schema.Attribute.String
+    duration: Schema.Attribute.String
+    food: Schema.Attribute.String
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>
+    locale: Schema.Attribute.String & Schema.Attribute.Private
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::result-search.result-search'> & Schema.Attribute.Private
+    openResult: Schema.Attribute.Component<'shared.open-result', true>
+    package: Schema.Attribute.String
+    price: Schema.Attribute.BigInteger
+    publishedAt: Schema.Attribute.DateTime
+    rating: Schema.Attribute.Integer
+    tittle: Schema.Attribute.String
+    town: Schema.Attribute.String
+    updatedAt: Schema.Attribute.DateTime
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
+  }
+}
+
 export interface ApiSummerTourSummerTour extends Struct.CollectionTypeSchema {
   collectionName: 'summer_tours'
   info: {
@@ -1034,6 +1066,7 @@ declare module '@strapi/strapi' {
       'api::hot-deal.hot-deal': ApiHotDealHotDeal
       'api::hotel.hotel': ApiHotelHotel
       'api::list-hotel.list-hotel': ApiListHotelListHotel
+      'api::result-search.result-search': ApiResultSearchResultSearch
       'api::summer-tour.summer-tour': ApiSummerTourSummerTour
       'api::winter-tour.winter-tour': ApiWinterTourWinterTour
       'plugin::content-releases.release': PluginContentReleasesRelease
