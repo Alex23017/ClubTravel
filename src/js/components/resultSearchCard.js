@@ -97,7 +97,14 @@ export function renderOffer() {
               <div class="result__img swiper-slide">
                 <img src="${imgUrl}" alt="card" />
               </div>
+        
             </div>
+          <div class='swiper-button-next swiper__result-next'>
+       
+          </div>
+          <div class='swiper-button-prev swiper__result-prev'>
+           
+          </div>
           </div>
 
           <div class="result__info">
@@ -197,3 +204,4 @@ btnOpen.forEach(btn => {
     btn.textContent = btn.classList.contains('active') ? 'Закрыть' : 'Открыть'
   })
 })
+

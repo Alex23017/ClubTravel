@@ -9,6 +9,7 @@
 .hotdeals__card {
   display: flex;
   flex-direction: column;
+  cursor: pointer;
   width: 100%;
   height: 100%;
   max-height: 350px;
@@ -205,27 +206,27 @@
   text-decoration: line-through;
   letter-spacing: 0.5px;
 }
+.hotdeals {
+  .swiper__hotdeals-next,
+  .swiper__hotdeals-prev {
+    top: 44.5%;
+    width: 48px;
+    height: 48px;
+    background: rgba(0, 128, 0, 0.2);
+    color: green;
+    border-radius: 50px;
+    padding: 16px;
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+}
 
 .hotdeals .swiper__hotdeals-next {
-  top: 10%;
   right: 10px;
-  top: 44.5%;
-  width: 48px;
-  height: 48px;
-  background: rgba(0, 128, 0, 0.2);
-  color: green;
-  border-radius: 50px;
-  padding: 16px;
 }
 .hotdeals .swiper__hotdeals-prev {
-  top: 44.5%;
   left: 10px;
-  width: 48px;
-  height: 48px;
-  background: rgba(0, 128, 0, 0.2);
-  color: green;
-  border-radius: 50px;
-  padding: 16px;
 }
 
 @include phone {

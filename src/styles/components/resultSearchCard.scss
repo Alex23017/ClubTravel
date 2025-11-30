@@ -99,6 +99,9 @@
   margin-inline-start: 8px;
   letter-spacing: 0.5px;
   white-space: nowrap;
+  &:hover {
+    transform: scale(0.9);
+  }
 }
 .result__items-link {
   font-size: 16px;
@@ -116,8 +119,28 @@
 }
 .result__proposition {
   &.active {
-    background-color: $colorBlue01;
+    position: relative;
     box-shadow: inherit;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 108.5%;
+      left: 0;
+      top: 0;
+      background-color: $colorBlue01;
+      z-index: -1;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    @media (max-width: 1325px) {
+      &::after {
+        position: static;
+      }
+    }
+    @media (max-width: 1325px) {
+      background-color: $colorBlue01;
+    }
   }
 }
 .result__beach-icon {
@@ -161,7 +184,7 @@
   letter-spacing: 0.6px;
 }
 .result__food {
-  margin-block-start: 20px;
+  margin-block-start: 19px;
 }
 .result__package {
   margin-block-start: 20px;
@@ -215,6 +238,10 @@
   border-radius: 6px;
   width: 160px;
   height: 42px;
+  &:hover {
+    transform: scale(0.9);
+  }
+
   &.active {
     background-color: $colorWhite;
     border: solid 1px $primaryColor;
@@ -239,6 +266,11 @@
     opacity: 0.1;
     margin-inline: 25px;
     width: 95.6%;
+    @media (max-width: 600px) {
+      left: 0px;
+      margin-inline: 0px;
+      width: 100%;
+    }
   }
 }
 .result__header {
@@ -304,9 +336,31 @@
   margin-block-start: 20px;
   padding-block-end: 20px;
   border-radius: 10px;
+  border-top-right-radius: 0px;
   &.open {
     display: block;
   }
+  @media (max-width: 1325px) {
+    border-radius: 10px;
+  }
+}
+
+.swiper__result-next,
+.swiper__result-prev {
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  background-color: $colorWhite02;
+  border-radius: 50%;
+  color: $colorWhite;
+}
+.mySwiperResult .swiper__result-prev {
+  top: 54.5%;
+  left: 2.2%;
+}
+.mySwiperResult .swiper__result-next {
+  top: 54.5%;
+  right: 2.2%;
 }
 .link__info {
   color: $colorWhite;
@@ -321,6 +375,9 @@
   align-items: center;
   justify-content: center;
   margin-inline-start: 40px;
+  &:hover {
+    transform: scale(0.9);
+  }
 }
 @media (max-width: 1365px) {
   .link__info {
@@ -530,6 +587,7 @@
   }
   .result__info-description {
     text-wrap: balance;
+    font-size: 10px;
   }
   .result__condition {
     margin-inline-start: 10px;
@@ -575,6 +633,7 @@
   }
   .link__info {
     margin-inline-start: 80px;
+    font-size: 10px;
   }
 }
 

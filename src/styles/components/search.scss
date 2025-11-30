@@ -59,6 +59,14 @@
   font-size: 14px;
   font-family: $Open;
 }
+.search__submit-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  &:hover {
+    transform: scale(0.9);
+  }
+}
 
 .search__title {
   font-size: 18px;

@@ -83,6 +83,10 @@
   font-weight: 400;
   letter-spacing: 0.5px;
   font-size: 14px;
+  cursor: pointer;
+  &:hover {
+    transform: scale(0.9);
+  }
 }
 .winter__town {
   display: flex;
@@ -102,6 +106,9 @@
   justify-content: center;
   gap: 8px;
   margin-block-end: 104px;
+  &:hover {
+    transform: scale(0.9);
+  }
 }
 
 .winter__all-link {

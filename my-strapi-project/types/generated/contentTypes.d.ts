@@ -432,6 +432,30 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   }
 }
 
+export interface ApiCalendarCalendar extends Struct.CollectionTypeSchema {
+  collectionName: 'calendars'
+  info: {
+    displayName: 'Calendar'
+    pluralName: 'calendars'
+    singularName: 'calendar'
+  }
+  options: {
+    draftAndPublish: true
+  }
+  attributes: {
+    createdAt: Schema.Attribute.DateTime
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
+    locale: Schema.Attribute.String & Schema.Attribute.Private
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::calendar.calendar'> & Schema.Attribute.Private
+    month: Schema.Attribute.String
+    price: Schema.Attribute.BigInteger
+    publishedAt: Schema.Attribute.DateTime
+    secondPrice: Schema.Attribute.BigInteger
+    updatedAt: Schema.Attribute.DateTime
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
+  }
+}
+
 export interface ApiCompanyNewCompanyNew extends Struct.CollectionTypeSchema {
   collectionName: 'company_news'
   info: {
@@ -1061,6 +1085,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission
       'admin::user': AdminUser
       'api::about.about': ApiAboutAbout
+      'api::calendar.calendar': ApiCalendarCalendar
       'api::company-new.company-new': ApiCompanyNewCompanyNew
       'api::global.global': ApiGlobalGlobal
       'api::hot-deal.hot-deal': ApiHotDealHotDeal

@@ -27,6 +27,10 @@
   border-radius: 50px;
   color: white;
   background-color: rgb(255, 255, 255, 0.2);
+
+  &:active {
+    transform: translateY(2px);
+  }
 }
 
 .slider__header .swiper-header-next {

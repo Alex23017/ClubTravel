@@ -15,7 +15,7 @@ function renderOffer() {
   const getStarsHtml = category => {
     let stars = ''
     for (let i = 0; i < category; i++) {
-      stars += '<svg class="hotdeals__category-star">< use xlink: href = "#icon-star-shiny" ></ ></svg > '
+      stars += '<svg class="hotdeals__category-star"><use xlink: href = "#icon-star-shiny" ></ ></svg > '
     }
     return stars
   }
