@@ -1,4 +1,4 @@
-@use "../base/variables" as *;
+@use '../base/variables' as *;
 
 #footer {
   display: flex;
@@ -187,7 +187,7 @@
   gap: 24px;
   &::before {
     position: absolute;
-    content: "";
+    content: '';
     width: 1px;
     height: 100%;
     background-color: $colorGrey;
@@ -258,4 +258,117 @@
 .footer__imdb-img {
   width: 100%;
   max-width: 332px;
+}
+.footer__mob {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  #footer {
+    padding-block-start: 41px;
+    padding-inline: 25px;
+  }
+  .footer__body {
+    flex-direction: column;
+    gap: 62px;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer__popular-title {
+    text-align: start;
+    font-size: 16px;
+    letter-spacing: -0.2px;
+  }
+  .footer__country__column p {
+    font-size: 18px;
+    letter-spacing: 0.4px;
+  }
+  .footer__country {
+    margin-block-start: 15px;
+    gap: 44px;
+  }
+  .footer__country__column--second {
+    margin-block-start: 2px;
+  }
+  .footer__contact-title,
+  .footer__contact-subtitle {
+    text-align: start;
+    font-size: 16px;
+  }
+  .footer__contact-subtitle {
+    margin-block-start: 16px;
+  }
+
+  .footer__contact > div {
+    text-transform: lowercase;
+    font-size: 16px;
+  }
+  .footer__contact > div img {
+    min-width: 24px;
+    min-height: 24px;
+  }
+  .footer__open {
+    margin-block-start: 10px;
+  }
+  .footer__number {
+    flex-direction: row;
+    width: 100%;
+    color: $colorBlack;
+    margin-block-start: 4px;
+    gap: 10px;
+  }
+
+  .footer__email {
+    margin-block-start: 14px;
+    color: $colorBlack;
+    letter-spacing: 0.4px;
+  }
+  .footer__phone p,
+  .footer__email {
+    text-decoration: none;
+  }
+  .footer__instagram-text {
+    font-size: 16px;
+    color: #ee5a36;
+    letter-spacing: 0.3px;
+  }
+  .footer__imdb {
+    margin-block-start: 32px;
+  }
+  .footer__instagram {
+    width: 100%;
+    justify-content: center;
+  }
+  .footer__imdb-img {
+    margin-block-start: 6px;
+    width: 332px;
+    height: 224px;
+    margin-inline-start: 9px;
+  }
+}
+@media (max-width: 360px) {
+  .footer__mob {
+    display: flex;
+    font-family: $Open;
+    font-size: 14px;
+    color: $colorGrey;
+    opacity: 0.5;
+    background-color: $colorGrey06;
+    margin-block-start: -22px;
+    text-align: center;
+    padding-block: 15px;
+    padding-inline: 30px;
+    justify-content: center;
+    margin-block-end: 40px;
+  }
+  .footer__mob-text {
+    margin-inline-start: 9px;
+    letter-spacing: 0.1px;
+  }
+  .footer__body {
+    align-items: start;
+  }
+  .footer__instagram {
+    justify-content: start;
+  }
 }

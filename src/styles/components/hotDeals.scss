@@ -65,6 +65,7 @@
   gap: 5px;
   margin-inline-start: -18px;
   margin-block-end: 37px;
+  margin-block-start: 1px;
 }
 
 .hotdeals__img {
@@ -263,3 +264,115 @@
     left: 35px !important;
   }
 }
+.hotDeals__footer {
+  display: flex;
+  justify-content: center;
+  font-family: $Open;
+  font-size: 16px;
+  gap: 8px;
+  letter-spacing: 0.7px;
+  margin-block-start: 50px;
+}
+
+@media (max-width: 600px) {
+  .hotdeals {
+    margin-block-start: 80px;
+    padding-inline-start: 12px;
+    padding-inline-end: 8px;
+  }
+  .hotdeals__img {
+    min-height: 250px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .hotdeals__header {
+    margin: 0;
+  }
+  .hotdeals__header-title {
+    flex-direction: column;
+  }
+  .hotdeals__clock {
+    min-width: 45px;
+  }
+  .hotdeals__header-title h2 {
+    font-size: 26px;
+    color: $colorOrange;
+    text-align: center;
+    margin-block-start: 3px;
+
+    line-height: 130%;
+  }
+  .hotdeals__clock {
+    margin-inline-start: -6px;
+  }
+  .hotdeals__subtitle {
+    margin-block-start: 9px;
+    margin-inline-start: 1px;
+    line-height: 140%;
+    padding-inline: 10px;
+  }
+  .mySwiperHotDeals {
+    margin-block-start: 37px;
+    height: auto;
+  }
+  .hotdeals__container {
+    margin-block-end: 40px;
+  }
+  .hotdeals__data {
+    top: 165px;
+    width: 141px;
+    left: 16px;
+  }
+  .hotdeals__data-text {
+    font-size: 14px;
+  }
+  .hotdeals__data-clock {
+    min-width: 16px;
+  }
+  .hotdeals__location {
+    width: 212px;
+    top: 205px;
+    left: 12px;
+  }
+  .hotdeals__data-title {
+    margin-block-start: 4px;
+    margin-inline-start: -1px;
+  }
+  .hotdeals__price {
+    margin-block-start: 2px;
+    margin-inline-start: -2px;
+  }
+  .hotdeals__price-old {
+    margin-block-start: 6px;
+    margin-inline-start: 2px;
+  }
+  .hotdeals__category {
+    margin-block-start: 6px;
+    margin-inline-end: 1px;
+  }
+  .hotdeals__icon-count {
+    margin-block-start: 2px;
+  }
+  .hotDeals__footer {
+    margin-block-start: 10px;
+    margin-inline-start: 14px;
+  }
+  .hotdeals {
+    .swiper__hotdeals-next,
+    .swiper__hotdeals-prev {
+      top: 53%;
+      width: 48px;
+      height: 48px;
+      padding: 16px;
+      background-color: $colorWhite;
+    }
+  }
+  .hotdeals .swiper__hotdeals-next {
+    right: 18px !important;
+  }
+  }
+  .hotdeals .swiper__hotdeals-prev {
+    left: 22px !important;
+  }
+

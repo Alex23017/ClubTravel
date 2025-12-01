@@ -30,6 +30,10 @@ function sliderInit() {
         el: '.swiper-pagination',
         clickable: true,
       },
+        navigation: {
+        nextEl: '.swiper__winter-next',
+        prevEl: '.swiper__winter-prev',
+      },
       breakpoints: {
         320: {
           slidesPerView: 1,

@@ -1,6 +1,7 @@
 @use '../base/variables' as *;
 
 .wintertours {
+  position: relative;
   padding-inline: 93px;
 }
 .winter__header {
@@ -110,6 +111,12 @@
     transform: scale(0.9);
   }
 }
+.wintertours {
+  .swiper__winter-next,
+  .swiper__winter-prev {
+    display: none;
+  }
+}
 
 .winter__all-link {
   color: $colorGrey;
@@ -134,5 +141,56 @@
 @include phone {
   .wintertours {
     padding-inline: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .wintertours {
+    margin-block-start: 84px;
+    padding-inline-start: 11px;
+    padding-inline-end: 8px;
+  }
+  .winter__header-title {
+    letter-spacing: 2px;
+    margin-inline-start: -15px;
+  }
+  .winter__header-subtitle {
+    margin-inline-start: -20px;
+  }
+  .winter__img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: relative;
+  }
+  .winter__town-text {
+    margin-inline-start: 2px;
+  }
+  .winter__all {
+    margin-block-end: 84px;
+  }
+  .winter__header-subtitle {
+    margin-inline-start: -25px;
+  }
+  .winter__link {
+    margin-block-start: -1px;
+  }
+
+  .wintertours {
+    .swiper__winter-next,
+    .swiper__winter-prev {
+      display: block;
+      position: absolute;
+      top: 42.6%;
+      width: 48px;
+      height: 48px;
+      padding: 18px;
+      right: 18px !important;
+      border-radius: 100%;
+      background-color: $colorWhite;
+      color: $colorGreen;
+    }
+    .swiper__winter-prev {
+      left: 22px !important;
+    }
   }
 }

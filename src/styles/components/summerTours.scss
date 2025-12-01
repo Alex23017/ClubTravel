@@ -1,6 +1,7 @@
 @use '../base/variables' as *;
 
 .summertours {
+  position: relative;
   padding-inline: 93px;
 }
 .summer__header {
@@ -61,6 +62,12 @@
   max-height: 20px;
   color: $colorGreen;
   opacity: 0.6;
+}
+.summertours {
+  .swiper__summer-next,
+  .swiper__summer-prev {
+    display: none;
+  }
 }
 .summer__footer-price {
   font-size: 16px;
@@ -140,5 +147,53 @@
 @include phone {
   .summertours {
     padding-inline: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .summertours {
+    padding-inline-start: 11px;
+    padding-inline-end: 9px;
+  }
+  .summer__header-subtitle {
+    margin-block-start: -2px;
+    margin-inline-start: -19px;
+  }
+  .summer__img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .summer__header {
+    margin-block-end: 39px;
+  }
+  .summer__town-text {
+    margin-inline-start: 2px;
+  }
+  .summer__all {
+    margin-block-end: 80px;
+    gap: 12px;
+    margin-inline-start: 5px;
+  }
+
+  .summertours {
+    .swiper__summer-next,
+    .swiper__summer-prev {
+      display: block;
+      position: absolute;
+      top: 42.6%;
+      width: 48px;
+      height: 48px;
+      padding: 18px;
+      right: 18px !important;
+      border-radius: 100%;
+      background-color: $colorWhite;
+      color: $colorGreen;
+    }
+    .swiper__summer-prev {
+      left: 22px !important;
+    }
+  }
+  .summer__all-link{
+    letter-spacing: 0.4px;
   }
 }

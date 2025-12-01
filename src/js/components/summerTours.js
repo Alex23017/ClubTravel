@@ -27,6 +27,10 @@ function sliderInit() {
         el: '.swiper-pagination',
         clickable: true,
       },
+      navigation: {
+        nextEl: '.swiper__summer-next',
+        prevEl: '.swiper__summer-prev',
+      },
       breakpoints: {
         320: {
           slidesPerView: 1,
@@ -60,7 +64,7 @@ export function renderOffer() {
       town: item.town,
       price: item.price,
     })
-    
+
     container.appendChild(offerCard)
   })
 }
