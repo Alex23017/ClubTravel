@@ -3,16 +3,19 @@
     @content;
   }
 }
+
 @mixin big {
-  @media (max-width: 1800px) {
+  @media (max-width: 1999px) {
     @content;
   }
 }
+
 @mixin desktop {
   @media (max-width: 1750px) {
     @content;
   }
 }
+
 @mixin laptop {
   @media (max-width: 1440px) {
     @content;
@@ -30,6 +33,7 @@
     @content;
   }
 }
+
 @mixin tablet-mini {
   @media (max-width: 768px) and (min-width: 601px) {
     @content;
@@ -44,21 +48,23 @@
 
 // COLOR
 $primaryColor: #f68521;
-$colorGrey: #666666;
+$colorGrey: #666;
 $colorGrey06: #6666662e;
 $colorBlue: #255296;
 $colorBlue01: #25529610;
-$colorGreen: #3E7739;
+$colorGreen: #3e7739;
 $colorGreen07: #3e77396e;
 $colorGreen02: #3e77392a;
 $colorOrange: #f15d28;
 $backgroundGrey: #f4f6fa;
-$colorWhite: #ffffff;
-$colorWhite02:rgba(255, 255, 255, 0.3);
-$colorBlack: #000000;
-$colorWhiteBorder:#e2e2e2;
-$colorCalendarNumber:#B4B4B4;
-$colorBackgrounNumber:#E2E2E2;
+$colorWhite: #fff;
+$colorCalendarNumber: #b4b4b4;
+
 // font
 $Open: 'Open Sans', sans-serif;
 $Roboto: 'Roboto', sans-serif;
+$colorBlack: black;
+$colorBackgrounNumber: #F1F1F1;
+$colorBackgrounBorder: #E2E2E2;
+$colorWhite02: white;
+$colorWhiteBorder: black;

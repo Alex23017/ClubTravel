@@ -1,0 +1,244 @@
+@use '../base/variables' as *;
+@use "../base/mixins" as *;
+
+body{
+    @include huge{
+        padding: 0 20%;
+    }
+
+    @include big{
+        padding: 0 15%;
+    }
+
+    @include desktop{
+        padding: 0 10%;
+    }
+
+    @include laptop{
+        padding: 0;
+    }
+
+    @include phone{
+        padding: 0;
+    }
+}
+
+.hero{
+    img{
+        width: 100%;
+
+        @include phone{
+            height: 360px;
+        }
+    }
+}
+
+.content{
+    padding: 0 111px 0 98px;
+
+    @include tablet{
+        padding: 0 35px;
+    }
+
+    @include phone{
+        padding: 0 15px 0 25px;
+    }
+
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+
+        @include tablet-mini{
+            flex-direction: column;
+        }
+
+        @include phone{
+            flex-direction: column;
+        }
+    }
+}
+
+.contact{
+    width: 30%;
+    margin-top: 20px;
+
+    @include table-big{
+        width: 50%;
+    }
+
+    @include tablet-mini{
+        width: 100%;
+    }
+
+    @include phone{
+        width: 100%;
+    }
+
+    &__title{
+        font-family: $Open;
+        font-size: 36px;
+        line-height: 49px;
+        font-weight: 700;
+        color: rgb(34, 34, 34, 1);
+
+        @include phone{
+            margin-top: 14px;
+        }
+    }
+
+    &__subtitle{
+        margin-top: 16px;
+        font-family: $Open;
+        font-size: 18px;
+        line-height: 25px;
+        font-weight: 400;
+        color: var(--text, rgb(34, 34, 34, 1));
+    }
+
+    &__description{
+        opacity: 0.5;
+        margin-top: 15px;
+        font-family: $Open;
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 400;
+        color: rgb(34, 34, 34, 1);
+    }
+
+    &__name{
+        margin-top: 33px;
+        font-family: $Open;
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 700;
+        color: var(--text, rgb(34, 34, 34, 1));
+    }
+
+    &__list{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 33px;
+    }
+
+    &__item{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-family: $Open;
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 400;
+        color: var(--text, rgb(34, 34, 34, 1));
+
+        svg{
+            width: 24px;
+            height: 24px;
+            color: $colorGreen;
+        }
+
+        a{
+            font-family: $Open;
+            font-size: 16px;
+            line-height: 22px;
+            font-weight: 400;
+            color: var(--blue, rgb(37, 82, 150, 1));
+        }
+
+    }
+
+    &__item-phone{
+        display: flex;
+        align-items: center;
+    }
+}
+
+.form{
+    width: 418px;
+    margin-top: -40px;
+    padding: 24px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background: rgb(255, 255, 255, 1);
+    box-shadow: 0 5px 10px 0 rgb(0, 0, 0, 0.1);
+
+    @include tablet-mini{
+        width: 100%;
+        margin-top: 32px;
+    }
+
+    @include phone{
+        width: 100%;
+        height: 463px;
+        margin-top: 35px;
+        padding: 24px 18px;
+    }
+
+    &__label{
+        margin-bottom: 8px;
+        margin-left: 15px;
+        font-family: $Open;
+        font-size: 13px;
+        line-height: 100%;
+        font-weight: 400;
+        color: rgb(136, 136, 136, 1);
+
+        @include phone{
+                    margin-bottom: 8px;
+        margin-left: 11px;
+        }
+    }
+
+    &__input{
+        width: 100%;
+        height: 42px;
+        margin-bottom: 16px;
+        border: 1px solid rgb(226, 226, 226, 1);
+        border-radius: 6px;
+        box-sizing: border-box;
+        background: rgb(255, 255, 255, 1);
+    }
+
+    &__textarea{
+        width: 100%;
+        height: 83px;
+        border: 1px solid rgb(226, 226, 226, 1);
+        border-radius: 6px;
+        box-sizing: border-box;
+        background: rgb(255, 255, 255, 1);
+    }
+
+    &__submit{
+        width: 100%;
+        height: 42px;
+        margin-top: 26px;
+        border-radius: 6px;
+        font-family: $Open;
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: 0.6px;
+        font-weight: 400;
+        color: rgb(255, 255, 255, 1);
+        text-transform: uppercase;
+        background: var(--primary, rgb(246, 133, 33, 1));
+    }
+}
+
+.map{
+    margin-top: 71px;
+    margin-bottom: 94px;
+
+    @include phone{
+        margin-top: 30px;
+        margin-bottom: 60px;
+    }
+
+    iframe{
+        width: 100%;
+        height: 395px;
+
+        @include phone{
+            height: 192px;
+        }
+    }
+}
