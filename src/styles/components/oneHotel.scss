@@ -34,7 +34,7 @@
     display: flex;
     align-items: center;
     gap: 11px;
-    font-family: "Open Sans";
+    font-family: $Open;
     font-size: 26px;
     line-height: 35px;
     font-weight: 700;
@@ -68,12 +68,13 @@
     display: flex;
     gap: 4px;
     margin-top: -11px;
-  
   }
 
   &__card-star{
       width: 18px;
       height: 18px;
+      color:$orange;
+
   }
 
   
@@ -83,7 +84,7 @@
     align-items: center;
     gap: 9px;
     margin-top: 4px;
-    font-family: "Open Sans";
+    font-family: $Open;
     font-size: 14px;
     line-height: 19px;
     font-weight: 400;
@@ -282,14 +283,14 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 24px;
-    font-family: "Open Sans";
+    font-family: $Open;
     font-size: 20px;
     line-height: 27px;
     font-weight: 400;
     color: rgb(34, 34, 34, 1);
     
     button{
-      font-family: "Open Sans";
+      font-family: $Open;
       font-size: 14px;
       line-height: 19px;
       font-weight: 400;
@@ -309,7 +310,7 @@
     }
 
     span{
-    font-family: "Open Sans";
+    font-family: $Open;
     font-size: 16px;
     line-height: 22px;
     font-weight: 400;
@@ -330,7 +331,7 @@
     }
 
     span{
-    font-family: "Open Sans";
+    font-family: $Open;
     font-size: 16px;
     line-height: 22px;
     font-weight: 400;
@@ -351,7 +352,7 @@
     }
 
     span{
-      font-family: "Open Sans";
+      font-family: $Open;
       font-size: 16px;
       line-height: 22px;
       font-weight: 400;
@@ -372,7 +373,7 @@
     }
 
     span{
-    font-family: "Open Sans";
+    font-family: $Open;
     font-size: 16px;
     line-height: 22px;
     font-weight: 400;
@@ -382,7 +383,7 @@
 
   &__offer-price{
     margin-top: 25px;
-    font-family: "Open Sans";
+    font-family: $Open;
     font-size: 24px;
     line-height: 33px;
     font-weight: 400;
@@ -390,7 +391,7 @@
 
   &__offer-description{
     margin-top: 8px;
-    font-family: "Open Sans";
+    font-family: $Open;
     font-size: 12px;
     line-height: 16px;
     font-weight: 400;
@@ -414,7 +415,7 @@
     border: 1px solid rgb(226, 226, 226, 1);
     border-radius: 6px;
     box-sizing: border-box;
-    font-family: "Open Sans";
+    font-family: $Open;
     font-size: 12px;
     line-height: 16px;
     font-weight: 400;
@@ -427,7 +428,7 @@
   &__offer-total{
     display: flex;
     margin-top: 31px;
-    font-family: "Open Sans";
+    font-family: $Open;
     font-size: 16px;
     line-height: 33px;
     font-weight: 400;
@@ -451,7 +452,7 @@
     margin-top: 11px;
     padding: 12px 80px;
     border-radius: 6px;
-    font-family: "Open Sans";
+    font-family: $Open;
     font-size: 14px;
     line-height: 19px;
     letter-spacing: 0.6px;
@@ -470,7 +471,7 @@
   &__offer-policy {
   display: flex;
   margin-top: 17px;
-  font-family: "Open Sans";
+  font-family: $Open;
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
@@ -493,7 +494,7 @@
   }
 
   &__title{
-    font-family: "Open Sans";
+    font-family: $Open;
     font-size: 18px;
     line-height: 25px;
     font-weight: 400;
@@ -502,7 +503,7 @@
 
   &__description{
     margin-top: 16px;
-    font-family: "Open Sans";
+    font-family: $Open;
     font-size: 14px;
     line-height: 150%;
     font-weight: 400;
@@ -537,7 +538,7 @@
   }
 
   &__info-title{
-    font-family: "Open Sans";
+    font-family: $Open;
     font-size: 18px;
     line-height: 25px;
     font-weight: 400;
@@ -546,7 +547,7 @@
 
   &__info-text{
     margin-top: 16px;
-    font-family: "Open Sans";
+    font-family: $Open;
     font-size: 14px;
     line-height: 19px;
     font-weight: 400;
@@ -662,7 +663,7 @@
   }
 
   &__advantages-title{
-    font-family: "Open Sans";
+    font-family: $Open;
     font-size: 18px;
     line-height: 25px;
     font-weight: 400;
@@ -676,7 +677,7 @@
 
 
   &__contact-title{
-    font-family: "Open Sans";
+    font-family: $Open;
     font-size: 18px;
     line-height: 25px;
     font-weight: 400;
@@ -685,7 +686,7 @@
 
   &__contact-name{
     margin-top: 18px;
-    font-family: "Open Sans";
+    font-family: $Open;
     font-size: 16px;
     line-height: 25px;
     font-weight: 400;
@@ -709,7 +710,7 @@
     align-items: center;
     gap: 12px;
     margin-top: 16px;
-    font-family: "Open Sans";
+    font-family: $Open;
     font-size: 16px;
     line-height: 22px;
     font-weight: 400;
@@ -740,7 +741,7 @@
   }
 
   label{
-font-family: "Open Sans";
+font-family: $Open;
 font-size: 16px;
 line-height: 22px;
 font-weight: 400;
@@ -782,7 +783,7 @@ font-weight: 400;
   position: relative;
   z-index: 2;
   width: 100%;
-    font-family: "Open Sans";
+    font-family: $Open;
     font-size: 16px;
     line-height: 22px;
     font-weight: 400;

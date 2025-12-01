@@ -7,11 +7,13 @@ import { hulakPlugins } from 'vite-plugin-hulak-tools'
 
 const partialDirs = [
   path.resolve(__dirname, 'src/html/components/base'),
-  path.resolve(__dirname, 'src/html/components/base/footer'),
+  path.resolve(__dirname, 'src/html/components/contacts'),
   path.resolve(__dirname, 'src/html/components/hotdeals'),
   path.resolve(__dirname, 'src/html/components/home'),
   path.resolve(__dirname, 'src/html/components/tourRequest'),
   path.resolve(__dirname, 'src/html/components/oneHotel'),
+  path.resolve(__dirname, 'src/html/components/authorization'),
+
 ]
 
 export default defineConfig({

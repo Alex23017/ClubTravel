@@ -1,47 +1,47 @@
 @mixin huge {
-  @media (width >= 2000px) {
+  @media (min-width: 2000px) {
     @content;
   }
 }
 
 @mixin big {
-  @media (width <= 1800px) {
+  @media (max-width: 1999px) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media (width <= 1750px) {
+  @media (max-width: 1750px) {
     @content;
   }
 }
 
 @mixin laptop {
-  @media (width <= 1440px) {
-    @content;
-  }
+    @media (max-width: 1440px) {
+        @content;
+    }
 }
 
 @mixin table-big {
-  @media (width <= 1200px) {
-    @content;
-  }
+    @media (max-width: 1200px) {
+        @content;
+    }
 }
 
 @mixin tablet {
-  @media (width <= 1000px) and (width >= 769px) {
+  @media (max-width: 1000px) and (min-width: 769px) {
     @content;
   }
 }
 
 @mixin tablet-mini {
-  @media (width <= 768px) and (width >= 601px) {
-    @content;
-  }
+    @media (max-width: 768px) and (min-width: 601px) {
+        @content;
+    }
 }
 
 @mixin phone {
-  @media (width <= 600px) {
+  @media (max-width: 600px) {
     @content;
   }
 }
@@ -54,6 +54,8 @@ $colorGreen: #3E7739;
 $colorOrange: #f15d28;
 $backgroundGrey: #f4f6fa;
 $colorWhite: #fff;
+$orange: rgb(245, 194, 19, 1);
+$orange-bold: rgb(246, 133, 33, 1);
 // font
 $Open: 'Open Sans', sans-serif;
 $Roboto: 'Roboto', sans-serif;
