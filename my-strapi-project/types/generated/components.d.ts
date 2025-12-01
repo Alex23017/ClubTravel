@@ -1,5 +1,62 @@
 import type { Schema, Struct } from '@strapi/strapi'
 
+export interface SharedHotdealslist extends Struct.ComponentSchema {
+  collectionName: 'components_shared_hotdealslists'
+  info: {
+    displayName: 'hotdealslist'
+  }
+  attributes: {
+    category: Schema.Attribute.BigInteger
+    food: Schema.Attribute.String
+    hotel: Schema.Attribute.String
+    price: Schema.Attribute.BigInteger
+    tour: Schema.Attribute.String
+  }
+}
+
+export interface SharedHotelSelect extends Struct.ComponentSchema {
+  collectionName: 'components_shared_hotel_selects'
+  info: {
+    displayName: 'hotelSelect'
+  }
+  attributes: {
+    category: Schema.Attribute.Integer
+    food: Schema.Attribute.String
+    hotel: Schema.Attribute.String
+    price: Schema.Attribute.BigInteger
+    tour: Schema.Attribute.String
+  }
+}
+
+export interface SharedHotelsOpen extends Struct.ComponentSchema {
+  collectionName: 'components_shared_hotels_opens'
+  info: {
+    displayName: 'hotelsOpen'
+  }
+  attributes: {
+    category: Schema.Attribute.Integer
+    food: Schema.Attribute.String
+    hotel: Schema.Attribute.String
+    openListSelect: Schema.Attribute.Component<'shared.hotel-select', true>
+    price: Schema.Attribute.BigInteger
+    tour: Schema.Attribute.String
+  }
+}
+
+export interface SharedHotopenlist extends Struct.ComponentSchema {
+  collectionName: 'components_shared_hotopenlists'
+  info: {
+    displayName: 'Hotopenlist'
+  }
+  attributes: {
+    category: Schema.Attribute.BigInteger
+    food: Schema.Attribute.String
+    hotel: Schema.Attribute.String
+    price: Schema.Attribute.BigInteger
+    tour: Schema.Attribute.String
+  }
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media'
   info: {
@@ -109,6 +166,10 @@ export interface SharedSubServices extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.hotdealslist': SharedHotdealslist
+      'shared.hotel-select': SharedHotelSelect
+      'shared.hotels-open': SharedHotelsOpen
+      'shared.hotopenlist': SharedHotopenlist
       'shared.media': SharedMedia
       'shared.position': SharedPosition
       'shared.quote': SharedQuote
