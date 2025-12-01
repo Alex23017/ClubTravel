@@ -103,6 +103,9 @@
     transform: scale(0.9);
   }
 }
+.clock__search {
+  display: none;
+}
 .result__items-link {
   font-size: 16px;
   color: $colorGrey;
