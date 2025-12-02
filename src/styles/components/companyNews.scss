@@ -5,7 +5,9 @@
   padding-inline-start: 93px;
   padding-inline-end: 81px;
 }
-
+.company__subtitle{
+  display: none;
+}
 .news__container {
   margin-block-end: 41px;
 }
@@ -294,5 +296,8 @@
   }
   .news__img {
     height: 250px;
+  }
+  .company__subtitle{
+    display: flex;
   }
 }

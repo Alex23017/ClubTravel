@@ -511,5 +511,9 @@
     top: -31px;
     left: -14px;
   }
-
+  .slider__img{
+    height: 186px;
+    object-fit: cover;
+    margin-block-end: 4px;
+  }
 }

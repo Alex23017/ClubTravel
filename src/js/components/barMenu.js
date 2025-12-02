@@ -92,6 +92,7 @@ setupDropdown('dropdownBarPrice')
 setupDropdown('dropdownBarLow')
 
 const btnOpenCalendar = document.querySelector('.bar__calendar')
+const btnOpenCalendarMob = document.querySelector('.bar__calendar--mob')
 const calendarContainer = document.querySelector('.calendar__container')
 const barSort = document.querySelector('.bar__sort')
 const barCalendarText = document.querySelector('.bar__calendar-text')
@@ -102,6 +103,7 @@ const arrowPrev = document.querySelector('.swiper__calendar-prev')
 const calendarTitle = document.querySelector('.calendar__container-title')
 const addOpenArray = [
   btnOpenCalendar,
+  btnOpenCalendarMob,
   calendarContainer,
   barSort,
   barCalendarText,
@@ -110,10 +112,10 @@ const addOpenArray = [
   arrowNext,
   arrowPrev,
   calendarTitle,
-]
+].filter(Boolean)
 
-function addOpen(array) {
-  btnOpenCalendar.addEventListener('click', () => {
+function addOpen(array, element) {
+  element.addEventListener('click', () => {
     array.forEach(item => {
       item.classList.toggle('open')
     })
@@ -121,4 +123,5 @@ function addOpen(array) {
 }
 renderOffer()
 sliderInit()
-addOpen(addOpenArray)
+addOpen(addOpenArray, btnOpenCalendar)
+addOpen(addOpenArray, btnOpenCalendarMob)
