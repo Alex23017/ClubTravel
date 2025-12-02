@@ -59,9 +59,8 @@
   position: relative;
   font-family: $Open;
   font-size: 14px;
-  color: colorCalendarNumber;
-  opacity: 0.2;
-  border: 0.5px solid $colorGrey;
+  color: $colorCalendarNumber;
+  border: 0.5px solid $colorBackgrounBorder;
   background-color: $colorBackgrounNumber;
 }
 
@@ -162,7 +161,7 @@
       padding: 12px;
       width: 36px;
       height: 36px;
-      top: 105%;
+      top: 85%;
     }
   }
 }

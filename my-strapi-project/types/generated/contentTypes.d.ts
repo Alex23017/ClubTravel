@@ -583,11 +583,14 @@ export interface ApiListHotelListHotel extends Struct.CollectionTypeSchema {
     data: Schema.Attribute.String
     duration: Schema.Attribute.Integer
     from: Schema.Attribute.String
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>
     locale: Schema.Attribute.String & Schema.Attribute.Private
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::list-hotel.list-hotel'> & Schema.Attribute.Private
     openList: Schema.Attribute.Component<'shared.hotels-open', true>
     price: Schema.Attribute.BigInteger
+    priceCount: Schema.Attribute.String
     publishedAt: Schema.Attribute.DateTime
+    title: Schema.Attribute.String
     to: Schema.Attribute.String
     updatedAt: Schema.Attribute.DateTime
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private

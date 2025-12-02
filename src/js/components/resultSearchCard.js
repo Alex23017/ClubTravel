@@ -57,25 +57,29 @@ export function renderOffer() {
         <div class="result__header open__header">
           <div class="result__header-data">
 
+            <div class="data__title"><p>Дата</p></div>
             <div class="data__info"><p>${open.dataOpen}</p></div>
           </div>
+
+      
           <div class="result__header-duration">
-       
+            <div class="duration__title"><p>Период</p></div>
             <div class="duration__info"><p>${open.durationOpen}</p></div>
           </div>
           <div class="result__header-food">
-           
+                <div class="food__title"><p>Питание</p></div>
             <div class="food__info"><p>${open.foodOpen}</p></div>
           </div>
           <div class="result__header-type">
-           
+              <div class="type__title"><p>Тип номера</p></div>
             <div class="type__info"><p>${open.typeOpen}</p></div>
           </div>
           <div class="result__header-place">
-          
+              <div class="place__title"><p>Мест в самолёте</p></div>
             <div class="place__info"><p>${open.placeOpen}</p></div>
           </div>
           <div class="result__header-price">
+           <div class="price__title"><p>Стоимость</p></div>
             <div class="price__info"><p>${open.priceOpen}€/чел</p></div>
           </div>
          <div class="link__info"><a href="">Выбрать</a></div>
@@ -109,6 +113,42 @@ export function renderOffer() {
 
           <div class="result__info">
             <h2 class="result__info-title">${item.tittle}</h2>
+
+            <div class="result__condition result__condition--mob">
+            <div class="result__rating"><svg class="result__star"><use xlink:href="#icon-star-shiny"></use></svg><svg class="result__star"><use xlink:href="#icon-star-shiny"></use></svg><svg class="result__star"><use xlink:href="#icon-star-shiny"></use></svg></div>
+            <div class="result__condition-body">
+            <div class="result__duration">
+            <svg class="result_duration-icon"><use xlink:href="#icon-iconResultClock">
+            </use>
+            </svg>
+            <p>7 ночей</p>
+            </div>
+            <div class="result__package">
+               <svg class="result_duration-icon">
+            <use xlink:href="#icon-iconResultHome">
+            </use>
+              </svg>
+               <p>Standard</p>
+          
+            </div>
+              <div class="result__food">
+          
+            <svg class="result_duration-icon">
+            <use xlink:href="#icon-iconResultSpoon">
+            </use>
+            </svg>
+               <p>Завтрак</p>
+            </div>
+            <div class="result__beach">
+                    <svg class="result_duration-icon">
+            <use xlink:href="#icon-iconResultSun">
+            </use>
+              </svg>
+              <p>Пляж: песок, &lt;50 m</p>
+            </div>
+            </div>
+          </div>
+
             <div class="result__town">
               <svg class="result__icon-location">
                 <use xlink:href="#icon-hotLocation"></use>
@@ -174,7 +214,33 @@ export function renderOffer() {
         <p class="result__header-type">Тип номера</p>
         <p class="result__header-place">Мест в самолёте</p>
         <p class="result__header-price">Стоимость</p>
-
+        <h4>Сортировать:</h4>
+          <div class="dropdown__body dropdown__body--mob">
+              <div class="bar__dropdown bar__dropdown--price list__dropdown--price">
+                <div class="dropdown">
+                  <button class="barprice__button" type="button" id="dropdownListPrice" data-bs-toggle="dropdown" aria-expanded="false" fdprocessedid="mcvh0h">
+                    Цена
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownListPrice">
+                    <li class="dropdown-item">Цена</li>
+                    <li class="dropdown-item">Категория</li>
+                  </ul>
+                  <img class="search__arrow" src="/img/search/arrow.png" alt="arrow">
+                </div>
+              </div>
+              <div class="bar__dropdown bar__dropdown--low list__dropdown--low">
+                <div class="dropdown">
+                  <button class="barprice__button" type="button" id="dropdownListLow" data-bs-toggle="dropdown" aria-expanded="false" fdprocessedid="y1sqjf">
+                    Возрастающий
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownListLow">
+                    <li class="dropdown-item">Возрастающий</li>
+                    <li class="dropdown-item">Убивающий</li>
+                  </ul>
+                  <img class="search__arrow" src="/img/search/arrow.png" alt="arrow">
+                </div>
+              </div>
+            </div>
 
         </div>
           ${openResult}
@@ -197,11 +263,23 @@ btnOpen.forEach(btn => {
     const card = btn.closest('.result__card')
     const container = card.querySelector('.open__container')
     const resultProposition = card.querySelector('.result__proposition ')
-
     btn.classList.toggle('active')
+    card.classList.toggle('active')
     container.classList.toggle('open')
     resultProposition.classList.toggle('active')
     btn.textContent = btn.classList.contains('active') ? 'Закрыть' : 'Открыть'
   })
 })
 
+document.addEventListener('click', e => {
+  const item = e.target.closest('.dropdown-item')
+  if (!item) return
+
+  const menu = item.closest('.dropdown-menu')
+  if (!menu) return
+
+  const btn = menu.parentElement.querySelector('button')
+  if (!btn) return
+
+  btn.textContent = item.textContent.trim()
+})

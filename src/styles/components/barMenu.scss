@@ -17,6 +17,14 @@
     }
   }
 }
+.bar__sort .bar__calendar--mob {
+  display: none;
+}
+
+.bar__body {
+  gap: 29px;
+  justify-content: flex-start;
+}
 
 .bar,
 .bar__calendar,
@@ -24,11 +32,13 @@
   display: flex;
   align-items: center;
 }
+.dropdown__body {
+  display: flex;
+}
 .bar__title {
   font-family: $Open;
   font-size: 24px;
   letter-spacing: 0.6px;
-  text-wrap: balance;
 }
 .bar__calendar {
   position: relative;
@@ -51,14 +61,13 @@
     margin-inline-start: 0px;
     &::before {
       position: absolute;
-      content: "";
+      content: '';
       background-color: $colorGrey;
       width: 1px;
       height: 90%;
       left: -8px;
       opacity: 0.4;
       top: 0;
-
     }
 
     @media (max-width: 800px) {
@@ -103,7 +112,6 @@
 .bar-wrapper,
 .bar__body {
   width: 100%;
-
 }
 .bar__hotel {
   display: none;
@@ -278,10 +286,7 @@
   .bar__sort-text {
     font-size: 12px;
   }
-  .bar__title {
-    font-size: 20px;
-    max-width: 150px;
-  }
+
   .bar__dropdown--low {
     width: 140px;
   }
@@ -295,10 +300,6 @@
 }
 
 @media (max-width: 1200px) {
-  .bar__title,
-  .bar__calendar-text--open {
-    font-size: 16px;
-  }
   .bar-wrapper {
     flex-direction: column;
     gap: 40px;
@@ -308,19 +309,108 @@
   }
 }
 @media (max-width: 600px) {
-  .bar__body {
-    justify-content: center;
-    gap: 20px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  .bar {
+    padding-inline-start: 23px;
+    padding-inline-end: 17px;
+  }
+  .bar-wrapper .bar__body {
+    margin-block-start: -2px;
+    margin-block-end: 6px;
+    justify-content: flex-start;
+  }
+  .bar__body .bar__title {
+    width: 100%;
+    max-width: 260px;
+    font-size: 20px;
+    line-height: 130%;
+  }
+  .bar {
+    margin-block-start: 140px;
   }
   .bar__title {
-    max-width: 100%;
+    font-size: 20px;
+    text-align: start;
+  }
+  .bar__calendar {
+    display: none;
+  }
+
+  .bar__sort {
+    flex-direction: column;
+  }
+  .bar__sort {
+    width: 100%;
+    align-items: start;
+    gap: 10px;
+    margin-inline-start: 0px;
+  }
+  .dropdown__body {
+    width: 100%;
+    justify-content: center;
+  }
+  .bar-wrapper {
+    gap: 10px;
+  }
+  .bar__sort-text {
+    font-size: 14px;
+  }
+  .barprice__button {
+    font-size: 16px;
+  }
+  .bar__dropdown--price {
+    width: 149px;
+    height: 42px;
+    margin-inline-start: 0px;
+  }
+  .bar__dropdown--low {
+    width: 161px;
+  }
+  .bar__dropdown {
+    padding-inline-start: 16px;
+  }
+  .barprice__button {
+    max-width: 100px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-block-start: 3px;
+  }
+  .bar__dropdown .search__arrow {
+    top: -2px;
+  }
+  .bar__sort .bar__calendar--mob {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+    margin-block-start: 8px;
+    height: 42px;
+    gap: 10px;
+    .bar__calendar-text {
+      font-size: 14px;
+      margin-inline-start: 2px;
+    }
+    .bar__calendar-icon {
+      margin-inline-start: 4px;
+    }
+  }
+  .bar__sort.open {
+    display: flex;
+  }
+  .bar__calendar--mob.open {
+    border: 1px solid $colorWhiteBorder;
+    &::before {
+      background: none;
+    }
+  }
+  .bar__hotel.open {
+    display: none;
   }
 }
-.bar__body {
-  gap: 29px;
-  justify-content: flex-start;
+@media (max-width: 340px) {
+  .barprice__button {
+    max-width: 70px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-block-start: 3px;
+  }
 }

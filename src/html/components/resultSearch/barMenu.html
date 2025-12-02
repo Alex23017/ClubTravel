@@ -9,6 +9,7 @@
         <p class="bar__calendar-text">Цены на календаре</p>
         <p class="bar__calendar-text--open">Сравнение цен на календаре</p>
       </div>
+
       <div class="bar__hotel">
         <svg class="bar__calendar-icon">
           <use xlink:href="#icon-iconList"></use>
@@ -18,41 +19,50 @@
     </div>
     <div class="bar__sort">
       <p class=" bar__sort-text">Сортировать:</p>
-      <div class="bar__dropdown bar__dropdown--price">
-        <div class="dropdown">
-          <button
-            class="barprice__button"
-            type="button"
-            id="dropdownBarPrice"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Цена
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownBarPrice">
-            <li class="dropdown-item">Цена</li>
-            <li class="dropdown-item">Категория</li>
-          </ul>
-          <img class="search__arrow" src="/img/search/arrow.png" alt="arrow" />
+      <div class="dropdown__body">
+        <div class="bar__dropdown bar__dropdown--price">
+          <div class="dropdown">
+            <button
+              class="barprice__button"
+              type="button"
+              id="dropdownBarPrice"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Цена
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownBarPrice">
+              <li class="dropdown-item">Цена</li>
+              <li class="dropdown-item">Категория</li>
+            </ul>
+            <img class="search__arrow" src="/img/search/arrow.png" alt="arrow" />
+          </div>
+        </div>
+        <div class="bar__dropdown bar__dropdown--low">
+          <div class="dropdown">
+            <button
+              class="barprice__button"
+              type="button"
+              id="dropdownBarLow"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Возрастающий
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownBarLow">
+              <li class="dropdown-item">Возрастающий</li>
+              <li class="dropdown-item">Убивающий</li>
+            </ul>
+            <img class="search__arrow" src="/img/search/arrow.png" alt="arrow" />
+          </div>
         </div>
       </div>
-      <div class="bar__dropdown bar__dropdown--low">
-        <div class="dropdown">
-          <button
-            class="barprice__button"
-            type="button"
-            id="dropdownBarLow"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Возрастающий
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownBarLow">
-            <li class="dropdown-item">Возрастающий</li>
-            <li class="dropdown-item">Убивающий</li>
-          </ul>
-          <img class="search__arrow" src="/img/search/arrow.png" alt="arrow" />
-        </div>
+      <div class="bar__calendar bar__calendar--mob">
+        <svg class="bar__calendar-icon">
+          <use xlink:href="#icon-barCalendar"></use>
+        </svg>
+        <p class="bar__calendar-text">Цены на календаре</p>
+        <p class="bar__calendar-text--open">Сравнение цен на календаре</p>
       </div>
     </div>
   </div>

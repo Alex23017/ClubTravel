@@ -1,12 +1,14 @@
-import { getListHotel } from '../api/service/listHotel'
+import { getListHotel, getListHotelMob } from '../api/service/listHotel'
 if (document.querySelector('[data-component="listHotDeals"]')) {
   import('/styles/components/listHotDeals.scss')
   import('/styles/base/reset.scss')
 }
 import '/styles/components/listHotDeals.scss'
 import '/styles/base/reset.scss'
+import { API_VARIABLES } from '../api/variables.js'
 
 const data = await getListHotel()
+const dataMob = await getListHotelMob()
 
 function renderOffer() {
   const container = document.querySelector('.hotdeals__render')
@@ -73,6 +75,8 @@ function renderOffer() {
 
     const cardHtml = `
       <div class="list__container">
+      <div class="list__img">
+      </div>
         <div class="list__body">
           <p class="list__data">${item.data}</p>
           <p class="list__from">${item.from}</p>
@@ -113,7 +117,28 @@ function renderOffer() {
   })
 }
 
+function renderOfferMob() {
+  const container = document.querySelector('.hotdeals__render-mob')
+  if (!container) return
+
+  dataMob.forEach(item => {
+    const imgUrl = API_VARIABLES.BASE_URL + item.img[0].url
+    const cardHtml = `
+      <div class="list__container">
+      <img src=${imgUrl} alt="card">
+      <p>${item.title}</p>
+      <svg class="hotdeals__icon-price">
+    <use xlink:href=${item.priceCount}></use>
+    </svg>
+      </div>
+    `
+
+    container.insertAdjacentHTML('beforeend', cardHtml)
+  })
+}
+
 renderOffer()
+renderOfferMob()
 
 const listContainer = document.querySelectorAll('.list__container')
 const listButton = document.querySelectorAll('.list__button')
