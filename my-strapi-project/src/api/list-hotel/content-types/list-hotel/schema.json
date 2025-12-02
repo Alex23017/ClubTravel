@@ -30,6 +30,22 @@
       "type": "component",
       "component": "shared.hotels-open",
       "repeatable": true
+    },
+    "img": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "priceCount": {
+      "type": "string"
     }
   }
 }

@@ -6,10 +6,16 @@
     <title>HotDeals</title>
     <link rel="stylesheet" href="../../styles/base/main.scss" />
     <link rel="stylesheet" href="../../styles/base/reset.scss" />
+    <link rel="stylesheet" href="../../styles/pages/hotdeals.scss" />
   </head>
   <body>
-    <div class="wrapper">
-      {{>header}} {{>imgHeader}} {{>search title ="горящие предложения"}}
+    <div class="wrapper hotdeals-wrapper">
+      {{>header}} {{>imgHeader}}
+      {{>search title ="горящие предложения"}}
+      <h2 class="hotdeals__title-mob">
+        ВЫГОДНЫЕ <br />
+        ПРЕДЛОЖЕНИЯ
+      </h2>
       {{>listHotDeals}}
 
       {{>consultation}}
@@ -18,3 +24,4 @@
     <script type="module" src="/js/main.js"></script>
   </body>
 </html>
+
