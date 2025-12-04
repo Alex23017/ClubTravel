@@ -659,7 +659,10 @@
 @media (max-width: 1310px) {
   .link__info {
     width: 100%;
-    margin-inline-start: 120px;
+    margin-inline-start: 100px;
+  }
+  .result__header-place {
+    display: none;
   }
 }
 @media (max-width: 940px) {
@@ -671,9 +674,6 @@
   .link__info {
     width: 100%;
     margin-inline-start: 30px;
-  }
-  .result__header-place {
-    display: none;
   }
 }
 @media (max-width: 650px) {
@@ -891,14 +891,13 @@
       margin-block-start: 15px;
     }
     #footer {
-     padding-inline-start: 23px;
-     padding-block-end: 81px;
-    
+      padding-inline-start: 23px;
+      padding-block-end: 81px;
     }
-    .footer__location{
+    .footer__location {
       margin-block-start: 14px;
     }
-    .footer__phone{
+    .footer__phone {
       margin-block-start: 11px;
     }
   }

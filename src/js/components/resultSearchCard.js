@@ -35,6 +35,7 @@ function sliderInit() {
 }
 const data = await getResultSearch()
 
+
 export function renderOffer() {
   const container = document.querySelector('.result__container')
   if (!container) return

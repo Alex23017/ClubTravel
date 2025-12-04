@@ -2,17 +2,18 @@ if (document.querySelector('[data-component="search"]')) {
   import('/styles/components/search.scss')
   import('/styles/base/reset.scss')
 }
-
-import flatpickr from 'flatpickr'
 import 'flatpickr/dist/flatpickr.min.css'
 import { Russian } from 'flatpickr/dist/l10n/ru.js'
+import flatpickr from 'flatpickr'
 
-const svgRadio = `<svg class="tour__img" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"
+const svgRadio = `
+        <svg class="tour__img" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"
           fill="none">
         <path d="M6.66667 0C2.99067 0 0 2.99067 0 6.66667C0 10.3427 2.99067 13.3333
           6.66667 13.3333C10.3427 13.3333 13.3333 10.3427 13.3333 6.66667C13.3333 2.99067 10.3427 0 6.66667 0ZM5.334 9.60867L2.85867 7.13867L3.8 6.19467L5.33267
           7.72467L8.862 4.19533L9.80467 5.138L5.334 9.60867Z" fill="currentColor"/>
-      </svg>`
+      </svg>
+      `
 
 const regions = [
   { id: 'Albena', label: 'Албена', name: 'region', value: 1 },
@@ -39,12 +40,12 @@ const flyFrom = [
   { id: 'Vilnos', label: 'Вильнюс', name: 'flyFrom', value: 3 },
 ]
 const foodTour = [
-  { id: 'none', label: 'Без питания', name: 'foodTour', value: 1 },
-  { id: '1', label: 'Завтрак', name: 'foodTour', value: 2 },
-  { id: '1+1', label: 'Затрак и ужин', name: 'foodTour', value: 3 },
-  { id: '1+1+1', label: 'Завтрак, обед, ужин', name: 'foodTour', value: 4 },
-  { id: 'all', label: 'Всё включено', name: 'foodTour', value: 5 },
-  { id: 'ultraAll', label: 'Ультра: всё включено', name: 'foodTour', value: 6 },
+  { id: 'none', label: 'Без питания', name: 'foodTour', value: 'Без питания' },
+  { id: '1', label: 'Завтрак', name: 'foodTour', value: 'Завтрак' },
+  { id: '1+1', label: 'Затрак и ужин', name: 'foodTour', value: 'Завтрак и ужин' },
+  { id: '1+1+1', label: 'Завтрак, обед, ужин', name: 'foodTour', value: 'Завтрак, обед, ужин' },
+  { id: 'all', label: 'Всё включено', name: 'foodTour', value: 'Всё включено' },
+  { id: 'ultraAll', label: 'Ультра: всё включено', name: 'foodTour', value: 'Ультра: всё включено' },
 ]
 
 export function renderPackage() {
@@ -307,3 +308,19 @@ export function SearchRender() {
   updateSlider()
 }
 SearchRender()
+
+const form = document.querySelector('.search__body')
+if (form) {
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+
+    const ratingValues = Array.from(document.querySelectorAll('.rater-star.active')).map(star => star.dataset.value)
+    const foodFilter = document.querySelector('input[name="foodTour"]:checked')?.value
+
+    const params = new URLSearchParams()
+
+    if (ratingValues.length) params.set('rating', ratingValues.join(','))
+    if (foodFilter) params.set('foodTour', foodFilter)
+    window.location.href = `/html/pages/resultSearch.html?${params.toString()}`
+  })
+}
