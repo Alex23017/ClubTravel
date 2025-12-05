@@ -10,3 +10,16 @@ document.querySelectorAll('[data-component]').forEach(el => {
   })
 })
 
+// PRELOAD
+
+window.addEventListener('load', () => {
+  const preload = document.querySelector('.preload')
+
+
+  if (preload) {
+    setTimeout(() => {
+      preload.classList.remove('loading')
+      document.body.classList.remove('loading')
+    }, 700)
+  }
+})

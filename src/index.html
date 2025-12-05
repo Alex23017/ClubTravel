@@ -8,9 +8,13 @@
     <link rel="stylesheet" href="./styles/base/main.scss" />
     <link rel="stylesheet" href="./styles/base/reset.scss" />
   </head>
-  <body>
+  <body class="loading">
+    {{>preload}}
+
+
     <div class="wrapper">
-      {{>header}} {{>sliderHeader}}
+      {{>header}}
+      {{>sliderHeader}}
       {{>search title="найти тур" svgClock="none"}}
       {{>companyNews}}
       {{>hotDeals}}

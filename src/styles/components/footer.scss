@@ -372,3 +372,10 @@
     justify-content: start;
   }
 }
+
+@media (max-width: 359px) {
+  .footer__imdb-img {
+    width: 260px;
+    height: 200px;
+  }
+}

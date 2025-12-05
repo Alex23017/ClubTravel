@@ -1,65 +1,79 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <!-- {{>preload}} -->
     {{>header}}
     {{>imgHeader}}
     <section class="hotel">
       <div class="hotel__content">
-        <!-- {{> oneHotelTitle data=data }} -->
-         <div data-component="oneHotelTitle" class="hotel__card">
- 
-        </div>
+        <!-- {{> oneHotelTitle data=data}} -->
+        <div data-component="oneHotelTitle" class="hotel__card"></div>
 
         <div class="hotel__content-top">
           {{>oneHotelGallery}}
           <!-- {{>oneHotelOffer}} -->
-           <div class="hotel__offer"> 
-            
-           </div>
+          <div class="hotel__offer"></div>
         </div>
       </div>
       <div class="hotel__content-center">
-        <div data-component="oneHotelInfo" class="hotel__info">
-         
-        </div>
+        <div data-component="oneHotelInfo" class="hotel__info"></div>
         <!-- {{>oneHotelInfo}} -->
         {{>oneHotelContact}}
       </div>
       <div class="hotel__similar">
-          <div class="hotel__similar-title">
-              ПОХОЖИЕ ОТЕЛИ
-          </div>
-            
-          <div class=" hotel__similar-list">
-            <div class="swiper-button-next swiper__hotdeals-next">
-            <svg class="swiper-navigation-icon" width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0.38296 20.0762C0.111788 19.805 0.111788 19.3654 0.38296 19.0942L9.19758 10.2796L0.38296 1.46497C0.111788 1.19379 0.111788 0.754138 0.38296 0.482966C0.654131 0.211794 1.09379 0.211794 1.36496 0.482966L10.4341 9.55214C10.8359 9.9539 10.8359 10.6053 10.4341 11.007L1.36496 20.0762C1.09379 20.3474 0.654131 20.3474 0.38296 20.0762Z" fill="currentColor"></path>
+        <div class="hotel__similar-title">ПОХОЖИЕ ОТЕЛИ</div>
+
+        <div class=" hotel__similar-list">
+          <div class="swiper-button-next swiper__hotdeals-next">
+            <svg
+              class="swiper-navigation-icon"
+              width="11"
+              height="20"
+              viewBox="0 0 11 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.38296 20.0762C0.111788 19.805 0.111788 19.3654 0.38296 19.0942L9.19758 10.2796L0.38296 1.46497C0.111788 1.19379 0.111788 0.754138 0.38296 0.482966C0.654131 0.211794 1.09379 0.211794 1.36496 0.482966L10.4341 9.55214C10.8359 9.9539 10.8359 10.6053 10.4341 11.007L1.36496 20.0762C1.09379 20.3474 0.654131 20.3474 0.38296 20.0762Z"
+                fill="currentColor"
+              ></path>
             </svg>
           </div>
           <div class="swiper-button-prev swiper__hotdeals-prev">
-<svg class="swiper-navigation-icon" width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0.38296 20.0762C0.111788 19.805 0.111788 19.3654 0.38296 19.0942L9.19758 10.2796L0.38296 1.46497C0.111788 1.19379 0.111788 0.754138 0.38296 0.482966C0.654131 0.211794 1.09379 0.211794 1.36496 0.482966L10.4341 9.55214C10.8359 9.9539 10.8359 10.6053 10.4341 11.007L1.36496 20.0762C1.09379 20.3474 0.654131 20.3474 0.38296 20.0762Z" fill="currentColor"></path>
-</svg>
-</div>
-            <div class="swiper mySwiperHotDeals">
-              <div class="hotdeals__container swiper-wrapper"></div>
+            <svg
+              class="swiper-navigation-icon"
+              width="11"
+              height="20"
+              viewBox="0 0 11 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.38296 20.0762C0.111788 19.805 0.111788 19.3654 0.38296 19.0942L9.19758 10.2796L0.38296 1.46497C0.111788 1.19379 0.111788 0.754138 0.38296 0.482966C0.654131 0.211794 1.09379 0.211794 1.36496 0.482966L10.4341 9.55214C10.8359 9.9539 10.8359 10.6053 10.4341 11.007L1.36496 20.0762C1.09379 20.3474 0.654131 20.3474 0.38296 20.0762Z"
+                fill="currentColor"
+              ></path>
+            </svg>
           </div>
+          <div class="swiper mySwiperHotDeals">
+            <div class="hotdeals__container swiper-wrapper"></div>
           </div>
+        </div>
       </div>
     </section>
-    
+
     {{> footer}}
     <script type="module" src="/js/main.js"></script>
     <script type="module" src="/js/pages/oneHotel.js"></script>
-    
   </body>
 </html>
-
