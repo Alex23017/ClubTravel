@@ -49,11 +49,11 @@ export function sliderInit() {
 }
 const data = await getListHotel()
 
-export function renderOffer(datas) {
+export function renderOffer() {
   const container = document.querySelector('.hotdeals__container')
   if (!container) return
 
-  datas.forEach(item => {
+  data.forEach(item => {
     let getStars = ''
     for (let i = 0; i < item.stars; i++) {
       getStars += `
@@ -73,16 +73,10 @@ export function renderOffer(datas) {
       stars: getStars,
     })
 
-    console.log(item)
     container.appendChild(offerCard)
   })
 
-  // data.forEach(item => {
-  //   const offerCard = hotDealsCard({
-  //     title: item.title,
-  //   })
-  //   container.appendChild(offerCard)
-  // })
+
 }
 sliderInit()
 renderOffer()
