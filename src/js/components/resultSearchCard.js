@@ -263,7 +263,7 @@ btnOpen.forEach(btn => {
   btn.addEventListener('click', () => {
     const card = btn.closest('.result__card')
     const container = card.querySelector('.open__container')
-    const resultProposition = card.querySelector('.result__proposition ')
+    const resultProposition = card.querySelector('.result__proposition')
     btn.classList.toggle('active')
     card.classList.toggle('active')
     container.classList.toggle('open')

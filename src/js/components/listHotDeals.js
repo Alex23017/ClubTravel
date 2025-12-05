@@ -1,4 +1,4 @@
-import { getListHotel, getListHotelMob } from '../api/service/listHotel'
+import { getListHotel } from '../api/service/listHotel'
 if (document.querySelector('[data-component="listHotDeals"]')) {
   import('/styles/components/listHotDeals.scss')
   import('/styles/base/reset.scss')
@@ -8,11 +8,12 @@ import '/styles/base/reset.scss'
 import { API_VARIABLES } from '../api/variables.js'
 
 const data = await getListHotel()
-const dataMob = await getListHotelMob()
 
 function renderOffer() {
   const container = document.querySelector('.hotdeals__render')
   if (!container) return
+  const containerMob = document.querySelector('.hotdeals__render-mob')
+  if (!containerMob) return
 
   const getStarsHtml = category => {
     let stars = ''
@@ -23,6 +24,7 @@ function renderOffer() {
   }
 
   data.forEach(item => {
+    const imgUrl = API_VARIABLES.BASE_URL + item.img[0].url
     const openListHtml = item.openList
       .map(open => {
         const openListSelectHtml = (open.openListSelect || [])
@@ -111,19 +113,9 @@ function renderOffer() {
           </div>
         </div>
       </div>
+
     `
-
-    container.insertAdjacentHTML('beforeend', cardHtml)
-  })
-}
-
-function renderOfferMob() {
-  const container = document.querySelector('.hotdeals__render-mob')
-  if (!container) return
-
-  dataMob.forEach(item => {
-    const imgUrl = API_VARIABLES.BASE_URL + item.img[0].url
-    const cardHtml = `
+    const cardHtmlMob = `
       <div class="list__container">
       <img src=${imgUrl} alt="card">
       <p>${item.title}</p>
@@ -134,11 +126,11 @@ function renderOfferMob() {
     `
 
     container.insertAdjacentHTML('beforeend', cardHtml)
+    containerMob.insertAdjacentHTML('beforeend', cardHtmlMob)
   })
 }
 
 renderOffer()
-renderOfferMob()
 
 const listContainer = document.querySelectorAll('.list__container')
 const listButton = document.querySelectorAll('.list__button')

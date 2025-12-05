@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_orders",
+  "info": {
+    "displayName": "order"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

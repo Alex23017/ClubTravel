@@ -1,17 +1,17 @@
-import { API_VARIABLES } from '../variables.js';
-import { getResource } from '../api';
+// import { API_VARIABLES } from '../variables.js';
+// import { getResource } from '../api';
 
 
 
-export async function getHotDeals() {
-    try {
-        const res = await getResource(`${API_VARIABLES.BASE_URL}/api/hot-deals?populate=*`);
+// export async function getHotDeals() {
+//     try {
+//         const res = await getResource(`${API_VARIABLES.BASE_URL}/api/hot-deals?populate=*`);
 
-        return res.data;
-    }
-    catch (error) {
-        console.error('Error fetching hot deals:', error);
+//         return res.data;
+//     }
+//     catch (error) {
+//         console.error('Error fetching hot deals:', error);
 
-    }
-}
+//     }
+// }
 

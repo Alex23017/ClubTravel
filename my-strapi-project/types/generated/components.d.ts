@@ -93,6 +93,16 @@ export interface SharedOpenResult extends Struct.ComponentSchema {
   }
 }
 
+export interface SharedOrder extends Struct.ComponentSchema {
+  collectionName: 'components_shared_orders'
+  info: {
+    displayName: 'order'
+  }
+  attributes: {
+    title: Schema.Attribute.String
+  }
+}
+
 export interface SharedPosition extends Struct.ComponentSchema {
   collectionName: 'components_shared_positions'
   info: {
@@ -198,6 +208,7 @@ declare module '@strapi/strapi' {
       'shared.list': SharedList
       'shared.media': SharedMedia
       'shared.open-result': SharedOpenResult
+      'shared.order': SharedOrder
       'shared.position': SharedPosition
       'shared.quote': SharedQuote
       'shared.rich-text': SharedRichText

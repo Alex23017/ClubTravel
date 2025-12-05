@@ -46,6 +46,12 @@
     },
     "priceCount": {
       "type": "string"
+    },
+    "oldPrice": {
+      "type": "biginteger"
+    },
+    "location": {
+      "type": "string"
     }
   }
 }

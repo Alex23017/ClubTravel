@@ -8,7 +8,7 @@ if (document.querySelector('[data-component="hotDeals"]')) {
   import('/styles/components/hotDeals.scss')
   import('/styles/base/reset.scss')
 }
-import { getHotDeals } from '../api/service/hotDeals.js'
+import { getListHotel } from '../api/service/listHotel.js'
 import hotDealsCard from '../../html/components/home/hotDealsCard.html'
 
 function sliderInit() {
@@ -47,7 +47,7 @@ function sliderInit() {
     })
   }
 }
-const data = await getHotDeals()
+const data = await getListHotel()
 
 export function renderOffer() {
   const container = document.querySelector('.hotdeals__container')
@@ -66,15 +66,23 @@ export function renderOffer() {
       img: API_VARIABLES.IMG_URL + item.img[0].url,
       data: item.data,
       location: item.location,
-      title: item.hotelName,
+      title: item.title,
       price: item.price,
       oldPrice: item.oldPrice,
       priceCount: item.priceCount,
       stars: getStars,
     })
 
+    console.log(item)
     container.appendChild(offerCard)
   })
+
+  // data.forEach(item => {
+  //   const offerCard = hotDealsCard({
+  //     title: item.title,
+  //   })
+  //   container.appendChild(offerCard)
+  // })
 }
-sliderInit() 
+sliderInit()
 renderOffer()

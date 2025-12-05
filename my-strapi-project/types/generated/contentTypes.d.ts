@@ -586,6 +586,8 @@ export interface ApiListHotelListHotel extends Struct.CollectionTypeSchema {
     img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>
     locale: Schema.Attribute.String & Schema.Attribute.Private
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::list-hotel.list-hotel'> & Schema.Attribute.Private
+    location: Schema.Attribute.String
+    oldPrice: Schema.Attribute.BigInteger
     openList: Schema.Attribute.Component<'shared.hotels-open', true>
     price: Schema.Attribute.BigInteger
     priceCount: Schema.Attribute.String
@@ -1040,7 +1042,6 @@ export interface PluginUsersPermissionsUser extends Struct.CollectionTypeSchema 
   }
   options: {
     draftAndPublish: false
-    timestamps: true
   }
   attributes: {
     blocked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>
@@ -1055,6 +1056,7 @@ export interface PluginUsersPermissionsUser extends Struct.CollectionTypeSchema 
       }>
     locale: Schema.Attribute.String & Schema.Attribute.Private
     localizations: Schema.Attribute.Relation<'oneToMany', 'plugin::users-permissions.user'> & Schema.Attribute.Private
+    order: Schema.Attribute.Component<'shared.order', true>
     password: Schema.Attribute.Password &
       Schema.Attribute.Private &
       Schema.Attribute.SetMinMaxLength<{
