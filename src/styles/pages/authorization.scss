@@ -45,7 +45,7 @@
         gap: 5px;
         width: 100%;
         margin-top: 16px;
-        font-family: "Open Sans";
+        font-family: $Open;
         font-size: 14px;
         line-height: 19px;
         font-weight: 400;
@@ -67,7 +67,7 @@
     &__title{
         opacity: 0.5;
         margin-bottom: 32px;
-        font-family: "Open Sans";
+        font-family: $Open;
         font-size: 14px;
         line-height: 19px;
         font-weight: 400;
@@ -88,7 +88,7 @@
 
     &__facebuce{
         border-radius: 6px;
-        font-family: "Open Sans";
+        font-family: $Open;
         font-size: 14px;
         line-height: 19px;
         font-weight: 400;
@@ -99,7 +99,7 @@
 
     &__google{
         border-radius: 6px;
-        font-family: "Open Sans";
+        font-family: $Open;
         font-size: 14px;
         line-height: 19px;
         font-weight: 400;
@@ -113,7 +113,7 @@
         align-items: center;
         margin-bottom: 32px;
         padding: 0 38px;
-        font-family: "Open Sans";
+        font-family: $Open;
         font-size: 14px;
         line-height: 19px;
         font-weight: 400;
@@ -141,14 +141,14 @@
         margin-bottom: 8px;
         margin-right: 10px;
         margin-left: 13px;
-        font-family: "Open Sans";
+        font-family: $Open;
         font-size: 13px;
         line-height: 100%;
         font-weight: 400;
         color: rgb(136, 136, 136, 1);
 
         button{
-            font-family: "Open Sans";
+            font-family: $Open;
             font-size: 13px;
             line-height: 18px;
             font-weight: 400;
@@ -181,7 +181,7 @@
 
     &__login{
         border-radius: 6px;
-        font-family: "Open Sans";
+        font-family: $Open;
         font-size: 14px;
         line-height: 19px;
         letter-spacing: 0.6px;
@@ -195,7 +195,7 @@
         border: 1px solid var(--primary, rgb(246, 133, 33, 1));
         border-radius: 6px;
         box-sizing: border-box;
-        font-family: "Open Sans";
+        font-family: $Open;
         font-size: 14px;
         line-height: 19px;
         letter-spacing: 0.6px;
@@ -209,7 +209,7 @@
         height: 42px;
         margin-top: auto;
         border-radius: 6px;
-        font-family: "Open Sans";
+        font-family: $Open;
         font-size: 14px;
         line-height: 19px;
         letter-spacing: 0.6px;

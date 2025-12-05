@@ -11,39 +11,22 @@
   <body>
     {{>header}}
     {{>imgHeader}}
-<!--     
+    
     <section class="news">
         <div class='news__wrapper'>
             
             <h2 class='news__title'>
-                <svg class='news__img'>
+                <svg class='news__logo'>
             <use xlink:href='#icon-sale'></use>
             </svg>
             кампании
             <span> и Новости</span>
             </h2>
-            <div class="news__list">
-                {{#each newsList}}
-                <div class="news__card">
-                    <img src="/img/companyNews/newsSlide_1.png" alt="">
-                    <div class="news__price">
-                    <span>от <b>509€</b></span>
-                    </div>
-
-                    <div class='news__data'>
-                        <svg class='news__data-clock'>
-                        <use xlink:href='#icon-newsClock'></use>
-                        </svg>
-                        <p class='news__data-text'>25 июня 2020</p>
-                    </div>
-                    <div class="news__card-title">
-                       {{title}}
-                    </div>
-                </div>
-                 {{/each}}
+            <div class="news__container news__list">
+               
             </div>
         </div>
-    </section> -->
+    </section>
     
     {{> footer}}
     <script type="module" src="/js/main.js"></script>

@@ -1,5 +1,38 @@
 @use "../base/variables" as *;
 @use "../base/mixins" as *;
+@use "../components/hotDeals.scss" as *;
+
+body{
+    @include huge{
+        padding: 0 20%;
+    }
+
+    @include big{
+        padding:  0 15%;
+    }
+
+    @include desktop{
+        padding: 0 10%;
+    }
+
+    @include laptop{
+        padding: 0;
+    }
+
+    @include phone{
+        padding: 0;
+    }
+}
+
+// .hero{
+//     img{
+//         width: 100%;
+
+//         @include phone{
+//             height: 360px;
+//         }
+//     }
+// }
 
 .hotel {
   position: relative;
@@ -112,13 +145,13 @@
     gap: 69px;
     padding: 40px 100px 22px;
 
-    @include huge{
-      padding: 40px 20%
-    }
+    // @include huge{
+    //   padding: 40px 20%
+    // }
 
-    @include big{
-      padding:40px 15%;
-    }
+    // @include big{
+    //   padding:40px 15%;
+    // }
 
     @include laptop{
         padding: 40px 100px 22px;
@@ -153,13 +186,13 @@
     gap: 67px;
     padding: 0 100px 0 97px;
 
-    @include huge{
-      padding: 0 20%
-    }
+    // @include huge{
+    //   padding: 0 20%
+    // }
 
-    @include big{
-      padding:0 15%;
-    }
+    // @include big{
+    //   padding:0 15%;
+    // }
 
     @include laptop{
     padding: 0 100px 0 97px;
@@ -466,6 +499,7 @@
     margin-left: -4px;
     }
 
+    
   }
 
   &__offer-policy {
@@ -529,8 +563,10 @@
     gap: 32px;
   }
 
-  &__info{
-    padding: 0 23px 0 17px;
+  &__info-wrapper{
+    @include phone{
+      padding: 0 23px 0 17px; 
+    }
   }
 
   &__info-item{
@@ -720,6 +756,43 @@
   &__contact-time{
     font-size: 14px;
   }
+
+  &__similar{
+      position: relative;
+      padding: 70px 77px 50px 97px;
+
+      @include phone{
+      padding: 59px 13px 0 7px;
+        
+      }
+    }
+
+    &__similar-title{
+      font-family: $Open;
+      font-size: 26px;
+      line-height: 35px;
+      letter-spacing: 0.6px;
+      font-weight: 400;
+      color: rgb(34, 34, 34, 1);
+      text-align: center;
+      text-transform: uppercase;
+
+    }
+
+  &__similar-list{
+    display: flex;
+    gap: 26px;
+    margin-top: 40px;
+
+    .swiper-slide{
+      width: 380px;
+
+      @include phone{
+        width: 100% !important;
+        margin-top: 0;
+      }
+    }
+  }
 }
 
 .hotel__card-pin{
@@ -789,5 +862,27 @@ font-weight: 400;
     font-weight: 400;
   color: rgb(34, 34, 34, 1);
   text-align: start;
+}
+
+.swiper-button-next{
+      right: 23px !important;
+}
+
+.swiper-button-prev {
+  left: 23px !important;
+}
+
+.swiper__hotdeals-next, .swiper__hotdeals-prev{
+    top: 44.5%;
+    width: 48px;
+    height: 48px;
+    padding: 16px;
+    border-radius: 50px;
+    color: green;
+    background: rgb(0, 128, 0, 0.2);
+
+    @include phone{
+      background: rgb(255, 255, 255, 1);
+    }
 }
 

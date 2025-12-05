@@ -1,15 +1,10 @@
 import '../../styles/pages/company.scss';
-import Greeting from '../../html/components/base/greeting.html';
+import '../../styles/components/companyNews.scss';
+import { getCompanyNews } from '../api/service/companyNews.js';
+import { renderOffer } from '../components/companyNews.js';
 
 
 
-// Create component with props
-const greeting = Greeting({ 
-  title: 'Hello World!',
-  message: 'Welcome t'
-})
-console.log(greeting);
-
-
-
+const data = await getCompanyNews();
+renderOffer(data);
 

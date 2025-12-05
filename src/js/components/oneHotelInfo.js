@@ -115,7 +115,7 @@ const dataHotel = await getHotelById('xfmhd9zt1s4qrghz8unla56q');
   
   
     })
-
+    
     container.appendChild(hotelInfo)
 
 }

@@ -554,6 +554,7 @@ export interface ApiHotelHotel extends Struct.CollectionTypeSchema {
     from: Schema.Attribute.String
     hotelName: Schema.Attribute.String
     houses: Schema.Attribute.String
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>
     isHotDeals: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>
     locale: Schema.Attribute.String & Schema.Attribute.Private
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::hotel.hotel'> & Schema.Attribute.Private
