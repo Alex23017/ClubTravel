@@ -23,25 +23,25 @@ body{
     }
 }
 
-.hero{
-    img{
-        width: 100%;
+// .hero{
+//     img{
+//         width: 100%;
 
-        @include phone{
-            height: 360px;
-        }
-    }
-}
+//         @include phone{
+//             height: 360px;
+//         }
+//     }
+// }
 
 .content{
     padding: 0 111px 0 98px;
 
     @include tablet{
-        padding: 0 35px;
+        padding: 0 35px 37px;
     }
 
     @include phone{
-        padding: 0 15px 0 25px;
+        padding: 0 15px 37px 25px
     }
 
     &__wrapper{

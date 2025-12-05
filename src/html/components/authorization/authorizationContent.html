@@ -1,5 +1,5 @@
 <section class="content"> 
-    <div class="content__item  authorization">
+    <form class="content__item  authorization" id="loginForm">
         <div class="content__cover">
         <img src="../../../img/authorization/authorization-bg.webp" alt="">
     </div>
@@ -20,17 +20,17 @@
             <div class="card__label">
                 E-mail
             </div>
-            <input type="text" class="card__input">
+            <input type="text" id="identifier" name="identifier" class="card__input">
             <div class="card__label" style="margin-top: -2px;">
                 Пароль 
                 <button type="submit" data-tab="reset" class="tab">Забыли пароль?</button>
             </div>
-            <input type="text" class="card__input">
+            <input type="password" id="passwordLogin" name="password" class="card__input">
             <div class="card__btns">
                 <button data-tab="register" type="button" class="card__registration tab">
                     Регистрация
                 </button>
-                <button type="button" class="card__login">
+                <button type="submit" class="card__login">
                     Вход
                 </button>
             </div>
@@ -40,8 +40,8 @@
            <a href="">Политика использования</a>
         </div>
     </div>
-    </div>
-    <div class="content__item register">
+    </form>
+    <form class="content__item register" id="registerForm">
         <div class="content__cover cover-regist">
         <img src="../../../img/authorization/authorization-bg.webp" alt="">
     </div>
@@ -62,20 +62,20 @@
             <div class="card__label">
                 E-mail
             </div>
-            <input type="text" class="card__input">
+            <input type="email" id="email" name="email" class="card__input">
             <div class="card__label">
                 Пароль
             </div>
-            <input type="text" class="card__input">
+            <input type="password" id="password" name="password" class="card__input">
             <div class="card__label">
                 Повторите пароль
             </div>
-            <input type="text" class="card__input">
+            <input type="password" name="passwordRepeat" class="card__input">
             <div class="card__btns">
                 <button data-tab="authorization" type="button" class="card__registration tab">
                   Вход  
                 </button>
-                <button type="button" class="card__login">
+                <button type="submit" class="card__login">
                     Регистрация
                 </button>
             </div>
@@ -86,7 +86,7 @@
            <a href="">Политика использования</a>
         </div>
     </div>
-    </div>
+    </form>
     <div class="content__item  reset">
         <div class="content__cover cover-reset">
             <img src="../../../img/authorization/authorization-bg.webp" alt="">

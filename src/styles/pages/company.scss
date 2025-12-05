@@ -1,6 +1,28 @@
 @use "../base/variables" as *;
 @use "../base/mixins" as *;
 
+body{
+    @include huge{
+        padding: 0 20%;
+    }
+
+    @include big{
+        padding:  0 15%;
+    }
+
+    @include desktop{
+        padding: 0 10%;
+    }
+
+    @include laptop{
+        padding: 0;
+    }
+
+    @include phone{
+        padding: 0;
+    }
+}
+
 .news {
     padding-top: 58px;
 
@@ -10,7 +32,7 @@
         gap: 2px;
         font-family: $Open;
         font-size: 26px;
-        letter-spacing: 3px;
+        letter-spacing: 2px;
         font-weight: 700;
         color: $colorOrange;
         text-transform: uppercase;
@@ -52,29 +74,29 @@
 
     
 
-    &__img {
+    &__logo {
     width: 35px;
     height: 35px;
     color: $colorOrange;
     }
 
-    &__card{
-        position: relative;
-        width: 379px;
-        padding-bottom: 40px;
-        border-radius: 10px;
-        box-sizing: border-box;
-        background: rgb(255, 255, 255, 1);
-        box-shadow: 0 5px 10px 0 rgb(0, 0, 0, 0.1);
+    // &__card{
+    //     position: relative;
+    //     width: 379px;
+    //     padding-bottom: 40px;
+    //     border-radius: 10px;
+    //     box-sizing: border-box;
+    //     background: rgb(255, 255, 255, 1);
+    //     box-shadow: 0 5px 10px 0 rgb(0, 0, 0, 0.1);
 
-        @include phone{
-            width: 100%;
-        }
+    //     @include phone{
+    //         width: 100%;
+    //     }
 
-        img{
-            width: 100%;
-        }
-    }
+    //     img{
+    //         width: 100%;
+    //     }
+    // }
 
     &__price {
         position: absolute;
@@ -132,9 +154,20 @@
         color: #fff
     }
 
+    // &__list{
+    //     display: flex;
+    //     flex-wrap: wrap;
+    //     gap: 24px;
+    // }
 }
 
+.news__card{
+    width: 379px !important;
 
+    @include phone{
+        width: 100% !important;
+    }
+}
  
 
 

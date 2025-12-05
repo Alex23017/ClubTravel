@@ -50,10 +50,10 @@ function sliderInit() {
 }
 const data = await getCompanyNews()
 
-export function renderOffer() {
+export function renderOffer(datas) {
   const container = document.querySelector('.news__container')
   if (!container) return
-  data.forEach(item => {
+  datas.forEach(item => {
     const offerCard = companyCard({
       title: item.title,
       img: API_VARIABLES.IMG_URL + item.img[0].url,
@@ -64,4 +64,4 @@ export function renderOffer() {
   })
 }
 sliderInit()
-renderOffer()
+renderOffer(data)

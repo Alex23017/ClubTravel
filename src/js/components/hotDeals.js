@@ -11,7 +11,7 @@ if (document.querySelector('[data-component="hotDeals"]')) {
 import { getHotDeals } from '../api/service/hotDeals.js'
 import hotDealsCard from '../../html/components/home/hotDealsCard.html'
 
-function sliderInit() {
+export function sliderInit() {
   const slider = document.querySelector('.mySwiperHotDeals')
 
   if (slider) {
@@ -49,11 +49,11 @@ function sliderInit() {
 }
 const data = await getHotDeals()
 
-export function renderOffer() {
+export function renderOffer(datas) {
   const container = document.querySelector('.hotdeals__container')
   if (!container) return
 
-  data.forEach(item => {
+  datas.forEach(item => {
     let getStars = ''
     for (let i = 0; i < item.stars; i++) {
       getStars += `
@@ -77,4 +77,4 @@ export function renderOffer() {
   })
 }
 sliderInit() 
-renderOffer()
+renderOffer(data)

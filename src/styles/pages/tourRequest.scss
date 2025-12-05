@@ -23,46 +23,46 @@ body{
     }
 }
 
-.hero{
-    img{
-        width: 100%;
+// .hero{
+//     img{
+//         width: 100%;
 
-        @include phone{
-            height: 360px;
-        }
-    }
-}
+//         @include phone{
+//             height: 360px;
+//         }
+//     }
+// }
 
 .content{
     display: flex;
     justify-content: space-between;
-    padding: 0 111px 0 98px;
+    padding: 0 111px 77px 98px;
 
 
     @include laptop{
-        padding: 0 111px 0 98px;
+        padding: 0 111px 77px 98px;
     }
 
     @include table-big{
-        padding: 0 20px;
+        padding: 0 20px 80px;
     }
 
     @include tablet{
         align-items: center;
         flex-direction: column;
-        padding: 0 80px;
+        padding: 0 80px 80px;
     }
 
     @include tablet-mini{
         align-items: center;
         flex-direction: column;
-        padding: 0 45px;
+        padding: 0 45px 80px;
     }
 
     @include phone{
         align-items: center;
         flex-direction: column;
-        padding: 0 17px 0 23px;
+        padding: 0 17px 80px 23px;
     }
 }
 

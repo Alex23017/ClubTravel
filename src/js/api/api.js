@@ -16,3 +16,20 @@ export async function getResource(url) {
     }
 }
 
+export async function postResource(url, data = {}) {
+  try {
+    const res = await axios.post(url, data, {
+      headers: {
+        Authorization: `Bearer ${API_VARIABLES.API_TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+    });
+
+    return res.data;
+  } catch (error) {
+    console.log(error);
+    
+  }
+}
+
+
