@@ -99,7 +99,10 @@ export interface SharedOrder extends Struct.ComponentSchema {
     displayName: 'order'
   }
   attributes: {
-    title: Schema.Attribute.String
+    data: Schema.Attribute.String
+    number: Schema.Attribute.BigInteger
+    orderStatus: Schema.Attribute.Boolean
+    price: Schema.Attribute.BigInteger
   }
 }
 

@@ -5,8 +5,17 @@
   },
   "options": {},
   "attributes": {
-    "title": {
+    "number": {
+      "type": "biginteger"
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "data": {
       "type": "string"
+    },
+    "orderStatus": {
+      "type": "boolean"
     }
   },
   "config": {}

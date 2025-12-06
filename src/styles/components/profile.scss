@@ -1,0 +1,374 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+.wrapper.profile .profile {
+  position: relative;
+  top: -57px;
+  z-index: 9999;
+}
+
+#preview {
+  border-radius: 100%;
+}
+#uploadForm,
+#avatar {
+}
+
+#avatar {
+  position: relative;
+  top: 38px;
+}
+#preview {
+  text-align: center;
+  width: 126px;
+  height: 126px;
+}
+.profile__img {
+  display: flex;
+  justify-content: center;
+  background-color: $colorWhite;
+  position: relative;
+  top: -40px;
+}
+.profile__body.profile {
+  justify-content: center;
+  gap: 52px;
+  padding-inline-start: 96px;
+  padding-inline-end: 103px;
+}
+.profile__user {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.16);
+  padding-block: 25px;
+  padding-inline: 13px;
+  min-width: 314px;
+  height: 439px;
+}
+.profile__username {
+  font-family: $Open;
+  font-size: 26px;
+  text-align: center;
+  margin-block-end: 26px;
+  margin-block-start: -18px;
+}
+.profile__order {
+  background-color: rgb($colorGrey, 0.1);
+  border-radius: 4px;
+}
+.profile__order,
+.profile__paymant,
+.profile__settings {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  font-family: $Open;
+  font-size: 18px;
+  width: 100%;
+  max-width: 288px;
+  letter-spacing: 0.7px;
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+  padding-block: 9px;
+  padding-inline: 11px;
+}
+
+.profile__list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  align-self: self-start;
+  margin-block-start: 22px;
+  margin-inline-start: -4px;
+}
+.profile__title {
+  font-size: 26px;
+  font-family: $Open;
+  letter-spacing: 0.7px;
+  margin-block-end: 24px;
+  margin-inline-start: 4px;
+}
+.profile__order-render {
+  display: flex;
+  flex-direction: column;
+  padding-block-start: 18px;
+  padding-block-end: 20px;
+  gap: 38px;
+}
+.profile__order-header,
+.profile__order-card {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  place-items: center;
+  gap: 10px;
+  text-align: center;
+}
+.profile__order-header {
+  padding-block: 15px;
+  margin-block-end: 4px;
+}
+.profile__order-number {
+  margin-inline-start: -9px;
+}
+.profile__order-card {
+  margin-inline-start: -5px;
+  height: 26px;
+  padding-inline-end: 5px;
+}
+.profile__order-card > div {
+  font-family: $Open;
+  font-size: 16px;
+  letter-spacing: 0.3px;
+}
+.profile__order-header > div {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: $Open;
+  letter-spacing: 0.7px;
+}
+.profile__body-box,
+.profile__order-header {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.16);
+}
+.profile__body-box {
+  margin-inline-start: 5px;
+}
+
+.profile__logout {
+  display: flex;
+  cursor: pointer;
+  position: relative;
+  align-items: center;
+  gap: 16px;
+  margin-block-start: 25px;
+  margin-inline-start: 12px;
+  &::before {
+    position: absolute;
+    content: '';
+    background-color: $colorGrey;
+    width: 100%;
+    height: 1px;
+    top: -15px;
+    opacity: 0.2;
+  }
+  p {
+    font-family: $Open;
+    font-size: 14px;
+    color: $colorGrey;
+    letter-spacing: 0.7px;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.profile__logout-icon {
+  width: 24px;
+  height: 24px;
+}
+.profile__list-status {
+  color: $colorGreen;
+  background-color: rgba($colorGreen, 0.2);
+  width: 99px;
+  padding-block: 4px;
+  text-align: center;
+  border-radius: 6px;
+
+  &.processing {
+    color: $primaryColor;
+
+    background-color: rgba($primaryColor, 0.2);
+  }
+  p {
+    font-size: 12px;
+  }
+}
+.profile__political {
+  margin-block-start: 52px;
+  margin-inline-start: -12px;
+  font-family: $Open;
+  font-size: 14px;
+  color: $colorGrey;
+  letter-spacing: 0.5px;
+  p {
+    margin-block-end: 4px;
+  }
+  &.margin {
+    margin-inline-start: 20px;
+  }
+}
+.profile__order-card--mob,
+.profile__order-header--mob {
+  display: none;
+}
+
+@media (max-width: 1360px) {
+  .wrapper.profile .profile {
+    top: -30px;
+  }
+  .profile__body {
+    padding-inline: 40px;
+    gap: 20px;
+  }
+}
+@media (max-width: 1100px) {
+  .profile__body.profile {
+    flex-direction: column;
+  }
+  .wrapper.profile .profile {
+    top: 16px;
+  }
+}
+
+@media (max-width: 769px) {
+  .profile__political.margin {
+    margin-inline-start: 0px;
+  }
+  .profile__order-card {
+    display: none;
+  }
+  .profile__order-card--mob {
+    display: flex;
+  }
+  .profile__order-header {
+    display: none;
+  }
+  .profile__body-box {
+    box-shadow: none;
+  }
+
+  .profile__order-header--mob,
+  .profile__order-info--mob {
+    display: flex;
+    flex-direction: column;
+    box-shadow: none;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+  }
+  .profile__order-card--mob {
+    display: flex;
+    height: inherit;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+  }
+  .profile__order-render {
+    gap: 20px;
+  }
+  .profile__list-number {
+    font-weight: 700;
+  }
+  .profile__order-number {
+    color: $colorGrey;
+  }
+  .profile__order-price,
+  .profile__order-email,
+  .profile__order-status,
+  .profile__order-data {
+    color: $colorGrey;
+    opacity: 0.6;
+    font-weight: 400 !important;
+  }
+
+  .wrapper.profile {
+    padding-inline: 0px;
+  }
+  .profile {
+    padding-inline: 20px;
+  }
+  .wrapper.profile #footer {
+    padding-inline: 17px;
+  }
+  .profile__vector {
+    display: none;
+  }
+  .profile {
+    position: static;
+  }
+  .profile__user {
+    margin-inline-start: -10px;
+    width: 314px;
+  }
+  .profile__political.margin {
+    margin-inline-start: -13px;
+  }
+  .profile__list {
+    margin-block-start: 53px;
+  }
+  .profile__body.profile {
+    padding-inline: 0px;
+  }
+  .profile__order-card--mob {
+    position: relative;
+    &::after {
+      position: absolute;
+      content: '';
+      background-color: $colorGrey;
+      opacity: 0.2;
+      width: 100%;
+      height: 1px;
+      bottom: -15px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .profile {
+    margin-block-end: 80px;
+  }
+  .profile__order-card--mob {
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 30px;
+  }
+  .profile__title {
+    margin-block-end: 13px;
+  }
+  .profile__order-number {
+    margin-inline-start: 0px;
+  }
+  .profile__order-header--mob {
+    gap: 12px;
+    > div {
+      letter-spacing: -0.1px;
+    }
+  }
+  .profile__order-info--mob {
+    gap: 8px;
+  }
+  .profile__order-render {
+    gap: 48px;
+  }
+  .profile__order-number p {
+    letter-spacing: 0.6px;
+  }
+  .profile__order-card--mob {
+    &::after {
+      position: absolute;
+      content: '';
+      background-color: $colorGrey;
+      opacity: 0.2;
+      width: 100%;
+      height: 1px;
+      bottom: -24px;
+    }
+  }
+  .profile__username {
+    margin-block-end: 28px;
+
+  }
+}
+@media (max-width: 340px) {
+  .profile__political.margin {
+    margin-inline-start: 20px;
+  }
+}

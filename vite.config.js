@@ -14,7 +14,8 @@ const partialDirs = [
   path.resolve(__dirname, 'src/html/components/oneHotel'),
   path.resolve(__dirname, 'src/html/components/resultSearch'),
   path.resolve(__dirname, 'src/html/components/authorization'),
-
+  path.resolve(__dirname, 'src/html/components/profile'),
+  
 ]
 
 export default defineConfig({
