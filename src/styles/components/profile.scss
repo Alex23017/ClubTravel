@@ -9,9 +9,6 @@
 #preview {
   border-radius: 100%;
 }
-#uploadForm,
-#avatar {
-}
 
 #avatar {
   position: relative;
@@ -32,8 +29,8 @@
 .profile__body.profile {
   justify-content: center;
   gap: 52px;
-  padding-inline-start: 96px;
-  padding-inline-end: 103px;
+  padding-inline-start: 125px;
+  padding-inline-end: 80px;
 }
 .profile__user {
   position: relative;
@@ -44,6 +41,13 @@
   padding-inline: 13px;
   min-width: 314px;
   height: 439px;
+  align-self: flex-start;
+  top: 57px;
+}
+
+.profile__list-data,
+.profile__order-data {
+  margin-inline-start: -20px;
 }
 .profile__username {
   font-family: $Open;
@@ -80,8 +84,9 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
+  max-width: 805px;
   align-self: self-start;
-  margin-block-start: 22px;
+  margin-block-start: 80px;
   margin-inline-start: -4px;
 }
 .profile__title {
@@ -91,7 +96,8 @@
   margin-block-end: 24px;
   margin-inline-start: 4px;
 }
-.profile__order-render {
+.profile__order-render,
+.profile__order-render--next {
   display: flex;
   flex-direction: column;
   padding-block-start: 18px;
@@ -109,6 +115,7 @@
 .profile__order-header {
   padding-block: 15px;
   margin-block-end: 4px;
+  padding-inline: 5px;
 }
 .profile__order-number {
   margin-inline-start: -9px;
@@ -135,6 +142,7 @@
 }
 .profile__body-box {
   margin-inline-start: 5px;
+  padding-block-end: 20px;
 }
 
 .profile__logout {
@@ -204,6 +212,100 @@
 .profile__order-header--mob {
   display: none;
 }
+.profile__footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-inline: 17px;
+
+  justify-content: space-between;
+  height: 27px;
+  margin-block-start: 18px;
+}
+.profile__items-length {
+  margin-block-start: -2px;
+}
+
+.profile__items-length,
+.profile__page {
+  font-size: 16px;
+  color: $colorGrey;
+  font-family: $Open;
+  letter-spacing: 0.4px;
+}
+.profile__page #current {
+  font-size: 14px;
+  padding-inline: 10px;
+  padding-block-start: 4px;
+  margin-block-start: 2px;
+  background-color: rgb($colorGrey, 0.2);
+  border-radius: 4px;
+  margin-inline-start: 4px;
+  margin-inline-end: 6px;
+}
+
+#total {
+  margin-inline-start: 6px;
+}
+.profile__page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 319px;
+  margin-inline-end: -34px;
+}
+
+.swiper-button-prev.swiper__profile-prev,
+.swiper-button-next.swiper__profile-next {
+  position: static;
+  align-self: flex-end;
+  height: 100%;
+  color: $colorWhite;
+  font-family: $Open;
+  font-size: 14px;
+  background-color: $primaryColor;
+  padding-inline: 9px;
+  padding-block: 3px;
+  border-radius: 6px;
+  margin-block-start: 3px;
+}
+.swiper-button-prev.swiper__profile-prev {
+  margin-inline-start: -70px;
+  width: 60px;
+  margin-inline-end: 20px;
+}
+.swiper-button-next.swiper__profile-next {
+  margin-inline-start: 20px;
+  width: 72px;
+}
+.profile__page {
+  .swiper-navigation-icon {
+    display: none;
+  }
+}
+.wrapper.profile #footer {
+  margin-block-start: -12px;
+  position: relative;
+  &::before {
+    position: absolute;
+    content: '';
+    background-color: rgb($colorGrey, 0.2);
+    width: 100%;
+    height: 1px;
+    top: -3px;
+    left: 0;
+  }
+  .footer__body {
+    gap: 60px;
+  }
+  .footer__open {
+    margin-block-start: 4px;
+  }
+  .footer__imdb {
+    margin-block-start: -2px;
+  }
+}
 
 @media (max-width: 1360px) {
   .wrapper.profile .profile {
@@ -214,6 +316,12 @@
     gap: 20px;
   }
 }
+@media (max-width: 1200px) {
+  .profile__body.profile {
+    gap: 10px;
+  }
+}
+
 @media (max-width: 1100px) {
   .profile__body.profile {
     flex-direction: column;
@@ -221,9 +329,18 @@
   .wrapper.profile .profile {
     top: 16px;
   }
+  .profile__list {
+    margin-block-start: 140px;
+  }
+  .profile__user {
+    align-self: center;
+  }
+  .wrapper.profile #footer {
+    margin-block-start: 50px;
+  }
 }
 
-@media (max-width: 769px) {
+@media (max-width: 900px) {
   .profile__political.margin {
     margin-inline-start: 0px;
   }
@@ -238,6 +355,8 @@
   }
   .profile__body-box {
     box-shadow: none;
+    width: 100%;
+    max-width: 800px;
   }
 
   .profile__order-header--mob,
@@ -251,6 +370,8 @@
     padding: 0;
     margin: 0;
     height: 100%;
+    width: 100%;
+    max-width: 151px;
   }
   .profile__order-card--mob {
     display: flex;
@@ -261,7 +382,8 @@
     margin: 0;
     height: 100%;
   }
-  .profile__order-render {
+  .profile__order-render,
+  .profile__order-render--next {
     gap: 20px;
   }
   .profile__list-number {
@@ -277,6 +399,9 @@
     color: $colorGrey;
     opacity: 0.6;
     font-weight: 400 !important;
+  }
+  .profile__order-data {
+    margin: 0;
   }
 
   .wrapper.profile {
@@ -301,9 +426,7 @@
   .profile__political.margin {
     margin-inline-start: -13px;
   }
-  .profile__list {
-    margin-block-start: 53px;
-  }
+
   .profile__body.profile {
     padding-inline: 0px;
   }
@@ -319,16 +442,70 @@
       bottom: -15px;
     }
   }
+  .copyright {
+    padding-inline: 20px;
+    text-align: center;
+  }
+}
+@media (max-width: 600px) {
+  .profile__footer {
+    flex-direction: column;
+    gap: 13px;
+    margin-block-start: 28px;
+    padding-inline: 0;
+  }
+  .profile__items-length {
+    width: 100%;
+  }
+  .profile__page #current {
+    margin-block-start: 0;
+  }
+  .profile__page {
+    height: 26px;
+    margin-inline-end: 0px;
+    margin-inline-start: 70px;
+  }
+  .wrapper.profile #footer {
+    &::before {
+      top: 25px;
+    }
+  }
 }
 
 @media (max-width: 400px) {
+  .wrapper.profile #footer {
+    padding-block-start: 82px;
+    &::before {
+      top: 40px;
+    }
+    .footer__imdb{
+      margin-block-start: 34px;
+    }
+  }
+  .profile__page {
+    max-width: 250px;
+  }
   .profile {
-    margin-block-end: 80px;
+    margin-block-end: 103px;
+  }
+  .profile__body.profile {
+    position: relative;
+    &::after {
+      position: absolute;
+      content: '';
+      background-color: $colorGrey;
+      opacity: 0.5;
+      width: 112%;
+      height: 1px;
+      bottom: -33px;
+      left: -18px;
+      filter: blur(1px);
+    }
   }
   .profile__order-card--mob {
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 30px;
+    gap: 10px;
   }
   .profile__title {
     margin-block-end: 13px;
@@ -338,6 +515,7 @@
   }
   .profile__order-header--mob {
     gap: 12px;
+    max-width: 121px;
     > div {
       letter-spacing: -0.1px;
     }
@@ -345,7 +523,8 @@
   .profile__order-info--mob {
     gap: 8px;
   }
-  .profile__order-render {
+  .profile__order-render,
+  .profile__order-render--next {
     gap: 48px;
   }
   .profile__order-number p {
@@ -359,16 +538,79 @@
       opacity: 0.2;
       width: 100%;
       height: 1px;
-      bottom: -24px;
+      bottom: -23px;
     }
   }
   .profile__username {
     margin-block-end: 28px;
-
+  }
+  .profile__user {
+    top: 0px;
+  }
+  .profile__list {
+    margin-block-start: 95px;
+  }
+  .profile__political {
+    margin-block-start: 50px;
+  }
+  .profile__list-data {
+    margin-inline-start: 0px;
+    white-space: nowrap;
+    margin-block-start: 1px;
+  }
+  #current {
+    padding-block: 1px;
+  }
+  .wrapper.profile #footer {
+    padding-inline: 20px;
+    margin-block-start: 20px;
+    .footer__open {
+      margin-block-start: 12px;
+    }
+    .footer__location {
+      margin-block-start: 14px;
+    }
+    .footer__phone {
+      margin-block-start: 9px;
+    }
+    .footer__imdb-img {
+      margin-inline-start: 0px;
+    }
+  }
+  .wrapper.profile .hero,
+  .slider__img {
+    height: 190px;
+  }
+  .profile__footer {
+    position: relative;
+    &::before {
+      position: absolute;
+      content: '';
+      background-color: rgb($colorGrey, 0.2);
+      width: 100%;
+      height: 1px;
+      top: -30px;
+    }
+  }
+}
+@media (max-width: 360px) {
+  .copyright {
+    display: none;
   }
 }
 @media (max-width: 340px) {
   .profile__political.margin {
     margin-inline-start: 20px;
+  }
+  .profile__footer {
+    margin-inline-start: 30px;
+    max-width: 220px;
+  }
+  .swiper-button-prev.swiper__profile-prev {
+    margin-inline-end: 5px;
+  }
+
+  .swiper-button-next.swiper__profile-next {
+    margin-inline-start: 5px;
   }
 }

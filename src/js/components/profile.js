@@ -3,31 +3,99 @@ if (document.querySelector('[data-component="profile"]')) {
   import('/styles/base/reset.scss')
 }
 
+import 'swiper/css'
+import 'swiper/css/pagination'
+import { Navigation, Pagination } from 'swiper/modules'
+import Swiper from 'swiper'
 import { getProfile } from '../api/service/profile.js'
 import profileComponent from '../../html/components/profile/profileList.html'
+
+export let mySwiperProfile = null
+
+export function sliderInit() {
+  const slider = document.querySelector('.mySwiperProfile')
+  const current = document.getElementById('current')
+  const total = document.getElementById('total')
+
+  if (slider) {
+    mySwiperProfile = new Swiper('.mySwiperProfile', {
+      on: {
+        init(swiper) {
+          total.textContent = swiper.slides.length
+          current.textContent = swiper.realIndex + 1
+        },
+        slideChange(swiper) {
+          current.textContent = swiper.realIndex + 1
+        },
+      },
+      modules: [Navigation, Pagination],
+      loop: slider.querySelectorAll('.swiper-slide').length > 1,
+      slidesPerView: 1,
+      spaceBetween: 25,
+
+      navigation: {
+        nextEl: '.swiper__profile-next',
+        prevEl: '.swiper__profile-prev',
+      },
+
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    })
+  }
+
+  window.mySwiperProfile = mySwiperProfile
+}
+sliderInit()
 
 const data = await getProfile()
 
 export function renderOffer() {
   const container = document.querySelector('.profile__order-render')
+  const containerNext = document.querySelector('.profile__order-render--next')
   if (!container) return
+  const orders = data.flatMap(user => user.order).slice(0, 9)
+  const ordersLength = data.flatMap(user => user.order)
+  const orderNexts = data.flatMap(user => user.order).slice(9, 18)
+  const profileItemsLength = document.querySelector('.profile__items-length')
 
-  data.forEach(user => {
-    user.order.forEach(item => {
-      const isProcessing = item.orderStatus
-      const status = !isProcessing ? 'в обработке' : 'оплачено'
-      const statusClass = !isProcessing ? 'processing' : 'paid'
+  mySwiperProfile.on('slideChange', () => {
+    const sliderNumber = mySwiperProfile.realIndex + 1
+    profileItemsLength.innerHTML = `
+  Показано ${sliderNumber === 1 ? orders.length : ordersLength.length} из ${ordersLength.length}
+  `
+  })
 
-      const offerCard = profileComponent({
-        orderNumber: item.number,
-        orderPrice: item.price + ".00",
-        orderEmail: item.email,
-        orderStatus: status,
-        statusClass: statusClass,
-        orderDate: item.data,
-      })
-      container.insertAdjacentHTML('beforeend', offerCard)
+  orders.forEach(item => {
+    const isProcessing = item.orderStatus
+    const status = !isProcessing ? 'в обработке' : 'оплачено'
+    const statusClass = !isProcessing ? 'processing' : 'paid'
+
+    const offerCard = profileComponent({
+      orderNumber: item.number,
+      orderPrice: item.price + '.00',
+      orderEmail: item.email,
+      orderStatus: status,
+      statusClass: statusClass,
+      orderDate: item.data,
     })
+    container.insertAdjacentHTML('beforeend', offerCard)
+  })
+  orderNexts.forEach(item => {
+    const isProcessing = item.orderStatus
+    const status = !isProcessing ? 'в обработке' : 'оплачено'
+    const statusClass = !isProcessing ? 'processing' : 'paid'
+
+    const offerCard = profileComponent({
+      orderNumber: item.number,
+      orderPrice: item.price + '.00',
+      orderEmail: item.email,
+      orderStatus: status,
+      statusClass: statusClass,
+      orderDate: item.data,
+    })
+    containerNext.insertAdjacentHTML('beforeend', offerCard)
   })
 }
 renderOffer()
@@ -37,8 +105,12 @@ const preview = document.getElementById('preview')
 
 const profilePolitical = document.querySelector('.profile__political')
 
-if (!preview.getAttribute('src')) {
-  profilePolitical.classList.add('margin')
+function updateMargin() {
+  if (!preview.getAttribute('src')) {
+    profilePolitical.classList.add('margin')
+  } else {
+    profilePolitical.classList.remove('margin')
+  }
 }
 
 // загрузка аватарки + локал
@@ -89,7 +161,7 @@ logOut.addEventListener('click', () => {
 
 profileUsername.textContent = profileLocalName.split('@')[0]
 profileOrderEmail.forEach(email => (email.textContent = profileLocalName))
-
+updateMargin()
 // const profileOrderData = document.querySelector('.profile__order-data')
 // const today = new Date()
 

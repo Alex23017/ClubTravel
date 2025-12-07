@@ -1,0 +1,19 @@
+@use '../base/variables' as *;
+
+.copyright {
+  background-color: rgb($colorGrey, 0.1);
+  font-family: $Open;
+  font-size: 14px;
+  color: $colorGrey04;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  letter-spacing: 0.3px;
+  padding-block: 14px;
+  span {
+    text-decoration: underline;
+    color: $colorBlue04;
+    letter-spacing:0.5px;
+  }
+}
