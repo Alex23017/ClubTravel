@@ -1,11 +1,15 @@
 import { API_VARIABLES } from '../variables.js'
 import { getResource } from '../api'
+import { skeleton } from '../../main.js'
 
 export async function getListHotel() {
   try {
     const res = await getResource(
       `${API_VARIABLES.BASE_URL}/api/list-hotels?populate[openList][populate][openListSelect]=true&populate[img]=true`
     )
+    if (res) {
+      skeleton('.hotdeals__container', '.skeleton__card')
+    }
 
     return res.data
   } catch (error) {

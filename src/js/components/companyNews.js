@@ -10,8 +10,6 @@ import Swiper from 'swiper'
 import companyCard from '../../html/components/home/companyCard.html'
 import { getCompanyNews } from '../api/service/companyNews.js'
 
-
-
 function sliderInit() {
   const slider = document.querySelector('.mySwiperNews')
 
@@ -50,10 +48,10 @@ function sliderInit() {
 }
 const data = await getCompanyNews()
 
-export function renderOffer(datas) {
+export function renderOffer() {
   const container = document.querySelector('.news__container')
   if (!container) return
-  datas.forEach(item => {
+  data.forEach(item => {
     const offerCard = companyCard({
       title: item.title,
       img: API_VARIABLES.IMG_URL + item.img[0].url,
@@ -64,4 +62,4 @@ export function renderOffer(datas) {
   })
 }
 sliderInit()
-renderOffer(data)
+renderOffer()

@@ -5,7 +5,7 @@
   padding-inline-start: 93px;
   padding-inline-end: 81px;
 }
-.company__subtitle{
+.company__subtitle {
   display: none;
 }
 .news__container {
@@ -274,7 +274,6 @@
   }
   .news__data-title {
     padding-inline-start: 18px;
-
   }
   .company__footer {
     margin-block-start: 50px;
@@ -297,7 +296,51 @@
   .news__img {
     height: 250px;
   }
-  .company__subtitle{
+  .company__subtitle {
     display: flex;
   }
+}
+.skeleton__container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.skeleton__card {
+  position: relative;
+  width: 379px;
+  height: 330px;
+  background-color: $colorGrey;
+  border-radius: 6px;
+  border: solid 1px $colorGrey;
+}
+.skeleton__img {
+  width: 100%;
+  height: 250px;
+  background-color: white;
+}
+.skeleton__line {
+  width: 80%;
+  background-color: white;
+  height: 24px;
+  margin-inline-start: 20px;
+  margin-block-start: 10px;
+  border-radius: 6px;
+}
+.skeleton__data {
+  position: absolute;
+  background-color: $colorGrey;
+  width: 50%;
+  height: 32px;
+  bottom: 100px;
+  border-radius: 6px;
+  margin-inline-start: 20px;
+}
+.skeleton__count {
+  position: absolute;
+  background-color: $colorGrey;
+  width: 20%;
+  height: 31px;
+  top: 30px;
+  right: 0;
+  margin-inline-start: 20px;
 }
