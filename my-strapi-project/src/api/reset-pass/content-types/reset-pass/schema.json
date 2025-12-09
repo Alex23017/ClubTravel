@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reset_passes",
+  "info": {
+    "singularName": "reset-pass",
+    "pluralName": "reset-passes",
+    "displayName": "resetPass"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "token": {
+      "type": "text"
+    },
+    "name": {
+      "type": "text"
+    }
+  }
+}
