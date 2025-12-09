@@ -23,7 +23,7 @@
             <input type="text" id="identifier" name="identifier" class="card__input">
             <div class="card__label" style="margin-top: -2px;">
                 Пароль 
-                <button type="submit" data-tab="reset" class="tab">Забыли пароль?</button>
+                <button type="button" data-tab="reset" class="tab">Забыли пароль?</button>
             </div>
             <input type="password" id="passwordLogin" name="password" class="card__input">
             <div class="card__btns">
@@ -99,13 +99,51 @@
                 <div class="card__label">
                 E-mail
             </div>
-            <input type="text" class="card__input">
+            <input type="text" class="card__input" id="emailReset">
              
-                <button type="button" class="card__reset">
+                <button type="button" id="reset" class="card__reset">
                     отправить
                 </button>
            
             </div>
         </div>
     </div>
+     <form class="content__item newPassword" id="newPasswordForm">
+        <div class="content__cover cover-regist">
+        <img src="../../../img/authorization/authorization-bg.webp" alt="">
+    </div>
+        <div class="content__wrapper wrapper-refistration">
+        <div class="card card-registration">
+            <div class="card__title">
+                новий пароль
+            </div>
+            
+            <div class="card__line">
+                <span></span>
+     или 
+    <span></span>
+            </div>
+           
+            <div class="card__label">
+                Пароль
+            </div>
+            <input type="password" id="newPassword" name="password" class="card__input">
+            <div class="card__label">
+                Повторите пароль
+            </div>
+            <input type="password" id="passwordRepeat" name="passwordRepeat" class="card__input">
+            <div class="card__btns">
+                <button type="submit" class="card__registration">
+                  Змінити пароль 
+                </button>
+               
+            </div>
+            
+        </div>
+        <div class="content__link">
+           <a href="">Политика конфиденциальности</a> 
+           <a href="">Политика использования</a>
+        </div>
+    </div>
+    </form>
 </section>

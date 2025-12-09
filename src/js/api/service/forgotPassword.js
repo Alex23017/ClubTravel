@@ -1,0 +1,14 @@
+
+import { API_VARIABLES } from '../variables.js';
+import axios from 'axios';
+export async function sendRessetPassword(email) {
+   await axios.post('http://localhost:1337/api/auth/forgot-password', {
+    email: `${email}`, 
+  })
+  .then(response => {
+    console.log('Your user received an email');
+  })
+  .catch(error => {
+    console.log('An error occurred:', error.response);
+  });
+}

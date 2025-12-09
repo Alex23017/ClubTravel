@@ -600,6 +600,29 @@ export interface ApiListHotelListHotel extends Struct.CollectionTypeSchema {
   }
 }
 
+export interface ApiResetPassResetPass extends Struct.CollectionTypeSchema {
+  collectionName: 'reset_passes'
+  info: {
+    displayName: 'resetPass'
+    pluralName: 'reset-passes'
+    singularName: 'reset-pass'
+  }
+  options: {
+    draftAndPublish: true
+  }
+  attributes: {
+    createdAt: Schema.Attribute.DateTime
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
+    locale: Schema.Attribute.String & Schema.Attribute.Private
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::reset-pass.reset-pass'> & Schema.Attribute.Private
+    name: Schema.Attribute.Text
+    publishedAt: Schema.Attribute.DateTime
+    token: Schema.Attribute.Text
+    updatedAt: Schema.Attribute.DateTime
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
+  }
+}
+
 export interface ApiResultSearchResultSearch extends Struct.CollectionTypeSchema {
   collectionName: 'result_searches'
   info: {
@@ -1097,6 +1120,7 @@ declare module '@strapi/strapi' {
       'api::hot-deal.hot-deal': ApiHotDealHotDeal
       'api::hotel.hotel': ApiHotelHotel
       'api::list-hotel.list-hotel': ApiListHotelListHotel
+      'api::reset-pass.reset-pass': ApiResetPassResetPass
       'api::result-search.result-search': ApiResultSearchResultSearch
       'api::summer-tour.summer-tour': ApiSummerTourSummerTour
       'api::winter-tour.winter-tour': ApiWinterTourWinterTour

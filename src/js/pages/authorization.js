@@ -1,5 +1,7 @@
 import '../../styles/pages/authorization.scss'
 import { postResource } from '../api/api'
+import { ressetPassword } from '../api/service/resetPassword';
+import { sendRessetPassword } from '../api/service/forgotPassword';
 const tabs = document.querySelectorAll('.tab')
 const content = document.querySelectorAll('.content__item')
 const params = new URLSearchParams(window.location.search)
@@ -88,3 +90,44 @@ async function login(event) {
 }
 
 document.getElementById('loginForm').addEventListener('submit', login)
+
+document.getElementById('reset').addEventListener('click',  () => {
+  const email = document.getElementById('emailReset').value;
+  sendRessetPassword(email);
+});
+
+
+
+ async function newPass(event) {
+  event.preventDefault();
+
+  const formData = new FormData(event.target);
+  const data = Object.fromEntries(formData);
+
+
+  const params = new URLSearchParams(window.location.search);
+  const code = params.get('code');
+  if (!code) {
+    console.error('No reset code in URL!');
+    return;
+  }
+  const resdata = {
+    code,
+    password: data.password,                    
+    passwordConfirmation: data.passwordRepeat,  
+  };
+
+  if (resdata.password !== resdata.passwordConfirmation) {
+    console.error('не співпадають паролі');
+    return;
+  }
+
+  try {
+    const res = await ressetPassword(resdata);
+    console.log('reset done:', res);
+  } catch (err) {
+    console.error('error:', err.response?.data ?? err.message);
+  }
+}
+
+document.getElementById('newPasswordForm').addEventListener('submit', newPass);
