@@ -5,8 +5,10 @@ import { Navigation, Pagination } from 'swiper/modules'
 import { API_VARIABLES } from '../api/variables.js'
 import OfferCard from '../../html/components/oneHotel/oneHotelOffer.html';
 import Swiper from 'swiper'
+import { addUserOrder } from '../api/service/createOffer.js';
 import {getHotelById} from '../api/service/hotels';
 import {getListHotel} from '../api/service/listHotel.js'
+
 
 import hotDealsCard from '../../html/components/home/hotDealsCard.html';
 
@@ -96,3 +98,32 @@ export function renderOffer() {
 renderHotelOffers()
 sliderInit()
 renderOffer()
+
+async function createOffer() {
+
+    const number = Date.now(); // унікальний номер
+    const date = new Date().toISOString(); // Strapi-friendly формат
+
+    const userId = localStorage.getItem('userId');
+
+    if (!userId) {
+        console.log('не авторизований користувач');
+        return;
+    }
+
+    const newOrder = {
+        number: number,
+        price: 745,
+        data: date
+    };
+
+    try {
+        await addUserOrder(userId, newOrder);
+        console.log('замовлення додано');
+    } catch (err) {
+        console.log('error:', err);
+    }
+}
+
+const btn = document.querySelector('.hotel__offer-button');
+btn.addEventListener('click', createOffer);

@@ -34,7 +34,7 @@ tabs.forEach(tab => {
 })
 
 async function register(event) {
-  event.preventDefault()
+  // event.preventDefault()
 
   const formData = new FormData(event.target)
   const jsonData = Object.fromEntries(formData)
@@ -60,7 +60,6 @@ async function register(event) {
 
     localStorage.setItem('Logged', 'true')
 
-    // window.location.href = './profile.html';
   }
 }
 
@@ -82,7 +81,12 @@ async function login(event) {
       console.log('login done', res)
 
       localStorage.setItem('Logged', 'true')
-      localStorage.setItem('username', data.identifier)
+      localStorage.setItem('username', data.identifier);
+      localStorage.setItem('userId', res.user.id);
+      localStorage.setItem('token', res.jwt);
+      
+      window.location.href = '/html/pages/profile.html';
+
     }
   } catch (err) {
     console.error('Login failed:', err.message)

@@ -600,6 +600,32 @@ export interface ApiListHotelListHotel extends Struct.CollectionTypeSchema {
   }
 }
 
+export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
+  collectionName: 'orders'
+  info: {
+    displayName: 'order'
+    pluralName: 'orders'
+    singularName: 'order'
+  }
+  options: {
+    draftAndPublish: true
+  }
+  attributes: {
+    createdAt: Schema.Attribute.DateTime
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
+    data: Schema.Attribute.String
+    locale: Schema.Attribute.String & Schema.Attribute.Private
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::order.order'> & Schema.Attribute.Private
+    number: Schema.Attribute.BigInteger
+    orderStatus: Schema.Attribute.Boolean
+    price: Schema.Attribute.BigInteger
+    publishedAt: Schema.Attribute.DateTime
+    updatedAt: Schema.Attribute.DateTime
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
+    users_permissions_user: Schema.Attribute.Relation<'manyToOne', 'plugin::users-permissions.user'>
+  }
+}
+
 export interface ApiResetPassResetPass extends Struct.CollectionTypeSchema {
   collectionName: 'reset_passes'
   info: {
@@ -1081,6 +1107,7 @@ export interface PluginUsersPermissionsUser extends Struct.CollectionTypeSchema 
     locale: Schema.Attribute.String & Schema.Attribute.Private
     localizations: Schema.Attribute.Relation<'oneToMany', 'plugin::users-permissions.user'> & Schema.Attribute.Private
     order: Schema.Attribute.Component<'shared.order', true>
+    orders: Schema.Attribute.Relation<'oneToMany', 'api::order.order'>
     password: Schema.Attribute.Password &
       Schema.Attribute.Private &
       Schema.Attribute.SetMinMaxLength<{
@@ -1120,6 +1147,7 @@ declare module '@strapi/strapi' {
       'api::hot-deal.hot-deal': ApiHotDealHotDeal
       'api::hotel.hotel': ApiHotelHotel
       'api::list-hotel.list-hotel': ApiListHotelListHotel
+      'api::order.order': ApiOrderOrder
       'api::reset-pass.reset-pass': ApiResetPassResetPass
       'api::result-search.result-search': ApiResultSearchResultSearch
       'api::summer-tour.summer-tour': ApiSummerTourSummerTour
