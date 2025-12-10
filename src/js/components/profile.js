@@ -50,7 +50,6 @@ export function sliderInit() {
 sliderInit()
 
 const data = await getProfile() || [];
-console.log('data: ', data);
 
 export function renderOffer() {
   const container = document.querySelector('.profile__order-render')
@@ -174,4 +173,3 @@ updateMargin()
 // const year = today.getFullYear()
 
 // profileOrderData.textContent = `${day} ${month} ${year}`
-console.log(localStorage.getItem('jwt'))

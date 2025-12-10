@@ -1,5 +1,5 @@
 import '../../styles/pages/authorization.scss'
-import { postPublicResource, postResource } from '../api/api'
+import { postPublicResource } from '../api/api'
 import { ressetPassword } from '../api/service/resetPassword'
 import { sendRessetPassword } from '../api/service/forgotPassword'
 const tabs = document.querySelectorAll('.tab')
@@ -57,7 +57,6 @@ async function register(event) {
   }
 
   if (res.jwt && res.user) {
-    console.log('Successfull registration.')
     localStorage.setItem('jwt', res.jwt)
     localStorage.setItem('Logged', 'true')
 
@@ -82,12 +81,10 @@ async function login(event) {
     })
 
     if (res.jwt && res.user) {
-      console.log('login done', res)
-
       localStorage.setItem('Logged', 'true')
       localStorage.setItem('username', data.identifier)
       localStorage.setItem('jwt', res.jwt)
-      console.log('login done', res)
+
     }
   } catch (err) {
     console.error('Login failed:', err.message)
@@ -138,4 +135,3 @@ const newPasswordForm = document.getElementById('newPasswordForm')
 if (newPasswordForm) {
   document.getElementById('newPasswordForm').addEventListener('submit', newPass)
 }
-console.log(localStorage.getItem('jwt'))
