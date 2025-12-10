@@ -101,8 +101,8 @@ renderOffer()
 
 async function createOffer() {
 
-    const number = Date.now(); // унікальний номер
-    const date = new Date().toISOString(); // Strapi-friendly формат
+    const number = Date.now(); 
+    const date = new Date().toISOString(); 
 
     const userId = localStorage.getItem('userId');
 
