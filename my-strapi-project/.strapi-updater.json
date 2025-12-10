@@ -1,5 +1,10 @@
 {
 	"latest": "5.31.3",
+<<<<<<< HEAD
 	"lastUpdateCheck": 1765190070349,
 	"lastNotification": 1764608070374
+=======
+	"lastUpdateCheck": 1765217736764,
+	"lastNotification": 1765217736722
+>>>>>>> bogdan-dev
 }
