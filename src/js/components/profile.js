@@ -49,21 +49,19 @@ export function sliderInit() {
 }
 sliderInit()
 
-const data = await getProfile()
+const data = await getProfile() || [];
 
 export function renderOffer() {
   const container = document.querySelector('.profile__order-render')
   const containerNext = document.querySelector('.profile__order-render--next')
   if (!container) return
-  const orders = data.flatMap(user => user.order).slice(0, 9)
-  const ordersLength = data.flatMap(user => user.order)
-  const orderNexts = data.flatMap(user => user.order).slice(9, 18)
+  const orders = data.slice(0, 9)
+  const orderNexts = data.slice(9, 18)
   const profileItemsLength = document.querySelector('.profile__items-length')
-
   mySwiperProfile.on('slideChange', () => {
     const sliderNumber = mySwiperProfile.realIndex + 1
     profileItemsLength.innerHTML = `
-  Показано ${sliderNumber === 1 ? orders.length : ordersLength.length} из ${ordersLength.length}
+  Показано ${sliderNumber === 1 ? orders.length : data.length} из ${data.length}
   `
   })
 
@@ -73,12 +71,11 @@ export function renderOffer() {
     const statusClass = !isProcessing ? 'processing' : 'paid'
 
     const offerCard = profileComponent({
-      orderNumber: item.number,
-      orderPrice: item.price + '.00',
-      orderEmail: item.email,
+      orderNumber: item.orderNumber,
+      orderPrice: item.orderPrice + '.00',
       orderStatus: status,
       statusClass: statusClass,
-      orderDate: item.data,
+      orderDate: item.orderDate,
     })
     container.insertAdjacentHTML('beforeend', offerCard)
   })
@@ -88,12 +85,11 @@ export function renderOffer() {
     const statusClass = !isProcessing ? 'processing' : 'paid'
 
     const offerCard = profileComponent({
-      orderNumber: item.number,
-      orderPrice: item.price + '.00',
-      orderEmail: item.email,
+      orderNumber: item.orderNumber,
+      orderPrice: item.orderPrice + '.00',
       orderStatus: status,
       statusClass: statusClass,
-      orderDate: item.data,
+      orderDate: item.orderDate,
     })
     containerNext.insertAdjacentHTML('beforeend', offerCard)
   })
@@ -152,6 +148,7 @@ logOut.addEventListener('click', () => {
   if (isLoggedIn()) {
     localStorage.removeItem('Logged')
     localStorage.removeItem('username')
+    localStorage.removeItem('jwt')
     window.location.reload()
   }
   if (!isLoggedIn()) {

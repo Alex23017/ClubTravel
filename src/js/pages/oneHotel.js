@@ -1,6 +1,7 @@
 import 'swiper/css'
 import 'swiper/css/pagination'
 import '/styles/pages/oneHotel.scss';
+import '../../styles/pages/tourRequest.scss'
 import { Navigation, Pagination } from 'swiper/modules'
 import { API_VARIABLES } from '../api/variables.js'
 import OfferCard from '../../html/components/oneHotel/oneHotelOffer.html';
@@ -11,7 +12,6 @@ import {getListHotel} from '../api/service/listHotel.js'
 
 
 import hotDealsCard from '../../html/components/home/hotDealsCard.html';
-
 
 const dataHotel = await getHotelById('xfmhd9zt1s4qrghz8unla56q')
 export function renderHotelOffers() {

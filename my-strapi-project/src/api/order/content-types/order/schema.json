@@ -4,7 +4,7 @@
   "info": {
     "singularName": "order",
     "pluralName": "orders",
-    "displayName": "order"
+    "displayName": "Order"
   },
   "options": {
     "draftAndPublish": true
@@ -17,16 +17,16 @@
       "target": "plugin::users-permissions.user",
       "inversedBy": "orders"
     },
-    "number": {
+    "orderNumber": {
+      "type": "biginteger"
+    },
+    "orderPrice": {
       "type": "biginteger"
     },
     "orderStatus": {
       "type": "boolean"
     },
-    "price": {
-      "type": "biginteger"
-    },
-    "data": {
+    "orderDate": {
       "type": "string"
     }
   }

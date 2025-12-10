@@ -2,8 +2,8 @@
 //   import('/styles/components/oneHotel.scss');
 //   import('/styles/base/reset.scss');
 // }
-import OneHotelTitle from '../../html/components/oneHotel/oneHotelTitle.html'
 
+import OneHotelTitle from '../../html/components/oneHotel/oneHotelTitle.html'
 
 const dataHotel = {
   hotelName: 'AMBASSADOR',

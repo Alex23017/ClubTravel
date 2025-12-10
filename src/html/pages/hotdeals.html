@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="../../styles/base/reset.scss" />
     <link rel="stylesheet" href="../../styles/pages/hotdeals.scss" />
   </head>
-  <body>
-    <!-- {{>preload}} -->
+  <body class="loading">
+    {{>preload}}
     <div class="wrapper hotdeals-wrapper">
       {{>header}}
       {{>imgHeader}}
@@ -24,5 +24,6 @@
       {{> footer}}
     </div>
     <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/pages/authorization.js"></script>
   </body>
 </html>

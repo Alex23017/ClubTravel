@@ -1,7 +1,7 @@
 import '../../styles/pages/authorization.scss'
-import { postResource } from '../api/api'
-import { ressetPassword } from '../api/service/resetPassword';
-import { sendRessetPassword } from '../api/service/forgotPassword';
+import { postPublicResource } from '../api/api'
+import { ressetPassword } from '../api/service/resetPassword'
+import { sendRessetPassword } from '../api/service/forgotPassword'
 const tabs = document.querySelectorAll('.tab')
 const content = document.querySelectorAll('.content__item')
 const params = new URLSearchParams(window.location.search)
@@ -33,6 +33,7 @@ tabs.forEach(tab => {
   tab.addEventListener('click', () => setTab(tab.dataset.tab))
 })
 
+const registerForm = document.getElementById('registerForm')
 async function register(event) {
   // event.preventDefault()
 
@@ -44,7 +45,7 @@ async function register(event) {
     return
   }
 
-  const res = await postResource('http://127.0.0.1:1337/api/auth/local/register', {
+  const res = await postPublicResource('http://127.0.0.1:1337/api/auth/local/register', {
     username: jsonData.email,
     email: jsonData.email,
     password: jsonData.password,
@@ -56,14 +57,15 @@ async function register(event) {
   }
 
   if (res.jwt && res.user) {
-    console.log('Successfull registration.')
-
+    localStorage.setItem('jwt', res.jwt)
     localStorage.setItem('Logged', 'true')
 
   }
 }
-
-document.getElementById('registerForm').addEventListener('submit', register)
+if (registerForm) {
+  document.getElementById('registerForm').addEventListener('submit', register)
+}
+const loginForm = document.getElementById('loginForm')
 
 async function login(event) {
   event.preventDefault()
@@ -72,14 +74,12 @@ async function login(event) {
   const data = Object.fromEntries(formData)
 
   try {
-    const res = await postResource('http://localhost:1337/api/auth/local', {
+    const res = await postPublicResource('http://localhost:1337/api/auth/local', {
       identifier: data.identifier,
       password: data.password,
     })
 
     if (res.jwt && res.user) {
-      console.log('login done', res)
-
       localStorage.setItem('Logged', 'true')
       localStorage.setItem('username', data.identifier);
       localStorage.setItem('userId', res.user.id);
@@ -92,46 +92,48 @@ async function login(event) {
     console.error('Login failed:', err.message)
   }
 }
+if (loginForm) {
+  document.getElementById('loginForm').addEventListener('submit', login)
+}
+const reset = document.getElementById('reset')
+if (reset) {
+  document.getElementById('reset').addEventListener('click', () => {
+    const email = document.getElementById('emailReset').value
+    sendRessetPassword(email)
+  })
+}
 
-document.getElementById('loginForm').addEventListener('submit', login)
+async function newPass(event) {
+  event.preventDefault()
 
-document.getElementById('reset').addEventListener('click',  () => {
-  const email = document.getElementById('emailReset').value;
-  sendRessetPassword(email);
-});
+  const formData = new FormData(event.target)
+  const data = Object.fromEntries(formData)
 
-
-
- async function newPass(event) {
-  event.preventDefault();
-
-  const formData = new FormData(event.target);
-  const data = Object.fromEntries(formData);
-
-
-  const params = new URLSearchParams(window.location.search);
-  const code = params.get('code');
+  const params = new URLSearchParams(window.location.search)
+  const code = params.get('code')
   if (!code) {
-    console.error('No reset code in URL!');
-    return;
+    console.error('No reset code in URL!')
+    return
   }
   const resdata = {
     code,
-    password: data.password,                    
-    passwordConfirmation: data.passwordRepeat,  
-  };
+    password: data.password,
+    passwordConfirmation: data.passwordRepeat,
+  }
 
   if (resdata.password !== resdata.passwordConfirmation) {
-    console.error('не співпадають паролі');
-    return;
+    console.error('не співпадають паролі')
+    return
   }
 
   try {
-    const res = await ressetPassword(resdata);
-    console.log('reset done:', res);
+    const res = await ressetPassword(resdata)
+    console.log('reset done:', res)
   } catch (err) {
-    console.error('error:', err.response?.data ?? err.message);
+    console.error('error:', err.response?.data ?? err.message)
   }
 }
-
-document.getElementById('newPasswordForm').addEventListener('submit', newPass);
+const newPasswordForm = document.getElementById('newPasswordForm')
+if (newPasswordForm) {
+  document.getElementById('newPasswordForm').addEventListener('submit', newPass)
+}

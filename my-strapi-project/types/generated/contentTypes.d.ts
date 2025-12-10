@@ -603,7 +603,7 @@ export interface ApiListHotelListHotel extends Struct.CollectionTypeSchema {
 export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
   collectionName: 'orders'
   info: {
-    displayName: 'order'
+    displayName: 'Order'
     pluralName: 'orders'
     singularName: 'order'
   }
@@ -613,12 +613,12 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
   attributes: {
     createdAt: Schema.Attribute.DateTime
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
-    data: Schema.Attribute.String
     locale: Schema.Attribute.String & Schema.Attribute.Private
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::order.order'> & Schema.Attribute.Private
-    number: Schema.Attribute.BigInteger
+    orderDate: Schema.Attribute.String
+    orderNumber: Schema.Attribute.BigInteger
+    orderPrice: Schema.Attribute.BigInteger
     orderStatus: Schema.Attribute.Boolean
-    price: Schema.Attribute.BigInteger
     publishedAt: Schema.Attribute.DateTime
     updatedAt: Schema.Attribute.DateTime
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
@@ -1106,7 +1106,6 @@ export interface PluginUsersPermissionsUser extends Struct.CollectionTypeSchema 
       }>
     locale: Schema.Attribute.String & Schema.Attribute.Private
     localizations: Schema.Attribute.Relation<'oneToMany', 'plugin::users-permissions.user'> & Schema.Attribute.Private
-    order: Schema.Attribute.Component<'shared.order', true>
     orders: Schema.Attribute.Relation<'oneToMany', 'api::order.order'>
     password: Schema.Attribute.Password &
       Schema.Attribute.Private &
