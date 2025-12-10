@@ -35,7 +35,7 @@ tabs.forEach(tab => {
 
 const registerForm = document.getElementById('registerForm')
 async function register(event) {
-  event.preventDefault()
+  // event.preventDefault()
 
   const formData = new FormData(event.target)
   const jsonData = Object.fromEntries(formData)
@@ -60,7 +60,6 @@ async function register(event) {
     localStorage.setItem('jwt', res.jwt)
     localStorage.setItem('Logged', 'true')
 
-    // window.location.href = './profile.html';
   }
 }
 if (registerForm) {
@@ -82,8 +81,11 @@ async function login(event) {
 
     if (res.jwt && res.user) {
       localStorage.setItem('Logged', 'true')
-      localStorage.setItem('username', data.identifier)
-      localStorage.setItem('jwt', res.jwt)
+      localStorage.setItem('username', data.identifier);
+      localStorage.setItem('userId', res.user.id);
+      localStorage.setItem('token', res.jwt);
+      
+      window.location.href = '/html/pages/profile.html';
 
     }
   } catch (err) {

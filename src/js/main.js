@@ -54,3 +54,21 @@ renderSkeleton('.news__container', 4)
 renderSkeleton('.hotdeals__container', 4)
 renderSkeleton('.wintertours__container', 5)
 renderSkeleton('.summertours__container', 5)
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  function isLoggedIn() {
+    return localStorage.getItem('Logged') === 'true'
+  }
+  const profile = document.querySelectorAll('.profile__body-img')
+
+  profile.forEach(prof =>
+    prof.addEventListener('click', () => {
+      if (isLoggedIn()) {
+        window.location.replace('/html/pages/profile.html')
+      } else {
+        window.location.replace('/html/pages/authorization.html?tab=authorization')
+      }
+    })
+  )
+})
