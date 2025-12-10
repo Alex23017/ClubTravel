@@ -1,3 +1,4 @@
+import "../../styles/base/main.scss"
 import '../../styles/pages/tourRequest.scss'
 
 const tabs = document.querySelectorAll('.tab__name');

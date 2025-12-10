@@ -1,10 +1,10 @@
 import { API_VARIABLES } from '../variables.js'
-import { getResource } from '../api'
+import { getPublicResource } from '../api'
 import { skeleton } from '../../main.js'
 
 export async function getSummerTours() {
   try {
-    const res = await getResource(`${API_VARIABLES.BASE_URL}/api/summer-tours?populate=*`)
+    const res = await getPublicResource(`${API_VARIABLES.BASE_URL}/api/summer-tours?populate=*`)
     if (res) {
       skeleton('.summertours__container', '.skeleton__card')
     }

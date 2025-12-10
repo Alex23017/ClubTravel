@@ -1,5 +1,5 @@
 import { API_VARIABLES } from '../variables.js'
-import { getResource } from '../api'
+import { getPublicResource } from '../api'
 
 const urlParams = new URLSearchParams(window.location.search)
 const rating = urlParams.get('rating')
@@ -21,7 +21,7 @@ if (filters.length) {
 
 export async function getResultSearch() {
   try {
-    const res = await getResource(`${API_VARIABLES.BASE_URL}/api/result-searches?${query.toString()}`)
+    const res = await getPublicResource(`${API_VARIABLES.BASE_URL}/api/result-searches?${query.toString()}`)
     console.log(res.data)
 
     return res.data

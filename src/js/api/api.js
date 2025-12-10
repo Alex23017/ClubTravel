@@ -1,14 +1,16 @@
-import { API_VARIABLES } from './variables.js'
 import axios from 'axios'
+
 export async function getResource(url) {
+  const jwt = localStorage.getItem('jwt')
+  if (!jwt) throw new Error('JWT отсутствует')
+
   try {
     const res = await axios.get(url, {
       headers: {
-        Authorization: `Bearer ${API_VARIABLES.API_TOKEN}`,
+        Authorization: `Bearer ${jwt}`,
         'Content-Type': 'application/json',
       },
     })
-
     return res.data
   } catch (error) {
     const status = error.response?.status || 'NO_STATUS'
@@ -17,19 +19,47 @@ export async function getResource(url) {
 }
 
 export async function postResource(url, data = {}) {
+  const jwt = localStorage.getItem('jwt')
+  if (!jwt) throw new Error('JWT отсутствует')
+
   try {
     const res = await axios.post(url, data, {
       headers: {
-        Authorization: `Bearer ${API_VARIABLES.API_TOKEN}`,
+        Authorization: `Bearer ${jwt}`,
         'Content-Type': 'application/json',
       },
-    });
-
-    return res.data;
+    })
+    return res.data
   } catch (error) {
-    console.log(error);
-    
+    const status = error.response?.status || 'NO_STATUS'
+    throw new Error(`Could not post to ${url}, status: ${status}`)
   }
 }
 
 
+export async function getPublicResource(url) {
+  try {
+    const res = await axios.get(url, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    return res.data
+  } catch (error) {
+    const status = error.response?.status || 'NO_STATUS'
+    throw new Error(`Could not fetch ${url}, status: ${status}`)
+  }
+}
+
+
+export async function postPublicResource(url, data = {}) {
+  try {
+    const res = await axios.post(url, data, {
+      headers: { 'Content-Type': 'application/json' },
+    })
+    return res.data
+  } catch (error) {
+    console.error(error.response?.data || error.message)
+    return null
+  }
+}
