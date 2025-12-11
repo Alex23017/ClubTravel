@@ -19,7 +19,7 @@ function OneHotelInfo(initialProps = {}) {
       return bin;
     }
   };
-  const sourceTemplate = decodeBase64Utf8("PGRpdiBjbGFzcz0iaG90ZWxfX2luZm8td3JhcHBlciI+DQo8ZGl2IGNsYXNzPSJob3RlbF9fdGl0bGUiPnt7dGl0bGV9fTwvZGl2Pg0KDQogICAgPGRpdiBjbGFzcz0iaG90ZWxfX2Rlc2NyaXB0aW9uIj57e2Rlc2NyaXB0aW9ufX08L2Rpdj4NCg0KICAgIDxkaXYgY2xhc3M9ImhvdGVsX19pbmZvLWxpc3QiPg0KICAgICAgDQogICAgICA8ZGl2IGNsYXNzPSJob3RlbF9fY29sdW1uIj4NCiAgICAgICAgICA8ZGl2IGNsYXNzPSJob3RlbF9faW5mby1pdGVtIj4NCiAgICAgICAgICAgIDxkaXYgY2xhc3M9ImhvdGVsX19pbmZvLXRpdGxlIj57e2l0ZW1UaXRsZX19PC9kaXY+DQogICAgICAgICAgICA8ZGl2IGNsYXNzPSJob3RlbF9faW5mby10ZXh0Ij57e2l0ZW1EZXNjcmlwdGlvbn19PC9kaXY+DQogICAgICAgICAgPC9kaXY+DQoNCiAgICAgICAgICB7e2xlZnRMaXN0fX0NCiAgICAgIDwvZGl2Pg0KICAgICAgDQogICAgICA8ZGl2IGNsYXNzPSJob3RlbF9fY29sdW1uIj4NCiAgICAgICAgICB7e3JpZ2h0TGlzdH19DQogICAgICA8L2Rpdj4NCg0KICAgIDwvZGl2Pg0KDQo8L2Rpdj4=");
+  const sourceTemplate = decodeBase64Utf8("PGRpdiBjbGFzcz0iaG90ZWxfX2luZm8td3JhcHBlciI+DQo8ZGl2IGNsYXNzPSJob3RlbF9fdGl0bGUiPnt7dGl0bGV9fTwvZGl2Pg0KDQogICAgPGRpdiBjbGFzcz0iaG90ZWxfX2Rlc2NyaXB0aW9uIj57e2Rlc2NyaXB0aW9ufX08L2Rpdj4NCg0KICAgIDxkaXYgY2xhc3M9ImhvdGVsX19pbmZvLWxpc3QiPg0KICAgICAgDQogICAgICA8ZGl2IGNsYXNzPSJob3RlbF9fY29sdW1uIj4NCiAgICAgICAgICA8ZGl2IGNsYXNzPSJob3RlbF9faW5mby1pdGVtIj4NCiAgICAgICAgICAgIDxkaXYgY2xhc3M9ImhvdGVsX19pbmZvLXRpdGxlIj57e2l0ZW1UaXRsZX19PC9kaXY+DQogICAgICAgICAgICA8ZGl2IGNsYXNzPSJob3RlbF9faW5mby10ZXh0Ij57e2l0ZW1EZXNjcmlwdGlvbn19PC9kaXY+DQogICAgICAgICAgPC9kaXY+DQoNCiAgICAgICAgICB7e2xlZnRMaXN0fX0NCiAgICAgIDwvZGl2Pg0KICAgICAgDQogICAgICA8ZGl2IGNsYXNzPSJob3RlbF9fY29sdW1uIj4NCiAgICAgICAgICB7e3JpZ2h0TGlzdH19DQogICAgICA8L2Rpdj4NCiAgICA8L2Rpdj4NCjwvZGl2Pg==");
   let currentProps = { ...initialProps };
   const LBRACE = String.fromCharCode(123), RBRACE = String.fromCharCode(125), OPEN = LBRACE + LBRACE, CLOSE = RBRACE + RBRACE;
   function createHtml(props) {
@@ -84,7 +84,9 @@ function OneHotelInfo(initialProps = {}) {
   Object.keys(api).forEach((name) => rootElement[name] = api[name]);
   return rootElement;
 }
-const dataHotel = await getHotelById("xfmhd9zt1s4qrghz8unla56q");
+const params = new URLSearchParams(window.location.search);
+const hotelId = params.get("id");
+const dataHotel = await getHotelById(hotelId);
 function renderInfo(data) {
   const container = document.querySelector(".hotel__info");
   if (!container) return;

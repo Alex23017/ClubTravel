@@ -4,7 +4,7 @@ const API_VARIABLES = {
   HEADERS: {
     "Content-Type": "application/json"
   },
-  IMG_URL: "http://localhost:1337"
+  IMG_URL: "https://deserving-apparel-f938801c39.strapiapp.com"
 };
 export {
   API_VARIABLES as A

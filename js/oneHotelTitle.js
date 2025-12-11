@@ -1,3 +1,6 @@
+import { g as getHotelById } from "./hotels.js";
+import "./variables.js";
+import "./api.js";
 function OneHotelTitle(initialProps = {}) {
   const decodeBase64Utf8 = (b64) => {
     if (typeof atob === "function" && typeof TextDecoder !== "undefined") {
@@ -16,7 +19,7 @@ function OneHotelTitle(initialProps = {}) {
       return bin;
     }
   };
-  const sourceTemplate = decodeBase64Utf8("PGRpdiBjbGFzcz0iaG90ZWxfX2NhcmQtd3JhcHBlciI+DQogICAgPGRpdiBjbGFzcz0iaG90ZWxfX2NhcmQtbmFtZSI+DQogICAgICB7e25hbWV9fQ0KICAgIDxkaXYgY2xhc3M9ImhvdGVsX19jYXJkLW1vcmUiPg0KICAgICAgPHN2Zz4NCiAgICAgICAgPHVzZSB4bGluazpocmVmPScjaWNvbi1wbHVzLXNoaW55Jz48L3VzZT4NCiAgICAgIDwvc3ZnPg0KICAgIDwvZGl2Pg0KICAgIDxkaXYgY2xhc3M9ImhvdGVsX19jYXJkLXN0YXJzIj4NCiAgICAgIHt7c3RhcnN9fQ0KICAgIDwvZGl2Pg0KICA8L2Rpdj4NCiAgPGRpdiBjbGFzcz0iaG90ZWxfX2NhcmQtbG9jYXRpb24iPg0KICAgDQogICAgPHN2ZyBjbGFzcz0iaG90ZWxfX2NhcmQtcGluIj4NCiAgICAgICAgPHVzZSB4bGluazpocmVmPScjaWNvbi1waW4tZ3JlYW4nPjwvdXNlPg0KICAgICAgPC9zdmc+DQogICAgICB7e2FkZHJlc3N9fQ0KICA8L2Rpdj4NCg0KPC9kaXY+");
+  const sourceTemplate = decodeBase64Utf8("PGRpdiBjbGFzcz0iaG90ZWxfX2NhcmQtd3JhcHBlciI+DQogICAgPGRpdiBjbGFzcz0iaG90ZWxfX2NhcmQtbmFtZSI+DQogICAgICB7e25hbWV9fQ0KICAgIDxkaXYgY2xhc3M9ImhvdGVsX19jYXJkLW1vcmUiPg0KICAgICAgPHN2Zz4NCiAgICAgICAgPHVzZSB4bGluazpocmVmPScjaWNvbi1wbHVzLXNoaW55Jz48L3VzZT4NCiAgICAgIDwvc3ZnPg0KICAgIDwvZGl2Pg0KICAgIDxkaXYgY2xhc3M9ImhvdGVsX19jYXJkLXN0YXJzIj4NCiAgICAgIHt7c3RhcnN9fQ0KICAgIDwvZGl2Pg0KICA8L2Rpdj4NCiAgPGRpdiBjbGFzcz0iaG90ZWxfX2NhcmQtbG9jYXRpb24iPg0KICAgDQogICAgPHN2ZyBjbGFzcz0iaG90ZWxfX2NhcmQtcGluIj4NCiAgICAgICAgPHVzZSB4bGluazpocmVmPScjaWNvbi1waW4tZ3JlYW4nPjwvdXNlPg0KICAgICAgPC9zdmc+DQogICAgICB7e2FkZHJlc3N9fQ0KICA8L2Rpdj4NCjwvZGl2Pg==");
   let currentProps = { ...initialProps };
   const LBRACE = String.fromCharCode(123), RBRACE = String.fromCharCode(125), OPEN = LBRACE + LBRACE, CLOSE = RBRACE + RBRACE;
   function createHtml(props) {
@@ -81,31 +84,23 @@ function OneHotelTitle(initialProps = {}) {
   Object.keys(api).forEach((name) => rootElement[name] = api[name]);
   return rootElement;
 }
-const dataHotel = {
-  hotelName: "AMBASSADOR",
-  address: "Болгария, Золотые Пески",
-  rating: 4
-};
+const params = new URLSearchParams(window.location.search);
+const hotelId = params.get("id");
+const dataHotel = await getHotelById(hotelId);
 function renderCard(data) {
   const container = document.querySelector(".hotel__card");
   if (!container) return;
   let stars = "";
-  for (let i = 1; i < data.rating; i++) {
+  for (let i = 1; i < 3; i++) {
     stars += ` <svg class="hotel__card-star">
         <use xlink:href='#icon-star-shiny'></use>
       </svg>`;
   }
   const oneHotelTitle = OneHotelTitle({
-    name: data.hotelName,
+    name: data.from,
     stars,
-    address: data.address,
-    items: [
-      { name: "Laptop", price: 999 },
-      { name: "Mouse", price: 29 },
-      { name: "Keyboard", price: 79 }
-    ]
+    address: data.location
   });
   container.appendChild(oneHotelTitle);
-  console.log(oneHotelTitle);
 }
 renderCard(dataHotel);

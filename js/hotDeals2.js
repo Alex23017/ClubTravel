@@ -43,6 +43,10 @@ function sliderInit() {
   }
 }
 const data = await getListHotel();
+function onHotelClick(e) {
+  const id = e.currentTarget.dataset.id;
+  window.location.href = `/html/pages/oneHotel.html?id=${id}`;
+}
 function renderOffer() {
   const container = document.querySelector(".hotdeals__container");
   if (!container) return;
@@ -55,6 +59,7 @@ function renderOffer() {
       </svg>`;
     }
     const offerCard = hotDealsCard({
+      documentId: item.documentId,
       img: item.img[0].url,
       data: item.data,
       location: item.location,
@@ -64,6 +69,7 @@ function renderOffer() {
       priceCount: item.priceCount,
       stars: getStars
     });
+    offerCard.addEventListener("click", onHotelClick);
     container.appendChild(offerCard);
   });
 }

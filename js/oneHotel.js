@@ -1,11 +1,11 @@
 import "./oneHotelOffer.js";
 import { S as Swiper, N as Navigation, P as Pagination } from "./swiper-core.js";
 /* empty css             */
-import { A as API_VARIABLES } from "./variables.js";
 import { b as axios } from "./api.js";
 import { g as getHotelById } from "./hotels.js";
 import { g as getListHotel } from "./listHotel.js";
 import { h as hotDealsCard } from "./hotDealsCard.js";
+import "./variables.js";
 function OfferCard(initialProps = {}) {
   const decodeBase64Utf8 = (b64) => {
     if (typeof atob === "function" && typeof TextDecoder !== "undefined") {
@@ -24,7 +24,7 @@ function OfferCard(initialProps = {}) {
       return bin;
     }
   };
-  const sourceTemplate = decodeBase64Utf8("PGZvcm0gZGF0YS1jb21wb25lbnQ9Im9uZUhvdGVsT2ZmZXIiIGNsYXNzPSJob3RlbF9fb2ZmZXItd3JhcHBlciI+DQogIDxkaXYgY2xhc3M9ImhvdGVsX19vZmZlci10aXRsZSI+DQogICAgPHNwYW4+0JLRi9Cx0YDQsNC90L3Ri9C5INGC0YPRgDwvc3Bhbj4NCiAgICA8YnV0dG9uIHR5cGU9InN1Ym1pdCI+0LjQt9C80LXQvdC40YLRjDwvYnV0dG9uPg0KPC9kaXY+DQo8ZGl2IGNsYXNzPSJob3RlbF9fb2ZmZXItZGF0ZXMiPg0KICA8ZGl2IGNsYXNzPSJob3RlbF9fb2ZmZXItZGF0ZSI+DQogICAgPHN2Zz4NCiAgICA8dXNlIHhsaW5rOmhyZWY9JyNpY29uLWNhbGVuZGFyJz48L3VzZT4NCiAgPC9zdmc+DQogICAgPHNwYW4+MTgg0LjRjtC90Y8gMjAyMCDQsy4gfCB7e25pZ2h0fX3QvdC+0YfQtdC5PC9zcGFuPg0KICA8L2Rpdj4NCiAgPGRpdiBjbGFzcz0iaG90ZWxfX29mZmVyLXJhaXNlIj4NCiAgICA8c3ZnPg0KICAgIDx1c2UgeGxpbms6aHJlZj0nI2ljb24tZGVwYXJ0dXJlJz48L3VzZT4NCiAgPC9zdmc+DQogICAgPHNwYW4+0JLRi9C70LXRgiDQuNC3IHt7ZnJvbX19PC9zcGFuPg0KICA8L2Rpdj4NCiAgPGRpdiBjbGFzcz0iaG90ZWxfX29mZmVyLWZvb2QiPg0KICAgIDxzdmc+DQogICAgPHVzZSB4bGluazpocmVmPScjaWNvbi1mb29kJz48L3VzZT4NCiAgPC9zdmc+DQogICAgPHNwYW4+e3tmb29kfX08L3NwYW4+DQogIDwvZGl2Pg0KICA8ZGl2IGNsYXNzPSJob3RlbF9fb2ZmZXItaG91c2VzIj4NCiAgICA8c3ZnPg0KICAgIDx1c2UgeGxpbms6aHJlZj0nI2ljb24tYXBhcnRtZW50Jz48L3VzZT4NCiAgPC9zdmc+DQogICAgPHNwYW4+e3tob3VzZXN9fTwvc3Bhbj4NCiAgPC9kaXY+DQo8ZGl2IGNsYXNzPSJob3RlbF9fb2ZmZXItcHJpY2UiPg0KICAgPGI+e3twcmljZXN9feKCrDwvYj4NCi/Rh9C10LsNCjwvZGl2Pg0KPGRpdiBjbGFzcz0iaG90ZWxfX29mZmVyLWRlc2NyaXB0aW9uIj4NCjxiPtCm0LXQvdCwINC90LAg0L7QtNC90L7Qs9C+INGH0LXQu9C+0LLQtdC60LAgPC9iPg0K0LTQtdC50YHRgtCy0LjRgtC10LvRjNC90LAg0L/RgNC4INGA0LDQt9C80LXRidC10L3QuNC4INCyINC00LLRg9GF0LzQtdGB0YLQvdC+0Lwg0L3QvtC80LXRgNC1LiDQptC10L3QsCDQt9Cw0LLQuNGB0LjRgiDQvtGCINC60L7Qu9C40YfQtdGB0YLQstCwINC80LXRgdGCINC4INC80L7QttC10YIg0LjQt9C80LXQvdC40YLRjNGB0Y8uDQo8L2Rpdj4NCjxkaXYgY2xhc3M9Imd1ZXN0cyI+DQogIDxsYWJlbCBmb3I9Imd1ZXN0cyI+0JrQvtC70LjRh9C10YHRgtCy0L4g0L7RgtC00YvRhdCw0Y7RidC40YU8L2xhYmVsPg0KICAgPGRpdiBjbGFzcz0ibGFiZWwiPtCS0LfRgNC+0YHQu9C40YU8L2Rpdj4NCiAgPGlucHV0IHR5cGU9InRleHQiPg0KICA8ZGl2IGNsYXNzPSJsYWJlbCI+0LTQtdGC0LXQuTwvZGl2Pg0KICA8aW5wdXQgdHlwZT0idGV4dCI+DQo8L2Rpdj4NCg0KPGRpdiBjbGFzcz0iaG90ZWxfX29mZmVyLXRvdGFsIj4NCiAg0J7QsdGJ0LDRjyDRgdGC0L7QuNC80L7RgdGC0Ywg0YLRg9GA0LA6DQo8c3Bhbj4NCiAgPGIgaWQ9InByaWNlIj4xIDQyOeKCrDwvYj4NCjwvc3Bhbj4NCjwvZGl2Pg0KPGJ1dHRvbiB0eXBlPSJidXR0b24iIGNsYXNzPSJob3RlbF9fb2ZmZXItYnV0dG9uIGJ1dHRvbi1wcmltYXJ5Ij4NCiAg0JHRgNC+0L3QuNGA0L7QstCw0YLRjA0KPC9idXR0b24+DQo8ZGl2IGNsYXNzPSJob3RlbF9fb2ZmZXItcG9saWN5Ij4NCjxzdmc+DQogIDx1c2UgeGxpbms6aHJlZj0nI2ljb24tcG9saWN5LWxvY2snPjwvdXNlPg0KPC9zdmc+DQogIDxkaXY+DQogINCS0LDRiNC4INC00LDQvdC90YvQtSDQvdCw0LTQtdC20L3QviDQt9Cw0YnQuNGJ0LXQvdGLINC4INC+0LHRgNCw0LHQsNGC0YvQstCw0Y7RgtGB0Y8g0YHQvtCz0LvQsNGB0L3QviDRgSANCiAgPHNwYW4+DQogIA0KICDRg9GB0LvQvtCy0LjRj9C80Lgg0L7QsdGA0LDQsdC+0YLQutC4INC70LjRh9C90YvRhSDQtNCw0L3QvdGL0YUNCiAgPC9zcGFuPg0KDQogIDwvZGl2Pg0KPC9kaXY+DQo8L2Rpdj4NCjwvZm9ybT4NCiAg");
+  const sourceTemplate = decodeBase64Utf8("PGZvcm0gZGF0YS1jb21wb25lbnQ9Im9uZUhvdGVsT2ZmZXIiIGNsYXNzPSJob3RlbF9fb2ZmZXItd3JhcHBlciI+DQogIDxkaXYgY2xhc3M9ImhvdGVsX19vZmZlci10aXRsZSI+DQogICAgPHNwYW4+0JLRi9Cx0YDQsNC90L3Ri9C5INGC0YPRgDwvc3Bhbj4NCiAgICA8YnV0dG9uIHR5cGU9InN1Ym1pdCI+0LjQt9C80LXQvdC40YLRjDwvYnV0dG9uPg0KPC9kaXY+DQo8ZGl2IGNsYXNzPSJob3RlbF9fb2ZmZXItZGF0ZXMiPg0KICA8ZGl2IGNsYXNzPSJob3RlbF9fb2ZmZXItZGF0ZSI+DQogICAgPHN2Zz4NCiAgICA8dXNlIHhsaW5rOmhyZWY9JyNpY29uLWNhbGVuZGFyJz48L3VzZT4NCiAgPC9zdmc+DQogICAgPHNwYW4+MTgg0LjRjtC90Y8gMjAyMCDQsy4gfCB7e25pZ2h0fX3QvdC+0YfQtdC5PC9zcGFuPg0KICA8L2Rpdj4NCiAgPGRpdiBjbGFzcz0iaG90ZWxfX29mZmVyLXJhaXNlIj4NCiAgICA8c3ZnPg0KICAgIDx1c2UgeGxpbms6aHJlZj0nI2ljb24tZGVwYXJ0dXJlJz48L3VzZT4NCiAgPC9zdmc+DQogICAgPHNwYW4+0JLRi9C70LXRgiDQuNC3IHt7ZnJvbX19PC9zcGFuPg0KICA8L2Rpdj4NCiAgPGRpdiBjbGFzcz0iaG90ZWxfX29mZmVyLWZvb2QiPg0KICAgIDxzdmc+DQogICAgPHVzZSB4bGluazpocmVmPScjaWNvbi1mb29kJz48L3VzZT4NCiAgPC9zdmc+DQogICAgPHNwYW4+e3tmb29kfX08L3NwYW4+DQogIDwvZGl2Pg0KICA8ZGl2IGNsYXNzPSJob3RlbF9fb2ZmZXItaG91c2VzIj4NCiAgICA8c3ZnPg0KICAgIDx1c2UgeGxpbms6aHJlZj0nI2ljb24tYXBhcnRtZW50Jz48L3VzZT4NCiAgPC9zdmc+DQogICAgPHNwYW4+e3tob3VzZXN9fTwvc3Bhbj4NCiAgPC9kaXY+DQo8ZGl2IGNsYXNzPSJob3RlbF9fb2ZmZXItcHJpY2UiPg0KICAgPGI+e3twcmljZXN9feKCrDwvYj4NCi/Rh9C10LsNCjwvZGl2Pg0KPGRpdiBjbGFzcz0iaG90ZWxfX29mZmVyLWRlc2NyaXB0aW9uIj4NCjxiPtCm0LXQvdCwINC90LAg0L7QtNC90L7Qs9C+INGH0LXQu9C+0LLQtdC60LAgPC9iPg0K0LTQtdC50YHRgtCy0LjRgtC10LvRjNC90LAg0L/RgNC4INGA0LDQt9C80LXRidC10L3QuNC4INCyINC00LLRg9GF0LzQtdGB0YLQvdC+0Lwg0L3QvtC80LXRgNC1LiDQptC10L3QsCDQt9Cw0LLQuNGB0LjRgiDQvtGCINC60L7Qu9C40YfQtdGB0YLQstCwINC80LXRgdGCINC4INC80L7QttC10YIg0LjQt9C80LXQvdC40YLRjNGB0Y8uDQo8L2Rpdj4NCjxkaXYgY2xhc3M9Imd1ZXN0cyI+DQogIDxsYWJlbCBmb3I9Imd1ZXN0cyI+0JrQvtC70LjRh9C10YHRgtCy0L4g0L7RgtC00YvRhdCw0Y7RidC40YU8L2xhYmVsPg0KICAgPGRpdiBjbGFzcz0ibGFiZWwiPtCS0LfRgNC+0YHQu9C40YU8L2Rpdj4NCiAgPGlucHV0IHR5cGU9InRleHQiPg0KICA8ZGl2IGNsYXNzPSJsYWJlbCI+0LTQtdGC0LXQuTwvZGl2Pg0KICA8aW5wdXQgdHlwZT0idGV4dCI+DQo8L2Rpdj4NCjxkaXYgY2xhc3M9ImhvdGVsX19vZmZlci10b3RhbCI+DQogINCe0LHRidCw0Y8g0YHRgtC+0LjQvNC+0YHRgtGMINGC0YPRgNCwOg0KPHNwYW4+DQogIDxiIGlkPSJwcmljZSI+MSA0Mjnigqw8L2I+DQo8L3NwYW4+DQo8L2Rpdj4NCjxidXR0b24gdHlwZT0iYnV0dG9uIiBjbGFzcz0iaG90ZWxfX29mZmVyLWJ1dHRvbiBidXR0b24tcHJpbWFyeSI+DQogINCR0YDQvtC90LjRgNC+0LLQsNGC0YwNCjwvYnV0dG9uPg0KPGRpdiBjbGFzcz0iaG90ZWxfX29mZmVyLXBvbGljeSI+DQo8c3ZnPg0KICA8dXNlIHhsaW5rOmhyZWY9JyNpY29uLXBvbGljeS1sb2NrJz48L3VzZT4NCjwvc3ZnPg0KICA8ZGl2Pg0KICDQktCw0YjQuCDQtNCw0L3QvdGL0LUg0L3QsNC00LXQttC90L4g0LfQsNGJ0LjRidC10L3RiyDQuCDQvtCx0YDQsNCx0LDRgtGL0LLQsNGO0YLRgdGPINGB0L7Qs9C70LDRgdC90L4g0YEgDQogIDxzcGFuPg0KICANCiAg0YPRgdC70L7QstC40Y/QvNC4INC+0LHRgNCw0LHQvtGC0LrQuCDQu9C40YfQvdGL0YUg0LTQsNC90L3Ri9GFDQogIDwvc3Bhbj4NCg0KICA8L2Rpdj4NCjwvZGl2Pg0KPC9kaXY+DQo8L2Zvcm0+DQogIA==");
   let currentProps = { ...initialProps };
   const LBRACE = String.fromCharCode(123), RBRACE = String.fromCharCode(125), OPEN = LBRACE + LBRACE, CLOSE = RBRACE + RBRACE;
   function createHtml(props) {
@@ -103,12 +103,15 @@ async function addUserOrder(userId, newOrder) {
     { headers: { Authorization: `Bearer ${token}` } }
   );
 }
-const dataHotel = await getHotelById("xfmhd9zt1s4qrghz8unla56q");
+const params = new URLSearchParams(window.location.search);
+const hotelId = params.get("id");
+console.log("Hotel ID:", hotelId);
+const dataHotel = await getHotelById(hotelId);
 function renderHotelOffers() {
   const container = document.querySelector(".hotel__offer");
   if (!container) return;
   const offerCard = OfferCard({
-    night: dataHotel.night,
+    night: 7,
     from: dataHotel.from,
     food: dataHotel.food,
     houses: dataHotel.houses,
@@ -162,7 +165,7 @@ function renderOffer() {
       </svg>`;
     }
     const offerCard = hotDealsCard({
-      img: API_VARIABLES.IMG_URL + item.img[0].url,
+      img: item.img[0].url,
       data: item.data,
       location: item.location,
       title: item.title,
@@ -183,12 +186,15 @@ async function createOffer() {
   const userId = localStorage.getItem("userId");
   if (!userId) {
     console.log("не авторизований користувач");
+    window.location.href = "/html/pages/authorization.html?tab=authorization";
     return;
   }
   const newOrder = {
-    number,
-    price: 745,
-    data: date
+    orderNumber: number,
+    orderPrice: 679,
+    orderStatus: false,
+    orderDate: date,
+    users_permissions_user: userId
   };
   try {
     await addUserOrder(userId, newOrder);

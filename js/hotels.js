@@ -1,8 +1,8 @@
 import { A as API_VARIABLES } from "./variables.js";
-import { a as getResource } from "./api.js";
+import { g as getPublicResource } from "./api.js";
 async function getHotelById(id) {
   try {
-    const res = await getResource(`${API_VARIABLES.BASE_URL}/api/hotels/${id}?populate[serviceLists][populate][list][populate][subServices]=*&populate[serviceLists][populate][position]]=*&populate[serviceLists][populate][listPosition]=*`);
+    const res = await getPublicResource(`${API_VARIABLES.BASE_URL}/api/list-hotels/${id}?populate[openList][populate][openListSelect]=true&populate[img]=true`);
     return res.data;
   } catch (error) {
     console.error(`Error fetching hotel with id ${id}:`, error);
