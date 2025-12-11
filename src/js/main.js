@@ -1,13 +1,21 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap'
+import '../styles/base/main.scss'
+
+const components = import.meta.glob('./components/*.js')
 
 document.querySelectorAll('[data-component]').forEach(el => {
   const name = el.dataset.component
   if (!name) return
 
-  import(/* @vite-ignore */ `/js/components/${name}.js`).catch(err => {
-    console.warn(`Компонент ${name}.js не найден`, err)
-  })
+  const importPath = `./components/${name}.js`
+  if (components[importPath]) {
+    components[importPath]().catch(err => {
+      console.warn(`Ошибка загрузки компонента ${name}:`, err)
+    })
+  } else {
+    console.warn(`Компонент ${name}.js не найден`)
+  }
 })
 
 // PRELOAD
@@ -54,7 +62,6 @@ renderSkeleton('.news__container', 4)
 renderSkeleton('.hotdeals__container', 4)
 renderSkeleton('.wintertours__container', 5)
 renderSkeleton('.summertours__container', 5)
-
 
 document.addEventListener('DOMContentLoaded', () => {
   function isLoggedIn() {

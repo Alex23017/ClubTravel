@@ -152,7 +152,7 @@ logOut.addEventListener('click', () => {
     window.location.reload()
   }
   if (!isLoggedIn()) {
-    window.location.replace('/html/pages/authorization.html?tab=authorization')
+    window.location.replace('html/pages/authorization.html?tab=authorization')
   }
 })
 

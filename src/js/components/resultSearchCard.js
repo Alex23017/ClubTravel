@@ -9,6 +9,7 @@ import 'swiper/css/pagination'
 import { Navigation, Pagination } from 'swiper/modules'
 import { API_VARIABLES } from '../api/variables.js'
 import Swiper from 'swiper'
+import arrow from '../../img/search/arrow.png'
 import { getResultSearch } from '../api/service/resultSearch.js'
 
 function sliderInit() {
@@ -34,7 +35,6 @@ function sliderInit() {
   }
 }
 const data = await getResultSearch()
-
 
 export function renderOffer() {
   const container = document.querySelector('.result__container')
@@ -226,7 +226,7 @@ export function renderOffer() {
                     <li class="dropdown-item">Цена</li>
                     <li class="dropdown-item">Категория</li>
                   </ul>
-                  <img class="search__arrow" src="/img/search/arrow.png" alt="arrow">
+                  <img class="search__arrow" src="${arrow}" alt="arrow">
                 </div>
               </div>
               <div class="bar__dropdown bar__dropdown--low list__dropdown--low">
@@ -238,7 +238,7 @@ export function renderOffer() {
                     <li class="dropdown-item">Возрастающий</li>
                     <li class="dropdown-item">Убивающий</li>
                   </ul>
-                  <img class="search__arrow" src="/img/search/arrow.png" alt="arrow">
+                  <img class="search__arrow" src="${arrow}" alt="arrow">
                 </div>
               </div>
             </div>
