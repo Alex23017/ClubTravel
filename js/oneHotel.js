@@ -190,7 +190,7 @@ async function createOffer() {
   const userId = localStorage.getItem("userId");
   if (!userId) {
     console.log("не авторизований користувач");
-    window.location.href = "/html/pages/authorization.html?tab=authorization";
+    window.location.href = "/ClubTravel/html/pages/authorization.html?tab=authorization";
     return;
   }
   const newOrder = {
