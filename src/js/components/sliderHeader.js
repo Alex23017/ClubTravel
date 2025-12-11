@@ -2,8 +2,8 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
-import Swiper from 'swiper'
 import { Navigation, Pagination } from 'swiper/modules'
+import Swiper from 'swiper'
 
 if (document.querySelector('[data-component="sliderHeader"]')) {
   import('/styles/components/sliderHeader.scss')

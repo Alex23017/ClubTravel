@@ -7,7 +7,6 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 
 import { Navigation, Pagination } from 'swiper/modules'
-import { API_VARIABLES } from '../api/variables.js'
 import Swiper from 'swiper'
 if (document.querySelector('[data-component="hotDeals"]')) {
   import('/styles/components/hotDeals.scss')
@@ -63,7 +62,7 @@ export function renderOffer() {
 
   data.forEach(item => {
     const offerCard = winterToursCard({
-      img: API_VARIABLES.IMG_URL + item.img[0].url,
+      img: item.img[0].url,
       town: item.town,
       price: item.price,
     })

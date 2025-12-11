@@ -321,6 +321,6 @@ if (form) {
 
     if (ratingValues.length) params.set('rating', ratingValues.join(','))
     if (foodFilter) params.set('foodTour', foodFilter)
-    window.location.href = `/html/pages/resultSearch.html?${params.toString()}`
+    window.location.href = `/ClubTravel/html/pages/resultSearch.html?${params.toString()}`
   })
 }

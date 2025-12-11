@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { API_VARIABLES } from './variables'
 export async function getResource(url) {
   const jwt = localStorage.getItem('jwt')
   if (!jwt) throw new Error('JWT отсутствует')

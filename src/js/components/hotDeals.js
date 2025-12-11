@@ -2,7 +2,6 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 
 import { Navigation, Pagination } from 'swiper/modules'
-import { API_VARIABLES } from '../api/variables.js'
 import Swiper from 'swiper'
 if (document.querySelector('[data-component="hotDeals"]')) {
   import('/styles/components/hotDeals.scss')
@@ -51,8 +50,7 @@ export function sliderInit() {
 const data = await getListHotel()
 function onHotelClick(e) {
     const id = e.currentTarget.dataset.id;
-    
-    window.location.href = `/html/pages/oneHotel.html?id=${id}`;
+    window.location.href = `/ClubTravel/html/pages/oneHotel.html?id=${id}`;
 }
 
 export function renderOffer() {
@@ -70,7 +68,7 @@ export function renderOffer() {
     
     const offerCard = hotDealsCard({
       documentId: item.documentId,
-      img: API_VARIABLES.IMG_URL + item.img[0].url,
+      img: item.img[0].url,
       data: item.data,
       location: item.location,
       title: item.title,

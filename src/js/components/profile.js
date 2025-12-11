@@ -49,7 +49,7 @@ export function sliderInit() {
 }
 sliderInit()
 
-const data = await getProfile() || [];
+const data = (await getProfile()) || []
 
 export function renderOffer() {
   const container = document.querySelector('.profile__order-render')
@@ -149,10 +149,11 @@ logOut.addEventListener('click', () => {
     localStorage.removeItem('Logged')
     localStorage.removeItem('username')
     localStorage.removeItem('jwt')
+    localStorage.removeItem('token')
     window.location.reload()
   }
   if (!isLoggedIn()) {
-    window.location.replace('html/pages/authorization.html?tab=authorization')
+    window.location.replace('/ClubTravel/html/pages/authorization.html?tab=authorization')
   }
 })
 

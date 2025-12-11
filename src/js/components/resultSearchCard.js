@@ -7,7 +7,6 @@ if (document.querySelector('[data-component="resultSearchCard"]')) {
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { Navigation, Pagination } from 'swiper/modules'
-import { API_VARIABLES } from '../api/variables.js'
 import Swiper from 'swiper'
 import arrow from '../../img/search/arrow.png'
 import { getResultSearch } from '../api/service/resultSearch.js'
@@ -49,7 +48,7 @@ export function renderOffer() {
   }
 
   data.forEach(item => {
-    const imgUrl = API_VARIABLES.BASE_URL + item.img[0].url
+    const imgUrl = item.img[0].url
 
     const openResult = item.openResult
       .map(

@@ -5,7 +5,6 @@ if (document.querySelector('[data-component="companyNews"]')) {
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { Navigation, Pagination } from 'swiper/modules'
-import { API_VARIABLES } from '../api/variables.js'
 import Swiper from 'swiper'
 import companyCard from '../../html/components/home/companyCard.html'
 import { getCompanyNews } from '../api/service/companyNews.js'
@@ -54,7 +53,7 @@ export function renderOffer() {
   data.forEach(item => {
     const offerCard = companyCard({
       title: item.title,
-      img: API_VARIABLES.IMG_URL + item.img[0].url,
+      img: item.img[0].url,
       data: item.data,
       iconCount: item.iconCount,
     })

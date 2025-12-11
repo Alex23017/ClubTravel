@@ -15,11 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const profile = document.querySelectorAll('.profile__body-img')
 
   profile.forEach(prof =>
-    prof.addEventListener('click', () => {
+    prof.addEventListener('click', e => {
+      e.preventDefault()
       if (isLoggedIn()) {
-        window.location.replace('../html/pages/profile.html')
+        window.location.replace('/ClubTravel/html/pages/profile.html')
       } else {
-        window.location.replace('../html/pages/authorization.html?tab=authorization')
+        window.location.replace('/ClubTravel/html/pages/authorization.html?tab=authorization')
       }
     })
   )
@@ -45,7 +46,7 @@ async function register(event) {
     return
   }
 
-  const res = await postPublicResource('http://127.0.0.1:1337/api/auth/local/register', {
+  const res = await postPublicResource('https://deserving-apparel-f938801c39.strapiapp.com/api/auth/local/register', {
     username: jsonData.email,
     email: jsonData.email,
     password: jsonData.password,
@@ -59,7 +60,6 @@ async function register(event) {
   if (res.jwt && res.user) {
     localStorage.setItem('jwt', res.jwt)
     localStorage.setItem('Logged', 'true')
-
   }
 }
 if (registerForm) {
@@ -74,19 +74,18 @@ async function login(event) {
   const data = Object.fromEntries(formData)
 
   try {
-    const res = await postPublicResource('http://localhost:1337/api/auth/local', {
+    const res = await postPublicResource('https://deserving-apparel-f938801c39.strapiapp.com/api/auth/local', {
       identifier: data.identifier,
       password: data.password,
     })
 
     if (res.jwt && res.user) {
       localStorage.setItem('Logged', 'true')
-      localStorage.setItem('username', data.identifier);
-      localStorage.setItem('userId', res.user.id);
-      localStorage.setItem('token', res.jwt);
-      localStorage.setItem('jwt', res.jwt);
-      window.location.href = '/html/pages/profile.html';
-
+      localStorage.setItem('username', data.identifier)
+      localStorage.setItem('userId', res.user.id)
+      localStorage.setItem('token', res.jwt)
+      localStorage.setItem('jwt', res.jwt)
+      window.location.href = '/ClubTravel/html/pages/profile.html'
     }
   } catch (err) {
     console.error('Login failed:', err.message)

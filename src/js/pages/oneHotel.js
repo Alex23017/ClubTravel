@@ -84,7 +84,7 @@ export function renderOffer() {
     }
 
     const offerCard = hotDealsCard({
-      img: API_VARIABLES.IMG_URL + item.img[0].url,
+      img: item.img[0].url,
       data: item.data,
       location: item.location,
       title: item.title,
@@ -113,7 +113,7 @@ async function createOffer() {
 
     if (!userId) {
         console.log('не авторизований користувач');
-         window.location.href = '/html/pages/authorization.html?tab=authorization'
+         window.location.href = '/ClubTravel/html/pages/authorization.html?tab=authorization'
         return;
     }
 

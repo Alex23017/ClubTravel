@@ -5,7 +5,7 @@ if (document.querySelector('[data-component="listHotDeals"]')) {
 }
 import '/styles/components/listHotDeals.scss'
 import '/styles/base/reset.scss'
-import { API_VARIABLES } from '../api/variables.js'
+
 
 const data = await getListHotel()
 
@@ -24,7 +24,7 @@ function renderOffer() {
   }
 
   data.forEach(item => {
-    const imgUrl = API_VARIABLES.BASE_URL + item.img[0].url
+    const imgUrl = item.img[0].url
     const openListHtml = item.openList
       .map(open => {
         const openListSelectHtml = (open.openListSelect || [])
