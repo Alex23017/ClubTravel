@@ -17,9 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
   profile.forEach(prof =>
     prof.addEventListener('click', () => {
       if (isLoggedIn()) {
-        window.location.replace('/html/pages/profile.html')
+        window.location.replace('../html/pages/profile.html')
       } else {
-        window.location.replace('/html/pages/authorization.html?tab=authorization')
+        window.location.replace('../html/pages/authorization.html?tab=authorization')
       }
     })
   )
@@ -83,9 +83,9 @@ async function login(event) {
       localStorage.setItem('Logged', 'true')
       localStorage.setItem('username', data.identifier);
       localStorage.setItem('userId', res.user.id);
-      localStorage.setItem('token', res.jwt);
-      
-      window.location.href = '/html/pages/profile.html';
+      localStorage.setItem('jwt', res.jwt);
+    
+      window.location.href = '/ClubTravel/html/pages/profile.html';
 
     }
   } catch (err) {

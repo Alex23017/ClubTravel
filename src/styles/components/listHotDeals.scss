@@ -486,8 +486,10 @@
   margin-inline-start: 6px;
 }
 .list__arrow-close {
-  min-width: 24px;
-  min-height: 24px;
+  min-width: 10px;
+  min-height: 10px;
+  max-width: 10px;
+  max-height: 10px;
   margin-block-start: 5px;
   margin-inline-start: 11px;
   @include table-big {
