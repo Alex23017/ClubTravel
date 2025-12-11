@@ -1,7 +1,7 @@
 import { b as axios, p as postPublicResource } from "./api.js";
 async function ressetPassword(data) {
   try {
-    const res = await axios.post("http://localhost:1337/api/auth/reset-password", data);
+    const res = await axios.post("https://deserving-apparel-f938801c39.strapiapp.com/api/auth/reset-password", data);
     return res.data;
   } catch (error) {
     console.log("error:", error.response?.data);
@@ -10,7 +10,7 @@ async function ressetPassword(data) {
 }
 async function sendRessetPassword(email) {
   console.log(email);
-  await axios.post("http://localhost:1337/api/auth/forgot-password", {
+  await axios.post("https://deserving-apparel-f938801c39.strapiapp.com/api/auth/forgot-password", {
     email: `${email}`
   }).then((response) => {
     console.log("Your user received an email");
@@ -30,9 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
   profile.forEach(
     (prof) => prof.addEventListener("click", () => {
       if (isLoggedIn()) {
-        window.location.replace("../html/pages/profile.html");
+        window.location.replace("/pages/profile.html");
       } else {
-        window.location.replace("../html/pages/authorization.html?tab=authorization");
+        window.location.replace("/pages/authorization.html?tab=authorization");
       }
     })
   );
@@ -52,7 +52,7 @@ async function register(event) {
     console.log("паролі не співпадають");
     return;
   }
-  const res = await postPublicResource("http://127.0.0.1:1337/api/auth/local/register", {
+  const res = await postPublicResource("https://deserving-apparel-f938801c39.strapiapp.com/api/auth/local/register", {
     username: jsonData.email,
     email: jsonData.email,
     password: jsonData.password
@@ -75,7 +75,7 @@ async function login(event) {
   const formData = new FormData(event.target);
   const data = Object.fromEntries(formData);
   try {
-    const res = await postPublicResource("http://localhost:1337/api/auth/local", {
+    const res = await postPublicResource("https://deserving-apparel-f938801c39.strapiapp.com/api/auth/local", {
       identifier: data.identifier,
       password: data.password
     });

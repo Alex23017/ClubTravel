@@ -1,9 +1,9 @@
 const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["css/hotDeals.css","css/reset.css"])))=>i.map(i=>d[i]);
 import { _ as __vitePreload } from "./oneHotelOffer.js";
 import { S as Swiper, N as Navigation, P as Pagination } from "./swiper-core.js";
-import { A as API_VARIABLES } from "./variables.js";
 import { g as getListHotel } from "./listHotel.js";
 import { h as hotDealsCard } from "./hotDealsCard.js";
+import "./variables.js";
 import "./api.js";
 if (document.querySelector('[data-component="hotDeals"]')) {
   __vitePreload(() => Promise.resolve({}), true ? __vite__mapDeps([0]) : void 0);
@@ -55,7 +55,7 @@ function renderOffer() {
       </svg>`;
     }
     const offerCard = hotDealsCard({
-      img: API_VARIABLES.IMG_URL + item.img[0].url,
+      img: item.img[0].url,
       data: item.data,
       location: item.location,
       title: item.title,
