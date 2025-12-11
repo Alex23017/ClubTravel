@@ -148,7 +148,7 @@ function renderOffer() {
   if (!container) return;
   data.forEach((item) => {
     const offerCard = winterToursCard({
-      img: item.img,
+      img: item.img[0].url,
       town: item.town,
       price: item.price
     });

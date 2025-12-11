@@ -141,7 +141,7 @@ function renderOffer() {
   data.forEach((item) => {
     const offerCard = companyCard({
       title: item.title,
-      img: item.img,
+      img: item.img[0].url,
       data: item.data,
       iconCount: item.iconCount
     });
