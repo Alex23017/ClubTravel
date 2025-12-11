@@ -144,7 +144,7 @@ function renderOffer() {
   if (!container) return;
   data.forEach((item) => {
     const offerCard = summerToursCard({
-      img: API_VARIABLES.IMG_URL + item.img[0].url,
+      img: item.img,
       town: item.town,
       price: item.price
     });
