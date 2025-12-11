@@ -30,9 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
   profile.forEach(
     (prof) => prof.addEventListener("click", () => {
       if (isLoggedIn()) {
-        window.location.replace("/ClubTravel/html/pages/profile.html");
+        window.location.replace("/ClubTravel/ClubTravel/html/pages/profile.html");
       } else {
-        window.location.replace("/ClubTravel/html/pages/authorization.html?tab=authorization");
+        window.location.replace("/ClubTravel/ClubTravel/html/pages/authorization.html?tab=authorization");
       }
     })
   );

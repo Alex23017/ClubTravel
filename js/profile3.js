@@ -227,7 +227,7 @@ logOut.addEventListener("click", () => {
     window.location.reload();
   }
   if (!isLoggedIn()) {
-    window.location.replace("html/pages/authorization.html?tab=authorization");
+    window.location.replace("/ClubTravel/html/pages/authorization.html?tab=authorization");
   }
 });
 profileUsername.textContent = profileLocalName.split("@")[0];
