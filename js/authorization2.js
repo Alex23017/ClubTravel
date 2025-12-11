@@ -84,7 +84,7 @@ async function login(event) {
       localStorage.setItem("username", data.identifier);
       localStorage.setItem("userId", res.user.id);
       localStorage.setItem("jwt", res.jwt);
-      window.location.href = "/html/pages/profile.html";
+      window.location.href = "/ClubTravel/html/pages/profile.html";
     }
   } catch (err) {
     console.error("Login failed:", err.message);
