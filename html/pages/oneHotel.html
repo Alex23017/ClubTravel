@@ -1,13 +1,27 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная</title>
-    <meta name="description" content="">
-    <!-- <link rel="stylesheet" href="./styles/base/main.scss" />
-    <link rel="stylesheet" href="./styles/base/reset.scss" /> -->
-    <script type="module" crossorigin="" src="./js/oneHotelOffer.js"></script>
-    <link rel="stylesheet" crossorigin="" href="./css/oneHotelOffer.css">
-  </head>
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css">
+ 
+  <script type="module" crossorigin="" src="../../js/oneHotel.js"></script>
+  <link rel="modulepreload" crossorigin="" href="../../js/oneHotelOffer.js">
+  <link rel="modulepreload" crossorigin="" href="../../js/swiper-core.js">
+  <link rel="modulepreload" crossorigin="" href="../../js/variables.js">
+  <link rel="modulepreload" crossorigin="" href="../../js/api.js">
+  <link rel="modulepreload" crossorigin="" href="../../js/hotels.js">
+  <link rel="modulepreload" crossorigin="" href="../../js/listHotel.js">
+  <link rel="modulepreload" crossorigin="" href="../../js/hotDealsCard.js">
+  <link rel="stylesheet" crossorigin="" href="../../css/oneHotelOffer.css">
+  <link rel="stylesheet" crossorigin="" href="../../css/swiper-core.css">
+  <link rel="stylesheet" crossorigin="" href="../../css/oneHotel.css">
+  <link rel="stylesheet" crossorigin="" href="../../css/tourRequest.css">
+</head>
+
   <body class="loading">
     <div class="preload loading">
     
@@ -24,540 +38,459 @@
         </div>
     
       </div>
-    </div>    <div class="wrapper">
-      <header data-component="header" id="header">
-        <div class="topbar">
-          <ul class="topbar__list">
-            <li class="topbar__items">
-              <a href="/html/pages/404.html" class="topbar__link">
-                Страховки
-              </a>
-              <a href="/html/pages/authorization.html?tab=authorization" class="topbar__link">
-                Визы
-              </a>
-              <a href="/html/pages/contacts.html" class="topbar__link">
-                Контакты
-              </a>
-            </li>
-          </ul>
-          <div class="topbar__contact">
-            <div class="phone__body">
-              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADhSURBVHgBzZGhD4JAGMXvGI1O16zdbsdsIQkMCn+AWf4FCGehkLXb6djJ0hkUwHfOQ8Z0Oyz6yr297f1u3/cR8mtRYRhju6ZpDO7xMs/zzjIARRhRfoSKYhBJ9QBKaTHwumT/BYCygb+RqQBVVVNRbtt2/w3giqfE/KnrusVkgGmaJWZP8PsGF1lMBnDZts1Pl+EifhiGUouk4yCOY62u60PXdRrGCSzLypHpyAJkHJrzMZEnbwECUlWVD7tC6YLC8lnu5TiO8REgFEXRGuXtuCwNGIH4YmeAzeFPGOFI/kJ3z3NfY1iX9/QAAAAASUVORK5CYII=" alt="phone" class="phone__body-img">
-              <p class="phone__body-text">+372 6 130 633</p>
-            </div>
-            <div class="email__body">
-              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADwSURBVHgBzZI9DoJAEIWXhYQQe6y15gDWcgp6IZTUHsCeCojWcgqtpbbXWnr+CsC3JBA0ECCa6GuYmZ3vMftDyK/F1YHruupYiOf5SNf1S2MAWOM4TiMTVJalb5qmT1lCKZVROMHkOASynqIoAoRyxbYWlDzPz5IkbRDfOtgrQLYWYAuLukhbDXNMcsiyTDUMw8JENppD1CPEexjvBEFQYWIjl2tIeP8NGjTP89Yw80VR3DKDJEmWaZq+gL0G9TQwsuI4ZucyQ74C3NnYZ1AJ8ODVUvKhvmOA/YZkonDID/ZtnrLjOMpYGNfJnvKd/IWeS3lcRxKmxoMAAAAASUVORK5CYII=" alt="email" class="email__body-img">
-              <p class="email__body-text">contact@email.ee</p>
-            </div>
-      
+    </div>    <header data-component="header" id="header">
+      <div class="topbar">
+        <ul class="topbar__list">
+          <li class="topbar__items">
+            <a href="/html/pages/404.html" class="topbar__link">
+              Страховки
+            </a>
+            <a href="/html/pages/authorization.html?tab=authorization" class="topbar__link">
+              Визы
+            </a>
+            <a href="/html/pages/contacts.html" class="topbar__link">
+              Контакты
+            </a>
+          </li>
+        </ul>
+        <div class="topbar__contact">
+          <div class="phone__body">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADhSURBVHgBzZGhD4JAGMXvGI1O16zdbsdsIQkMCn+AWf4FCGehkLXb6djJ0hkUwHfOQ8Z0Oyz6yr297f1u3/cR8mtRYRhju6ZpDO7xMs/zzjIARRhRfoSKYhBJ9QBKaTHwumT/BYCygb+RqQBVVVNRbtt2/w3giqfE/KnrusVkgGmaJWZP8PsGF1lMBnDZts1Pl+EifhiGUouk4yCOY62u60PXdRrGCSzLypHpyAJkHJrzMZEnbwECUlWVD7tC6YLC8lnu5TiO8REgFEXRGuXtuCwNGIH4YmeAzeFPGOFI/kJ3z3NfY1iX9/QAAAAASUVORK5CYII=" alt="phone" class="phone__body-img">
+            <p class="phone__body-text">+372 6 130 633</p>
           </div>
-          <div class="profile__body">
-            <svg class="profile__body-img">
-              <use xlink:href="#icon-profile"></use>
-            </svg>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAE4SURBVHgB3ZSxUoNAEIb/u0ljxyPgG8TRwrcIPoFY2BOHXl5AwxtEWxrQ55AJjTU01PoCZN1DYBglDIFLkXwzO+zt3u3e3S4HHDui1+tsDEhYPGsBwhwgs7QTEkiRsRbh6eJ1XALnw4KUa9YM9JNBCG9XItm5ZBn7HDwcEFxhgugFTux1OUVHcI939IhRkI/ny+XuBA+xzaY1prDd3sC/iurhnysau/MWqm6qOSpmjeP63sbnu4npGJidLfj7r+iqqKRJwuZArQQm9DGvlXaRCXopY0scmHaCDPpIuhIk0EdWK02bBkHwVhSFBQ3keR65rlvqTZGJSP0cKYa9P31kQojzetBcERu/+XOH6Xi9Xj7JisYz7KlRE2l/VtgHXmCzpAMCf7GMb44qUciyaQVNK9st/TbHCfMDuuQUlEwTNycAAAAASUVORK5CYII=" alt="flag" class="profile__body-img profile__body-img--flag">
+          <div class="email__body">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADwSURBVHgBzZI9DoJAEIWXhYQQe6y15gDWcgp6IZTUHsCeCojWcgqtpbbXWnr+CsC3JBA0ECCa6GuYmZ3vMftDyK/F1YHruupYiOf5SNf1S2MAWOM4TiMTVJalb5qmT1lCKZVROMHkOASynqIoAoRyxbYWlDzPz5IkbRDfOtgrQLYWYAuLukhbDXNMcsiyTDUMw8JENppD1CPEexjvBEFQYWIjl2tIeP8NGjTP89Yw80VR3DKDJEmWaZq+gL0G9TQwsuI4ZucyQ74C3NnYZ1AJ8ODVUvKhvmOA/YZkonDID/ZtnrLjOMpYGNfJnvKd/IWeS3lcRxKmxoMAAAAASUVORK5CYII=" alt="email" class="email__body-img">
+            <p class="email__body-text">contact@email.ee</p>
           </div>
+    
         </div>
-        <a class="link__logo" href="/">
-          <div class="logo">
-            <img src="./assets/logo.jpg" alt="logo" class="logo__img">
-            <img src="data:image/png;base64,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" alt="backgroundLogo" class="logo__background">
-          </div>
-        </a>
-      
-        <nav class="nav">
-          <ul class="nav__list">
-            <div class="burger">
-              <svg class="burger__img">
-                <use xlink:href="#icon-burger"></use>
-              </svg>
-            </div>
-            <svg class="profile__body-img profile__body-img--none">
-              <use xlink:href="#icon-profile"></use>
+        <div class="profile__body">
+          <svg class="profile__body-img">
+            <use xlink:href="#icon-profile"></use>
+          </svg>
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAE4SURBVHgB3ZSxUoNAEIb/u0ljxyPgG8TRwrcIPoFY2BOHXl5AwxtEWxrQ55AJjTU01PoCZN1DYBglDIFLkXwzO+zt3u3e3S4HHDui1+tsDEhYPGsBwhwgs7QTEkiRsRbh6eJ1XALnw4KUa9YM9JNBCG9XItm5ZBn7HDwcEFxhgugFTux1OUVHcI939IhRkI/ny+XuBA+xzaY1prDd3sC/iurhnysau/MWqm6qOSpmjeP63sbnu4npGJidLfj7r+iqqKRJwuZArQQm9DGvlXaRCXopY0scmHaCDPpIuhIk0EdWK02bBkHwVhSFBQ3keR65rlvqTZGJSP0cKYa9P31kQojzetBcERu/+XOH6Xi9Xj7JisYz7KlRE2l/VtgHXmCzpAMCf7GMb44qUciyaQVNK9st/TbHCfMDuuQUlEwTNycAAAAASUVORK5CYII=" alt="flag" class="profile__body-img profile__body-img--flag">
+        </div>
+      </div>
+      <a class="link__logo" href="/">
+        <div class="logo">
+          <img src="../../assets/logo.jpg" alt="logo" class="logo__img">
+          <img src="data:image/png;base64,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" alt="backgroundLogo" class="logo__background">
+        </div>
+      </a>
+    
+      <nav class="nav">
+        <ul class="nav__list">
+          <div class="burger">
+            <svg class="burger__img">
+              <use xlink:href="#icon-burger"></use>
             </svg>
-      
-            <div class="burger__menu">
-              <div class="burger__body">
-                <a href="" class="nav__link">
-                  Поиск тура
-                </a>
-                <a href="" class="nav__link">
-                  Направления
-                </a>
-                <a href="/html/pages/company.html" class="nav__link nav__link--company">
-                  <svg class="sale">
-                    <use xlink:href="#icon-sale"></use>
-                  </svg>
-      
-                  кампании
-                </a>
-                <a href="" class="nav__link nav__link--sale">
-                  <svg class="clock">
-                    <use xlink:href="#icon-clock"></use>
-                  </svg>
-      
-                  Горящие предложения
-                </a>
-                <a href="" class="nav__link">
-                  Запрос тура
-                </a>
-                <a href="" class="nav__link">
-                  авиабилеты
-                </a>
-              </div>
-            </div>
-      
-            <li class="nav__items">
+          </div>
+          <svg class="profile__body-img profile__body-img--none">
+            <use xlink:href="#icon-profile"></use>
+          </svg>
+    
+          <div class="burger__menu">
+            <div class="burger__body">
               <a href="" class="nav__link">
                 Поиск тура
               </a>
               <a href="" class="nav__link">
-      
                 Направления
               </a>
               <a href="/html/pages/company.html" class="nav__link nav__link--company">
                 <svg class="sale">
                   <use xlink:href="#icon-sale"></use>
                 </svg>
-      
+    
                 кампании
               </a>
-              <a href="/html/pages/hotdeals.html" class="nav__link nav__link--sale">
+              <a href="" class="nav__link nav__link--sale">
                 <svg class="clock">
                   <use xlink:href="#icon-clock"></use>
                 </svg>
+    
                 Горящие предложения
               </a>
-              <a href=" /html/pages/tourRequest.html" class="nav__link">
+              <a href="" class="nav__link">
                 Запрос тура
               </a>
-              <a href="/html/pages/oneHotel.html" class="nav__link">
+              <a href="" class="nav__link">
                 авиабилеты
               </a>
-            </li>
-          </ul>
-        </nav>
-        <a class="link__logo--mob" href="/">
-          <div class="logo">
-      
-            <img src="./assets/logoMob.png" alt="logo" class="logo__img--mob">
-            <img src="data:image/png;base64,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" alt="backgroundLogo" class="logo__background--mob">
-          </div>
-        </a>
-      </header>      <div data-component="sliderHeader" class="slider__header">
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="./assets/heroSlider.png" alt="hero">
-            </div>
-            <div class="swiper-slide">
-              <img src="./assets/heroSlider.png" alt="hero">
-            </div>
-            <div class="swiper-slide">
-              <img src="./assets/heroSlider.png" alt="hero">
-            </div>
-            <div class="swiper-slide">
-              <img src="./assets/heroSlider.png" alt="hero">
             </div>
           </div>
-          <div class="swiper-button-next swiper-header-next"></div>
-          <div class="swiper-button-prev swiper-header-prev"></div>
-      
-        </div>
-      </div>      <div data-component="search" class="search">
-        <div class="search__header">
-          <svg class="clock__search none">
-            <use xlink:href="#icon-clock"></use>
-          </svg>
-          <h2 class="search__title">найти тур</h2>
-      
-        </div>
-        <form class="search__body">
-      
-          <div class="destinations">
-            <label for="destinations">Направление</label>
-            <div class="dropdown">
-              <button class="destinations__button" type="button" id="dropdownDestinations" data-bs-toggle="dropdown" aria-expanded="false">
-                Все направления
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownDestinations">
-                <li class="dropdown-item">Все направления</li>
-                <li class="dropdown-item">Египет</li>
-                <li class="dropdown-item">АОЭ</li>
-                <li class="dropdown-item">Тайланд</li>
-              </ul>
-              <img class="search__arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACBSURBVHgB7c7LDYAgDIDhYhjIbTjKJuIk6oEDLONItSScTJGHJ5P+l0Zp+ACQJOlTMca5tuO9r+5MpYMQgkPEi+YC5UdYrXXacTCCUJjnwUEJoEfsj1029XZIl680XP60xpiTARz934YRDlJUD9CEMBD0AM0IAzUD3SUoY5Ik/bEbeTRCkRpoQgYAAAAASUVORK5CYII=" alt="arrow">
-            </div>
-          </div>
-      
-          <div class="duration">
-            <label for="duration">Длительность тура</label>
-            <div class="dropdown">
-              <button class="duration__button" type="button" id="dropdownDuration" data-bs-toggle="dropdown" aria-expanded="false">
-                1 неделя
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownDuration">
-                <li class="dropdown-item">1 неделя</li>
-                <li class="dropdown-item">2 недели</li>
-                <li class="dropdown-item">3 недели</li>
-                <li class="dropdown-item">1 месяц</li>
-              </ul>
-              <img class="search__arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACBSURBVHgB7c7LDYAgDIDhYhjIbTjKJuIk6oEDLONItSScTJGHJ5P+l0Zp+ACQJOlTMca5tuO9r+5MpYMQgkPEi+YC5UdYrXXacTCCUJjnwUEJoEfsj1029XZIl680XP60xpiTARz934YRDlJUD9CEMBD0AM0IAzUD3SUoY5Ik/bEbeTRCkRpoQgYAAAAASUVORK5CYII=" alt="arrow">
-            </div>
-          </div>
-      
-          <div class="departure">
-            <p>Дата вылета</p>
-            <input type="text" class="search__data departure__static">
-            <svg class="search__calendar">
-              <use xlink:href="#icon-calendar"></use>
-            </svg>
-      
-          </div>
-      
-          <div class="guests">
-            <label for="guests">Гости</label>
-            <div class="dropdown">
-              <button class="guests__button" type="button" id="dropdownGuests" data-bs-toggle="dropdown" aria-expanded="false">
-                Взрослых: 2; детей: 1
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownGuests">
-                <li class="dropdown-item">Взрослых: 2; детей: 1</li>
-                <li class="dropdown-item">Взрослых: 2; детей: 2</li>
-                <li class="dropdown-item">Взрослых: 2; детей: 3</li>
-                <li class="dropdown-item">Взрослых: 2; детей: 4</li>
-              </ul>
-              <img class="search__arrow" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACBSURBVHgB7c7LDYAgDIDhYhjIbTjKJuIk6oEDLONItSScTJGHJ5P+l0Zp+ACQJOlTMca5tuO9r+5MpYMQgkPEi+YC5UdYrXXacTCCUJjnwUEJoEfsj1029XZIl680XP60xpiTARz934YRDlJUD9CEMBD0AM0IAzUD3SUoY5Ik/bEbeTRCkRpoQgYAAAAASUVORK5CYII=" alt="arrow">
-            </div>
-          </div>
-      <a class="search__submit-link" href="/html/pages/resultSearch.html">
-          </a><div class="search__submit"><a class="search__submit-link" href="/html/pages/resultSearch.html">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAC4SURBVHgBzZFvEcIwDMVTFFRCJdQBoAAkzAESwAESagEHxcEkdA7AQUlu70NukLCPe3e/67ZkL39KtDn13jNTmVefNTKFSb/yw+LngY/CPJkH82Yyc0bKMYQwWZUTKl6NmHQyktN68RJUgZOVIDNfyBF2U/S3nXqONM/s6SuuDSYmka9MVhFZHsaIRnzADpJlEJmGbadF7ADzSp6w6YZKFTej30U3+ie0e4eBnHs15joTx1xMGm1GH4EG0cnyPnGMAAAAAElFTkSuQmCC" alt="icon" class="search__submit-img">
-            
-              <button id="searchSubmit" type="submit">
-                НАЙТИ
-              </button>
-            </a>
-          </div>
-        </form>
-      
-        <div class="search__footer">
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGvSURBVHgBlVLdTQJBEP5mVxLRmGgHFxuQDjwrsATPCtRHFcIRxVexAqEDSjg6wAbM2gEJKIRwO87u3Sac4AOTbHZmdubbb34IazJ/imJWdMNATMCx3BO5s9zy21HLZNgiFJRZ97SnwDf4T4h7Bw/m7q9bbSQzZ0Sc1IhjC74msQs/3f68RK8bAI52SGbm9KBpLoTXaGURi2tcF1tA0gAylfgKAEnN4efDpuk4NZdkJkq1xZmzBaTjeuF0rVApcy8vGiYloj/rRg1RGxrqnMGuwFh8pJfSSPBAgWKWU2Ug3faahtGMSwl6l+TEkwIlzkYNV8LG+F6G+MCgHNUxckSLPQz2mY1lJaw4EaC+/JAtgI8aoaE8KCYVBrqsTeafnNwbU38wA4Yd+UeLzNknj2asQVcFg3IqAYBlSUo9nnZP01Ifu84vVvBA3+J3y+UBCL11AL9Ifr4yotKXkeX+Cvgihcj9HJJFjLyl9ZYZVAC2gGwTIydySg7qHD1+pr6E8OrW1G2fdGMYGlXcPKRiKzshVoPboVzCDjJ/jtpuwYLtmOwEsAXE7AwQQCzR7RJ88QuOYsvOsF8hpAAAAABJRU5ErkJggg==" alt="" class="search__footer-img">
-          <p class="advanced__search">Расширенный поиск</p>
-          <div class="advanced__menu">
-            <div class="advanced__header">
-              <h3 class="adanced__title">Расширенный поиск</h3>
-              <p class="adanced__close">Закрыть
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFwSURBVHgBrZTfTQJBEMa/mVyM4At2sFABnXB2oB3gK5GAQXymA7QCjxLs4Dpw7YBEEEW9cWdBOU6Uk+OXXC67m/0y+80fwgakYyrTA4QMaoBQh8Asj2L3WUokKrXt7aa7lN2Y9kwIpqE7qOBvVLibFeb0YtKvDYjpLoeYYoTp5qlf626McOoOyD0Wu0AyKLfs+bfgpG9OnV9DFEASOTlq28gLPl9XH1LG7yYIjOdzqbJGV1RMUd8PAzQ40NLYE8IIgwSZ6ERcpn29bReA1ig1VztUD6CbKZxYVGrZ+zyCs555dFGlBGEYe8ZZCJtOiiQIXaKqeS5/gOusD/+6C4kDFsRrPhI184ctayuXacvvkBH2BCWI+G2OSIsSxbE6KPj40o6RyBkKopNH/94u7UFtcOyIyGqMrc3D2ZXpCFEX/8E1QvliMWl+CCp+8hB1tvW3991Z5V+Xgn67sBhp0D432lLLbeukYiJEL68Yef8zfAIuYo6lWo2pbAAAAABJRU5ErkJggg==" alt="iconClose">
-              </p>
-            </div>
-            <div class="advanced__body">
-              <div class="type">
-                <h2 class="type__title">Категория размещения</h2>
-                <div class="type__body">
-      
-                  <div class="rater" data-input="hotelRating">
-                    <span class="rater-star" data-value="2">★★</span>
-                    <span class="rater-star" data-value="3">★★★</span>
-                    <span class="rater-star" data-value="4">★★★★</span>
-                    <span class="rater-star" data-value="5">★★★★★</span>
-                  </div>
-      
-                  <input type="hidden" id="hotelRating" name="hotelRating" value="">
-      
-                </div>
-      
-                <div class="type__caption">
-                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADgSURBVHgBxZLBDYJAEEXZxcCVErYJSLhpCVagJWgF2olQgXYAnjgQstoBbUAI+CcCIYbdLPHATwiTnfkvfzZrWRpJKb0sy4RuhmvMous66bpuooPMAoqiOJIZJRkFIODJgxEA5itj7IbSmxx7AEbU+51nk8hkuGNwa2mE/qOu63MYhuUI6PdN+sgmKquq2hFkWOGywEwSjuOQ53sHTdPE2DsyddN9tG0bjwDf91P8nqYAznnae9TvACqR6kQf1aqhjaqBtfZBELyozvP8bdt2MptGBRjMpCHuIoCp/gasrw92DV2M34nKtgAAAABJRU5ErkJggg==" alt="home" class="type__caption-img">
-                  <p class="type__caption-text">Апартаменты</p>
-                </div>
-              </div>
-      
-              <div class="tour__package">
-                <h3 class="tour__package-title">Состав тура</h3>
-                <div class="tour__body tour__body--package">
-                  <div class="tour__package-tour"></div>
-                </div>
-      
-              </div>
-              <div class="tour__region">
-                <h3 class="tour__package-title">Регион</h3>
-                <div class="tour__body tour__body--region">
-                  <div class="tour__package-regions"></div>
-                </div>
-              </div>
-      
-            </div>
-      
-            <div class="advanced__column">
-              <div class="advanced__food">
-                <div class="food__body">
-                  <h3 class="food__title">Питание</h3>
-                  <div class="food__render"></div>
-                </div>
-      
-              </div>
-      
-              <div class="advanced__fly">
-                <h3 class="advanced__fly-title">Вылет из</h3>
-                <div class="advance__fly"></div>
-              </div>
-              <div class="advanced__pointer">
-                <h3 class="advanced__pointer-title">Цена на одного человека</h3>
-      
-                <div class="price-range">
-                  <div class="labels top">
-                    <span class="label left-value">400€</span>
-                    <span class="label right-value">2000€</span>
-                  </div>
-      
-                  <div class="slider">
-                    <div class="track"></div>
-                    <div class="range"></div>
-                    <div class="thumb left" tabindex="0"></div>
-                    <div class="thumb right" tabindex="0"></div>
-                  </div>
-      
-                  <div class="labels bottom">
-                    <span class="label">200€</span>
-                    <span class="label">3000€</span>
-                  </div>
-                </div>
-      
-              </div>
-      
-            </div>
-            <div class="advanced__footer">
-              <p class="advanced__footer-title">Активные фильтры:</p>
-              <div class="advanced__category"><p>Категория размещения отеля</p>
-                <div id="render__category"></div>
-              </div>
-              <div p="" class="advanced__tour"><p>Состав тура</p>
-                <div id="render__tour"></div>
-      
-              </div>
-      
-            </div>
-          </div>
-        </div>
-      </div>      <section data-component="companyNews" class="company__news">
-        <div class="company__header">
-          <svg class="company__header-img">
-            <use xlink:href="#icon-sale"></use>
-          </svg>
-          <h2 class="company__header-title">кампании<span> и Новости</span></h2>
-          <p class="hotdeals__subtitle company__subtitle">
-            Кто действует быстро - получает самые вкусные цены <span>☺️</span>
-          </p>
-        </div>
-        <div class="swiper mySwiperNews">
-          <div class="news__container swiper-wrapper">
-           
-          </div>
-          <div class="company__footer">
-            <a href="" class="company__footer-link">Все кампании и новости</a>
-            <svg class="company__footer-img">
-              <use xlink:href="#icon-arrowNews"></use>
-            </svg>
-          </div>
-        </div>
-        <div class="swiper-button-next swiper__news-next"></div>
-        <div class="swiper-button-prev swiper__news-prev"></div>
-      </section>
-      <section data-component="hotDeals" class="hotdeals">
-        <div class="hotdeals__header">
-      
-          <div class="hotdeals__header-title">
-            <svg class="hotdeals__clock">
-              <use xlink:href="#icon-clock"></use>
-            </svg>
-            <h2>горящие предложения</h2>
-          </div>
-      
-          <p class="hotdeals__subtitle">Кто действует быстро - получает самые вкусные цены <span>☺️</span></p>
-        </div>
-        <div class="swiper mySwiperHotDeals">
-          <div class="hotdeals__container swiper-wrapper">
-          </div>
-          <div class="hotDeals__footer">
-            <a href="" class="company__footer-link">Все горящие предложения</a>
-            <svg class="company__footer-img">
-              <use xlink:href="#icon-arrowNews"></use>
-            </svg>
-          </div>
-      
-        </div>
-        <div class="swiper-button-next swiper__hotdeals-next"></div>
-        <div class="swiper-button-prev swiper__hotdeals-prev"></div>
-      
-      </section>      <section data-component="winterTours" class="wintertours">
-        <div class="winter__header">
-          <h3 class="winter__header-title">ЗИМНИЕ ТУРЫ</h3>
-          <p class="winter__header-subtitle">Зима 2019 - 2025</p>
-        </div>
-        <div class="swiper mySwiperWinterTours">
-          <div class="wintertours__container swiper-wrapper"></div>
-        </div>
-        <div class="winter__all">
-          <a href="" class="winter__all-link">Все зимние туры</a>
-          <svg class="winter__all-img">
-            <use xlink:href="#icon-arrowNews"></use>
-          </svg>
-        </div>
-        <div class="swiper-button-next swiper__winter-next"></div>
-        <div class="swiper-button-prev swiper__winter-prev"></div>
-      </section>      <section data-component="summerTours" class="summertours">
-        <div class="summer__header">
-          <h3 class="summer__header-title">ЛЕТНИЕ ТУРЫ</h3>
-          <p class="summer__header-subtitle">Лето 2019 - 2025</p>
-        </div>
-        <div class="swiper mySwiperSummerTours">
-          <div class="summertours__container swiper-wrapper"></div>
-        </div>
-        <div class="summer__all">
-          <a href="" class="summer__all-link">Все летние туры</a>
-          <svg class="summer__all-img">
-            <use xlink:href="#icon-arrowNews"></use>
-          </svg>
-        </div>
-        <div class="swiper-button-next swiper__summer-next"></div>
-        <div class="swiper-button-prev swiper__summer-prev"></div>
-      </section>
-      <section data-component="consultation" class="consultation">
-        <div class="consultation__cover">
-          <img src="./assets/consultation-bg.webp">
-        </div>
-        <div class="consultation__content">
-          <div class="consultation__header">
-            <div class="consultation__title">
-              НЕТ ВРЕМЕНИ ИСКАТЬ ТУР?
-            </div>
-            <div class="consultation__text">
-              Просто скажите нам как должен выглядеть отдых вашей мечты и мы найдём лучший тур для вас!
-            </div>
-          </div>
-          <div class="consultation__main">
-            <div class="consultation__left">
-              <p>
-                Заполните короткую форму запроса на нашем сайте и мы свяжемся с вами в течении 1 часа в рабочее время
-              </p>
-              <button class="consultation__button">ЗАПОЛНИТЬ ЗАЯВКУ НА ПОИСК ТУРА </button>
-            </div>
-            <div class="consultation__center">
-              <div class="consultation__line">
-      
-              </div>
-              <span>
-                или
-              </span>
-              <div class="consultation__line">
-              </div>
-            </div>
-            <div class="consultation__right">
-              <p>
-                Свяжитесь с нашим консультантом
-              </p>
-              <div class="consultation__card">
-                <img src="data:image/webp;base64,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" alt="Консультант">
-                <div class="consultation__card-info">
-                  <div class="consultation__card-name">
-                    Марина Каасик
-                  </div>
-                  <div class="consultation__card-position">
-                    Специалист по подбору туров
-                  </div>
-                  <div class="consultation__card-phone">
-                    <svg>
-                      <use xlink:href="#icon-phone"></use>
-                    </svg>
-      
-                    +372 6 130 633
-                  </div>
-                  <div class="consultation__card-email">
-      
-                    <svg>
-                      <use xlink:href="#icon-mail"></use>
-                    </svg>
-      
-                    contact@email.ee
-                  </div>
-                  <div class="consultation__card-massager">
-                    <svg>
-                      <use xlink:href="#icon-messanger"></use>
-                    </svg>
-      
-                    Написать в Messenger
-                  </div>
-      
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>      <footer data-component="footer" id="footer">
-        <div class="footer__body">
-          <div class="footer__popular">
-            <h3 class="footer__popular-title">Популярные направления</h3>
-            <div class="footer__country">
-              <div class="footer__country__column footer__country__column--first">
-                <p>Египет</p>
-                <p>АОЭ</p>
-                <p>Тайланд</p>
-                <p>Болгария</p>
-                <p>Тенерифе</p>
-              </div>
-              <div class="footer__country__column footer__country__column--second">
-                <p>Бали</p>
-                <p>Грузия</p>
-                <p>Греция</p>
-                <p>Турция</p>
-                <p>Кипр</p>
-              </div>
-            </div>
-      
-          </div>
-          <div class="footer__contact">
-            <h3 class="footer__contact-title">Контакты</h3>
-            <h4 class="footer__contact-subtitle">Clubs Travel OÜ</h4>
-            <div class="footer__open">
-              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHQSURBVHgB3ZU/LzxBGMe/8+z9flkUrhEkyKlsqZGgONtdofASvATVRVRyJReF0stQ6sa5cIhEebollyAUp3DZ4OYxu3I4c3bX0fCtNjsz38+Tef4M8NslohbdVddG494Bk6MsDIJF+uWUuqKmuIOwqrK4f9oVwF2ZcZRCDszpKAMNrRPE7mcgq6P58rSrzef1p404Cdgs2BnLjuKiXDuPBYTmjDl8UYKR6QRpA7j52UkFzqFLBZDx7OC1V768bf2j9xsUcWTkpfVKgZrYjdqjnv7n3NWMbQCC6GMTmkRCezQGHAMAhoMfkoI1YQCUxf34MfGQAdDXM5TobAqevoZ65B4h0iYggYI8ybWKR3bPVlyyTUBcVFpKqIVsfmYJjQdHblQk9fibusnMDtajxABQ07pGEukqeQX5dtpS1rkZCb0Gm3o7+FjFu+wnAjEW9ajwPy4Rmmdv3y319lWTXJMp1T6vmOuyeHxqAGRB+kS0g2+KoNqS3zaLvHLtdnx6RDAhgy7ELGSpeHj4KSCEHNS8biCB+V7xwCjdju9BCJkdvmMSuvmEHeNcp9TTdmnt6KTTcuSTGcjNT+kh+M8JR0mr23UxhGUdVF7vTVUWPB9/Vs80cLwc/w6FDgAAAABJRU5ErkJggg==" alt="clock" class="footer__open-img">
-              <p class="footer__open-text">Пн-Пт 9:30-18:00, Сб 11:00-15:00</p>
-            </div>
-            <div class="footer__location">
-              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHPSURBVHgB5VQ9TwJBEJ3Zw3ixsvMrMZKYWHqdH5i4nYU/wtLWRltiqSaEv2BpZ2u3YNQjUkAHHUZMsMNG7vjYcTnBcLgHq6ExvuRyud2Z92bfzB7AXweOC+BJboPnbUqgdSCc/cySNda2XqEzLURa1H8twI+3HYmwByDtiBCPtSkjUjk3isOKJD9JbEqU+wAUg2jEiOFqfHv5rXL/XNMFMC15ks8qS3bBEKqQPZ5csY0FoOFzjS0egXS7DyAN+2533hc2dFQxfUUwBzSwQFRnLf9SpAsBMU86OdmYORwsAkE66pUBoxMQzYc+kUp98i7EaaHOiIqhHOxNmJHABKEXGPIYgTn8iH9VGAwBg7VwjtROkbYHTLKyRBpsmi2n/AN+vFXufshGc10ZFxoC6qC5ADAqqSaHpwJJjW5/jb6lWG0saql0i+LMrTCCJzCFskek3YqxQG9HgCGYpFw0TQSMT0FQEhePhR8LBJjxrlWINyqEtbybUfvWqM1KpubFE4sdAlzV7ROhyKby5VEcYy+aOM+5WqtUY28vHjLj8s1u8rBV3X+T37wySbVMggKrdpZe1PQ7QVUtvBLpfG1iAoHIXbUeTyz5klg1m3KL8G/wAS7CxWsRUDz2AAAAAElFTkSuQmCC" alt="location" class="footer__location-img">
-              <p class="footer__location-text">Narva mnt 7D, Tallinn (корпус B) 4 этаж</p>
-            </div>
-            <div class="footer__phone">
-              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHUSURBVHgB7ZQ9b9RAEIbfHV+IhSJxBcUlkYgtRUoKJCgducAFSHT8BOho0yDoopQEirSUKfkHlDYfwelSgHQUSBsQyAXFIQGyw+1MHCeXcy6+u3y4zCNL3pmd3XdnZ3eBS8agykawEtj493cRaLSYzByEWqSwET6PNc5Jo2xwmj2GspqA5B8d+AR38p/GOaFjlkizIsYJloMmahFQ0qkKMhPZLdQhQKx+VwUpJR7qEMinSqqCRFSMWgRI2oMBzHjz7sXHCHUIHBxHSo8cipP3L+MtXAA64TDcnzC/B8FTz0GdApiy43IWzOrBRY6pNejQke66/owRqPnCoWBLY9dx70581lGnizOihnUET7xHrDDXj+SEsquvw/Xw6K4Ez5bus8ECMXZgJsNy39AMejj35tti/t/MZ7YPFaaEzKLr38j05vckr02QPyN+kSGhJVbXc5dmpx1/5pfe/PlnbAbFClduNzmdfAhRgzXQ+2sYNu7tWrzaaxNGEK5ud8jONojpy0CXM2KYLhsWxqCjJM235JPrz2aicL2/ZdUIuP3tw4+vPZtwSsK1rbjIxiAa9igWKzZmp2yPrMEogmXPMVd4wRKaZpJrh3VKaTd9Fa5vd3DJadkDNs2rA8ExIVIAAAAASUVORK5CYII=" alt="phone" class="footer__phone-img">
-              <div class="footer__number">
-                <p class="footer__phone-text">+372 555 60 310</p>
-                <span> | </span>
-                <p class="footer__phone-text">+372 61 30 633</p>
-              </div>
-            </div>
-            <div class="footer__email">
-              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAF5SURBVHgB7ZS/T8JAFMffXYkcTqy6yIabbm1jIrfhhn+C/4GJpqgTcRQcYGTkT2Bku4rRogujI5txq4uemL6zra0YCOGXRgc+U9/r3ff7Xu7dASz5a0j8wc/MTfRIAQAZLIIiLgVii8pNNwhpnEeE/MLiAUSlkWA+DunAWaXDhPKa/iIXZkUpl/ahEUVs1CBCVO67lKXqCogD02oDOnT1qS6qTm/434gBPzb34RlYu3zboilZm9BNL6i6Xb5rAWQYt4yD4QWJ4QRqags0meVHui3OO0EXNV7UDQQt9+2MpH9m4vrS6YRFFXcMfO3n/JFhEw0iGCZIftcydfqebIiycHhp+8GTyRxRJE37snlV7br8xMgAAkfwNsbojDX4JJiIFXnILdOv9FG0L3rNsOISZ/zU3ENU+mDQ5zGIQOILvaxlubVuA0UX5VshnrpJTGUQEnQDyhcOAjX1Ngq/zNJgFgMq4adQg9v/ZUAVtOZ65EaRFDQblvwbPgBdOY7ZZQIjQQAAAABJRU5ErkJggg==" alt="email" class="footer__email-img">
-              <p class="footer__email-text">info@clubstravel.ee</p>
-            </div>
-          </div>
-        </div>
-        <div class="footer__imdb">
-          <div class="footer__instagram">
-            <img src="data:image/png;base64,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" alt="instagram" class="footer__instagram-icon">
-            <p class="footer__instagram-text">@booking.clubstravel.ee</p>
-          </div>
-          <img src="./assets/IMDb.jpg" alt="IMDb" class="footer__imdb-img">
-        </div>
-      
-      </footer>
-      <div class="footer__mob">
-        <p class="footer__mob-text">©2020 Clubstravel. All Rights Reserved</p>
-      </div>    </div>
-
     
-    <!-- <script type="module" src="/js/main.js" defer></script>
-    <script type="module" src="./js/pages/authorization.js"></script> -->
+          <li class="nav__items">
+            <a href="" class="nav__link">
+              Поиск тура
+            </a>
+            <a href="" class="nav__link">
+    
+              Направления
+            </a>
+            <a href="/html/pages/company.html" class="nav__link nav__link--company">
+              <svg class="sale">
+                <use xlink:href="#icon-sale"></use>
+              </svg>
+    
+              кампании
+            </a>
+            <a href="/html/pages/hotdeals.html" class="nav__link nav__link--sale">
+              <svg class="clock">
+                <use xlink:href="#icon-clock"></use>
+              </svg>
+              Горящие предложения
+            </a>
+            <a href=" /html/pages/tourRequest.html" class="nav__link">
+              Запрос тура
+            </a>
+            <a href="/html/pages/oneHotel.html" class="nav__link">
+              авиабилеты
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <a class="link__logo--mob" href="/">
+        <div class="logo">
+    
+          <img src="../../assets/logoMob.png" alt="logo" class="logo__img--mob">
+          <img src="data:image/png;base64,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" alt="backgroundLogo" class="logo__background--mob">
+        </div>
+      </a>
+    </header>       <div data-component="imgHeader" class="hero">
+          <img src="../../assets/hero.jpg" alt="Slide 1" class="slider__img">
+          </div>    <section class="hotel">
+      <div class="hotel__content">
+        <!-- <div class="hotel__card-wrapper">
+    <div class="hotel__card-name">
+      
+    <div class="hotel__card-more">
+      <svg>
+        <use xlink:href='#icon-plus-shiny'></use>
+      </svg>
+    </div>
+    <div class="hotel__card-stars">
+      
+    </div>
+  </div>
+  <div class="hotel__card-location">
+   
+    <svg class="hotel__card-pin">
+        <use xlink:href='#icon-pin-grean'></use>
+      </svg>
+      
+  </div>
+
+</div> -->
+         <div data-component="oneHotelTitle" class="hotel__card">
+ 
+        </div>
+
+        <div class="hotel__content-top">
+          
+          <div class="hotel__gallery">
+            <div class="hotel__gallery-main">
+              <a data-fancybox="hotel" href="/img/oneHotel/hotel1.webp">
+                <img src="../../assets/hotel1.webp">
+              </a>
+            </div>
+          
+            <div class="hotel__gallery-list">
+          
+              <div class="hotel__gallery-item">
+                <a data-fancybox="hotel" href="/img/oneHotel/hotel1.webp">
+                  <img src="../../assets/hotel1.webp">
+                </a>
+              </div>
+          
+              <div class="hotel__gallery-item">
+                <a data-fancybox="hotel" href="/img/oneHotel/hotel1.webp">
+                  <img src="../../assets/hotel1.webp">
+                </a>
+              </div>
+          
+              <div class="hotel__gallery-item">
+                <a data-fancybox="hotel" href="/img/oneHotel/hotel1.webp">
+                  <img src="../../assets/hotel1.webp">
+                </a>
+              </div>
+          
+              <div class="hotel__gallery-item">
+                <a data-fancybox="hotel" href="/img/oneHotel/hotel1.webp">
+                  <img src="../../assets/hotel1.webp">
+                </a>
+              </div>
+          
+            </div>
+          </div>
+          <!-- <form data-component="oneHotelOffer" class="hotel__offer-wrapper">
+  <div class="hotel__offer-title">
+    <span>Выбранный тур</span>
+    <button type="submit">изменить</button>
+</div>
+<div class="hotel__offer-dates">
+  <div class="hotel__offer-date">
+    <svg>
+    <use xlink:href='#icon-calendar'></use>
+  </svg>
+    <span>18 июня 2020 г. | ночей</span>
+  </div>
+  <div class="hotel__offer-raise">
+    <svg>
+    <use xlink:href='#icon-departure'></use>
+  </svg>
+    <span>Вылет из </span>
+  </div>
+  <div class="hotel__offer-food">
+    <svg>
+    <use xlink:href='#icon-food'></use>
+  </svg>
+    <span></span>
+  </div>
+  <div class="hotel__offer-houses">
+    <svg>
+    <use xlink:href='#icon-apartment'></use>
+  </svg>
+    <span></span>
+  </div>
+<div class="hotel__offer-price">
+   <b>€</b>
+/чел
+</div>
+<div class="hotel__offer-description">
+<b>Цена на одного человека </b>
+действительна при размещении в двухместном номере. Цена зависит от количества мест и может измениться.
+</div>
+<div class="guests">
+  <label for="guests">Количество отдыхающих</label>
+   <div class="label">Взрослих</div>
+  <input type="text">
+  <div class="label">детей</div>
+  <input type="text">
+</div>
+
+<div class="hotel__offer-total">
+  Общая стоимость тура:
+<span>
+  <b id="price">1 429€</b>
+</span>
+</div>
+<button type="button" class="hotel__offer-button button-primary">
+  Бронировать
+</button>
+<div class="hotel__offer-policy">
+<svg>
+  <use xlink:href='#icon-policy-lock'></use>
+</svg>
+  <div>
+  Ваши данные надежно защищены и обрабатываются согласно с 
+  <span>
   
+  условиями обработки личных данных
+  </span>
+
+  </div>
+</div>
+</div>
+</form>
+   -->
+           <div class="hotel__offer" data-component="oneHotelOffer"> 
+            
+           </div>
+        </div>
+      </div>
+      <div class="hotel__content-center">
+        <div data-component="oneHotelInfo" class="hotel__info">
+         
+        </div>
+        <!-- <div class="hotel__info-wrapper">
+<div class="hotel__title"></div>
+
+    <div class="hotel__description"></div>
+
+    <div class="hotel__info-list">
+      
+      <div class="hotel__column">
+          <div class="hotel__info-item">
+            <div class="hotel__info-title"></div>
+            <div class="hotel__info-text"></div>
+          </div>
+
+          
+      </div>
+      
+      <div class="hotel__column">
+          
+      </div>
+
+    </div>
+
+</div> -->
+        <div data-component="oneHotelContact" class="hotel__contacts">
+           <div class="hotel__advantages">
+                <div class="hotel__advantages-title">
+                    ПОЧЕМУ БРОНИРОВАТЬ ТУР У НАС?
+                </div>
+                <div class="hotel__advantages-list">
+                    <div class="hotel__advantages-item">
+                        
+                        <svg>
+                            <use xlink:href="#icon-check-bold"></use>
+                        </svg>
+                        
+                        Только отобранные отели
+                    </div>
+                    <div class="hotel__advantages-item">
+                        <svg>
+                            <use xlink:href="#icon-check-bold"></use>
+                        </svg>
+                        Все туроператоры на одном сайте
+                    </div>
+                    <div class="hotel__advantages-item">
+                        <svg>
+                            <use xlink:href="#icon-check-bold"></use>
+                        </svg>
+                        Прозрачно и безопасно
+                    </div>
+                    <div class="hotel__advantages-item">
+                        <svg>
+                            <use xlink:href="#icon-check-bold"></use>
+                        </svg>
+                        Без наценок
+                    </div>
+                </div>
+           </div>
+            <div class="hotel__contact">
+                <div class="hotel__contact-title">
+                  ЕСТЬ ВОПРОСЫ ПО ОТЕЛЮ
+               <br> ИЛИ <b>ХОТИТЕ ПОДОБРАТЬ ТУР?</b>
+                </div>
+                <div class="hotel__contact-name">
+                    Вам поможет наш кон сультант
+                    <br>
+                   <b>
+                    Марина Каасик
+                   </b> 
+        
+                </div>
+                <div class="hotel__contact-img">
+                    <img src="data:image/webp;base64,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" alt="">
+                </div>
+                <div class="hotel__contact-phone">
+                    <svg>
+                        <use xlink:href="#icon-phone"></use>
+                    </svg>
+                    +372 <b>6 130 633</b>
+                </div>
+                <div class="hotel__contact-email">
+                    <svg>
+                        <use xlink:href="#icon-mail"></use>
+                    </svg>
+                    contact@email.ee
+                </div>
+                <div class="hotel__contact-message">
+                    <svg>
+                        <use xlink:href="#icon-messanger"></use>
+                    </svg>
+                    Написать в Messenger
+                </div>
+                <div class="hotel__contact-time">
+                    <svg>
+                        <use xlink:href="#icon-clock-time"></use>
+                    </svg>
+                    <span>
+                    Пн - Пт <b>10.00 - 18.00</b>
+                    </span>
+                </div>
+            </div>
+        </div>      </div>
+      <div class="hotel__similar">
+          <div class="hotel__similar-title">
+              ПОХОЖИЕ ОТЕЛИ
+          </div>
+            
+          <div class=" hotel__similar-list">
+            <div class="swiper-button-next swiper__hotdeals-next">
+            <svg class="swiper-navigation-icon" width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.38296 20.0762C0.111788 19.805 0.111788 19.3654 0.38296 19.0942L9.19758 10.2796L0.38296 1.46497C0.111788 1.19379 0.111788 0.754138 0.38296 0.482966C0.654131 0.211794 1.09379 0.211794 1.36496 0.482966L10.4341 9.55214C10.8359 9.9539 10.8359 10.6053 10.4341 11.007L1.36496 20.0762C1.09379 20.3474 0.654131 20.3474 0.38296 20.0762Z" fill="currentColor"></path>
+            </svg>
+          </div>
+          <div class="swiper-button-prev swiper__hotdeals-prev">
+<svg class="swiper-navigation-icon" width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.38296 20.0762C0.111788 19.805 0.111788 19.3654 0.38296 19.0942L9.19758 10.2796L0.38296 1.46497C0.111788 1.19379 0.111788 0.754138 0.38296 0.482966C0.654131 0.211794 1.09379 0.211794 1.36496 0.482966L10.4341 9.55214C10.8359 9.9539 10.8359 10.6053 10.4341 11.007L1.36496 20.0762C1.09379 20.3474 0.654131 20.3474 0.38296 20.0762Z" fill="currentColor"></path>
+</svg>
+</div>
+            <div class="swiper mySwiperHotDeals">
+              <div class="hotdeals__container swiper-wrapper"></div>
+          </div>
+          </div>
+      </div>
+    </section>
+    
+    <footer data-component="footer" id="footer">
+      <div class="footer__body">
+        <div class="footer__popular">
+          <h3 class="footer__popular-title">Популярные направления</h3>
+          <div class="footer__country">
+            <div class="footer__country__column footer__country__column--first">
+              <p>Египет</p>
+              <p>АОЭ</p>
+              <p>Тайланд</p>
+              <p>Болгария</p>
+              <p>Тенерифе</p>
+            </div>
+            <div class="footer__country__column footer__country__column--second">
+              <p>Бали</p>
+              <p>Грузия</p>
+              <p>Греция</p>
+              <p>Турция</p>
+              <p>Кипр</p>
+            </div>
+          </div>
+    
+        </div>
+        <div class="footer__contact">
+          <h3 class="footer__contact-title">Контакты</h3>
+          <h4 class="footer__contact-subtitle">Clubs Travel OÜ</h4>
+          <div class="footer__open">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHQSURBVHgB3ZU/LzxBGMe/8+z9flkUrhEkyKlsqZGgONtdofASvATVRVRyJReF0stQ6sa5cIhEebollyAUp3DZ4OYxu3I4c3bX0fCtNjsz38+Tef4M8NslohbdVddG494Bk6MsDIJF+uWUuqKmuIOwqrK4f9oVwF2ZcZRCDszpKAMNrRPE7mcgq6P58rSrzef1p404Cdgs2BnLjuKiXDuPBYTmjDl8UYKR6QRpA7j52UkFzqFLBZDx7OC1V768bf2j9xsUcWTkpfVKgZrYjdqjnv7n3NWMbQCC6GMTmkRCezQGHAMAhoMfkoI1YQCUxf34MfGQAdDXM5TobAqevoZ65B4h0iYggYI8ybWKR3bPVlyyTUBcVFpKqIVsfmYJjQdHblQk9fibusnMDtajxABQ07pGEukqeQX5dtpS1rkZCb0Gm3o7+FjFu+wnAjEW9ajwPy4Rmmdv3y319lWTXJMp1T6vmOuyeHxqAGRB+kS0g2+KoNqS3zaLvHLtdnx6RDAhgy7ELGSpeHj4KSCEHNS8biCB+V7xwCjdju9BCJkdvmMSuvmEHeNcp9TTdmnt6KTTcuSTGcjNT+kh+M8JR0mr23UxhGUdVF7vTVUWPB9/Vs80cLwc/w6FDgAAAABJRU5ErkJggg==" alt="clock" class="footer__open-img">
+            <p class="footer__open-text">Пн-Пт 9:30-18:00, Сб 11:00-15:00</p>
+          </div>
+          <div class="footer__location">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHPSURBVHgB5VQ9TwJBEJ3Zw3ixsvMrMZKYWHqdH5i4nYU/wtLWRltiqSaEv2BpZ2u3YNQjUkAHHUZMsMNG7vjYcTnBcLgHq6ExvuRyud2Z92bfzB7AXweOC+BJboPnbUqgdSCc/cySNda2XqEzLURa1H8twI+3HYmwByDtiBCPtSkjUjk3isOKJD9JbEqU+wAUg2jEiOFqfHv5rXL/XNMFMC15ks8qS3bBEKqQPZ5csY0FoOFzjS0egXS7DyAN+2533hc2dFQxfUUwBzSwQFRnLf9SpAsBMU86OdmYORwsAkE66pUBoxMQzYc+kUp98i7EaaHOiIqhHOxNmJHABKEXGPIYgTn8iH9VGAwBg7VwjtROkbYHTLKyRBpsmi2n/AN+vFXufshGc10ZFxoC6qC5ADAqqSaHpwJJjW5/jb6lWG0saql0i+LMrTCCJzCFskek3YqxQG9HgCGYpFw0TQSMT0FQEhePhR8LBJjxrlWINyqEtbybUfvWqM1KpubFE4sdAlzV7ROhyKby5VEcYy+aOM+5WqtUY28vHjLj8s1u8rBV3X+T37wySbVMggKrdpZe1PQ7QVUtvBLpfG1iAoHIXbUeTyz5klg1m3KL8G/wAS7CxWsRUDz2AAAAAElFTkSuQmCC" alt="location" class="footer__location-img">
+            <p class="footer__location-text">Narva mnt 7D, Tallinn (корпус B) 4 этаж</p>
+          </div>
+          <div class="footer__phone">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHUSURBVHgB7ZQ9b9RAEIbfHV+IhSJxBcUlkYgtRUoKJCgducAFSHT8BOho0yDoopQEirSUKfkHlDYfwelSgHQUSBsQyAXFIQGyw+1MHCeXcy6+u3y4zCNL3pmd3XdnZ3eBS8agykawEtj493cRaLSYzByEWqSwET6PNc5Jo2xwmj2GspqA5B8d+AR38p/GOaFjlkizIsYJloMmahFQ0qkKMhPZLdQhQKx+VwUpJR7qEMinSqqCRFSMWgRI2oMBzHjz7sXHCHUIHBxHSo8cipP3L+MtXAA64TDcnzC/B8FTz0GdApiy43IWzOrBRY6pNejQke66/owRqPnCoWBLY9dx70581lGnizOihnUET7xHrDDXj+SEsquvw/Xw6K4Ez5bus8ECMXZgJsNy39AMejj35tti/t/MZ7YPFaaEzKLr38j05vckr02QPyN+kSGhJVbXc5dmpx1/5pfe/PlnbAbFClduNzmdfAhRgzXQ+2sYNu7tWrzaaxNGEK5ud8jONojpy0CXM2KYLhsWxqCjJM235JPrz2aicL2/ZdUIuP3tw4+vPZtwSsK1rbjIxiAa9igWKzZmp2yPrMEogmXPMVd4wRKaZpJrh3VKaTd9Fa5vd3DJadkDNs2rA8ExIVIAAAAASUVORK5CYII=" alt="phone" class="footer__phone-img">
+            <div class="footer__number">
+              <p class="footer__phone-text">+372 555 60 310</p>
+              <span> | </span>
+              <p class="footer__phone-text">+372 61 30 633</p>
+            </div>
+          </div>
+          <div class="footer__email">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAF5SURBVHgB7ZS/T8JAFMffXYkcTqy6yIabbm1jIrfhhn+C/4GJpqgTcRQcYGTkT2Bku4rRogujI5txq4uemL6zra0YCOGXRgc+U9/r3ff7Xu7dASz5a0j8wc/MTfRIAQAZLIIiLgVii8pNNwhpnEeE/MLiAUSlkWA+DunAWaXDhPKa/iIXZkUpl/ahEUVs1CBCVO67lKXqCogD02oDOnT1qS6qTm/434gBPzb34RlYu3zboilZm9BNL6i6Xb5rAWQYt4yD4QWJ4QRqags0meVHui3OO0EXNV7UDQQt9+2MpH9m4vrS6YRFFXcMfO3n/JFhEw0iGCZIftcydfqebIiycHhp+8GTyRxRJE37snlV7br8xMgAAkfwNsbojDX4JJiIFXnILdOv9FG0L3rNsOISZ/zU3ENU+mDQ5zGIQOILvaxlubVuA0UX5VshnrpJTGUQEnQDyhcOAjX1Ngq/zNJgFgMq4adQg9v/ZUAVtOZ65EaRFDQblvwbPgBdOY7ZZQIjQQAAAABJRU5ErkJggg==" alt="email" class="footer__email-img">
+            <p class="footer__email-text">info@clubstravel.ee</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer__imdb">
+        <div class="footer__instagram">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAYSSURBVHgB7VdPbFRFGP/mz2uhZUExHHYTOBhTuEGzHsQqwRMe2sZ4MJJoYgJZTh6kxpuhHDU2IZAY3QROoDfTWGLEEDQBQoKuhCM9ctg9NFRg27K7782Mv++bt023dIF4kQMvnc6b6bz5/b7f92emRC+e//lRT1vw1di1glF2hN8Taan03fFGffdpBjV/5PpbTfovBM6MXStRcCd0UGVDjgx5spjXgdB70hQwF9ArtLiRxi8TVJxR/KPIKDO32ajqgasHGs9MoLr/8riiMKXJFxgkCQzoAQjw4ATchhww38QwnIoEterSIpmjgF2Umn77xqGLTyVwdmy2NODNBU2uYMVCJuAACFAoobn3IAR0Jqc8SOm4VQ4pqnRHJGRA06umVuHYvpvvz6/Fs+sJbAmPKgnpgoLFbLlVUf6EchKeSWFO+lwBT10NVkkAuKGCKeaOoKBVwXs9hT8e66vA7NjZAsB/N9iQQRKW2nPP/s/IOC8qiDKB/e1yC3PYIJGA5quv/n28enf0TInM4AUfdIGh2ImdJffOnjtHmhsqsFm1RziSlYHszkmwJTqjZJVECtDoihBCDUTqMI0dUdKky2IPk8hsjffbdevTemPfqSWQLATRSpMZloyqbUhgCABWpbAEBLQTX5sAAiqTd1ZBaffjysN71T13zvWk193RL0qDQVW0MuNkTGVh74kZTXbCq5WiEi1j3lDaob4xkCQrsDyNUc5+1lDAZyK1haMVpdWdf56udtcvlytFpj1cO9XYdevrOqam7+2dqgOsQjr5Aa5AfFgmHeMALREl+hAYohUGQe7mqSb5noN7N7fzr28FfOH1oweVV1Ot4EFgiRZHK3XrdXXr7e8uvnJ7pnpv9DP4nA5z6hLAvc8rhmYlfA8B3aMACAyYZRrgXq0A+BFZ04YSLdrksgj+xicTmjrfKN0uGtXhsELed0retKf/2Xf0IK/xQw+qWAPgFCMoqnkdv7P8K/0JDNEDGgxL8D9cQctCIkEzoVXbUatKJVOqU9GGN8WGiA22UCFQFWLH2Ow4r9lx/VzThE7Ngrj2LVFVaXZtSusf3TsEoGbgZfSwnmLDe12sH/uwpKhTjIAMniIJopVcDHzISsvlj4q8Nuh2gy2WtdQGkahCso7EY0FoXSbZlBc3SSvr1SpBjbIn+Y5CEHwsMgga6M61Ab2LR5IHsEYhQ77K+iAbhrz1iwEQMBYNLlBQwOg2YqCFUt4qRWl/hhKdBqwTgGBhnWUlYgsmqw/XzourjMqQfmwMLEYmRf9nUa2+BMRCBF2CZiAfekIQhiQtL0yOFWTRoJ9RFlkCYG1hoWFgbGo51VwM1LHJEgiViedBIEgM5GSeRICSVAhQ0hJwflcDPNehwVRVeMnLl3/9w9n0pE98IyRQgAPS+ro37vOtN2bltBsIqAOKLXYCyGsIGSGKJE+IARrCH7MsHhCQLaCISGkNnNH68P339jdfmr1R3f7blTmsmFs+dKjIOwxf+mX1rH944N0K+dZ4dDq7BjWA37mWhPAYZO8IMRBsLorX8kHw8bQn7oOpPPjgzaIdMNXh81cbw5curQIvTE4WBttLAO8cDpmKhxRfGBx6ZSX2OCY5WPsT2MaK5ZXKAVy+MPEjISJzE6nXEw8/3l8LQdW5sKFSlyhdLMth6JRkhYIhHkQUCJDz8i0qk7iiL4F0U5i3SSSAIxS5i034yAUJLeydpBVv5Lwrwz1lCXQGYUCfxxmAfQbLExT0lE9Hn6vpKHUDPReSx25Ei1+OfB9UKEt8ep1Lz6M1YzHIRGtZnRxUyGSsCC4nPAY4E1CO11omOrftypWT/V3ACm55dNLQpguQuhDrRrxyepZRVFA5KcdVOKY21x5WAURCnmmB/a9ZGZBooRgp1bTaVdfjbXgpXTz92oQP9ji4F1YLlwDrmFk+J8ZzDCjZpiV+dBqJUJt7Vgc2dlQzZGFm+9zNp19Ku8/Cmd0lbQ3yWY+LO0SN6A6x1udE2A1timowaBuTHS1zXPxCx9QGW9n08E+1Z7+W9xA5u7uAe9RIz78d6Zp60u1X8vc1fdq+P7/j3J0mvXie5+dfE9Pn/477dNYAAAAASUVORK5CYII=" alt="instagram" class="footer__instagram-icon">
+          <p class="footer__instagram-text">@booking.clubstravel.ee</p>
+        </div>
+        <img src="../../assets/IMDb.jpg" alt="IMDb" class="footer__imdb-img">
+      </div>
+    
+    </footer>
+    <div class="footer__mob">
+      <p class="footer__mob-text">©2020 Clubstravel. All Rights Reserved</p>
+    </div>    
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+
+  
+
 
 <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;"><symbol id="icon-apartment" viewBox="0 0 18 15.3" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path fill="#3e7739" d="M7.2 15.3V9.9h3.6v5.4h4.5V8.1H18L9 0 0 8.1h2.7v7.2z" opacity=".5"></path></symbol><symbol id="icon-arrowClose" viewBox="0 0 10 5" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#555" d="m0 0 5 5 5-5z"></path></symbol><symbol id="icon-arrowDown" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path fill="none" d="M0 24V0h24v24z"></path><path d="M16.58 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></symbol><symbol id="icon-arrowLeft" viewBox="-3 0 14 12" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#fff" d="M7.41 10.58 2.83 6l4.58-4.59L6 0 0 6l6 6z"></path></symbol><symbol id="icon-arrowNews" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="currentColor" d="M3.097 12.997v-1.994h14.977l-4.66-4.66 1.414-1.414L21.9 12l-7.07 7.071-1.415-1.414 4.66-4.66z"></path></symbol><symbol id="icon-arrowOpen" viewBox="0 0 10 5" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#555" d="M10 5 5 0 0 5z"></path></symbol><symbol id="icon-arrowRight" viewBox="-3 0 14 12"><path fill="#fff" d="M0 1.42 4.58 6 0 10.59 1.41 12l6-6-6-6z"></path></symbol><symbol id="icon-barCalendar" viewBox="0 0 25 21" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="currentColor" d="M22.49 6.626q-.835 0-1.375.485-.54.48-.697 1.395h2.755v1.203h-2.858l-.013.24v.32l.013.226h2.427v1.217h-2.31q.348 1.66 2.194 1.661.977 0 1.88-.39v1.75q-.793.404-2.003.404-1.675 0-2.755-.91-1.08-.909-1.36-2.515h-.937v-1.217h.807a2.6 2.6 0 0 1-.027-.424l.013-.362h-.793V8.506h.91q.252-1.654 1.36-2.611 1.106-.964 2.768-.964 1.286 0 2.406.56l-.67 1.586a6.5 6.5 0 0 0-.881-.328 3 3 0 0 0-.855-.123M0 19.312A1.69 1.69 0 0 0 1.687 21h12.375a1.69 1.69 0 0 0 1.687-1.687V9.75H0zm11.25-6.89a.424.424 0 0 1 .421-.422h1.406a.423.423 0 0 1 .422.422v1.406a.423.423 0 0 1-.422.422h-1.406a.423.423 0 0 1-.422-.422zm0 4.5a.423.423 0 0 1 .422-.422h1.406a.423.423 0 0 1 .422.422v1.406a.423.423 0 0 1-.422.422h-1.407a.423.423 0 0 1-.422-.422zm-4.5-4.5A.423.423 0 0 1 7.172 12h1.406a.423.423 0 0 1 .422.421v1.406a.423.423 0 0 1-.422.422H7.172a.423.423 0 0 1-.422-.422zm0 4.5a.423.423 0 0 1 .422-.422h1.406a.423.423 0 0 1 .422.421v1.406a.423.423 0 0 1-.422.422H7.172a.423.423 0 0 1-.422-.422zm-4.5-4.5A.423.423 0 0 1 2.672 12h1.406a.423.423 0 0 1 .422.422v1.406a.423.423 0 0 1-.422.422H2.672a.423.423 0 0 1-.422-.422zm0 4.5a.423.423 0 0 1 .422-.422h1.406a.423.423 0 0 1 .422.422v1.406a.423.423 0 0 1-.422.422H2.672a.423.423 0 0 1-.422-.422zM14.062 5.25h-1.688V3.562A.564.564 0 0 0 11.812 3h-1.125a.564.564 0 0 0-.562.562V5.25h-4.5V3.562A.564.564 0 0 0 5.062 3H3.937a.564.564 0 0 0-.562.562V5.25H1.687A1.69 1.69 0 0 0 0 6.937v1.688h15.749V6.937a1.69 1.69 0 0 0-1.687-1.687"></path></symbol><symbol id="icon-burger" viewBox="0 0 22 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#606c81" d="M0 6.667h16v2.666H0zM0 0h21.333v2.667H0zm0 16h9.647v-2.667H0z"></path></symbol><symbol id="icon-calendar" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M9 10v2H7v-2zm4 0v2h-2v-2zm4 0v2h-2v-2zm2-7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h1V1h2v2h8V1h2v2zm0 16V8H5v11zM9 14v2H7v-2zm4 0v2h-2v-2zm4 0v2h-2v-2z"></path></symbol><symbol id="icon-check-bold" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"><defs><clipPath id="a"><path fill="#fff" d="M3 3h18v18H3z"></path></clipPath></defs><rect width="23" height="23" x=".5" y=".5" stroke="#3e7739" opacity=".25" rx="3.5"></rect><g clip-path="url(#a)"><path d="M3 3h18v18H3z"></path><path fill="#3e7739" d="m9.75 18.315-4.657-4.658 2.122-2.122 2.535 2.543 7.41-7.418 2.122 2.123z"></path></g></symbol><symbol id="icon-clock" viewBox="0 0 28 24" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="currentColor" d="M15.429 20a7 7 0 1 1 0-14 7 7 0 0 1 0 14m7.03-12.61 1.42-1.42c-.45-.51-.9-.97-1.41-1.41L21.049 6c-1.55-1.26-3.5-2-5.62-2a9 9 0 0 0 0 18c5 0 9-4.03 9-9 0-2.12-.74-4.07-1.97-5.61M14.429 14h2V8h-2zm4-13h-6v2h6zM2.743 15.085h2.743v2.057H2.743zM1.372 8.228h4.114v2.057H1.372zM0 11.657h4.8v2.057H0z"></path></symbol><symbol id="icon-clock-time" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><rect fill="none"></rect><path fill="#3e7739" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m4.3 13.2L11 12.3V7h1.5v4.4l4.5 2.5z" opacity=".5"></path></symbol><symbol id="icon-clock-times" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" opacity=".5"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m4.3 13.2L11 12.3V7h1.5v4.4l4.5 2.5z"></path></symbol><symbol id="icon-count" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#f68521" d="M4 4a2 2 0 0 0-2 2v4a2 2 0 1 1 0 4v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 1 0-4V6a2 2 0 0 0-2-2zm11.5 3L17 8.5 8.5 17 7 15.5zm-6.69.04a1.77 1.77 0 1 1 0 3.54 1.77 1.77 0 0 1 0-3.54m6.38 6.38a1.77 1.77 0 1 1 0 3.54 1.77 1.77 0 0 1 0-3.54"></path></symbol><symbol id="icon-departure" viewBox="0 0 18.006 18" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path fill="#3e7739" d="M.582 15.935h16.864V18H.582zm17.37-9.666a1.32 1.32 0 0 0-1.633-1.095l-4.714 1.471L5.481 0 3.768.527l3.675 7.4-4.407 1.378-1.749-1.59-1.287.4 1.615 3.263.683 1.373 1.42-.444 4.71-1.462 3.861-1.2 4.713-1.466a1.614 1.614 0 0 0 .95-1.91" opacity=".5"></path></symbol><symbol id="icon-food" viewBox="0 0 18.013 18.006" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path fill="#3e7739" d="M4.013 0a3.932 3.932 0 0 0-.923 7.773l-.662 9.105A1.143 1.143 0 0 0 3.678 18h.667a1.143 1.143 0 0 0 1.253-1.123l-.662-9.105a3.932 3.932 0 0 0-.923-7.77zm13.444 0-1.11 5.626h-.834L14.957 0h-.556l-.556 5.625h-.833L11.902 0h-.556v7.313a.62.62 0 0 0 .667.563h1.736l-.655 9A1.14 1.14 0 0 0 14.346 18h.667a1.14 1.14 0 0 0 1.252-1.123l-.655-9h1.736a.62.62 0 0 0 .667-.562V0z" opacity=".5"></path></symbol><symbol id="icon-hotLocation" viewBox="-0.05 0 10.5 14.7" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="currentColor" d="M5.223.003A5.14 5.14 0 0 0 1.61 1.31 4.84 4.84 0 0 0 0 4.709c0 3.66 5.224 9.937 5.224 9.937s5.222-6.276 5.222-9.937a4.84 4.84 0 0 0-1.61-3.4A5.14 5.14 0 0 0 5.223.003m0 6.72c-.337 0-.666-.098-.945-.279a1.66 1.66 0 0 1-.627-.74 1.6 1.6 0 0 1-.097-.955c.066-.32.228-.614.466-.845s.541-.388.871-.452a1.75 1.75 0 0 1 .983.094c.31.125.577.337.764.608a1.616 1.616 0 0 1-.212 2.085c-.32.31-.752.483-1.203.483"></path></symbol><symbol id="icon-hotdealCount" viewBox="0 0 83 31" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M0 3.1 3 0v6.2zm0 6.2 3-3.1v6.2z"></path><path d="m0 15.5 3-3.1v6.2z"></path><path d="m0 21.7 3-3.1v6.2zm0 6.2 3-3.1V31zM3 0h80v31H3z"></path><text x="33" y="14" fill="#fff" class="hotdeals__text-count" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">
     -30%

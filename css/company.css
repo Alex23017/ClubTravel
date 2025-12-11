@@ -1,0 +1,136 @@
+@media (min-width: 2000px) {
+  body {
+    padding: 0 20%;
+  }
+}
+@media (max-width: 1999px) {
+  body {
+    padding: 0 15%;
+  }
+}
+@media (max-width: 1750px) {
+  body {
+    padding: 0 10%;
+  }
+}
+@media (max-width: 1440px) {
+  body {
+    padding: 0;
+  }
+}
+@media (max-width: 600px) {
+  body {
+    padding: 0;
+  }
+}
+
+.news {
+  padding-top: 58px;
+}
+.news__title {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 26px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #f15d28;
+  text-transform: uppercase;
+}
+.news__title span {
+  font-family: "Open Sans", sans-serif;
+  font-size: 26px;
+  color: black;
+}
+@media (max-width: 600px) {
+  .news__title {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.news__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.news__list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 43px;
+  padding: 0 88px 0 93px;
+}
+@media (max-width: 600px) {
+  .news__list {
+    padding: 0 20px;
+  }
+}
+.news__logo {
+  width: 35px;
+  height: 35px;
+  color: #f15d28;
+}
+.news__price {
+  position: absolute;
+  display: inline-block;
+  top: 29px;
+  right: 0;
+  height: 31px;
+  padding: 4px 14px;
+  background: #f15d28;
+}
+.news__price span {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+}
+.news__price {
+  clip-path: polygon(7px 0, 0 14.5%, 7px 25%, 0 36.5%, 7px 49%, 0 62.5%, 7px 75%, 0 88.5%, 7px 100%, 100% 100%, 100% 0);
+}
+.news__card-title {
+  padding: 16px 0 0 21px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 400;
+}
+.news__data {
+  position: absolute;
+  display: flex;
+  bottom: 92px;
+  left: 14px;
+  align-items: center;
+  gap: 8px;
+  height: 32px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-block: 5.5px;
+  padding-inline: 8px 15px;
+}
+.news__data-clock {
+  width: 16px;
+  height: 16px;
+  color: white;
+}
+.news__data-text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.news__card {
+  width: 379px !important;
+}
+@media (max-width: 600px) {
+  .news__card {
+    width: 100% !important;
+  }
+}

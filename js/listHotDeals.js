@@ -1,0 +1,182 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["../css/listHotDeals.css","../css/reset.css"])))=>i.map(i=>d[i]);
+import { _ as __vitePreload } from "./oneHotelOffer.js";
+import { g as getListHotel } from "./listHotel.js";
+/* empty css              */
+/* empty css      */
+import { A as API_VARIABLES } from "./variables.js";
+import "./api.js";
+if (document.querySelector('[data-component="listHotDeals"]')) {
+  __vitePreload(() => Promise.resolve({}), true ? __vite__mapDeps([0]) : void 0, import.meta.url);
+  __vitePreload(() => Promise.resolve({}), true ? __vite__mapDeps([1]) : void 0, import.meta.url);
+}
+const data = await getListHotel();
+function renderOffer() {
+  const container = document.querySelector(".hotdeals__render");
+  if (!container) return;
+  const containerMob = document.querySelector(".hotdeals__render-mob");
+  if (!containerMob) return;
+  const getStarsHtml = (category) => {
+    let stars = "";
+    for (let i = 0; i < category; i++) {
+      stars += '<svg class="hotdeals__category-star"><use xlink: href = "#icon-star-shiny" ></ ></svg > ';
+    }
+    return stars;
+  };
+  data.forEach((item) => {
+    const imgUrl = API_VARIABLES.BASE_URL + item.img[0].url;
+    const openListHtml = item.openList.map((open) => {
+      const openListSelectHtml = (open.openListSelect || []).map(
+        (select) => `
+        <div class="list__select">
+          <div class="list__select-hotel">
+            <p class="list__hotel">→ ${select.hotel}</p>
+            <p class="list__category">${getStarsHtml(select.category)}</p>
+            <p class="list__food">${select.food}</p>
+            <p class="list__tour">${select.tour}</p>
+            <p class="list__price list__price--open">от <strong>${select.price}€</strong>/чел.</p>
+            <p class="href__button-select">Выбрать</p>
+          </div>
+        </div>
+      `
+      ).join("");
+      return `
+        <div class="list__body-select">
+          <div class="list__body-category">
+            <p class="list__hotel">${open.hotel}</p>
+            <p class="list__category">${getStarsHtml(open.category)}</p>
+            <p class="list__food">${open.food}</p>
+            <p class="list__tour">${open.tour}</p>
+            <p class="list__price list__price--open">от <strong>${open.price}€</strong>/чел.</p>
+            <p class="list__button-select" data-default="Выбрать">Выбрать</p>
+          </div>
+
+          ${openListSelectHtml}
+
+          <div class="list__body-hotel">
+            <p class="list__hotel">${open.hotel}</p>
+            <p class="list__category">${getStarsHtml(open.category)}</p>
+            <p class="list__food">${open.food}</p>
+            <p class="list__tour">${open.tour}</p>
+            <p class="list__price list__price--open">от <strong>${open.price}€</strong>/чел.</p>
+            <p class="list__body-close">
+              Скрыть предложения
+              <svg class="list__arrow-close">
+                <use xlink:href="#icon-arrowClose"></use>
+              </svg>
+            </p>
+          </div>
+        </div>
+      `;
+    }).join("");
+    const cardHtml = `
+      <div class="list__container">
+      <div class="list__img">
+      </div>
+        <div class="list__body">
+          <p class="list__data">${item.data}</p>
+          <p class="list__from">${item.from}</p>
+          <p class="list__to">${item.to}</p>
+          <p class="list__duration">${item.duration} дней</p>
+          <p class="list__price">от <strong>${item.price}€</strong>/чел.</p>
+          <p class="list__button">Открыть</p>
+        </div>
+
+        <div class="list__open">
+          <div class="list__body">
+            <p class="list__data">${item.data}</p>
+            <p class="list__from">${item.from}</p>
+            <p class="list__to">${item.to}</p>
+            <p class="list__duration">${item.duration} дней</p>
+            <p class="list__price">от <strong>${item.price}€</strong>/чел.</p>
+            <p class="list__button-close">Закрыть</p>
+          </div>
+
+          <div class="list__openlist">
+            <div class="list__opendeals">
+              <div class="hotdeals__header">
+                <h3 class="hotdeals__data">Отель</h3>
+                <h3 class="hotdeals__from">Категория</h3>
+                <h3 class="hotdeals__to">Питание</h3>
+                <h3 class="hotdeals__duration">Состав тура</h3>
+                <h3 class="hotdeals__price">Цена</h3>
+              </div>
+
+              ${openListHtml}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    `;
+    const cardHtmlMob = `
+      <div class="list__container">
+      <img src=${imgUrl} alt="card">
+      <p>${item.title}</p>
+      <svg class="hotdeals__icon-price">
+    <use xlink:href=${item.priceCount}></use>
+    </svg>
+      </div>
+    `;
+    container.insertAdjacentHTML("beforeend", cardHtml);
+    containerMob.insertAdjacentHTML("beforeend", cardHtmlMob);
+  });
+}
+renderOffer();
+const listContainer = document.querySelectorAll(".list__container");
+const listButton = document.querySelectorAll(".list__button");
+const listButtonClose = document.querySelectorAll(".list__button-close");
+if (listButtonClose) {
+  listButtonClose.forEach((el) => {
+    el.addEventListener("click", () => {
+      const currentContainer = el.closest(".list__container");
+      if (currentContainer) {
+        currentContainer.classList.remove("active");
+      }
+      el.classList.remove("active");
+    });
+  });
+}
+if (listButton) {
+  listButton.forEach((el) => {
+    el.addEventListener("click", () => {
+      listButton.forEach((item) => item.classList.remove("active"));
+      listContainer.forEach((item) => item.classList.remove("active"));
+      const currentContainer = el.closest(".list__container");
+      if (currentContainer) {
+        currentContainer.classList.add("active");
+        el.classList.add("active");
+      }
+    });
+  });
+}
+const selectBtn = document.querySelectorAll(".list__button-select");
+const closeBody = document.querySelectorAll(".list__body-close");
+selectBtn.forEach((btn) => btn.dataset.default = btn.textContent);
+selectBtn.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    selectBtn.forEach((item) => {
+      item.classList.remove("active");
+      item.innerHTML = item.dataset.default;
+    });
+    btn.classList.add("active");
+    btn.innerHTML = `<span>Открыть предложения</span>  <svg class='list__arrow-close'>
+            <use xlink:href='#icon-arrowClose'></use>
+            </svg>`;
+    const currentOpen = btn.closest(".list__open");
+    if (!currentOpen) return;
+    const allBodies = currentOpen.querySelectorAll(".list__body-select");
+    allBodies.forEach((b) => b.classList.remove("active"));
+    const activeBody = btn.closest(".list__body-select");
+    if (activeBody) activeBody.classList.add("active");
+  });
+});
+closeBody.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const activeBody = btn.closest(".list__body-select");
+    if (activeBody) activeBody.classList.remove("active");
+    selectBtn.forEach((item) => {
+      item.classList.remove("active");
+      item.innerHTML = item.dataset.default;
+    });
+  });
+});

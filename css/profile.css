@@ -1,0 +1,632 @@
+.wrapper.profile .profile {
+  position: relative;
+  top: -57px;
+  z-index: 9999;
+}
+
+#preview {
+  border-radius: 100%;
+}
+
+#avatar {
+  position: relative;
+  top: 38px;
+}
+
+#preview {
+  text-align: center;
+  width: 126px;
+  height: 126px;
+}
+
+.profile__img {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  position: relative;
+  top: -40px;
+}
+
+.profile__body.profile {
+  justify-content: center;
+  gap: 52px;
+  padding-inline-start: 125px;
+  padding-inline-end: 80px;
+}
+
+.profile__user {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.16);
+  padding-block: 25px;
+  padding-inline: 13px;
+  min-width: 314px;
+  height: 439px;
+  align-self: flex-start;
+  top: 57px;
+}
+
+.profile__list-data,
+.profile__order-data {
+  margin-inline-start: -20px;
+}
+
+.profile__username {
+  font-family: "Open Sans", sans-serif;
+  font-size: 26px;
+  text-align: center;
+  margin-block-end: 26px;
+  margin-block-start: -18px;
+}
+
+.profile__order {
+  background-color: rgba(102, 102, 102, 0.1);
+  border-radius: 4px;
+}
+
+.profile__order,
+.profile__paymant,
+.profile__settings {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  width: 100%;
+  max-width: 288px;
+  letter-spacing: 0.7px;
+}
+.profile__order svg,
+.profile__paymant svg,
+.profile__settings svg {
+  width: 24px;
+  height: 24px;
+}
+.profile__order,
+.profile__paymant,
+.profile__settings {
+  padding-block: 9px;
+  padding-inline: 11px;
+}
+
+.profile__list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  max-width: 805px;
+  align-self: self-start;
+  margin-block-start: 80px;
+  margin-inline-start: -4px;
+}
+
+.profile__title {
+  font-size: 26px;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0.7px;
+  margin-block-end: 24px;
+  margin-inline-start: 4px;
+}
+
+.profile__order-render,
+.profile__order-render--next {
+  display: flex;
+  flex-direction: column;
+  padding-block-start: 18px;
+  padding-block-end: 20px;
+  gap: 38px;
+}
+
+.profile__order-header,
+.profile__order-card {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  place-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.profile__order-header {
+  padding-block: 15px;
+  margin-block-end: 4px;
+  padding-inline: 5px;
+}
+
+.profile__order-number {
+  margin-inline-start: -9px;
+}
+
+.profile__order-card {
+  margin-inline-start: -5px;
+  height: 26px;
+  padding-inline-end: 5px;
+}
+
+.profile__order-card > div {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.3px;
+}
+
+.profile__order-header > div {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0.7px;
+}
+
+.profile__body-box,
+.profile__order-header {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.16);
+}
+
+.profile__body-box {
+  margin-inline-start: 5px;
+  padding-block-end: 20px;
+}
+
+.profile__logout {
+  display: flex;
+  cursor: pointer;
+  position: relative;
+  align-items: center;
+  gap: 16px;
+  margin-block-start: 25px;
+  margin-inline-start: 12px;
+}
+.profile__logout::before {
+  position: absolute;
+  content: "";
+  background-color: #666;
+  width: 100%;
+  height: 1px;
+  top: -15px;
+  opacity: 0.2;
+}
+.profile__logout p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  color: #666;
+  letter-spacing: 0.7px;
+}
+.profile__logout p:hover {
+  transform: scale(1.1);
+}
+
+.profile__logout-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.profile__list-status {
+  color: #3e7739;
+  background-color: rgba(62, 119, 57, 0.2);
+  width: 99px;
+  padding-block: 4px;
+  text-align: center;
+  border-radius: 6px;
+}
+.profile__list-status.processing {
+  color: #f68521;
+  background-color: rgba(246, 133, 33, 0.2);
+}
+.profile__list-status p {
+  font-size: 12px;
+}
+
+.profile__political {
+  margin-block-start: 52px;
+  margin-inline-start: -12px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  color: #666;
+  letter-spacing: 0.5px;
+}
+.profile__political p {
+  margin-block-end: 4px;
+}
+.profile__political.margin {
+  margin-inline-start: 20px;
+}
+
+.profile__order-card--mob,
+.profile__order-header--mob {
+  display: none;
+}
+
+.profile__footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-inline: 17px;
+  justify-content: space-between;
+  height: 27px;
+  margin-block-start: 18px;
+}
+
+.profile__items-length {
+  margin-block-start: -2px;
+}
+
+.profile__items-length,
+.profile__page {
+  font-size: 16px;
+  color: #666;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0.4px;
+}
+
+.profile__page #current {
+  font-size: 14px;
+  padding-inline: 10px;
+  padding-block-start: 4px;
+  margin-block-start: 2px;
+  background-color: rgba(102, 102, 102, 0.2);
+  border-radius: 4px;
+  margin-inline-start: 4px;
+  margin-inline-end: 6px;
+}
+
+#total {
+  margin-inline-start: 6px;
+}
+
+.profile__page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 319px;
+  margin-inline-end: -34px;
+}
+
+.swiper-button-prev.swiper__profile-prev,
+.swiper-button-next.swiper__profile-next {
+  position: static;
+  align-self: flex-end;
+  height: 100%;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  background-color: #f68521;
+  padding-inline: 9px;
+  padding-block: 3px;
+  border-radius: 6px;
+  margin-block-start: 3px;
+}
+
+.swiper-button-prev.swiper__profile-prev {
+  margin-inline-start: -70px;
+  width: 60px;
+  margin-inline-end: 20px;
+}
+
+.swiper-button-next.swiper__profile-next {
+  margin-inline-start: 20px;
+  width: 72px;
+}
+
+.profile__page .swiper-navigation-icon {
+  display: none;
+}
+
+.wrapper.profile #footer {
+  margin-block-start: -12px;
+  position: relative;
+}
+.wrapper.profile #footer::before {
+  position: absolute;
+  content: "";
+  background-color: rgba(102, 102, 102, 0.2);
+  width: 100%;
+  height: 1px;
+  top: -3px;
+  left: 0;
+}
+.wrapper.profile #footer .footer__body {
+  gap: 60px;
+}
+.wrapper.profile #footer .footer__open {
+  margin-block-start: 4px;
+}
+.wrapper.profile #footer .footer__imdb {
+  margin-block-start: -2px;
+}
+
+@media (max-width: 1360px) {
+  .wrapper.profile .profile {
+    top: -30px;
+  }
+  .profile__body {
+    padding-inline: 40px;
+    gap: 20px;
+  }
+}
+@media (max-width: 1200px) {
+  .profile__body.profile {
+    gap: 10px;
+  }
+}
+@media (max-width: 1100px) {
+  .profile__body.profile {
+    flex-direction: column;
+  }
+  .wrapper.profile .profile {
+    top: 16px;
+  }
+  .profile__list {
+    margin-block-start: 140px;
+  }
+  .profile__user {
+    align-self: center;
+  }
+  .wrapper.profile #footer {
+    margin-block-start: 50px;
+  }
+}
+@media (max-width: 900px) {
+  .profile__political.margin {
+    margin-inline-start: 0px;
+  }
+  .profile__order-card {
+    display: none;
+  }
+  .profile__order-card--mob {
+    display: flex;
+  }
+  .profile__order-header {
+    display: none;
+  }
+  .profile__body-box {
+    box-shadow: none;
+    width: 100%;
+    max-width: 800px;
+  }
+  .profile__order-header--mob,
+  .profile__order-info--mob {
+    display: flex;
+    flex-direction: column;
+    box-shadow: none;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 151px;
+  }
+  .profile__order-card--mob {
+    display: flex;
+    height: inherit;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+  }
+  .profile__order-render,
+  .profile__order-render--next {
+    gap: 20px;
+  }
+  .profile__list-number {
+    font-weight: 700;
+  }
+  .profile__order-number {
+    color: #666;
+  }
+  .profile__order-price,
+  .profile__order-email,
+  .profile__order-status,
+  .profile__order-data {
+    color: #666;
+    opacity: 0.6;
+    font-weight: 400 !important;
+  }
+  .profile__order-data {
+    margin: 0;
+  }
+  .wrapper.profile {
+    padding-inline: 0px;
+  }
+  .profile {
+    padding-inline: 20px;
+  }
+  .wrapper.profile #footer {
+    padding-inline: 17px;
+  }
+  .profile__vector {
+    display: none;
+  }
+  .profile {
+    position: static;
+  }
+  .profile__user {
+    margin-inline-start: -10px;
+    width: 314px;
+  }
+  .profile__political.margin {
+    margin-inline-start: -13px;
+  }
+  .profile__body.profile {
+    padding-inline: 0px;
+  }
+  .profile__order-card--mob {
+    position: relative;
+  }
+  .profile__order-card--mob::after {
+    position: absolute;
+    content: "";
+    background-color: #666;
+    opacity: 0.2;
+    width: 100%;
+    height: 1px;
+    bottom: -15px;
+  }
+  .copyright {
+    padding-inline: 20px;
+    text-align: center;
+  }
+}
+@media (max-width: 600px) {
+  .profile__footer {
+    flex-direction: column;
+    gap: 13px;
+    margin-block-start: 28px;
+    padding-inline: 0;
+  }
+  .profile__items-length {
+    width: 100%;
+  }
+  .profile__page #current {
+    margin-block-start: 0;
+  }
+  .profile__page {
+    height: 26px;
+    margin-inline-end: 0px;
+    margin-inline-start: 70px;
+  }
+  .wrapper.profile #footer::before {
+    top: 25px;
+  }
+}
+@media (max-width: 400px) {
+  .wrapper.profile #footer {
+    padding-block-start: 82px;
+  }
+  .wrapper.profile #footer::before {
+    top: 40px;
+  }
+  .wrapper.profile #footer .footer__imdb {
+    margin-block-start: 34px;
+  }
+  .profile__page {
+    max-width: 250px;
+  }
+  .profile {
+    margin-block-end: 103px;
+  }
+  .profile__body.profile {
+    position: relative;
+  }
+  .profile__body.profile::after {
+    position: absolute;
+    content: "";
+    background-color: #666;
+    opacity: 0.5;
+    width: 112%;
+    height: 1px;
+    bottom: -33px;
+    left: -18px;
+    filter: blur(1px);
+  }
+  .profile__order-card--mob {
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  .profile__title {
+    margin-block-end: 13px;
+  }
+  .profile__order-number {
+    margin-inline-start: 0px;
+  }
+  .profile__order-header--mob {
+    gap: 12px;
+    max-width: 121px;
+  }
+  .profile__order-header--mob > div {
+    letter-spacing: -0.1px;
+  }
+  .profile__order-info--mob {
+    gap: 8px;
+  }
+  .profile__order-render,
+  .profile__order-render--next {
+    gap: 48px;
+  }
+  .profile__order-number p {
+    letter-spacing: 0.6px;
+  }
+  .profile__order-card--mob::after {
+    position: absolute;
+    content: "";
+    background-color: #666;
+    opacity: 0.2;
+    width: 100%;
+    height: 1px;
+    bottom: -23px;
+  }
+  .profile__username {
+    margin-block-end: 28px;
+  }
+  .profile__user {
+    top: 0px;
+  }
+  .profile__list {
+    margin-block-start: 95px;
+  }
+  .profile__political {
+    margin-block-start: 50px;
+  }
+  .profile__list-data {
+    margin-inline-start: 0px;
+    white-space: nowrap;
+    margin-block-start: 1px;
+  }
+  #current {
+    padding-block: 1px;
+  }
+  .wrapper.profile #footer {
+    padding-inline: 20px;
+    margin-block-start: 20px;
+  }
+  .wrapper.profile #footer .footer__open {
+    margin-block-start: 12px;
+  }
+  .wrapper.profile #footer .footer__location {
+    margin-block-start: 14px;
+  }
+  .wrapper.profile #footer .footer__phone {
+    margin-block-start: 9px;
+  }
+  .wrapper.profile #footer .footer__imdb-img {
+    margin-inline-start: 0px;
+  }
+  .wrapper.profile .hero,
+  .slider__img {
+    height: 190px;
+  }
+  .profile__footer {
+    position: relative;
+  }
+  .profile__footer::before {
+    position: absolute;
+    content: "";
+    background-color: rgba(102, 102, 102, 0.2);
+    width: 100%;
+    height: 1px;
+    top: -30px;
+  }
+}
+@media (max-width: 360px) {
+  .copyright {
+    display: none;
+  }
+}
+@media (max-width: 340px) {
+  .profile__political.margin {
+    margin-inline-start: 20px;
+  }
+  .profile__footer {
+    margin-inline-start: 30px;
+    max-width: 220px;
+  }
+  .swiper-button-prev.swiper__profile-prev {
+    margin-inline-end: 5px;
+  }
+  .swiper-button-next.swiper__profile-next {
+    margin-inline-start: 5px;
+  }
+}

@@ -1,12 +1,17 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная</title>
-    <meta name="description" content="">
-    <!-- <link rel="stylesheet" href="./styles/base/main.scss" />
-    <link rel="stylesheet" href="./styles/base/reset.scss" /> -->
-    <script type="module" crossorigin="" src="./js/oneHotelOffer.js"></script>
-    <link rel="stylesheet" crossorigin="" href="./css/oneHotelOffer.css">
+    <title>HotDeals</title>
+
+
+
+    <script type="module" crossorigin="" src="../../js/oneHotelOffer.js"></script>
+    <script type="module" crossorigin="" src="../../js/api.js"></script>
+    <script type="module" crossorigin="" src="../../js/authorization2.js"></script>
+    <link rel="stylesheet" crossorigin="" href="../../css/oneHotelOffer.css">
+    <link rel="stylesheet" crossorigin="" href="../../css/authorization.css">
+    <link rel="stylesheet" crossorigin="" href="../../css/hotdeals2.css">
+    <link rel="stylesheet" crossorigin="" href="../../css/reset.css">
   </head>
   <body class="loading">
     <div class="preload loading">
@@ -24,7 +29,7 @@
         </div>
     
       </div>
-    </div>    <div class="wrapper">
+    </div>    <div class="wrapper hotdeals-wrapper">
       <header data-component="header" id="header">
         <div class="topbar">
           <ul class="topbar__list">
@@ -60,7 +65,7 @@
         </div>
         <a class="link__logo" href="/">
           <div class="logo">
-            <img src="./assets/logo.jpg" alt="logo" class="logo__img">
+            <img src="../../assets/logo.jpg" alt="logo" class="logo__img">
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAL0AAACaCAYAAAD8fkm+AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAewSURBVHgB7d2NcdRGGMbxx6nAVBC5gpgKcq4AuwJMBZgKOCrAVIBTAaQCRAXgClAHcSpw9s2tiHy5L0m7q93T/zezo2FggLGfe/3uarU6UcYeHx9P3WXpxmshZ40bb05OTj6rACfKlAv8ubt8dONcKMU7F/ylMpdl6F3gb9zlrRunQmlqN1658DfKVFah9+3MrRsvhZI1blzkGvxsQu8CX7nLFzcq4Rg8uHHlgl8rM78oAy7wl+7yTQT+mNhP7S++Vc3K5KF3X5Slu3wS/fuxeu+/x9mYtL1xXwzr31mOnIdsVnYmCT0T1tnKIvjJQ+8DbxNW1t/nafLgJw09gYdnd29vNZFkoWdJEmuuptq2kCT0VHhsYOv4dgPruxKLHnoCjx0aTXDnNsU6PZvGsE2l1T2apKKG3q/DXwrY7tzl5L0Sitbe+LtwbwUcJtnENkro/X6LpJ9eFM8mts9T9PfBQ++XJn8I6K92ob9QZEF7+s5aPDDEIsWuzKCV3v2HLfALAcNFb3OCVXo/cV0IGMfu63xUREEqvX+I+5uAcKKt5owOvb/jylNPCK3Rqs15UGAh2htbmqwEhFUp0gNGoyq9q/LXitx/Ydasyp+FrvaDK71va7jjipgsY8Gr/Zj2xtZTKwFx3fgCG8yg0PubUFR5pBC82g/q6V3obTsouyeRStDevnel95NXAo+Uglb73pXehd42k1UC0npwlf6ZAuhV6X2VrwSkd+ryt1AAvSo9VR4TC7L1+OBKT5VHBhYhli/7tDcsUSIHo4+CPCj0VHlkZPTK4UE9vQu97aLkGA/k4tmYNfu9ld7PmAk8cjKqxTmkveE4beRmVIuzs73hZANkatS2hH2VfiEgP7ZsObjl3hd6Xo2DXL3QQFtD71sbJrDIVZRKT5VHzqKEfiEgX6f+6JneNoae1gaF+E0DbKv0CwH5C1fpxQ0plKHSANtCT2uDEoSp9H6vTdAjF4BIKg2wqdIPmhwAU3BF+lf1tCn0CwHlqNQToUfpKvX0JPR+fZ5+HkdtvdJXAspSqaf10DOJxdFbDz3r8yhN73ac9galI/TAPoQes/Mz9H65Ejh63UrP+jxK1KgnQo/ZIfQoXe+zbwg9Sjcq9ECJGvVE6FG6v9UToUfpGvVE6FGyhyGHuBJ6lOy7BiD0KNnoo7qDvIIcSGh0pSf0KE2tAbqhbwSU5V4DUOlRqmb063f8X0DwUYpB/bxZX70h9ChFrYHWQz/40wMk9lUDrYe+EZA/6+eDtTeDZsNAYrVGoL1BiT5rhCdvDH98fLQHSf4SkLdnQ5crzZNK7/8iqj1y9nlM4M2mDWe1gHyNam3MptAzmUWubP/8HxppU+hHf5KASIJk83+hp69Hxu4UwLaHSGoBebEbUoPvwnZtC/2fAvKyVCAn237Drdnbej0HQCEHjRvPxy5VtnY9I3snIA91qMCbXZV+4S5fBEzvzIW+USBbK737R2qxvx7TuwsZeLPvCJBbAdN6p8BOdv0mG9AwMavyrxTYzkrvJw+1gPQse8GrvDnkhLMo/zCwx23oXr51csgfcm2OreIsBKRhd1/PFMmhZ1mO3tkG9LBURAdVeuOq/Q/xnlnEZw+JXCmiPqcW09sjhTeK7ODQu0/fndhyjLiWsSavXQe3N4atCYgo6uS1q9dLGfzWhFpAWLYmf6FEhryJJPgdMsxekram1Tv0/j+3FBCGbTX4oIR69fQtvyfnm1jCxDiNGxcpq7wZFHrDpBYBnKUOvBn8dkE/qWXrMYa6mSLwZnClN7Q5GMgmrpPd7BwVeuOCf65Vm8ND5DhE9G0G+4x+ebI/HJ8tCjiEZWXyJe8gbwx3wbfenv4euzRuXIU81WCo0e1Nl2t1rL8/F/BUowmWJrcJUuk7rFdrBPynUUaBN0ErvXHVvtJqRYeJLRplFngTutK32xRs8xBn5sxbowwDb4JX+hZ3bGetUaaBN8ErfcvfsWVH5vw0yjjwJlrojX/aiuDPR63V6cKNMhY19MYH31Z16PGPm51Tc5HDOvw+0Xr6dX67wiexT+cY3aTeEz9GstAbv5xpk9tKOAZW1S9DvRYnlejtTVdnOZNTFcpn38PnpQXeJA29seC78Vzs1SmZ9e/ZT1i3SdrerHPtzo27vBdK0bhxXWJ175o09IY+vxj24uJXJazO7JO8vVnnf0TS7uTLQm5bgrPYFhzC5KE39sV0w84wtBtZjZALK0Rn7nsT5PX0uZi8vVnn2523blwLU6m1eo616N59m+xC3+Jm1iSsfVmWdKNpiCzam03s2Vt/oCctT3z/hl2rVuaoA2+yrfRdvuV57caNEJKF3fr2D8cyST1EEaFv0e8HM8uwt4oKfYvwDzbrsLeKDH3Lh/+FVm1PJWxT64hXY/oqOvRd7gNw7S4vxas/W21VtxPF7oWfjib0rc6k91Lzq/4WdLuRdEdV3+7oQt/lPgC/a9X3L3S8H4CfQXfjfs69+qGOOvRd/maXfQjsJ8BCZavbQUXvbzah7/JHjNsHYKHVMYQL5csq93c/aje+Us3HmWXoN/GtkH0AKn+1kfqUtsaPNuT3/lRoBETod/A/EX7TKvzth6Dy19POr/d5WBvN2tVWVxoqOAAAAAAAAAAAAACgbP8ApwMl4b9YNxYAAAAASUVORK5CYII=" alt="backgroundLogo" class="logo__background">
           </div>
         </a>
@@ -140,36 +145,18 @@
         <a class="link__logo--mob" href="/">
           <div class="logo">
       
-            <img src="./assets/logoMob.png" alt="logo" class="logo__img--mob">
+            <img src="../../assets/logoMob.png" alt="logo" class="logo__img--mob">
             <img src="data:image/png;base64,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" alt="backgroundLogo" class="logo__background--mob">
           </div>
         </a>
-      </header>      <div data-component="sliderHeader" class="slider__header">
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="./assets/heroSlider.png" alt="hero">
-            </div>
-            <div class="swiper-slide">
-              <img src="./assets/heroSlider.png" alt="hero">
-            </div>
-            <div class="swiper-slide">
-              <img src="./assets/heroSlider.png" alt="hero">
-            </div>
-            <div class="swiper-slide">
-              <img src="./assets/heroSlider.png" alt="hero">
-            </div>
-          </div>
-          <div class="swiper-button-next swiper-header-next"></div>
-          <div class="swiper-button-prev swiper-header-prev"></div>
-      
-        </div>
-      </div>      <div data-component="search" class="search">
+      </header>         <div data-component="imgHeader" class="hero">
+            <img src="../../assets/hero.jpg" alt="Slide 1" class="slider__img">
+            </div>      <div data-component="search" class="search">
         <div class="search__header">
-          <svg class="clock__search none">
+          <svg class="clock__search ">
             <use xlink:href="#icon-clock"></use>
           </svg>
-          <h2 class="search__title">найти тур</h2>
+          <h2 class="search__title">горящие предложения</h2>
       
         </div>
         <form class="search__body">
@@ -340,92 +327,24 @@
             </div>
           </div>
         </div>
-      </div>      <section data-component="companyNews" class="company__news">
-        <div class="company__header">
-          <svg class="company__header-img">
-            <use xlink:href="#icon-sale"></use>
-          </svg>
-          <h2 class="company__header-title">кампании<span> и Новости</span></h2>
-          <p class="hotdeals__subtitle company__subtitle">
-            Кто действует быстро - получает самые вкусные цены <span>☺️</span>
-          </p>
-        </div>
-        <div class="swiper mySwiperNews">
-          <div class="news__container swiper-wrapper">
-           
-          </div>
-          <div class="company__footer">
-            <a href="" class="company__footer-link">Все кампании и новости</a>
-            <svg class="company__footer-img">
-              <use xlink:href="#icon-arrowNews"></use>
-            </svg>
-          </div>
-        </div>
-        <div class="swiper-button-next swiper__news-next"></div>
-        <div class="swiper-button-prev swiper__news-prev"></div>
-      </section>
-      <section data-component="hotDeals" class="hotdeals">
+      </div>      <h2 class="hotdeals__title-mob">
+        ВЫГОДНЫЕ <br>
+        ПРЕДЛОЖЕНИЯ
+      </h2>
+      <div data-component="listHotDeals" class="list__hotdeals">
         <div class="hotdeals__header">
-      
-          <div class="hotdeals__header-title">
-            <svg class="hotdeals__clock">
-              <use xlink:href="#icon-clock"></use>
-            </svg>
-            <h2>горящие предложения</h2>
-          </div>
-      
-          <p class="hotdeals__subtitle">Кто действует быстро - получает самые вкусные цены <span>☺️</span></p>
+          <h3 class="hotdeals__data">Дата</h3>
+          <h3 class="hotdeals__from">Откуда</h3>
+          <h3 class="hotdeals__to">Куда</h3>
+          <h3 class="hotdeals__duration">Длительность</h3>
+          <h3 class="hotdeals__price">Цена</h3>
         </div>
-        <div class="swiper mySwiperHotDeals">
-          <div class="hotdeals__container swiper-wrapper">
-          </div>
-          <div class="hotDeals__footer">
-            <a href="" class="company__footer-link">Все горящие предложения</a>
-            <svg class="company__footer-img">
-              <use xlink:href="#icon-arrowNews"></use>
-            </svg>
-          </div>
-      
-        </div>
-        <div class="swiper-button-next swiper__hotdeals-next"></div>
-        <div class="swiper-button-prev swiper__hotdeals-prev"></div>
-      
-      </section>      <section data-component="winterTours" class="wintertours">
-        <div class="winter__header">
-          <h3 class="winter__header-title">ЗИМНИЕ ТУРЫ</h3>
-          <p class="winter__header-subtitle">Зима 2019 - 2025</p>
-        </div>
-        <div class="swiper mySwiperWinterTours">
-          <div class="wintertours__container swiper-wrapper"></div>
-        </div>
-        <div class="winter__all">
-          <a href="" class="winter__all-link">Все зимние туры</a>
-          <svg class="winter__all-img">
-            <use xlink:href="#icon-arrowNews"></use>
-          </svg>
-        </div>
-        <div class="swiper-button-next swiper__winter-next"></div>
-        <div class="swiper-button-prev swiper__winter-prev"></div>
-      </section>      <section data-component="summerTours" class="summertours">
-        <div class="summer__header">
-          <h3 class="summer__header-title">ЛЕТНИЕ ТУРЫ</h3>
-          <p class="summer__header-subtitle">Лето 2019 - 2025</p>
-        </div>
-        <div class="swiper mySwiperSummerTours">
-          <div class="summertours__container swiper-wrapper"></div>
-        </div>
-        <div class="summer__all">
-          <a href="" class="summer__all-link">Все летние туры</a>
-          <svg class="summer__all-img">
-            <use xlink:href="#icon-arrowNews"></use>
-          </svg>
-        </div>
-        <div class="swiper-button-next swiper__summer-next"></div>
-        <div class="swiper-button-prev swiper__summer-prev"></div>
-      </section>
+        <div class="hotdeals__render"></div>
+        <div class="hotdeals__render-mob"></div>
+      </div>
       <section data-component="consultation" class="consultation">
         <div class="consultation__cover">
-          <img src="./assets/consultation-bg.webp">
+          <img src="../../assets/consultation-bg.webp">
         </div>
         <div class="consultation__content">
           <div class="consultation__header">
@@ -546,7 +465,7 @@
             <img src="data:image/png;base64,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" alt="instagram" class="footer__instagram-icon">
             <p class="footer__instagram-text">@booking.clubstravel.ee</p>
           </div>
-          <img src="./assets/IMDb.jpg" alt="IMDb" class="footer__imdb-img">
+          <img src="../../assets/IMDb.jpg" alt="IMDb" class="footer__imdb-img">
         </div>
       
       </footer>
@@ -554,9 +473,7 @@
         <p class="footer__mob-text">©2020 Clubstravel. All Rights Reserved</p>
       </div>    </div>
 
-    
-    <!-- <script type="module" src="/js/main.js" defer></script>
-    <script type="module" src="./js/pages/authorization.js"></script> -->
+
   
 
 <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;"><symbol id="icon-apartment" viewBox="0 0 18 15.3" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path fill="#3e7739" d="M7.2 15.3V9.9h3.6v5.4h4.5V8.1H18L9 0 0 8.1h2.7v7.2z" opacity=".5"></path></symbol><symbol id="icon-arrowClose" viewBox="0 0 10 5" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#555" d="m0 0 5 5 5-5z"></path></symbol><symbol id="icon-arrowDown" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path fill="none" d="M0 24V0h24v24z"></path><path d="M16.58 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></symbol><symbol id="icon-arrowLeft" viewBox="-3 0 14 12" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#fff" d="M7.41 10.58 2.83 6l4.58-4.59L6 0 0 6l6 6z"></path></symbol><symbol id="icon-arrowNews" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="currentColor" d="M3.097 12.997v-1.994h14.977l-4.66-4.66 1.414-1.414L21.9 12l-7.07 7.071-1.415-1.414 4.66-4.66z"></path></symbol><symbol id="icon-arrowOpen" viewBox="0 0 10 5" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#555" d="M10 5 5 0 0 5z"></path></symbol><symbol id="icon-arrowRight" viewBox="-3 0 14 12"><path fill="#fff" d="M0 1.42 4.58 6 0 10.59 1.41 12l6-6-6-6z"></path></symbol><symbol id="icon-barCalendar" viewBox="0 0 25 21" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="currentColor" d="M22.49 6.626q-.835 0-1.375.485-.54.48-.697 1.395h2.755v1.203h-2.858l-.013.24v.32l.013.226h2.427v1.217h-2.31q.348 1.66 2.194 1.661.977 0 1.88-.39v1.75q-.793.404-2.003.404-1.675 0-2.755-.91-1.08-.909-1.36-2.515h-.937v-1.217h.807a2.6 2.6 0 0 1-.027-.424l.013-.362h-.793V8.506h.91q.252-1.654 1.36-2.611 1.106-.964 2.768-.964 1.286 0 2.406.56l-.67 1.586a6.5 6.5 0 0 0-.881-.328 3 3 0 0 0-.855-.123M0 19.312A1.69 1.69 0 0 0 1.687 21h12.375a1.69 1.69 0 0 0 1.687-1.687V9.75H0zm11.25-6.89a.424.424 0 0 1 .421-.422h1.406a.423.423 0 0 1 .422.422v1.406a.423.423 0 0 1-.422.422h-1.406a.423.423 0 0 1-.422-.422zm0 4.5a.423.423 0 0 1 .422-.422h1.406a.423.423 0 0 1 .422.422v1.406a.423.423 0 0 1-.422.422h-1.407a.423.423 0 0 1-.422-.422zm-4.5-4.5A.423.423 0 0 1 7.172 12h1.406a.423.423 0 0 1 .422.421v1.406a.423.423 0 0 1-.422.422H7.172a.423.423 0 0 1-.422-.422zm0 4.5a.423.423 0 0 1 .422-.422h1.406a.423.423 0 0 1 .422.421v1.406a.423.423 0 0 1-.422.422H7.172a.423.423 0 0 1-.422-.422zm-4.5-4.5A.423.423 0 0 1 2.672 12h1.406a.423.423 0 0 1 .422.422v1.406a.423.423 0 0 1-.422.422H2.672a.423.423 0 0 1-.422-.422zm0 4.5a.423.423 0 0 1 .422-.422h1.406a.423.423 0 0 1 .422.422v1.406a.423.423 0 0 1-.422.422H2.672a.423.423 0 0 1-.422-.422zM14.062 5.25h-1.688V3.562A.564.564 0 0 0 11.812 3h-1.125a.564.564 0 0 0-.562.562V5.25h-4.5V3.562A.564.564 0 0 0 5.062 3H3.937a.564.564 0 0 0-.562.562V5.25H1.687A1.69 1.69 0 0 0 0 6.937v1.688h15.749V6.937a1.69 1.69 0 0 0-1.687-1.687"></path></symbol><symbol id="icon-burger" viewBox="0 0 22 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#606c81" d="M0 6.667h16v2.666H0zM0 0h21.333v2.667H0zm0 16h9.647v-2.667H0z"></path></symbol><symbol id="icon-calendar" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M9 10v2H7v-2zm4 0v2h-2v-2zm4 0v2h-2v-2zm2-7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h1V1h2v2h8V1h2v2zm0 16V8H5v11zM9 14v2H7v-2zm4 0v2h-2v-2zm4 0v2h-2v-2z"></path></symbol><symbol id="icon-check-bold" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"><defs><clipPath id="a"><path fill="#fff" d="M3 3h18v18H3z"></path></clipPath></defs><rect width="23" height="23" x=".5" y=".5" stroke="#3e7739" opacity=".25" rx="3.5"></rect><g clip-path="url(#a)"><path d="M3 3h18v18H3z"></path><path fill="#3e7739" d="m9.75 18.315-4.657-4.658 2.122-2.122 2.535 2.543 7.41-7.418 2.122 2.123z"></path></g></symbol><symbol id="icon-clock" viewBox="0 0 28 24" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="currentColor" d="M15.429 20a7 7 0 1 1 0-14 7 7 0 0 1 0 14m7.03-12.61 1.42-1.42c-.45-.51-.9-.97-1.41-1.41L21.049 6c-1.55-1.26-3.5-2-5.62-2a9 9 0 0 0 0 18c5 0 9-4.03 9-9 0-2.12-.74-4.07-1.97-5.61M14.429 14h2V8h-2zm4-13h-6v2h6zM2.743 15.085h2.743v2.057H2.743zM1.372 8.228h4.114v2.057H1.372zM0 11.657h4.8v2.057H0z"></path></symbol><symbol id="icon-clock-time" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><rect fill="none"></rect><path fill="#3e7739" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m4.3 13.2L11 12.3V7h1.5v4.4l4.5 2.5z" opacity=".5"></path></symbol><symbol id="icon-clock-times" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" opacity=".5"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m4.3 13.2L11 12.3V7h1.5v4.4l4.5 2.5z"></path></symbol><symbol id="icon-count" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#f68521" d="M4 4a2 2 0 0 0-2 2v4a2 2 0 1 1 0 4v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 1 0-4V6a2 2 0 0 0-2-2zm11.5 3L17 8.5 8.5 17 7 15.5zm-6.69.04a1.77 1.77 0 1 1 0 3.54 1.77 1.77 0 0 1 0-3.54m6.38 6.38a1.77 1.77 0 1 1 0 3.54 1.77 1.77 0 0 1 0-3.54"></path></symbol><symbol id="icon-departure" viewBox="0 0 18.006 18" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path fill="#3e7739" d="M.582 15.935h16.864V18H.582zm17.37-9.666a1.32 1.32 0 0 0-1.633-1.095l-4.714 1.471L5.481 0 3.768.527l3.675 7.4-4.407 1.378-1.749-1.59-1.287.4 1.615 3.263.683 1.373 1.42-.444 4.71-1.462 3.861-1.2 4.713-1.466a1.614 1.614 0 0 0 .95-1.91" opacity=".5"></path></symbol><symbol id="icon-food" viewBox="0 0 18.013 18.006" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path fill="#3e7739" d="M4.013 0a3.932 3.932 0 0 0-.923 7.773l-.662 9.105A1.143 1.143 0 0 0 3.678 18h.667a1.143 1.143 0 0 0 1.253-1.123l-.662-9.105a3.932 3.932 0 0 0-.923-7.77zm13.444 0-1.11 5.626h-.834L14.957 0h-.556l-.556 5.625h-.833L11.902 0h-.556v7.313a.62.62 0 0 0 .667.563h1.736l-.655 9A1.14 1.14 0 0 0 14.346 18h.667a1.14 1.14 0 0 0 1.252-1.123l-.655-9h1.736a.62.62 0 0 0 .667-.562V0z" opacity=".5"></path></symbol><symbol id="icon-hotLocation" viewBox="-0.05 0 10.5 14.7" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="currentColor" d="M5.223.003A5.14 5.14 0 0 0 1.61 1.31 4.84 4.84 0 0 0 0 4.709c0 3.66 5.224 9.937 5.224 9.937s5.222-6.276 5.222-9.937a4.84 4.84 0 0 0-1.61-3.4A5.14 5.14 0 0 0 5.223.003m0 6.72c-.337 0-.666-.098-.945-.279a1.66 1.66 0 0 1-.627-.74 1.6 1.6 0 0 1-.097-.955c.066-.32.228-.614.466-.845s.541-.388.871-.452a1.75 1.75 0 0 1 .983.094c.31.125.577.337.764.608a1.616 1.616 0 0 1-.212 2.085c-.32.31-.752.483-1.203.483"></path></symbol><symbol id="icon-hotdealCount" viewBox="0 0 83 31" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M0 3.1 3 0v6.2zm0 6.2 3-3.1v6.2z"></path><path d="m0 15.5 3-3.1v6.2z"></path><path d="m0 21.7 3-3.1v6.2zm0 6.2 3-3.1V31zM3 0h80v31H3z"></path><text x="33" y="14" fill="#fff" class="hotdeals__text-count" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">

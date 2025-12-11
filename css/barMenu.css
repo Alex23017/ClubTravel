@@ -1,0 +1,436 @@
+.bar {
+  padding-inline: 97px;
+  padding-inline-end: 96px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.bar.open {
+  margin-block-start: 472px;
+}
+@media (max-width: 1200px) {
+  .bar.open {
+    margin-block-start: 572px;
+  }
+}
+@media (max-width: 780px) {
+  .bar.open {
+    margin-block-start: 680px;
+    gap: 20px;
+  }
+}
+
+.bar__sort .bar__calendar--mob {
+  display: none;
+}
+
+.bar__body {
+  gap: 29px;
+  justify-content: flex-start;
+}
+
+.bar,
+.bar__calendar,
+.bar__sort {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown__body {
+  display: flex;
+}
+
+.bar__title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 24px;
+  letter-spacing: 0.6px;
+}
+
+.bar__calendar {
+  position: relative;
+  gap: 12px;
+  color: #f68521;
+  border: solid 1px #f68521;
+  border-radius: 6px;
+  padding-inline-start: 13px;
+  padding-inline-end: 16px;
+  padding-block: 7px;
+  margin-block-start: -1px;
+}
+.bar__calendar:hover {
+  transform: scale(0.9);
+}
+.bar__calendar {
+  cursor: pointer;
+}
+.bar__calendar.open {
+  border: inherit;
+  color: rgba(62, 119, 57, 0.431372549);
+  margin-inline-end: 85px;
+  margin-inline-start: 0px;
+}
+.bar__calendar.open::before {
+  position: absolute;
+  content: "";
+  background-color: #666;
+  width: 1px;
+  height: 90%;
+  left: -8px;
+  opacity: 0.4;
+  top: 0;
+}
+@media (max-width: 800px) {
+  .bar__calendar.open {
+    margin-inline-end: 0px;
+  }
+}
+
+.bar__hotel {
+  gap: 12px;
+  color: #f68521;
+  border: solid 1px #f68521;
+  border-radius: 6px;
+  padding-block: 4px;
+  cursor: pointer;
+  margin-block-start: -10px;
+  padding-inline-start: 14px;
+  padding-inline-end: 25px;
+  margin-inline-end: 3px;
+  margin-block-start: -6px;
+}
+.bar__hotel:hover {
+  transform: scale(0.9);
+}
+
+.bar__hotel-link {
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  margin-block-start: 5px;
+  white-space: nowrap;
+  letter-spacing: 0.4px;
+}
+
+.bar.open .bar__title {
+  margin-block-start: -4px;
+  margin-inline-start: -1px;
+}
+
+.bar__hotel .bar__calendar-icon {
+  margin-block-start: 7px;
+  margin-inline-end: -4px;
+}
+
+.bar-wrapper,
+.bar__body {
+  width: 100%;
+}
+
+.bar__hotel {
+  display: none;
+}
+.bar__hotel.open {
+  display: flex;
+}
+
+.bar__body {
+  justify-content: center;
+}
+
+.bar__body,
+.bar-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.bar__calendar-text--open {
+  display: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 24px;
+  color: black;
+  opacity: 1;
+  margin-block-start: -5px;
+  letter-spacing: 0.6px;
+}
+.bar__calendar-text--open.open {
+  display: block;
+}
+
+.bar__calendar-icon {
+  min-width: 25px;
+  min-height: 25px;
+  max-width: 25px;
+  max-height: 25px;
+  margin-block-start: 2px;
+  margin-inline-start: -1px;
+}
+
+.bar__calendar-text {
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0.3px;
+  font-size: 14px;
+}
+.bar__calendar-text.open {
+  display: none;
+}
+
+.bar__sort {
+  margin-inline-start: 22px;
+  letter-spacing: 0.5px;
+}
+.bar__sort.open {
+  display: none;
+}
+
+.bar__sort-text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  color: #666;
+}
+
+.bar__dropdown {
+  padding-inline-start: 16px;
+  margin-block-start: -3px;
+  padding-block: 11px;
+  border-radius: 6px;
+  border: solid 1px #E2E2E2;
+}
+
+.bar__dropdown > div {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  margin: 0;
+}
+
+.bar__dropdown--price {
+  margin-inline-start: 13px;
+  width: 100%;
+  width: 149px;
+}
+
+.bar__dropdown--low {
+  margin-inline-start: 11px;
+  width: 200px;
+}
+
+.barprice__button {
+  width: 100%;
+  text-align: start;
+  cursor: pointer;
+}
+
+.bar__dropdown .search__arrow {
+  right: 6px;
+}
+
+.calendar__container {
+  width: 100%;
+  display: none;
+  height: 300px;
+  margin-block-start: 32px;
+}
+.calendar__container.open {
+  display: flex;
+}
+
+@media (max-width: 1000px) and (min-width: 769px) {
+  .bar {
+    padding-inline: 20px;
+    justify-content: center;
+  }
+  .bar__dropdown > div,
+  .bar__calendar-text,
+  .bar__sort-text {
+    font-size: 12px;
+  }
+  .bar__title {
+    font-size: 20px;
+    max-width: 150px;
+  }
+  .bar__dropdown--low {
+    width: 140px;
+  }
+  .bar__dropdown--price {
+    width: 110px;
+  }
+  .dropdown-item {
+    font-size: 12px;
+    padding-block: 4px;
+  }
+  .result__body-info {
+    flex-direction: column;
+  }
+  .bar__calendar {
+    height: 50px;
+  }
+  .bar__body,
+  .bar-wrapper {
+    align-items: center;
+  }
+}
+@media (max-width: 768px) and (min-width: 601px) {
+  .bar {
+    margin-block-start: 40px;
+    padding-inline: 20px;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .bar__dropdown > div,
+  .bar__calendar-text,
+  .bar__sort-text {
+    font-size: 12px;
+  }
+  .bar__title {
+    font-size: 18px;
+  }
+  .bar__dropdown--low {
+    width: 140px;
+  }
+  .bar__dropdown--price {
+    width: 90px;
+  }
+  .dropdown-item {
+    font-size: 12px;
+    padding-block: 4px;
+  }
+}
+@media (max-width: 600px) {
+  .bar__calendar {
+    margin-inline-start: 20px;
+    height: 50px;
+  }
+  .bar {
+    padding-inline: 20px;
+    flex-direction: column;
+    margin-block-start: 40px;
+  }
+  .bar__dropdown > div,
+  .bar__calendar-text,
+  .bar__sort-text {
+    font-size: 12px;
+  }
+  .bar__dropdown--low {
+    width: 140px;
+  }
+  .bar__dropdown--price {
+    width: 90px;
+  }
+  .dropdown-item {
+    font-size: 12px;
+    padding-block: 4px;
+  }
+}
+@media (max-width: 1200px) {
+  .bar-wrapper {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .bar__body {
+    gap: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .bar {
+    padding-inline-start: 23px;
+    padding-inline-end: 17px;
+  }
+  .bar-wrapper .bar__body {
+    margin-block-start: -2px;
+    margin-block-end: 6px;
+    justify-content: flex-start;
+  }
+  .bar__body .bar__title {
+    width: 100%;
+    max-width: 260px;
+    font-size: 20px;
+    line-height: 130%;
+  }
+  .bar {
+    margin-block-start: 140px;
+  }
+  .bar__title {
+    font-size: 20px;
+    text-align: start;
+  }
+  .bar__calendar {
+    display: none;
+  }
+  .bar__sort {
+    flex-direction: column;
+  }
+  .bar__sort {
+    width: 100%;
+    align-items: start;
+    gap: 10px;
+    margin-inline-start: 0px;
+  }
+  .dropdown__body {
+    width: 100%;
+    justify-content: center;
+  }
+  .bar-wrapper {
+    gap: 10px;
+  }
+  .bar__sort-text {
+    font-size: 14px;
+  }
+  .barprice__button {
+    font-size: 16px;
+  }
+  .bar__dropdown--price {
+    width: 149px;
+    height: 42px;
+    margin-inline-start: 0px;
+  }
+  .bar__dropdown--low {
+    width: 161px;
+  }
+  .bar__dropdown {
+    padding-inline-start: 16px;
+  }
+  .barprice__button {
+    max-width: 100px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-block-start: 3px;
+  }
+  .bar__dropdown .search__arrow {
+    top: -2px;
+  }
+  .bar__sort .bar__calendar--mob {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+    margin-block-start: 8px;
+    height: 42px;
+    gap: 10px;
+  }
+  .bar__sort .bar__calendar--mob .bar__calendar-text {
+    font-size: 14px;
+    margin-inline-start: 2px;
+  }
+  .bar__sort .bar__calendar--mob .bar__calendar-icon {
+    margin-inline-start: 4px;
+  }
+  .bar__sort.open {
+    display: flex;
+  }
+  .bar__calendar--mob.open {
+    border: 1px solid #E2E2E2;
+  }
+  .bar__calendar--mob.open::before {
+    background: none;
+  }
+  .bar__hotel.open {
+    display: none;
+  }
+}
+@media (max-width: 340px) {
+  .barprice__button {
+    max-width: 70px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-block-start: 3px;
+  }
+}
