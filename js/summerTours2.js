@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["../css/summerTours.css","../css/reset.css"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["css/summerTours.css","css/reset.css"])))=>i.map(i=>d[i]);
 import { s as skeleton, _ as __vitePreload } from "./oneHotelOffer.js";
 import { S as Swiper, N as Navigation, P as Pagination } from "./swiper-core.js";
 import { A as API_VARIABLES } from "./variables.js";
@@ -98,8 +98,8 @@ function summerToursCard(initialProps = {}) {
   return rootElement;
 }
 if (document.querySelector('[data-component="summerTours"]')) {
-  __vitePreload(() => Promise.resolve({}), true ? __vite__mapDeps([0]) : void 0, import.meta.url);
-  __vitePreload(() => Promise.resolve({}), true ? __vite__mapDeps([1]) : void 0, import.meta.url);
+  __vitePreload(() => Promise.resolve({}), true ? __vite__mapDeps([0]) : void 0);
+  __vitePreload(() => Promise.resolve({}), true ? __vite__mapDeps([1]) : void 0);
 }
 function sliderInit() {
   const slider = document.querySelector(".mySwiperSummerTours");

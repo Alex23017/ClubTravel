@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["../css/listHotDeals.css","../css/reset.css"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["css/listHotDeals.css","css/reset.css"])))=>i.map(i=>d[i]);
 import { _ as __vitePreload } from "./oneHotelOffer.js";
 import { g as getListHotel } from "./listHotel.js";
 /* empty css              */
@@ -6,8 +6,8 @@ import { g as getListHotel } from "./listHotel.js";
 import { A as API_VARIABLES } from "./variables.js";
 import "./api.js";
 if (document.querySelector('[data-component="listHotDeals"]')) {
-  __vitePreload(() => Promise.resolve({}), true ? __vite__mapDeps([0]) : void 0, import.meta.url);
-  __vitePreload(() => Promise.resolve({}), true ? __vite__mapDeps([1]) : void 0, import.meta.url);
+  __vitePreload(() => Promise.resolve({}), true ? __vite__mapDeps([0]) : void 0);
+  __vitePreload(() => Promise.resolve({}), true ? __vite__mapDeps([1]) : void 0);
 }
 const data = await getListHotel();
 function renderOffer() {

@@ -1,4 +1,4 @@
-const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./barMenu2.js","./swiper-core.js","../css/swiper-core.css","./variables.js","./api.js","../css/navigation.css","./companyNews2.js","./hotDeals2.js","./listHotel.js","./hotDealsCard.js","./listHotDeals.js","../css/listHotDeals.css","../css/reset.css","./oneHotelInfo.js","./hotels.js","./profile3.js","./resultSearchCard2.js","./search2.js","../css/search2.css","./sliderHeader.js","./summerTours2.js","./winterTours2.js"])))=>i.map(i=>d[i]);
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["js/barMenu2.js","js/swiper-core.js","css/swiper-core.css","js/variables.js","js/api.js","css/navigation.css","js/companyNews2.js","js/hotDeals2.js","js/listHotel.js","js/hotDealsCard.js","js/listHotDeals.js","css/listHotDeals.css","css/reset.css","js/oneHotelInfo.js","js/hotels.js","js/profile3.js","js/resultSearchCard2.js","js/search2.js","css/search2.css","js/sliderHeader.js","js/summerTours2.js","js/winterTours2.js"])))=>i.map(i=>d[i]);
 (function polyfill() {
   const relList = document.createElement("link").relList;
   if (relList && relList.supports && relList.supports("modulepreload")) return;
@@ -29,8 +29,8 @@ const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./barMenu2.js","./swip
   }
 })();
 const scriptRel = "modulepreload";
-const assetsURL = function(dep, importerUrl) {
-  return new URL(dep, importerUrl).href;
+const assetsURL = function(dep) {
+  return "/ClubTravel/" + dep;
 };
 const seen = {};
 const __vitePreload = function preload(baseModule, deps, importerUrl) {
@@ -45,20 +45,16 @@ const __vitePreload = function preload(baseModule, deps, importerUrl) {
         reason
       }))));
     };
-    const links = document.getElementsByTagName("link");
+    document.getElementsByTagName("link");
     const cspNonceMeta = document.querySelector("meta[property=csp-nonce]");
     const cspNonce = cspNonceMeta?.nonce || cspNonceMeta?.getAttribute("nonce");
     promise = allSettled(deps.map((dep) => {
-      dep = assetsURL(dep, importerUrl);
+      dep = assetsURL(dep);
       if (dep in seen) return;
       seen[dep] = true;
       const isCss = dep.endsWith(".css");
       const cssSelector = isCss ? '[rel="stylesheet"]' : "";
-      if (!!importerUrl) for (let i$1 = links.length - 1; i$1 >= 0; i$1--) {
-        const link$1 = links[i$1];
-        if (link$1.href === dep && (!isCss || link$1.rel === "stylesheet")) return;
-      }
-      else if (document.querySelector(`link[href="${dep}"]${cssSelector}`)) return;
+      if (document.querySelector(`link[href="${dep}"]${cssSelector}`)) return;
       const link = document.createElement("link");
       link.rel = isCss ? "stylesheet" : scriptRel;
       if (!isCss) link.as = "script";
@@ -5128,7 +5124,7 @@ class Toast extends BaseComponent {
 }
 enableDismissTrigger(Toast);
 defineJQueryPlugin(Toast);
-const components = /* @__PURE__ */ Object.assign({ "./components/barMenu.js": () => __vitePreload(() => import("./barMenu2.js"), true ? __vite__mapDeps([0,1,2,3,4,5]) : void 0, import.meta.url), "./components/companyNews.js": () => __vitePreload(() => import("./companyNews2.js").then((n) => n.c), true ? __vite__mapDeps([6,1,2,3,4]) : void 0, import.meta.url), "./components/consultation.js": () => __vitePreload(() => import("./consultation.js"), true ? [] : void 0, import.meta.url), "./components/copyRight.js": () => __vitePreload(() => import("./copyRight.js"), true ? [] : void 0, import.meta.url), "./components/footer.js": () => __vitePreload(() => import("./footer.js"), true ? [] : void 0, import.meta.url), "./components/header.js": () => __vitePreload(() => import("./header.js"), true ? [] : void 0, import.meta.url), "./components/hotDeals.js": () => __vitePreload(() => import("./hotDeals2.js"), true ? __vite__mapDeps([7,1,2,3,8,4,9]) : void 0, import.meta.url), "./components/imgHeader.js": () => __vitePreload(() => import("./imgHeader.js"), true ? [] : void 0, import.meta.url), "./components/listHotDeals.js": () => __vitePreload(() => import("./listHotDeals.js"), true ? __vite__mapDeps([10,8,3,4,11,12]) : void 0, import.meta.url), "./components/oneHotelContact.js": () => __vitePreload(() => Promise.resolve().then(() => oneHotelContact), true ? void 0 : void 0, import.meta.url), "./components/oneHotelInfo.js": () => __vitePreload(() => import("./oneHotelInfo.js"), true ? __vite__mapDeps([13,14,3,4]) : void 0, import.meta.url), "./components/oneHotelOffer.js": () => __vitePreload(() => Promise.resolve().then(() => oneHotelOffer), true ? void 0 : void 0, import.meta.url), "./components/oneHotelTitle.js": () => __vitePreload(() => import("./oneHotelTitle.js"), true ? [] : void 0, import.meta.url), "./components/profile.js": () => __vitePreload(() => import("./profile3.js"), true ? __vite__mapDeps([15,1,2,3,4]) : void 0, import.meta.url), "./components/resultSearchCard.js": () => __vitePreload(() => import("./resultSearchCard2.js"), true ? __vite__mapDeps([16,1,2,3,4]) : void 0, import.meta.url), "./components/search.js": () => __vitePreload(() => import("./search2.js"), true ? __vite__mapDeps([17,18]) : void 0, import.meta.url), "./components/sliderHeader.js": () => __vitePreload(() => import("./sliderHeader.js"), true ? __vite__mapDeps([19,1,2,5]) : void 0, import.meta.url), "./components/summerTours.js": () => __vitePreload(() => import("./summerTours2.js"), true ? __vite__mapDeps([20,1,2,3,4]) : void 0, import.meta.url), "./components/winterTours.js": () => __vitePreload(() => import("./winterTours2.js"), true ? __vite__mapDeps([21,1,2,3,4]) : void 0, import.meta.url) });
+const components = /* @__PURE__ */ Object.assign({ "./components/barMenu.js": () => __vitePreload(() => import("./barMenu2.js"), true ? __vite__mapDeps([0,1,2,3,4,5]) : void 0), "./components/companyNews.js": () => __vitePreload(() => import("./companyNews2.js").then((n) => n.c), true ? __vite__mapDeps([6,1,2,3,4]) : void 0), "./components/consultation.js": () => __vitePreload(() => import("./consultation.js"), true ? [] : void 0), "./components/copyRight.js": () => __vitePreload(() => import("./copyRight.js"), true ? [] : void 0), "./components/footer.js": () => __vitePreload(() => import("./footer.js"), true ? [] : void 0), "./components/header.js": () => __vitePreload(() => import("./header.js"), true ? [] : void 0), "./components/hotDeals.js": () => __vitePreload(() => import("./hotDeals2.js"), true ? __vite__mapDeps([7,1,2,3,8,4,9]) : void 0), "./components/imgHeader.js": () => __vitePreload(() => import("./imgHeader.js"), true ? [] : void 0), "./components/listHotDeals.js": () => __vitePreload(() => import("./listHotDeals.js"), true ? __vite__mapDeps([10,8,3,4,11,12]) : void 0), "./components/oneHotelContact.js": () => __vitePreload(() => Promise.resolve().then(() => oneHotelContact), true ? void 0 : void 0), "./components/oneHotelInfo.js": () => __vitePreload(() => import("./oneHotelInfo.js"), true ? __vite__mapDeps([13,14,3,4]) : void 0), "./components/oneHotelOffer.js": () => __vitePreload(() => Promise.resolve().then(() => oneHotelOffer), true ? void 0 : void 0), "./components/oneHotelTitle.js": () => __vitePreload(() => import("./oneHotelTitle.js"), true ? [] : void 0), "./components/profile.js": () => __vitePreload(() => import("./profile3.js"), true ? __vite__mapDeps([15,1,2,3,4]) : void 0), "./components/resultSearchCard.js": () => __vitePreload(() => import("./resultSearchCard2.js"), true ? __vite__mapDeps([16,1,2,3,4]) : void 0), "./components/search.js": () => __vitePreload(() => import("./search2.js"), true ? __vite__mapDeps([17,18]) : void 0), "./components/sliderHeader.js": () => __vitePreload(() => import("./sliderHeader.js"), true ? __vite__mapDeps([19,1,2,5]) : void 0), "./components/summerTours.js": () => __vitePreload(() => import("./summerTours2.js"), true ? __vite__mapDeps([20,1,2,3,4]) : void 0), "./components/winterTours.js": () => __vitePreload(() => import("./winterTours2.js"), true ? __vite__mapDeps([21,1,2,3,4]) : void 0) });
 document.querySelectorAll("[data-component]").forEach((el) => {
   const name = el.dataset.component;
   if (!name) return;
