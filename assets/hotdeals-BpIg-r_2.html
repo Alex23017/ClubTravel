@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HotDeals</title>
+    <link rel="stylesheet" href="../../styles/base/main.scss" />
+    <link rel="stylesheet" href="../../styles/base/reset.scss" />
+    <link rel="stylesheet" href="../../styles/pages/hotdeals.scss" />
+  </head>
+  <body class="loading">
+    {{>preload}}
+    <div class="wrapper hotdeals-wrapper">
+      {{>header}}
+      {{>imgHeader}}
+      {{>search title ="горящие предложения"}}
+      <h2 class="hotdeals__title-mob">
+        ВЫГОДНЫЕ <br />
+        ПРЕДЛОЖЕНИЯ
+      </h2>
+      {{>listHotDeals}}
+
+      {{>consultation}}
+      {{> footer}}
+    </div>
+    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/pages/authorization.js"></script>
+  </body>
+</html>
