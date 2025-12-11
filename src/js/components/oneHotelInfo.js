@@ -88,6 +88,7 @@ const hotelId = params.get('id');
 const dataHotel = await getHotelById(hotelId);
  function  renderInfo(data) {
   
+  
   const container = document.querySelector('.hotel__info');
   if (!container) return;
   const lists = data.serviceLists.list;

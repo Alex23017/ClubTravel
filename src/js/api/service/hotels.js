@@ -1,18 +1,7 @@
 import { API_VARIABLES } from '../variables.js';
 import { getPublicResource, getResource} from '../api';
 
-// export function _transformHotels(data) {
-//     return data.map(item => ({
-//         name: item.hotelName,
-//         price: item.price,
-//         from: item.from,
-//         stars: item.stars,
-//         id: item.documentId,
-//         food: item.food,
-//         serviceLists: item.serviceLists,
-//         // img: item.img,
-//     }));
-// }
+
 export async function getAllHotels() {
     try {
         const res = await getPublicResource(`${API_VARIABLES.BASE_URL}/api/hotels?populate[serviceLists][populate][list][populate][subServices]=*&populate[serviceLists][populate][position]=*&populate[serviceLists][populate][listPosition]=*`);
@@ -28,7 +17,6 @@ export async function getHotelById(id) {
     try {
         // const res = await getResource(`${API_VARIABLES.BASE_URL}/api/hotels/${id}?populate[serviceLists][populate][list][populate][subServices]=*&populate[serviceLists][populate][position]]=*&populate[serviceLists][populate][listPosition]=*`);
         const res = await getPublicResource(`${API_VARIABLES.BASE_URL}/api/list-hotels/${id}?populate[openList][populate][openListSelect]=true&populate[img]=true`);
-       
         return res.data;
     }
     catch (error) {

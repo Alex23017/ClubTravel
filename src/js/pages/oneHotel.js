@@ -103,6 +103,7 @@ renderHotelOffers()
 sliderInit()
 renderOffer()
 
+
 async function createOffer() {
 
     const number = Date.now(); 

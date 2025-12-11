@@ -1,23 +1,12 @@
-// if (document.querySelector('[data-component="oneHotelTitle"]')) {
-//   import('/styles/components/oneHotel.scss');
-//   import('/styles/base/reset.scss');
-// }
 
 import OneHotelTitle from '../../html/components/oneHotel/oneHotelTitle.html'
 import { getHotelById } from '../api/service/hotels';
-// const dataHotel = {
-//   hotelName: 'AMBASSADOR',
-//   address: 'Болгария, Золотые Пески',
-//   rating: 4,
-//   features: ['WiFi', 'Parking', 'Pool'],
 
-// };
 const params = new URLSearchParams(window.location.search);
 const hotelId = params.get('id');
 
 
 const dataHotel = await getHotelById(hotelId);
-
 function renderCard(data) {
 
   const container = document.querySelector('.hotel__card');

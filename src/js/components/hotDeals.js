@@ -47,6 +47,7 @@ export function sliderInit() {
     })
   }
 }
+
 const data = await getListHotel()
 function onHotelClick(e) {
     const id = e.currentTarget.dataset.id;

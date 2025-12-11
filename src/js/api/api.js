@@ -36,7 +36,6 @@ export async function postResource(url, data = {}) {
   }
 }
 
-
 export async function getPublicResource(url) {
   try {
     const res = await axios.get(url, {
