@@ -28,11 +28,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   const profile = document.querySelectorAll(".profile__body-img");
   profile.forEach(
-    (prof) => prof.addEventListener("click", () => {
+    (prof) => prof.addEventListener("click", (e) => {
+      e.preventDefault();
       if (isLoggedIn()) {
-        window.location.replace("/ClubTravel/ClubTravel/html/pages/profile.html");
+        window.location.replace("/ClubTravel/html/pages/profile.html");
       } else {
-        window.location.replace("/ClubTravel/ClubTravel/html/pages/authorization.html?tab=authorization");
+        window.location.replace("/ClubTravel/html/pages/authorization.html?tab=authorization");
       }
     })
   );
@@ -85,7 +86,7 @@ async function login(event) {
       localStorage.setItem("userId", res.user.id);
       localStorage.setItem("token", res.jwt);
       localStorage.setItem("jwt", res.jwt);
-      window.location.href = "/html/pages/profile.html";
+      window.location.href = "/ClubTravel/html/pages/profile.html";
     }
   } catch (err) {
     console.error("Login failed:", err.message);

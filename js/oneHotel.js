@@ -1,11 +1,11 @@
 import "./oneHotelOffer.js";
 import { S as Swiper, N as Navigation, P as Pagination } from "./swiper-core.js";
 /* empty css             */
-import { A as API_VARIABLES } from "./variables.js";
 import { b as axios } from "./api.js";
 import { g as getHotelById } from "./hotels.js";
 import { g as getListHotel } from "./listHotel.js";
 import { h as hotDealsCard } from "./hotDealsCard.js";
+import "./variables.js";
 function OfferCard(initialProps = {}) {
   const decodeBase64Utf8 = (b64) => {
     if (typeof atob === "function" && typeof TextDecoder !== "undefined") {
@@ -169,7 +169,7 @@ function renderOffer() {
       </svg>`;
     }
     const offerCard = hotDealsCard({
-      img: API_VARIABLES.IMG_URL + item.img[0].url,
+      img: item.img[0].url,
       data: item.data,
       location: item.location,
       title: item.title,
