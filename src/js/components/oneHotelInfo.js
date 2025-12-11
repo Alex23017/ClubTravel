@@ -83,7 +83,9 @@ import { getHotelById } from '../api/service/hotels';
 
 
 // };
-const dataHotel = await getHotelById('xfmhd9zt1s4qrghz8unla56q');
+const params = new URLSearchParams(window.location.search);
+const hotelId = params.get('id');
+const dataHotel = await getHotelById(hotelId);
  function  renderInfo(data) {
   
   const container = document.querySelector('.hotel__info');

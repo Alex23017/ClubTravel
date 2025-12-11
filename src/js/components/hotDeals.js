@@ -48,11 +48,16 @@ export function sliderInit() {
   }
 }
 const data = await getListHotel()
+function onHotelClick(e) {
+    const id = e.currentTarget.dataset.id;
+    
+    window.location.href = `/html/pages/oneHotel.html?id=${id}`;
+}
 
 export function renderOffer() {
   const container = document.querySelector('.hotdeals__container')
   if (!container) return
-
+  
   data.forEach(item => {
     let getStars = ''
     for (let i = 0; i < item.stars; i++) {
@@ -61,8 +66,9 @@ export function renderOffer() {
       <use xlink:href="#icon-star-shiny"></use>
       </svg>`
     }
-
+    
     const offerCard = hotDealsCard({
+      documentId: item.documentId,
       img: API_VARIABLES.IMG_URL + item.img[0].url,
       data: item.data,
       location: item.location,
@@ -72,7 +78,7 @@ export function renderOffer() {
       priceCount: item.priceCount,
       stars: getStars,
     })
-
+    offerCard.addEventListener('click', onHotelClick);
     container.appendChild(offerCard)
   })
 

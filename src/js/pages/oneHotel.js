@@ -12,13 +12,17 @@ import {getListHotel} from '../api/service/listHotel.js'
 
 
 import hotDealsCard from '../../html/components/home/hotDealsCard.html';
+const params = new URLSearchParams(window.location.search);
+const hotelId = params.get('id');
 
-const dataHotel = await getHotelById('xfmhd9zt1s4qrghz8unla56q')
+console.log('Hotel ID:', hotelId);
+
+const dataHotel = await getHotelById(hotelId)
 export function renderHotelOffers() {
     const container = document.querySelector('.hotel__offer');
     if (!container) return;
     const offerCard = OfferCard({
-    night: dataHotel.night,
+    night: 7,
     from: dataHotel.from,
     food: dataHotel.food,
     houses: dataHotel.houses,
@@ -108,13 +112,16 @@ async function createOffer() {
 
     if (!userId) {
         console.log('не авторизований користувач');
+         window.location.href = '/html/pages/authorization.html?tab=authorization'
         return;
     }
 
     const newOrder = {
-        number: number,
-        price: 745,
-        data: date
+                    orderNumber: number,
+                    orderPrice: 679,
+                    orderStatus: false,
+                    orderDate: date,
+                    users_permissions_user: userId,
     };
 
     try {

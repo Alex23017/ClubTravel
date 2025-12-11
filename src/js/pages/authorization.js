@@ -84,7 +84,7 @@ async function login(event) {
       localStorage.setItem('username', data.identifier);
       localStorage.setItem('userId', res.user.id);
       localStorage.setItem('token', res.jwt);
-      
+      localStorage.setItem('jwt', res.jwt);
       window.location.href = '/html/pages/profile.html';
 
     }

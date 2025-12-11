@@ -4,37 +4,39 @@
 // }
 
 import OneHotelTitle from '../../html/components/oneHotel/oneHotelTitle.html'
+import { getHotelById } from '../api/service/hotels';
+// const dataHotel = {
+//   hotelName: 'AMBASSADOR',
+//   address: 'Болгария, Золотые Пески',
+//   rating: 4,
+//   features: ['WiFi', 'Parking', 'Pool'],
 
-const dataHotel = {
-  hotelName: 'AMBASSADOR',
-  address: 'Болгария, Золотые Пески',
-  rating: 4,
-  features: ['WiFi', 'Parking', 'Pool'],
+// };
+const params = new URLSearchParams(window.location.search);
+const hotelId = params.get('id');
 
-};
+
+const dataHotel = await getHotelById(hotelId);
+
 function renderCard(data) {
 
   const container = document.querySelector('.hotel__card');
 
   if (!container) return;
   let stars = '';
-  for (let i = 1; i < data.rating; i++) {
+  for (let i = 1; i < 3; i++) {
     stars += ` <svg class="hotel__card-star">
         <use xlink:href='#icon-star-shiny'></use>
       </svg>`;
-  }
+  } 
+  
   const oneHotelTitle = OneHotelTitle({
-    name:data.hotelName,
+    name:data.from,
     stars: stars,
-    address:data.address,
-    items: [
-    { name: 'Laptop', price: 999 },
-    { name: 'Mouse', price: 29 },
-    { name: 'Keyboard', price: 79 }
-  ]
+    address:data.location,
+    
   }) 
   container.appendChild(oneHotelTitle);
-  console.log(oneHotelTitle);
   // return container.innerHTML = `
   //    <div class="hotel__card-name">
   //     ${data.hotelName}
