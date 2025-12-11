@@ -1,11 +1,11 @@
 import "./oneHotelOffer.js";
 import { S as Swiper, N as Navigation, P as Pagination } from "./swiper-core.js";
 /* empty css             */
+import { A as API_VARIABLES } from "./variables.js";
 import { b as axios } from "./api.js";
 import { g as getHotelById } from "./hotels.js";
 import { g as getListHotel } from "./listHotel.js";
 import { h as hotDealsCard } from "./hotDealsCard.js";
-import "./variables.js";
 function OfferCard(initialProps = {}) {
   const decodeBase64Utf8 = (b64) => {
     if (typeof atob === "function" && typeof TextDecoder !== "undefined") {
@@ -91,17 +91,21 @@ function OfferCard(initialProps = {}) {
 }
 async function addUserOrder(userId, newOrder) {
   const token = localStorage.getItem("token");
-  console.log("TOKEN:", token);
-  const user = await axios.get(`https://deserving-apparel-f938801c39.strapiapp.com/api/users/${userId}`, {
-    headers: { Authorization: `Bearer ${token}` }
-  });
-  const currentOrders = user.data.order || [];
-  const updatedOrders = [...currentOrders, newOrder];
-  await axios.put(
-    `https://deserving-apparel-f938801c39.strapiapp.com/api/users-permissions/users/${userId}`,
-    { order: updatedOrders },
-    { headers: { Authorization: `Bearer ${token}` } }
-  );
+  try {
+    const res = await axios.post(
+      "https://deserving-apparel-f938801c39.strapiapp.com/api/orders",
+      { data: newOrder },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }
+    );
+    console.log("created ", res.data);
+    return res.data;
+  } catch (err) {
+    console.error("error:", err);
+  }
 }
 const params = new URLSearchParams(window.location.search);
 const hotelId = params.get("id");
@@ -165,7 +169,7 @@ function renderOffer() {
       </svg>`;
     }
     const offerCard = hotDealsCard({
-      img: item.img[0].url,
+      img: API_VARIABLES.IMG_URL + item.img[0].url,
       data: item.data,
       location: item.location,
       title: item.title,

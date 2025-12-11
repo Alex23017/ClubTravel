@@ -3,7 +3,7 @@ import { _ as __vitePreload } from "./oneHotelOffer.js";
 import { g as getListHotel } from "./listHotel.js";
 /* empty css              */
 /* empty css      */
-import { A as API_VARIABLES } from "./variables.js";
+import "./variables.js";
 import "./api.js";
 if (document.querySelector('[data-component="listHotDeals"]')) {
   __vitePreload(() => Promise.resolve({}), true ? __vite__mapDeps([0]) : void 0);
@@ -23,7 +23,7 @@ function renderOffer() {
     return stars;
   };
   data.forEach((item) => {
-    const imgUrl = API_VARIABLES.BASE_URL + item.img[0].url;
+    const imgUrl = item.img[0].url;
     const openListHtml = item.openList.map((open) => {
       const openListSelectHtml = (open.openListSelect || []).map(
         (select) => `

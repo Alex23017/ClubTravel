@@ -223,6 +223,7 @@ logOut.addEventListener("click", () => {
     localStorage.removeItem("Logged");
     localStorage.removeItem("username");
     localStorage.removeItem("jwt");
+    localStorage.removeItem("token");
     window.location.reload();
   }
   if (!isLoggedIn()) {

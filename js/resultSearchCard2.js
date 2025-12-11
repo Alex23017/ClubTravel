@@ -62,7 +62,7 @@ function renderOffer() {
     return stars;
   };
   data.forEach((item) => {
-    const imgUrl = API_VARIABLES.BASE_URL + item.img[0].url;
+    const imgUrl = item.img[0].url;
     const openResult = item.openResult.map(
       (open) => `
       <div class="result__open">
