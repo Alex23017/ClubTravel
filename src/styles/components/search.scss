@@ -917,7 +917,7 @@ $color: #ff8c00;
     }
   }
   .advanced__body {
-    gap: 5px;
+    gap: 15px;
     padding-inline: 0px;
     p,
     label {
@@ -926,7 +926,6 @@ $color: #ff8c00;
   }
   .tour__package-regions {
     gap: 10px;
-    column-gap: 0px;
     place-items: start;
     max-width: 170px;
   }
