@@ -31,7 +31,7 @@ function sliderInit() {
       breakpoints: {
         320: {
           slidesPerView: 1,
-          spaceBetween: 28,
+          spaceBetween: 0,
         },
         768: {
           slidesPerView: 2,
