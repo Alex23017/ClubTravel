@@ -52,6 +52,11 @@
     },
     "location": {
       "type": "string"
+    },
+    "serviceLists": {
+      "type": "component",
+      "component": "shared.service-list",
+      "repeatable": false
     }
   }
 }

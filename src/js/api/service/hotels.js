@@ -16,7 +16,10 @@ export async function getAllHotels() {
 export async function getHotelById(id) {
     try {
         // const res = await getResource(`${API_VARIABLES.BASE_URL}/api/hotels/${id}?populate[serviceLists][populate][list][populate][subServices]=*&populate[serviceLists][populate][position]]=*&populate[serviceLists][populate][listPosition]=*`);
-        const res = await getPublicResource(`${API_VARIABLES.BASE_URL}/api/list-hotels/${id}?populate[openList][populate][openListSelect]=true&populate[img]=true`);
+        const res = await getPublicResource(
+        `${API_VARIABLES.BASE_URL}/api/list-hotels/${id}?populate[serviceLists][populate][list][populate][subServices]=*&populate[serviceLists][populate][position]=*&populate[serviceLists][populate][listPosition]=*`);
+
+        
         return res.data;
     }
     catch (error) {
