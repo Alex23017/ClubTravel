@@ -593,6 +593,7 @@ export interface ApiListHotelListHotel extends Struct.CollectionTypeSchema {
     price: Schema.Attribute.BigInteger
     priceCount: Schema.Attribute.String
     publishedAt: Schema.Attribute.DateTime
+    serviceLists: Schema.Attribute.Component<'shared.service-list', false>
     title: Schema.Attribute.String
     to: Schema.Attribute.String
     updatedAt: Schema.Attribute.DateTime
