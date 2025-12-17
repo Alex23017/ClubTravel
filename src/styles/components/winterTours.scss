@@ -8,11 +8,11 @@
 .winter__header {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 14px;
   text-align: center;
   margin-block-start: 2px;
   margin-inline-start: 24px;
-  margin-block-end: 38px;
+  margin-block-end: 39px;
 }
 .winter__header-title {
   font-family: $Open;
@@ -38,14 +38,16 @@
   box-shadow: 0px 4px 8px rgba(34, 60, 80, 0.2);
   border-radius: 10px;
   padding-block-end: 16px;
-  max-height: 364px;
+  height: 364px;
   margin-block-end: 40px;
 }
 
 .winter__img {
   object-fit: cover;
   max-width: 100%;
-  max-height: 250px;
+  height: 250px;
+  border-top-left-radius: 10px;
+  border-top-right-radius:10px;
 }
 .winter__footer {
   display: flex;
@@ -146,6 +148,14 @@
 }
 
 @media (max-width: 600px) {
+  .winter__header{
+    gap: 14px;
+    margin-block-end: 39px;
+  }
+  .winter__footer-price {
+    margin-block-start: -2px;
+    margin-inline-end: 1px;
+  }
   .wintertours {
     margin-block-start: 84px;
     padding-inline-start: 11px;
@@ -162,6 +172,7 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     position: relative;
+   
   }
   .winter__town-text {
     margin-inline-start: 2px;

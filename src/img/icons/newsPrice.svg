@@ -1,10 +1,21 @@
-<svg width="83" height="31" viewBox="0 0 83 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 3.09998L3 0L3 6.19998L0 3.09998Z" fill="currentColor"/>
-<path d="M0 15.5L3 12.4V18.6L0 15.5Z" fill="currentColor"/>
-<path d="M0 21.7L3 18.6V24.8L0 21.7Z" fill="currentColor"/>
-<path d="M0 9.29998L3 6.19998V12.4L0 9.29998Z" fill="currentColor"/>
-<path d="M0 27.9L3 24.8V31L0 27.9Z" fill="currentColor"/>
-<rect x="3" y="0" width="83" height="31" fill="currentColor"/>
-<rect x="4" width="83" height="31" fill="currentColor"/>
-<text class="news__icon-text" x="10" y="17" fill="white">от 509€</text>
+<svg width="83" height="31" viewBox="0 0 83 31" xmlns="http://www.w3.org/2000/svg">
+
+  <path d="M0 3.09998L3 0L3 6.19998L0 3.09998Z" fill="currentColor"/>
+  <path d="M0 15.5L3 12.4V18.6L0 15.5Z" fill="currentColor"/>
+  <path d="M0 21.7L3 18.6V24.8L0 21.7Z" fill="currentColor"/>
+  <path d="M0 9.29998L3 6.19998V12.4L0 9.29998Z" fill="currentColor"/>
+  <path d="M0 27.9L3 24.8V31L0 27.9Z" fill="currentColor"/>
+
+  <rect x="3" y="0" width="80" height="31" fill="currentColor"/>
+
+  <text
+    x="13"
+    y="17"
+    font-size="16"
+    fill="white"
+    dominant-baseline="middle"
+  >
+    от 509€
+  </text>
+
 </svg>

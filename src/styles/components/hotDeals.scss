@@ -62,7 +62,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  gap: 5px;
+  gap: 4px;
   margin-inline-start: -18px;
   margin-block-end: 37px;
   margin-block-start: 1px;
@@ -125,8 +125,10 @@
   }
 }
 .hotdeals__location-icon {
-  width: 10px;
-  height: 14px;
+  min-width: 10px;
+  min-height: 14px;
+  max-width: 10px;
+  max-height: 14px;
   color: white;
 }
 
@@ -164,7 +166,8 @@
   color: $primaryColor;
   width: 134px;
   height: 31px;
-  margin-inline-end: -10px;
+  margin-inline-end: -35px;
+  font-size: 25px;
 }
 .hotdeals__text-count {
   font-size: 12px;
@@ -206,11 +209,12 @@
   opacity: 0.4;
   text-decoration: line-through;
   letter-spacing: 0.5px;
+  margin-block-start: 2px;
 }
 .hotdeals {
   .swiper__hotdeals-next,
   .swiper__hotdeals-prev {
-    top: 44.5%;
+    top: 52.5%;
     width: 48px;
     height: 48px;
     background: rgba(0, 128, 0, 0.2);
@@ -245,7 +249,7 @@
   }
   .hotdeals__data-text,
   .hotdeals__location-text {
-    font-size: 12px;
+    font-size: 14px;
   }
   .hotdeals .swiper__hotdeals-next {
     top: 35%;
@@ -270,8 +274,9 @@
   font-family: $Open;
   font-size: 16px;
   gap: 8px;
-  letter-spacing: 0.7px;
+  letter-spacing: 0.5px;
   margin-block-start: 50px;
+  margin-inline-start: -2px;
 }
 
 @media (max-width: 600px) {
@@ -288,6 +293,7 @@
   }
   .hotdeals__header {
     margin: 0;
+    gap: 2px;
   }
   .hotdeals__header-title {
     flex-direction: column;
@@ -307,7 +313,7 @@
     margin-inline-start: -6px;
   }
   .hotdeals__subtitle {
-    margin-block-start: 9px;
+    margin-block-start: 12px;
     margin-inline-start: 1px;
     line-height: 140%;
     padding-inline: 10px;
@@ -322,7 +328,7 @@
   .hotdeals__data {
     top: 165px;
     width: 141px;
-    left: 16px;
+    left: 17px;
   }
   .hotdeals__data-text {
     font-size: 14px;
@@ -334,7 +340,9 @@
     width: 212px;
     top: 205px;
     left: 12px;
+    gap: 6px;
   }
+
   .hotdeals__data-title {
     margin-block-start: 4px;
     margin-inline-start: -1px;
@@ -352,11 +360,11 @@
     margin-inline-end: 1px;
   }
   .hotdeals__icon-count {
-    margin-block-start: 2px;
+    margin-block-start: 3px;
   }
   .hotDeals__footer {
     margin-block-start: 10px;
-    margin-inline-start: 14px;
+    margin-inline-start: 10px;
   }
   .hotdeals {
     .swiper__hotdeals-next,
@@ -371,10 +379,7 @@
   .hotdeals .swiper__hotdeals-next {
     right: 18px !important;
   }
-
-
 }
 .hotdeals .swiper__hotdeals-prev {
   left: 22px !important;
 }
-

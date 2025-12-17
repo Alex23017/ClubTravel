@@ -57,6 +57,9 @@
       "type": "component",
       "component": "shared.service-list",
       "repeatable": false
+    },
+    "stars": {
+      "type": "integer"
     }
   }
 }

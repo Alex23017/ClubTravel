@@ -38,14 +38,16 @@
   box-shadow: 0px 4px 8px rgba(34, 60, 80, 0.2);
   border-radius: 10px;
   padding-block-end: 16px;
-  max-height: 364px;
+  height: 364px;
   margin-block-end: 40px;
 }
 
 .summer__img {
   object-fit: cover;
   max-width: 100%;
-  max-height: 250px;
+  height: 250px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .summer__footer {
   display: flex;
@@ -114,7 +116,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  margin-block-end: 101px;
+  margin-block-end: 100px;
   &:hover {
     transform: scale(0.9);
   }
@@ -157,22 +159,22 @@
   }
   .summer__header-subtitle {
     margin-block-start: -2px;
-    margin-inline-start: -19px;
+    margin-inline-start: -22px;
   }
   .summer__img {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   }
   .summer__header {
-    margin-block-end: 39px;
+    margin-block-end: 40px;
   }
   .summer__town-text {
     margin-inline-start: 2px;
   }
   .summer__all {
-    margin-block-end: 80px;
-    gap: 12px;
-    margin-inline-start: 5px;
+    margin-block-end: 79px;
+    gap: 9px;
+    margin-inline-start: 2px;
   }
 
   .summertours {
@@ -193,7 +195,7 @@
       left: 22px !important;
     }
   }
-  .summer__all-link{
+  .summer__all-link {
     letter-spacing: 0.4px;
   }
 }

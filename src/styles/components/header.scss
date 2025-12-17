@@ -35,6 +35,14 @@
   position: relative;
   display: none;
 }
+.topbar__link {
+  letter-spacing: 0.3px;
+}
+.email__body-text {
+  letter-spacing: 0.2px;
+  margin-inline-end: -5px;
+  margin-block-start: 1px;
+}
 
 .topbar__contact,
 .profile__body,
@@ -49,7 +57,7 @@
 .topbar {
   position: relative;
   justify-content: flex-end;
-  gap: 48px;
+  gap: 53px;
   line-height: 100%;
   padding-block: 8px;
 
@@ -82,11 +90,19 @@
     display: none;
   }
 }
-
+.vector__home {
+  position: absolute;
+  z-index: 14;
+  top: 570px;
+  height: 80px;
+  @media (max-width: 1300px) {
+    display: none;
+  }
+}
 .topbar__items {
   position: relative;
-  gap: 28px;
-  margin-inline-start: -2px;
+  gap: 26px;
+  margin-inline-start: 3px;
   margin-block-start: 1px;
 
   @include tablet-mini {
@@ -102,7 +118,7 @@
     content: '';
     opacity: 0.1;
     position: absolute;
-    right: 0;
+    right: -5px;
     width: 1px;
     height: 24px;
     background-color: $colorGrey;
@@ -120,12 +136,13 @@
 .email__body {
   position: relative;
   gap: 24px;
+  margin-inline-end: 5px;
 
   &::after {
     content: '';
     opacity: 0.1;
     position: absolute;
-    right: -24px;
+    right: -30px;
     width: 1px;
     height: 24px;
     background-color: $colorGrey;
@@ -137,8 +154,8 @@
 }
 
 .topbar__contact {
-  gap: 24px;
-  margin-inline-end: 4px;
+  gap: 26px;
+  margin-inline-end: -5px;
 
   img {
     width: 16px;
@@ -273,7 +290,7 @@
     align-items: center;
     gap: 24px;
     white-space: nowrap;
-    margin-inline-end: -10px;
+    margin-inline-end: -5px;
 
     @include table-big {
       gap: 12px;
@@ -338,6 +355,7 @@
 .nav__link--company {
   gap: 6px;
   margin-inline-start: -8px;
+  margin-inline-end: 2px;
 
   @include tablet-mini {
     margin-inline-start: 0;
@@ -347,7 +365,9 @@
     margin-inline-start: 0;
   }
 }
-
+.nav__link-request {
+  letter-spacing: -0.6px;
+}
 .sale,
 .clock {
   @include tablet-mini {
@@ -444,7 +464,12 @@
 .link__logo--mob {
   display: none;
 }
-
+@media (max-width: 700px) {
+  #header {
+    padding-inline-start: 3px;
+    padding-inline-end: 10px;
+  }
+}
 @media (max-width: 600px) {
   .topbar {
     display: none;
@@ -458,6 +483,8 @@
   .profile__body-img--none {
     display: flex;
     margin-block-start: -4px;
+    width: 32px;
+    height: 32px;
   }
 
   .mySwiper .swiper-wrapper {
@@ -517,7 +544,7 @@
     top: -31px;
     left: -14px;
   }
-  .slider__img{
+  .slider__img {
     height: 186px;
     object-fit: cover;
     margin-block-end: 4px;

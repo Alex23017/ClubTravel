@@ -1,12 +1,28 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="83"
+  height="31"
+  viewBox="0 0 83 31"
+  fill="currentColor"
+>
 
-<svg xmlns="http://www.w3.org/2000/svg" width="83" height="31" viewBox="0 0 83 31" fill="currentColor">
   <path d="M0 3.1L3 0V6.2L0 3.1Z" fill="currentColor"/>
   <path d="M0 9.3L3 6.2V12.4L0 9.3Z" fill="currentColor"/>
   <path d="M0 15.5L3 12.4V18.6L0 15.5Z" fill="currentColor"/>
   <path d="M0 21.7L3 18.6V24.8L0 21.7Z" fill="currentColor"/>
   <path d="M0 27.9L3 24.8V31L0 27.9Z" fill="currentColor"/>
-  <rect x="3" y="0" width="80" height="31" fill="currentColor"/>
-  <text class="hotdeals__text-count" x="33" y="14" fill="white" font-size="14" font-family="Arial, sans-serif" text-anchor="middle" dominant-baseline="middle">
+<rect x="3" y="0" width="80.5" height="31" fill="currentColor"/>
+
+
+  <text
+    x="42"
+    y="17"
+    font-size="16"
+    fill="white"
+    text-anchor="middle"
+    dominant-baseline="middle"
+  >
     -30%
   </text>
+
 </svg>
