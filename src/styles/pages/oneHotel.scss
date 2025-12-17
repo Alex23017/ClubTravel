@@ -36,6 +36,7 @@ body{
 
 .hotel {
   position: relative;
+  max-width: 100%;
 
   &__card {
     position: absolute;
@@ -144,6 +145,7 @@ body{
     display: flex;
     gap: 69px;
     padding: 40px 100px 22px;
+    justify-content: space-between;
 
     // @include huge{
     //   padding: 40px 20%
