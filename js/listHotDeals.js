@@ -82,14 +82,7 @@ function renderOffer() {
         </div>
 
         <div class="list__open">
-          <div class="list__body">
-            <p class="list__data">${item.data}</p>
-            <p class="list__from">${item.from}</p>
-            <p class="list__to">${item.to}</p>
-            <p class="list__duration">${item.duration} дней</p>
-            <p class="list__price">от <strong>${item.price}€</strong>/чел.</p>
-            <p class="list__button-close">Закрыть</p>
-          </div>
+      
 
           <div class="list__openlist">
             <div class="list__opendeals">
@@ -113,7 +106,7 @@ function renderOffer() {
       <img src=${imgUrl} alt="card">
       <p>${item.title}</p>
       <svg class="hotdeals__icon-price">
-    <use xlink:href=${item.priceCount}></use>
+    <use xlink:href=${item.priceValue}></use>
     </svg>
       </div>
     `;
@@ -122,7 +115,7 @@ function renderOffer() {
   });
 }
 renderOffer();
-const listContainer = document.querySelectorAll(".list__container");
+document.querySelectorAll(".list__container");
 const listButton = document.querySelectorAll(".list__button");
 const listButtonClose = document.querySelectorAll(".list__button-close");
 if (listButtonClose) {
@@ -139,12 +132,17 @@ if (listButtonClose) {
 if (listButton) {
   listButton.forEach((el) => {
     el.addEventListener("click", () => {
-      listButton.forEach((item) => item.classList.remove("active"));
-      listContainer.forEach((item) => item.classList.remove("active"));
       const currentContainer = el.closest(".list__container");
       if (currentContainer) {
-        currentContainer.classList.add("active");
-        el.classList.add("active");
+        currentContainer.classList.toggle("active");
+        el.classList.toggle("active");
+      }
+      if (el.classList.contains("active")) {
+        el.textContent = "Закрыть";
+        el.style.color = "black";
+      } else {
+        el.textContent = "Открыть";
+        el.style.color = "";
       }
     });
   });
@@ -158,6 +156,7 @@ selectBtn.forEach((btn) => {
       item.classList.remove("active");
       item.innerHTML = item.dataset.default;
     });
+    document.querySelectorAll(".list__body-category").forEach((el) => el.classList.toggle("open"));
     btn.classList.add("active");
     btn.innerHTML = `<span>Открыть предложения</span>  <svg class='list__arrow-close'>
             <use xlink:href='#icon-arrowClose'></use>
@@ -174,6 +173,7 @@ closeBody.forEach((btn) => {
   btn.addEventListener("click", () => {
     const activeBody = btn.closest(".list__body-select");
     if (activeBody) activeBody.classList.remove("active");
+    document.querySelectorAll(".list__body-category").forEach((el) => el.classList.remove("open"));
     selectBtn.forEach((item) => {
       item.classList.remove("active");
       item.innerHTML = item.dataset.default;

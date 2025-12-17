@@ -15,3 +15,13 @@
   color: rgba(37, 82, 150, 0.4);
   letter-spacing: 0.5px;
 }
+@media (max-width: 900px) {
+  .copyright {
+    padding-inline: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .copyright {
+    display: none;
+  }
+}

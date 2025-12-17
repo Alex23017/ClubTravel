@@ -63,8 +63,9 @@
 
 .news__icon-price {
   position: absolute;
-  top: 31px;
-  right: 0px;
+  top: 28px;
+  right: -2px;
+  font-size: 25px;
   width: 87px;
   height: 31px;
   color: #f68521;
@@ -248,8 +249,7 @@
     margin-block-start: 50px;
   }
   .hotdeals__subtitle.company__subtitle {
-    margin-block-start: 12px;
-    margin-inline-start: 2px;
+    padding-inline-start: 12px;
     line-height: 130%;
   }
   .news__img {
@@ -278,7 +278,7 @@
   }
   .news__data {
     left: 85px;
-    bottom: 93px;
+    bottom: 94px;
     width: 141px;
   }
   .news__data-text {
@@ -308,7 +308,7 @@
     height: 250px;
   }
   .company__subtitle {
-    display: flex;
+    display: block;
   }
 }
 .skeleton__container {
