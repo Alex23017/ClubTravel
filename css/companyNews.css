@@ -9,7 +9,7 @@
 }
 
 .news__container {
-  margin-block-end: 41px;
+  margin-block-end: 40px;
 }
 
 .swiper-news-next {
@@ -17,14 +17,18 @@
   height: 20px;
 }
 
+.company__header-title {
+  margin-block-start: 3px;
+  letter-spacing: -0.3px;
+}
+
 .company__header {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 4px;
-  margin-inline-start: 9px;
-  margin-block-start: 0px;
-  margin-block-end: 38px;
+  margin-block-start: 5px;
+  margin-block-end: 40px;
 }
 .company__header h2 {
   font-family: "Open Sans", sans-serif;
@@ -32,7 +36,7 @@
   font-weight: 700;
   text-transform: uppercase;
   color: #f15d28;
-  letter-spacing: 3px;
+  letter-spacing: 2.4px;
 }
 .company__header span {
   color: black;
@@ -59,9 +63,9 @@
 
 .news__icon-price {
   position: absolute;
-  top: 29px;
-  right: 0;
-  width: 134px;
+  top: 31px;
+  right: 0px;
+  width: 87px;
   height: 31px;
   color: #f68521;
   font-family: "Open Sans", sans-serif;

@@ -40,6 +40,16 @@
   display: none;
 }
 
+.topbar__link {
+  letter-spacing: 0.3px;
+}
+
+.email__body-text {
+  letter-spacing: 0.2px;
+  margin-inline-end: -5px;
+  margin-block-start: 1px;
+}
+
 .topbar__contact,
 .profile__body,
 .phone__body,
@@ -53,7 +63,7 @@
 .topbar {
   position: relative;
   justify-content: flex-end;
-  gap: 48px;
+  gap: 53px;
   line-height: 100%;
   padding-block: 8px;
 }
@@ -91,8 +101,8 @@
 
 .topbar__items {
   position: relative;
-  gap: 28px;
-  margin-inline-start: -2px;
+  gap: 26px;
+  margin-inline-start: 3px;
   margin-block-start: 1px;
 }
 @media (max-width: 768px) and (min-width: 601px) {
@@ -110,7 +120,7 @@
   content: "";
   opacity: 0.1;
   position: absolute;
-  right: 0;
+  right: -5px;
   width: 1px;
   height: 24px;
   background-color: #666;
@@ -129,12 +139,13 @@
 .email__body {
   position: relative;
   gap: 24px;
+  margin-inline-end: 5px;
 }
 .email__body::after {
   content: "";
   opacity: 0.1;
   position: absolute;
-  right: -24px;
+  right: -30px;
   width: 1px;
   height: 24px;
   background-color: #666;
@@ -146,8 +157,8 @@
 }
 
 .topbar__contact {
-  gap: 24px;
-  margin-inline-end: 4px;
+  gap: 26px;
+  margin-inline-end: -5px;
 }
 .topbar__contact img {
   width: 16px;
@@ -292,7 +303,7 @@
   align-items: center;
   gap: 24px;
   white-space: nowrap;
-  margin-inline-end: -10px;
+  margin-inline-end: -5px;
 }
 @media (max-width: 1200px) {
   .nav__items {
@@ -359,6 +370,7 @@
 .nav__link--company {
   gap: 6px;
   margin-inline-start: -8px;
+  margin-inline-end: 2px;
 }
 @media (max-width: 768px) and (min-width: 601px) {
   .nav__link--company {
@@ -369,6 +381,10 @@
   .nav__link--company {
     margin-inline-start: 0;
   }
+}
+
+.nav__link-request {
+  letter-spacing: -0.6px;
 }
 
 @media (max-width: 768px) and (min-width: 601px) {

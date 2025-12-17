@@ -63,7 +63,7 @@
   justify-content: center;
   gap: 5px;
   margin-inline-start: -18px;
-  margin-block-end: 37px;
+  margin-block-end: 36px;
   margin-block-start: 1px;
 }
 
@@ -173,7 +173,7 @@
   color: #f68521;
   width: 134px;
   height: 31px;
-  margin-inline-end: -10px;
+  margin-inline-end: -35px;
 }
 
 .hotdeals__text-count {
