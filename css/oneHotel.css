@@ -414,6 +414,7 @@
 
 .hotel {
   position: relative;
+  max-width: 100%;
 }
 .hotel__card {
   position: absolute;
@@ -515,6 +516,7 @@
   display: flex;
   gap: 69px;
   padding: 40px 100px 22px;
+  justify-content: space-between;
 }
 @media (max-width: 1440px) {
   .hotel__content-top {
