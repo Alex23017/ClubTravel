@@ -1,5 +1,10 @@
 @use '../base/variables' as *;
 
+.hotdeals-wrapper .search {
+  top: -98px;
+  left: 50%;
+}
+
 @media (max-width: 600px) {
   .hotdeals-wrapper {
     .consultation {

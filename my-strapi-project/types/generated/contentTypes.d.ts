@@ -592,6 +592,7 @@ export interface ApiListHotelListHotel extends Struct.CollectionTypeSchema {
     openList: Schema.Attribute.Component<'shared.hotels-open', true>
     price: Schema.Attribute.BigInteger
     priceCount: Schema.Attribute.String
+    priceValue: Schema.Attribute.String
     publishedAt: Schema.Attribute.DateTime
     serviceLists: Schema.Attribute.Component<'shared.service-list', false>
     stars: Schema.Attribute.Integer

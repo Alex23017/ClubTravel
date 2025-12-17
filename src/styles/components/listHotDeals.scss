@@ -2,8 +2,8 @@
 
 .list__hotdeals {
   position: relative;
-  margin-block-start: -22px;
-  margin-block-end: 65px;
+  margin-block-start: -20px;
+  margin-block-end: 48px;
   margin-inline: 98px;
   @include tablet-mini {
     margin-inline: 0px;
@@ -93,6 +93,7 @@
   font-size: 15px;
   font-family: $Open;
   display: flex;
+  gap: 6px;
   flex-direction: column;
   min-width: 650px;
   @media (max-width: 760px) {
@@ -119,13 +120,14 @@
 }
 .list__duration {
   max-width: 170px;
-  margin-inline-start: 2px;
+  margin-inline-start: 4px;
   @include table-big {
     text-align: center;
   }
 }
 .list__price {
   max-width: 90px;
+  margin-inline-start: -1px;
 }
 .list__button {
   width: 100%;
@@ -198,9 +200,6 @@
 }
 .list__open {
   padding-inline-start: 24px;
-  box-shadow:
-    0 -1px 3px rgba(0, 0, 0, 0.1),
-    0 1px 3px rgba(0, 0, 0, 0.1);
   .list__body {
     @include table-big {
       padding-inline-end: 24px;
@@ -243,6 +242,9 @@
   &.active {
     height: auto;
     overflow: inherit;
+    box-shadow:
+      0 -1px 3px rgba(0, 0, 0, 0.1),
+      0 1px 3px rgba(0, 0, 0, 0.1);
   }
   &::after {
     content: '';
@@ -350,14 +352,14 @@
   border-radius: 6px;
   width: 100%;
   max-width: 200px;
-  height: 28px;
+  height: 29px;
   font-size: 12px;
   padding-block-start: 6px;
   text-transform: uppercase;
   margin-inline-start: 38px;
-  margin-block-start: 4px;
-  padding-inline-start: 7px;
+  padding-inline-start: 14px;
   padding-inline-end: 14px;
+  padding-block-start: 6px;
   letter-spacing: 0.3px;
   &.active {
     background-color: white;
@@ -405,8 +407,14 @@
     margin-inline-start: 0px;
   }
 }
+
 .list__price--open {
   margin-inline-start: 20px;
+}
+.list__body-category.open {
+  &::after {
+    background-color: inherit;
+  }
 }
 .list__body-select {
   display: flex;
@@ -435,11 +443,24 @@
     width: 100%;
   }
 }
+.list__body-hotel {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    background-color: $colorGrey;
+    width: 100%;
+    height: 1px;
+    opacity: 0.2;
+  }
+}
 
 .list__body-category {
   position: relative;
   display: flex;
-  padding-block: 12px;
+  padding-block: 14px;
   align-items: center;
   padding-inline-start: 2px;
   margin-block-start: 8px;
@@ -457,7 +478,7 @@
   &::after {
     content: '';
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     left: 0;
     background-color: $colorGrey;
     width: 100%;
@@ -467,16 +488,6 @@
 }
 
 .list__body-select.active .list__body-category {
-  &::before {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 0;
-    background-color: $colorGrey;
-    width: 100%;
-    height: 1px;
-    opacity: 0.2;
-  }
 }
 
 .list__arrow-open {
@@ -490,7 +501,7 @@
   min-height: 10px;
   max-width: 10px;
   max-height: 10px;
-  margin-block-start: 5px;
+  margin-block-start: 4px;
   margin-inline-start: 11px;
   @include table-big {
     display: none;
@@ -505,8 +516,9 @@
 }
 
 .list__body-hotel {
-  padding-block: 13px;
-  margin-block: 12px;
+  padding-block: 10px;
+  margin-block: 8px;
+  margin-block-start: 15px;
   @media (max-width: 1366px) {
     padding-inline-end: 10px;
   }
@@ -523,8 +535,8 @@
 .list__select-hotel {
   display: flex;
   align-items: center;
-  padding-block: 12px;
-  padding-block-end: 23px;
+  padding-block: 20px;
+  padding-block-end: 18px;
   border-radius: 6px;
   padding-inline-start: 12px;
 
