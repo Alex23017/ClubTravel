@@ -5,6 +5,7 @@ import { b as axios } from "./api.js";
 import { g as getHotelById } from "./hotels.js";
 import { g as getListHotel } from "./listHotel.js";
 import { h as hotDealsCard } from "./hotDealsCard.js";
+import "./authorization2.js";
 import "./variables.js";
 function OfferCard(initialProps = {}) {
   const decodeBase64Utf8 = (b64) => {
