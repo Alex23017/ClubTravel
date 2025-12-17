@@ -145,7 +145,7 @@ body{
     display: flex;
     gap: 69px;
     padding: 40px 100px 22px;
-    justify-content: space-between;
+    
 
     // @include huge{
     //   padding: 40px 20%
@@ -187,6 +187,7 @@ body{
     display: flex;
     gap: 67px;
     padding: 0 100px 0 97px;
+    justify-content: space-between;
 
     // @include huge{
     //   padding: 0 20%
