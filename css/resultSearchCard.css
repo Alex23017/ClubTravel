@@ -977,6 +977,9 @@
   .result-wrapper .footer__phone {
     margin-block-start: 11px;
   }
+  .result-wrapper .search {
+    top: 0px;
+  }
   .result__header-type .type__title,
   .result__header-food .food__title {
     margin: 0;
