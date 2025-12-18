@@ -964,13 +964,20 @@
   .hotdeals__render {
     display: none;
   }
-  .hotdeals__icon-price {
+  .hotdeals__icon-value {
     position: absolute;
-    width: 220px;
-    height: 31px;
+    width: 83px;
+    background-color: #f68521;
+    max-height: 31px;
     color: #f68521;
-    right: -27px;
     top: 30px;
+    right: 0;
+    height: 31px;
+  }
+  .hotdeals__icon-price {
+    margin-inline-start: -11px;
+    margin-block-start: 0.5px;
+    height: 31px;
   }
 }
 @media (max-width: 400px) {

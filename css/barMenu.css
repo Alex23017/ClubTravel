@@ -6,7 +6,7 @@
   flex-direction: column;
 }
 .bar.open {
-  margin-block-start: 472px;
+  margin-block-start: 476px;
 }
 @media (max-width: 1200px) {
   .bar.open {
@@ -20,12 +20,16 @@
   }
 }
 
+.bar__sort-text {
+  margin-inline-end: -4px;
+}
+
 .bar__sort .bar__calendar--mob {
   display: none;
 }
 
 .bar__body {
-  gap: 29px;
+  gap: 35px;
   justify-content: flex-start;
 }
 
@@ -44,6 +48,14 @@
   font-family: "Open Sans", sans-serif;
   font-size: 24px;
   letter-spacing: 0.6px;
+  white-space: nowrap;
+  margin-inline-end: 5px;
+  margin-block-start: 0px;
+}
+@media (max-width: 1300px) {
+  .bar__title {
+    white-space: wrap;
+  }
 }
 
 .bar__calendar {
@@ -55,7 +67,10 @@
   padding-inline-start: 13px;
   padding-inline-end: 16px;
   padding-block: 7px;
-  margin-block-start: -1px;
+  margin-block-start: -3px;
+  height: 42px;
+  max-width: 201px;
+  width: 100%;
 }
 .bar__calendar:hover {
   transform: scale(0.9);
@@ -67,7 +82,9 @@
   border: inherit;
   color: rgba(62, 119, 57, 0.431372549);
   margin-inline-end: 85px;
-  margin-inline-start: 0px;
+  margin-inline-start: -4px;
+  margin-block-start: -2px;
+  max-width: 100%;
 }
 .bar__calendar.open::before {
   position: absolute;
@@ -75,7 +92,7 @@
   background-color: #666;
   width: 1px;
   height: 90%;
-  left: -8px;
+  left: -14px;
   opacity: 0.4;
   top: 0;
 }
@@ -112,13 +129,12 @@
 }
 
 .bar.open .bar__title {
-  margin-block-start: -4px;
-  margin-inline-start: -1px;
+  margin-inline-start: -2px;
 }
 
 .bar__hotel .bar__calendar-icon {
-  margin-block-start: 7px;
-  margin-inline-end: -4px;
+  margin-inline-end: -10px;
+  margin-block-start: 4px;
 }
 
 .bar-wrapper,
@@ -131,6 +147,11 @@
 }
 .bar__hotel.open {
   display: flex;
+  gap: 22px;
+  height: 42px;
+  width: 174px;
+  margin-block-start: -3px;
+  margin-inline-end: 4px;
 }
 
 .bar__body {
@@ -150,18 +171,26 @@
   color: black;
   opacity: 1;
   margin-block-start: -5px;
+  margin-inline-end: -20px;
   letter-spacing: 0.6px;
+  white-space: nowrap;
 }
 .bar__calendar-text--open.open {
   display: block;
+  margin-block-start: 1px;
+}
+@media (max-width: 1300px) {
+  .bar__calendar-text--open {
+    white-space: wrap;
+  }
 }
 
 .bar__calendar-icon {
-  min-width: 25px;
+  min-width: 20px;
   min-height: 25px;
-  max-width: 25px;
+  max-width: 20px;
   max-height: 25px;
-  margin-block-start: 2px;
+  margin-block-start: -1px;
   margin-inline-start: -1px;
 }
 
@@ -203,9 +232,9 @@
 }
 
 .bar__dropdown--price {
-  margin-inline-start: 13px;
+  margin-inline-start: 15px;
   width: 100%;
-  width: 149px;
+  width: 148px;
 }
 
 .bar__dropdown--low {
@@ -227,7 +256,7 @@
   width: 100%;
   display: none;
   height: 300px;
-  margin-block-start: 32px;
+  margin-block-start: 34px;
 }
 .calendar__container.open {
   display: flex;
@@ -334,14 +363,18 @@
     padding-inline-start: 23px;
     padding-inline-end: 17px;
   }
+  .bar-wrapper {
+    text-align: center;
+  }
   .bar-wrapper .bar__body {
     margin-block-start: -2px;
     margin-block-end: 6px;
     justify-content: flex-start;
   }
-  .bar__body .bar__title {
+  .bar__body .bar__title,
+  .bar__sort-text {
     width: 100%;
-    max-width: 260px;
+    text-align: center;
     font-size: 20px;
     line-height: 130%;
   }
@@ -360,7 +393,7 @@
   }
   .bar__sort {
     width: 100%;
-    align-items: start;
+    align-items: center;
     gap: 10px;
     margin-inline-start: 0px;
   }
@@ -424,6 +457,27 @@
   }
   .bar__hotel.open {
     display: none;
+  }
+}
+@media (max-width: 360px) {
+  .bar__body .bar__title {
+    max-width: 260px;
+    text-align: start;
+  }
+  .bar-wrapper,
+  .bar__sort-text {
+    align-items: start;
+    text-align: start;
+  }
+  .bar__sort-text {
+    margin-inline-start: -6px;
+  }
+  .bar__sort {
+    margin-block-start: 2px;
+  }
+  .bar__calendar--mob {
+    width: 100%;
+    max-width: 100%;
   }
 }
 @media (max-width: 340px) {

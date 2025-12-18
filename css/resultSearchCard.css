@@ -1,7 +1,20 @@
+.result-wrapper .search {
+  left: 50%;
+  top: -98px;
+}
+.result-wrapper .search .food__title,
+.result-wrapper .search .type__title {
+  display: flex;
+}
+.result-wrapper .search .adanced__close {
+  margin-block-start: -2px;
+}
+
 .result__container {
   padding-inline-start: 98px;
   padding-inline-end: 114px;
   margin-block-start: 35px;
+  margin-block-end: 121px;
 }
 
 .mySwiperResult {
@@ -94,13 +107,13 @@
   font-size: 14px;
   color: #666;
   opacity: 0.8;
-  margin-block-start: 16px;
+  margin-block-start: 18px;
   letter-spacing: 0.4px;
 }
 
 .result_duration-icon {
-  min-width: 24px;
-  max-width: 24px;
+  min-width: 18px;
+  max-width: 18px;
 }
 
 .result__body-info {
@@ -109,7 +122,7 @@
 }
 
 .result__items {
-  margin-block-start: 40px;
+  margin-block-start: 38px;
   margin-inline-start: 8px;
   letter-spacing: 0.5px;
   white-space: nowrap;
@@ -196,6 +209,7 @@
 .result__star {
   width: 18px;
   height: 18px;
+  color: #f68521;
 }
 
 .result__duration,
@@ -204,7 +218,7 @@
 .result__beach {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   white-space: nowrap;
@@ -223,7 +237,8 @@
 }
 
 .result__duration {
-  margin-block-start: 23px;
+  margin-block-start: 22px;
+  margin-inline-start: 2px;
   letter-spacing: 0.6px;
 }
 
@@ -676,7 +691,7 @@
   .result__proposition-button {
     max-width: 162px;
     height: 42px;
-    margin-block-start: 10px;
+    margin-block-start: 11px;
     font-size: 14px;
   }
   .result__condition {
@@ -739,8 +754,12 @@
   }
 }
 @media (max-width: 600px) {
-  .bar__calendar--mob {
+  .bar__sort .bar__calendar--mob {
     display: flex;
+    margin-block-start: 9px;
+  }
+  .bar__calendar-icon {
+    min-width: 25px;
   }
   .result__items {
     display: none;
@@ -798,7 +817,7 @@
   }
   .result__town {
     position: absolute;
-    top: 140px;
+    top: 141px;
     z-index: 5;
     background-color: rgba(0, 0, 0, 0.5);
     border: none;
@@ -958,6 +977,22 @@
   .result-wrapper .footer__phone {
     margin-block-start: 11px;
   }
+  .result__header-type .type__title,
+  .result__header-food .food__title {
+    margin: 0;
+  }
+}
+@media (max-width: 360px) {
+  .result__condition--mob .result__duration,
+  .result__condition--mob .result__package,
+  .result__condition--mob .result__food,
+  .result__condition--mob .result__beach {
+    gap: 18px;
+  }
+  .result__condition--mob .result__condition-body {
+    margin-block-start: 14px;
+    row-gap: 7px;
+  }
 }
 @media (max-width: 340px) {
   .dropdown__body--mob {
@@ -969,4 +1004,10 @@
   .dropdown__body--mob .list__dropdown--low {
     margin-inline-start: 10px;
   }
+}
+.result-wrapper #footer .footer__body {
+  margin-inline-start: 2px;
+}
+.result-wrapper #footer .footer__imdb {
+  margin-inline-end: -2px;
 }

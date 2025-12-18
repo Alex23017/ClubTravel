@@ -579,7 +579,7 @@ label {
 .advanced__body {
   display: flex;
   padding-inline-start: 32px;
-  margin-block-start: 33px;
+  margin-block-start: 32px;
 }
 
 .type {
@@ -599,6 +599,7 @@ label {
   align-items: center;
   gap: 8px;
   margin-block-start: 12px;
+  letter-spacing: 0.4px;
 }
 .type__caption img {
   width: 16px;
@@ -633,7 +634,7 @@ label {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-inline-start: 161px;
+  margin-inline-start: 150px;
 }
 
 .tour__body {
@@ -688,7 +689,7 @@ label {
 .rater {
   display: flex;
   flex-direction: column;
-  gap: 11px;
+  gap: 10px;
 }
 
 .tour__package-regions {
@@ -709,6 +710,11 @@ label {
   flex-direction: column;
   gap: 16px;
   margin-inline-start: 3px;
+  margin-block-start: -1px;
+  letter-spacing: 0.6px;
+}
+.tour__package-tour .tour__img {
+  margin-block-start: 3px;
 }
 
 .tour__body--package {
@@ -753,8 +759,9 @@ label {
 .food__title {
   font-size: 14px;
   font-weight: 700;
-  margin-block-end: 19px;
+  margin-block-end: 18px;
   margin-inline-start: -2px;
+  letter-spacing: 1px;
 }
 
 .food__render {
@@ -764,6 +771,7 @@ label {
 }
 .food__render label {
   height: 18px;
+  letter-spacing: 0.5px;
 }
 .food__render .tour__img {
   margin-block-start: 2px;
@@ -777,7 +785,7 @@ label {
 }
 
 .advanced__fly {
-  margin-inline-start: 122px;
+  margin-inline-start: 112px;
   margin-block-start: -151px;
 }
 
@@ -786,6 +794,7 @@ label {
   flex-direction: column;
   gap: 16px;
   margin-inline-start: 3px;
+  margin-block-start: -2px;
 }
 .advance__fly .tour__img {
   margin-block-start: 2px;
@@ -911,7 +920,7 @@ label {
   white-space: nowrap;
   display: flex;
   align-items: center;
-  margin-block-start: 49px;
+  margin-block-start: 50px;
   margin-block-end: 24px;
   padding-inline: 31px;
 }
@@ -950,7 +959,7 @@ label {
 }
 
 .selected__rating {
-  border: 1px solid e2e2e2;
+  border: 1px solid #e2e2e2;
   padding-inline: 11px;
   padding-block-start: 2px;
   padding-block-end: 4px;

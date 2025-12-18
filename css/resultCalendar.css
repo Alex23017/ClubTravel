@@ -13,9 +13,8 @@
   font-weight: 600;
   color: #333;
   margin-bottom: 14px;
-  line-height: 100%;
   margin-inline-start: 2px;
-  margin-block-start: 17px;
+  margin-block-start: 14px;
   letter-spacing: -0.3px;
 }
 
@@ -23,11 +22,11 @@
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 22px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   font-size: 14px;
   text-transform: lowercase;
   padding-inline: 14px;
-  margin-block-start: 3px;
+  margin-block-start: 0px;
 }
 @media (max-width: 1365px) {
   .weekdays {
@@ -71,7 +70,6 @@
   flex-direction: column-reverse;
   height: 54px;
   align-items: center;
-  justify-content: center;
   color: black;
   background-color: inherit;
   overflow: hidden;
@@ -79,6 +77,7 @@
 }
 .day__price p {
   font-size: 12px;
+  height: 22px;
 }
 
 .day__border {
@@ -138,6 +137,7 @@
 }
 .calendar__container-title.open {
   display: flex;
+  margin-block-start: 26px;
 }
 .calendar__container-title::after {
   position: absolute;
