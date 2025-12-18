@@ -16,7 +16,7 @@
 }
 @media (max-width: 360px) {
   .wrapper.profile #footer .footer__body {
-    margin-block-start: 3px;
+    margin-block-start: 0px;
     margin-inline-start: 0px;
   }
   .wrapper.profile #footer .footer__popular-title {
@@ -554,7 +554,7 @@
     padding-block-start: 82px;
   }
   .wrapper.profile #footer::before {
-    top: 43px;
+    top: 40px;
   }
   .wrapper.profile #footer .footer__imdb {
     margin-block-start: 34px;
@@ -575,7 +575,7 @@
     opacity: 0.5;
     width: 112%;
     height: 1px;
-    bottom: -36px;
+    bottom: -33px;
     left: -18px;
     filter: blur(1px);
   }
@@ -673,6 +673,7 @@
   }
   .profile__footer {
     position: relative;
+    margin-block-start: 31px;
   }
   .profile__footer::before {
     position: absolute;
