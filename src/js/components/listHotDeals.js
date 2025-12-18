@@ -8,12 +8,21 @@ import '/styles/base/reset.scss'
 
 const data = await getListHotel()
 
-function renderOffer() {
-  const container = document.querySelector('.hotdeals__render')
-  if (!container) return
-  const containerMob = document.querySelector('.hotdeals__render-mob')
-  if (!containerMob) return
+function onSelectHotelClick(e) {
+  const btn = e.target.closest('.href__button-select')
+  if (!btn) return
+  const id = btn.dataset.id
+  if (!id) return
+  window.location.href = `/ClubTravel/html/pages/oneHotel.html?id=${id}`
+}
+const container = document.querySelector('.hotdeals__render')
+const containerMob = document.querySelector('.hotdeals__render-mob')
+if (container) {
+  container.addEventListener('click', onSelectHotelClick)
+}
 
+function renderOffer() {
+  if (!container || !containerMob) return
   const getStarsHtml = category => {
     let stars = ''
     for (let i = 0; i < category; i++) {
@@ -36,7 +45,7 @@ function renderOffer() {
             <p class="list__food">${select.food}</p>
             <p class="list__tour">${select.tour}</p>
             <p class="list__price list__price--open">от <strong>${select.price}€</strong>/чел.</p>
-            <p class="href__button-select">Выбрать</p>
+            <p class="href__button-select" data-id="${item.documentId}">Выбрать</p>
           </div>
         </div>
       `
