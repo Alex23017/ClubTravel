@@ -111,9 +111,11 @@ function renderOffer() {
       <div class="list__container">
       <img src=${imgUrl} alt="card">
       <p>${item.title}</p>
+      <div class="hotdeals__icon-value">
       <svg class="hotdeals__icon-price">
     <use xlink:href=${item.priceValue}></use>
     </svg>
+    </div>
       </div>
     `
 

@@ -5,6 +5,55 @@
   top: -57px;
   z-index: 9999;
 }
+.wrapper.profile #footer {
+  .footer__body {
+    margin-block-start: -2px;
+    margin-inline-start: 1px;
+  }
+  .footer__contact {
+    margin-inline-start: 6px;
+  }
+  .footer__contact-subtitle {
+    margin-block-end: -3px;
+  }
+  @media (max-width: 360px) {
+
+    .footer__body {
+      margin-block-start: 3px;
+      margin-inline-start: 0px;
+    }
+    .footer__popular-title {
+      margin-block-start: 1px;
+    }
+
+    .footer__country {
+      margin-block-start: 14px;
+    }
+    .footer__contact{
+      margin-inline-start: 0px;
+    }
+    .footer__imdb {
+      gap: 11px;
+    }
+    .footer__instagram {
+      margin-block-start: -2px;
+    }
+  }
+
+}
+
+.wrapper.profile #footer .footer__contact {
+  @media (max-width: 360px) {
+  .footer__open {
+    margin-block-start: 14px ;
+  }
+  .footer__location,
+  .footer__phone {
+    margin-block-start: -1px;
+  }
+  }
+  
+}
 
 #preview {
   border-radius: 100%;
@@ -60,6 +109,11 @@
   background-color: rgb($colorGrey, 0.1);
   border-radius: 4px;
 }
+.profile__list-number {
+  font-weight: 700;
+  margin-block-start: -1px;
+}
+
 .profile__order,
 .profile__paymant,
 .profile__settings {
@@ -123,12 +177,18 @@
 .profile__order-card {
   margin-inline-start: -5px;
   height: 26px;
-  padding-inline-end: 5px;
+  padding-inline-end: 6px;
 }
 .profile__order-card > div {
   font-family: $Open;
   font-size: 16px;
   letter-spacing: 0.3px;
+}
+.profile__order-price {
+  margin-inline-start: -8px;
+}
+.profile__list-price {
+  margin-inline-start: 4px;
 }
 .profile__order-header > div {
   font-size: 14px;
@@ -143,6 +203,11 @@
 .profile__body-box {
   margin-inline-start: 5px;
   padding-block-end: 20px;
+}
+.profile__list-email {
+  max-width: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .profile__logout {
@@ -386,9 +451,6 @@
   .profile__order-render--next {
     gap: 20px;
   }
-  .profile__list-number {
-    font-weight: 700;
-  }
   .profile__order-number {
     color: $colorGrey;
   }
@@ -476,9 +538,9 @@
   .wrapper.profile #footer {
     padding-block-start: 82px;
     &::before {
-      top: 40px;
+      top: 43px;
     }
-    .footer__imdb{
+    .footer__imdb {
       margin-block-start: 34px;
     }
   }
@@ -497,7 +559,7 @@
       opacity: 0.5;
       width: 112%;
       height: 1px;
-      bottom: -33px;
+      bottom: -36px;
       left: -18px;
       filter: blur(1px);
     }
@@ -520,12 +582,26 @@
       letter-spacing: -0.1px;
     }
   }
+  .profile__list-email {
+    margin-block-start: 1px;
+    max-width: 150px;
+  }
+  .profile__list-price {
+    margin: 0;
+  }
+  .profile__order-status,
+  .profile__list-status {
+    margin-block-start: 1px;
+  }
+  .profile__order-price {
+    margin-inline-start: 0px;
+  }
   .profile__order-info--mob {
     gap: 8px;
   }
   .profile__order-render,
   .profile__order-render--next {
-    gap: 48px;
+    gap: 46px;
   }
   .profile__order-number p {
     letter-spacing: 0.6px;
@@ -552,6 +628,7 @@
   }
   .profile__political {
     margin-block-start: 50px;
+    margin-inline-start: -13px;
   }
   .profile__list-data {
     margin-inline-start: 0px;
@@ -591,6 +668,9 @@
       height: 1px;
       top: -30px;
     }
+  }
+  .profile__logout {
+    margin-inline-start: 11px;
   }
 }
 @media (max-width: 360px) {

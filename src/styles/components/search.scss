@@ -474,7 +474,7 @@ label {
 .advanced__body {
   display: flex;
   padding-inline-start: 32px;
-  margin-block-start: 33px;
+  margin-block-start: 32px;
 }
 .type {
   max-width: 176px;
@@ -493,6 +493,7 @@ label {
   align-items: center;
   gap: 8px;
   margin-block-start: 12px;
+  letter-spacing: 0.4px;
   img {
     width: 16px;
     height: 16px;
@@ -524,7 +525,7 @@ label {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-inline-start: 161px;
+  margin-inline-start: 150px;
 }
 .tour__body {
   display: flex;
@@ -534,6 +535,7 @@ label {
     font-size: 14px;
   }
 }
+
 
 .tour__body {
   position: relative;
@@ -573,7 +575,7 @@ label {
 .rater {
   display: flex;
   flex-direction: column;
-  gap: 11px;
+  gap: 10px;
 }
 .tour__package-regions {
   display: grid;
@@ -593,6 +595,11 @@ label {
   flex-direction: column;
   gap: 16px;
   margin-inline-start: 3px;
+  margin-block-start: -1px;
+  letter-spacing: 0.6px;
+  .tour__img {
+    margin-block-start: 3px;
+  }
 }
 
 .tour__body--package {
@@ -631,8 +638,9 @@ label {
 .food__title {
   font-size: 14px;
   font-weight: 700;
-  margin-block-end: 19px;
+  margin-block-end: 18px;
   margin-inline-start: -2px;
+  letter-spacing: 1px;
 }
 .food__render {
   display: flex;
@@ -640,6 +648,7 @@ label {
   gap: 12px;
   label {
     height: 18px;
+    letter-spacing: 0.5px;
   }
   .tour__img {
     margin-block-start: 2px;
@@ -652,7 +661,7 @@ label {
   font-size: 14px;
 }
 .advanced__fly {
-  margin-inline-start: 122px;
+  margin-inline-start: 112px;
   margin-block-start: -151px;
 }
 .advance__fly {
@@ -660,6 +669,7 @@ label {
   flex-direction: column;
   gap: 16px;
   margin-inline-start: 3px;
+  margin-block-start: -2px;
   .tour__img {
     margin-block-start: 2px;
     margin-inline-start: -1px;
@@ -792,7 +802,7 @@ $color: #ff8c00;
   white-space: nowrap;
   display: flex;
   align-items: center;
-  margin-block-start: 49px;
+  margin-block-start: 50px;
   margin-block-end: 24px;
   padding-inline: 31px;
 }
@@ -828,7 +838,7 @@ $color: #ff8c00;
 }
 
 .selected__rating {
-  border: 1px solid e2e2e2;
+  border: 1px solid #e2e2e2;
   padding-inline: 11px;
   padding-block-start: 2px;
   padding-block-end: 4px;
