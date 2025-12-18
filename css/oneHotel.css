@@ -161,9 +161,17 @@
 }
 
 .hotdeals__category-star {
-  width: 22px;
-  height: 22px;
-  color: #f68521;
+  width: 18px;
+  height: 18px;
+  color: #f5c213;
+  margin-inline-end: 5px;
+}
+@media (max-width: 600px) {
+  .hotdeals__category-star {
+    width: 20px;
+    height: 20px;
+    margin-inline-end: 2px;
+  }
 }
 
 .hotdeals__data-clock {
