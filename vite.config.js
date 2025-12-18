@@ -79,7 +79,6 @@ export default defineConfig({
         profile: path.resolve(__dirname, 'src/html/pages/profile.html'),
         resultSearch: path.resolve(__dirname, 'src/html/pages/resultSearch.html'),
         tourRequest: path.resolve(__dirname, 'src/html/pages/tourRequest.html'),
-
       },
       output: {
         entryFileNames: 'js/[name].js',

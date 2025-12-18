@@ -19,7 +19,7 @@
   @media (max-width: 360px) {
 
     .footer__body {
-      margin-block-start: 3px;
+      margin-block-start: 0px;
       margin-inline-start: 0px;
     }
     .footer__popular-title {
@@ -538,7 +538,7 @@
   .wrapper.profile #footer {
     padding-block-start: 82px;
     &::before {
-      top: 43px;
+      top: 40px;
     }
     .footer__imdb {
       margin-block-start: 34px;
@@ -559,7 +559,7 @@
       opacity: 0.5;
       width: 112%;
       height: 1px;
-      bottom: -36px;
+      bottom: -33px;
       left: -18px;
       filter: blur(1px);
     }
@@ -660,6 +660,7 @@
   }
   .profile__footer {
     position: relative;
+    margin-block-start: 31px;
     &::before {
       position: absolute;
       content: '';
