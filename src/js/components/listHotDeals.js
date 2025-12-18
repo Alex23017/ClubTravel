@@ -172,7 +172,7 @@ selectBtn.forEach(btn => {
       item.classList.remove('active')
       item.innerHTML = item.dataset.default
     })
-    document.querySelectorAll('.list__body-category').forEach(el => el.classList.toggle('open'))
+    document.querySelector('.list__body-category').classList.toggle('open')
 
     btn.classList.add('active')
     btn.innerHTML = `<span>Открыть предложения</span>  <svg class='list__arrow-close'>
