@@ -112,7 +112,11 @@ export function renderOffer() {
           </div>
 
           <div class="result__info">
-            <h2 class="result__info-title">${item.tittle}</h2>
+            <h2 class="result__info-title">${item.tittle}
+            <svg class="company__footer-img">
+              <use xlink:href="#icon-arrowNews"></use>
+            </svg>
+            </h2>
 
             <div class="result__condition result__condition--mob">
             <div class="result__rating"><svg class="result__star"><use xlink:href="#icon-star-shiny"></use></svg><svg class="result__star"><use xlink:href="#icon-star-shiny"></use></svg><svg class="result__star"><use xlink:href="#icon-star-shiny"></use></svg></div>
