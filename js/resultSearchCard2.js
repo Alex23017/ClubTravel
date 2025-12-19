@@ -106,10 +106,10 @@ function renderOffer() {
           <div class="swiper mySwiperResult">
             <div class="result-wrapper swiper-wrapper">
               <div class="result__img swiper-slide">
-                <img src="${imgUrl}" alt="card" />
+                <img src="${imgUrl}" alt="card" loading="lazy" />
               </div>
               <div class="result__img swiper-slide">
-                <img src="${imgUrl}" alt="card" />
+                <img src="${imgUrl}" alt="card" loading="lazy" />
               </div>
         
             </div>
