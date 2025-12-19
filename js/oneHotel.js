@@ -1,4 +1,4 @@
-import "./oneHotelOffer.js";
+import "./sliderHeader.js";
 import { S as Swiper, N as Navigation, P as Pagination } from "./swiper-core.js";
 /* empty css             */
 import { b as axios } from "./api.js";

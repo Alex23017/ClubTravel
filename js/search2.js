@@ -1,5 +1,5 @@
 const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["css/search.css","css/reset.css"])))=>i.map(i=>d[i]);
-import { _ as __vitePreload } from "./oneHotelOffer.js";
+import { _ as __vitePreload } from "./sliderHeader.js";
 var ru$1 = { exports: {} };
 var ru = ru$1.exports;
 var hasRequiredRu;

@@ -1,5 +1,5 @@
 const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["css/profile.css","css/reset.css"])))=>i.map(i=>d[i]);
-import { _ as __vitePreload } from "./oneHotelOffer.js";
+import { _ as __vitePreload } from "./sliderHeader.js";
 import { S as Swiper, N as Navigation, P as Pagination } from "./swiper-core.js";
 import { A as API_VARIABLES } from "./variables.js";
 import { a as getResource } from "./api.js";

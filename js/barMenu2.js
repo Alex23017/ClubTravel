@@ -1,7 +1,6 @@
 const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["css/barMenu.css","css/reset.css","css/resultCalendar.css"])))=>i.map(i=>d[i]);
-import { _ as __vitePreload } from "./oneHotelOffer.js";
+import { _ as __vitePreload } from "./sliderHeader.js";
 import { S as Swiper, N as Navigation, P as Pagination } from "./swiper-core.js";
-/* empty css           */
 import { A as API_VARIABLES } from "./variables.js";
 import { g as getPublicResource } from "./api.js";
 async function getCalendarPrice() {

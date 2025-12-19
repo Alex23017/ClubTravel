@@ -1,6 +1,6 @@
 import { A as API_VARIABLES } from "./variables.js";
 import { g as getPublicResource } from "./api.js";
-import { s as skeleton } from "./oneHotelOffer.js";
+import { s as skeleton } from "./sliderHeader.js";
 async function getListHotel() {
   try {
     const res = await getPublicResource(
