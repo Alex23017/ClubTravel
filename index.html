@@ -10,24 +10,23 @@
     <link rel="stylesheet" crossorigin="" href="/ClubTravel/css/oneHotelOffer.css">
     <link rel="stylesheet" crossorigin="" href="/ClubTravel/css/authorization.css">
   </head>
-  <body class="">
-    <!-- <div class='preload loading'>
-
-  <div class='loader'>
-    <svg class='loader__svg'>
-      <use xlink:href='#icon-preloadIcon'></use>
-    </svg>
-    <p>Загружаем туры</p>
-    <div class='dot__body'>
-      <div class='dot'></div>
-      <div class='dot'></div>
-      <div class='dot'></div>
-
-    </div>
-
-  </div>
-</div> -->
-    <div class="wrapper">
+  <body class="loading">
+    <div class="preload loading">
+    
+      <div class="loader">
+        <svg class="loader__svg">
+          <use xlink:href="#icon-preloadIcon"></use>
+        </svg>
+        <p>Загружаем туры</p>
+        <div class="dot__body">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+    
+        </div>
+    
+      </div>
+    </div>    <div class="wrapper">
       <header data-component="header" id="header">
         <div class="topbar">
           <ul class="topbar__list">
@@ -155,10 +154,10 @@
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="/ClubTravel/assets/heroSlider.webp" class="swiper-lazy" alt="hero">
+              <img src="/ClubTravel/assets/heroSlider.webp" alt="hero" loading="lazy">
             </div>
             <div class="swiper-slide">
-              <img src="/ClubTravel/assets/heroSlider.webp" class="swiper-lazy" alt="hero">
+              <img src="/ClubTravel/assets/heroSlider.webp" alt="hero" loading="lazy">
             </div>
           </div>
           <div class="swiper-button-next swiper-header-next"></div>
@@ -425,7 +424,7 @@
       </section>
       <section data-component="consultation" class="consultation">
         <div class="consultation__cover">
-          <img src="/ClubTravel/assets/consultation-bg.webp">
+          <img src="/ClubTravel/assets/consultation-bg.webp" alt="consultation">
         </div>
         <div class="consultation__content">
           <div class="consultation__header">
