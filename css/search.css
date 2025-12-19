@@ -512,8 +512,7 @@ label {
 }
 
 .advanced__menu {
-  opacity: 0;
-  visibility: hidden;
+  display: none;
   transition: 0.2s ease;
   position: absolute;
   left: 50%;
@@ -527,8 +526,7 @@ label {
   z-index: 2000;
 }
 .advanced__menu.open {
-  opacity: 1;
-  visibility: visible;
+  display: block;
 }
 
 .advanced__header {
