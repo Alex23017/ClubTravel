@@ -3,7 +3,7 @@
 .swiper {
   display: block;
   width: 100%;
-  max-width: 100%; // чтобы не было 1366px
+  max-width: 100%; 
 }
 
 .slider__header {
@@ -12,6 +12,7 @@
 
 .hero__slider-img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
