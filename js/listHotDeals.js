@@ -1,5 +1,5 @@
 const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["css/listHotDeals.css","css/reset.css"])))=>i.map(i=>d[i]);
-import { _ as __vitePreload } from "./sliderHeader.js";
+import { _ as __vitePreload } from "./oneHotelOffer.js";
 import { g as getListHotel } from "./listHotel.js";
 /* empty css              */
 /* empty css      */

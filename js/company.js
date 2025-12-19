@@ -1,4 +1,4 @@
-import "./sliderHeader.js";
+import "./oneHotelOffer.js";
 import "./authorization2.js";
 /* empty css            */
 /* empty css             */
