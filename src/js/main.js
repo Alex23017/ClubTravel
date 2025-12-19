@@ -4,6 +4,9 @@ import '../styles/base/main.scss'
 
 const components = import.meta.glob('./components/*.js')
 
+
+
+
 document.querySelectorAll('[data-component]').forEach(el => {
   const name = el.dataset.component
   if (!name) return

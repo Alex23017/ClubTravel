@@ -327,7 +327,6 @@ label {
 #searchSubmit {
   font-family: $Open;
   font-size: 14px;
-
 }
 
 .search__calendar {
@@ -411,8 +410,7 @@ label {
 // рассширеный поиск
 
 .advanced__menu {
-  opacity: 0;
-  visibility: hidden;
+  display: none;
   transition: 0.2s ease;
   position: absolute;
   left: 50%;
@@ -425,8 +423,7 @@ label {
   top: 15px;
   z-index: 2000;
   &.open {
-    opacity: 1;
-    visibility: visible;
+    display: block;
   }
 }
 
@@ -535,7 +532,6 @@ label {
     font-size: 14px;
   }
 }
-
 
 .tour__body {
   position: relative;
@@ -1089,7 +1085,7 @@ $color: #ff8c00;
       display: none;
     }
   }
- 
+
   .search__data {
     margin-block-start: 5px;
   }
@@ -1130,6 +1126,5 @@ $color: #ff8c00;
     .hotdeals__header {
       display: none;
     }
-   
   }
 }
