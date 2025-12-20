@@ -34,7 +34,7 @@ export default defineConfig({
     }),
     createHtmlPlugin({
       minify: false,
-      inject: false, // не вставлять ничего в HTML
+      inject: false, 
     }),
 
     svgSpritePlugin({
@@ -62,10 +62,10 @@ export default defineConfig({
       usePolling: true,
     },
   },
-  // assetsInclude: ['**/*.html'],
+
 
   build: {
-    minify: false,
+    minify: 'esbuild',
     outDir: path.resolve(__dirname, 'dist'),
     rollupOptions: {
       input: {
