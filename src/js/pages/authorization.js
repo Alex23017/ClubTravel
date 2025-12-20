@@ -1,4 +1,4 @@
-import '../../styles/pages/authorization.scss'
+// import '../../styles/pages/authorization.scss'
 import { postPublicResource } from '../api/api'
 import { ressetPassword } from '../api/service/resetPassword'
 import { sendRessetPassword } from '../api/service/forgotPassword'
@@ -9,6 +9,7 @@ const tabFromUrl = params.get('tab')
 
 // Перевірка чи юзей залогінений якщо так - переходим в кабінет
 document.addEventListener('DOMContentLoaded', () => {
+  
   function isLoggedIn() {
     return localStorage.getItem('Logged') === 'true'
   }
@@ -36,7 +37,7 @@ tabs.forEach(tab => {
 
 const registerForm = document.getElementById('registerForm')
 async function register(event) {
-  // event.preventDefault()
+  event.preventDefault()
 
   const formData = new FormData(event.target)
   const jsonData = Object.fromEntries(formData)
@@ -57,10 +58,8 @@ async function register(event) {
     return
   }
 
-  if (res.jwt && res.user) {
-    localStorage.setItem('jwt', res.jwt)
-    localStorage.setItem('Logged', 'true')
-  }
+  
+  window.location.replace('/ClubTravel/html/pages/authorization.html?tab=authorization')
 }
 if (registerForm) {
   document.getElementById('registerForm').addEventListener('submit', register)

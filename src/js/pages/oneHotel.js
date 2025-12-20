@@ -21,6 +21,8 @@ const dataHotel = await getHotelById(hotelId)
 export function renderHotelOffers() {
     const container = document.querySelector('.hotel__offer');
     if (!container) return;
+    // console.log(dataHotel);
+    
     const offerCard = OfferCard({
     night: 7,
     from: dataHotel.from,

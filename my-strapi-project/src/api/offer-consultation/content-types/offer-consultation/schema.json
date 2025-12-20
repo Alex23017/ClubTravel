@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "offer_consultations",
+  "info": {
+    "singularName": "offer-consultation",
+    "pluralName": "offer-consultations",
+    "displayName": "offer Consultation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "text"
+    },
+    "email": {
+      "type": "text"
+    },
+    "date": {
+      "type": "text"
+    },
+    "direction": {
+      "type": "string"
+    },
+    "tourTime": {
+      "type": "text"
+    },
+    "desiredPrice": {
+      "type": "string"
+    },
+    "nutrition": {
+      "type": "string"
+    },
+    "wishes": {
+      "type": "text"
+    },
+    "guests": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "integer"
+    }
+  }
+}
