@@ -18,6 +18,10 @@ if (slider) {
     loop: true,
     slidesPerView: 1,
     spaceBetween: 20,
+    preloadImages: false, 
+    lazy: {
+      loadPrevNext: true, 
+    },
 
     navigation: {
       nextEl: '.swiper-header-next',

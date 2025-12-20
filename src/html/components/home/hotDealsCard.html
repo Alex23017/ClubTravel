@@ -1,5 +1,5 @@
-<div class="hotdeals__card swiper-slide" data-id="{{documentId}}"> 
-  <img class="hotdeals__img" src="{{img}}" alt="card_img">
+<div class="hotdeals__card swiper-slide" data-id="{{documentId}}">
+  <img class="hotdeals__img" src="{{img}}" alt="card_img" loading="lazy" />
   <div class="hotdeals__data">
     <svg class="hotdeals__data-clock">
       <use xlink:href="#icon-newsClock"></use>
@@ -25,7 +25,7 @@
         <p class="hotdeals__price-old">{{oldPrice}} €/чел</p>
       </div>
       <svg class="hotdeals__icon-count">
-        <use xlink:href={{priceCount}}></use>
+        <use xlink:href="{{priceCount}}"></use>
       </svg>
     </div>
   </div>
