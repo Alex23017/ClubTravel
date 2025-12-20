@@ -33,6 +33,9 @@ body{
 //         }
 //     }
 // }
+  picture{
+    height: 100%;
+  }
 
 .hotel {
   position: relative;
@@ -185,9 +188,9 @@ body{
 
   &__content-center {
     display: flex;
+    justify-content: space-between;
     gap: 67px;
     padding: 0 100px 0 97px;
-    justify-content: space-between;
 
     // @include huge{
     //   padding: 0 20%

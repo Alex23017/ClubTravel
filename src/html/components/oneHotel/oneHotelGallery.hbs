@@ -23,33 +23,55 @@
 <div class="hotel__gallery">
   <div class="hotel__gallery-main">
     <a data-fancybox="hotel" href="/img/oneHotel/hotel1.webp">
-      <img src="/img/oneHotel/hotel1.webp" />
+      {{!-- <img src="/img/oneHotel/hotel1.webp" /> --}}
+
+      <picture>
+      <source
+         srcset="
+            /img/oneHotel/hotel1-mobile.webp 1x,
+            /img/oneHotel/hotel1-mobile.webp 2x"
+         media="(max-width: 768px)">
+
+      <source
+         srcset="
+           /img/oneHotel/hotel1.webp 1x,
+           /img/oneHotel/hotel1.webp 2x">
+
+      <img
+         src="/img/oneHotel/hotel1.webp"
+         alt="Slide 1"
+         class="slider__img"
+         width="1367"
+         height="360"
+         fetchpriority="high"
+         decoding="async">
+   </picture>
     </a>
   </div>
 
   <div class="hotel__gallery-list">
 
     <div class="hotel__gallery-item">
-      <a data-fancybox="hotel" href="/img/oneHotel/hotel1.webp">
-        <img src="/img/oneHotel/hotel1.webp" />
+      <a data-fancybox="hotel" href="/img/oneHotel/hotel2.webp">
+        <img src="/img/oneHotel/hotel2.webp" />
       </a>
     </div>
 
     <div class="hotel__gallery-item">
-      <a data-fancybox="hotel" href="/img/oneHotel/hotel1.webp">
-        <img src="/img/oneHotel/hotel1.webp" />
+      <a data-fancybox="hotel" href="/img/oneHotel/hotel3.webp">
+        <img src="/img/oneHotel/hotel3.webp" />
       </a>
     </div>
 
     <div class="hotel__gallery-item">
-      <a data-fancybox="hotel" href="/img/oneHotel/hotel1.webp">
-        <img src="/img/oneHotel/hotel1.webp" />
+      <a data-fancybox="hotel" href="/img/oneHotel/hotel4.webp">
+        <img src="/img/oneHotel/hotel4.webp" />
       </a>
     </div>
 
     <div class="hotel__gallery-item">
-      <a data-fancybox="hotel" href="/img/oneHotel/hotel1.webp">
-        <img src="/img/oneHotel/hotel1.webp" />
+      <a data-fancybox="hotel" href="/img/oneHotel/hotel5.webp">
+        <img src="/img/oneHotel/hotel5.webp" />
       </a>
     </div>
 
