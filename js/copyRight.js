@@ -1,6 +1,2 @@
 const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["css/copyRight.css","css/reset.css"])))=>i.map(i=>d[i]);
-import { _ as __vitePreload } from "./oneHotelOffer.js";
-if (document.querySelector('[data-component="copyRight"]')) {
-  __vitePreload(() => Promise.resolve({}), true ? __vite__mapDeps([0]) : void 0);
-  __vitePreload(() => Promise.resolve({}), true ? __vite__mapDeps([1]) : void 0);
-}
+import{_}from"./oneHotelOffer.js";document.querySelector('[data-component="copyRight"]')&&(_(()=>Promise.resolve({}),__vite__mapDeps([0])),_(()=>Promise.resolve({}),__vite__mapDeps([1])));
