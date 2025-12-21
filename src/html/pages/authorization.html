@@ -23,13 +23,14 @@
         <link rel="icon" href="../../img/header/favicon.png" type="png" rel="preload">
   </head>
   <body class="loading">
+      <div class="wrapper">
+        {{>preload}}
+        {{>header}}
     
-      {{>preload}}
-      {{>header}}
-  
-      {{>authorizationContent}}
-  
-      {{> footer}}
+        {{>authorizationContent}}
+    
+        {{> footer}}
+      </div>
     
     <!-- <script type="module" src="/js/main.js"></script> -->
     <!-- <script type="module" src="/js/pages/authorization.js"></script> -->

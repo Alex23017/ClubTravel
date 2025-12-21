@@ -1,9 +1,30 @@
 <section class="content"> 
     <form class="content__item  authorization" id="loginForm">
         <div class="content__cover">
-        <img fetchpriority="high"
+        <!-- <img fetchpriority="high"
   loading="eager"
-  decoding="async" src="/img/authorization/authorization-bg.webp" alt="">
+  decoding="async" src="/img/authorization/authorization-bg.webp" alt=""> -->
+  <picture>
+                    <source
+                        srcset="
+                            /img/authorization/authorization-bg-mobile.webp 1x,
+                            /img/authorization/authorization-bg-mobile.webp 2x"
+                        media="(max-width: 768px)">
+
+                    <source
+                        srcset="
+                            /img/authorization/authorization-bg.webp 1x,
+                            /img/authorization/authorization-bg.webp 2x">
+
+                    <img
+                        src="/img/authorization/authorization-bg.webp"
+                        alt="bg"
+                       
+                        width="1367"
+                        height="800"
+                        fetchpriority="high"
+                        decoding="async">
+                </picture>
     </div>
     <div class="content__wrapper">
         <div class="card">
@@ -19,14 +40,14 @@
      или 
     <span></span>
             </div>
-            <div class="card__label">
+            <label for="identifier" class="card__label">
                 E-mail
-            </div>
+            </label>
             <input type="text" id="identifier" name="identifier" class="card__input">
-            <div class="card__label" style="margin-top: -2px;">
+            <label for="passwordLogin" class="card__label" style="margin-top: -2px;">
                 Пароль 
                 <button type="button" data-tab="reset" class="tab">Забыли пароль?</button>
-            </div>
+            </label>
             <input type="password" id="passwordLogin" name="password" class="card__input">
             <div class="card__btns">
                 <button data-tab="register" type="button" class="card__registration tab">
@@ -61,17 +82,17 @@
      или 
     <span></span>
             </div>
-            <div class="card__label">
+            <laber for="email" class="card__label">
                 E-mail
-            </div>
+            </laber>
             <input type="email" id="email" name="email" class="card__input">
-            <div class="card__label">
+            <label for="password" class="card__label">
                 Пароль
-            </div>
+            </label>
             <input type="password" id="password" name="password" class="card__input">
-            <div class="card__label">
+            <label for="passwordRepeat" class="card__label">
                 Повторите пароль
-            </div>
+            </label>
             <input type="password" name="passwordRepeat" class="card__input">
             <div class="card__btns">
                 <button data-tab="authorization" type="button" class="card__registration tab">
@@ -120,11 +141,6 @@
                 новий пароль
             </div>
             
-            <div class="card__line">
-                <span></span>
-     или 
-    <span></span>
-            </div>
             <div class="card__label">
                 Пароль
             </div>

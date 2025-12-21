@@ -1,6 +1,10 @@
 @use '../base/variables' as *;
 @use "../base/mixins" as *;
 
+picture{
+    width: 100%;
+    height: 100%;
+}
 
 .content{
     position: relative;
@@ -33,6 +37,7 @@
         left: 50%;
         z-index: 1;
         transform: translate(-50%, -50%);
+       
     }
 
     .wrapper-refistration{
@@ -226,6 +231,11 @@
     @include phone{
         width: 323px;
     }
+
+    @media (max-width: 340px) {
+            width: 300px;
+            padding: 10px;
+        }
 }
 
 .card-reset{
@@ -235,6 +245,11 @@
     @include phone{
         width: 320px;
     }
+
+    @media (max-width: 340px) {
+            width: 300px;
+            padding: 10px;
+        }
 
     .card__title{
         margin-bottom: 34px;
@@ -261,6 +276,11 @@
         @include phone{
             width: 323px;
                 padding: 32px 21px;
+        }
+
+         @media (max-width: 340px) {
+            width: 300px;
+            padding: 10px;
         }
 
         &__label{

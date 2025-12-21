@@ -1,6 +1,8 @@
-import '../../styles/base/main.scss'
+// import '../../styles/base/main.scss'
 import '../../styles/pages/tourRequest.scss'
 import { addUserConsultation } from '../api/service/offerConsultation';
+
+
 const tabs = document.querySelectorAll('.tab__name');
 const contents = document.querySelectorAll('.tab__item');
 const nextBtn = document.querySelectorAll('.tab__next');
