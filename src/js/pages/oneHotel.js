@@ -1,5 +1,6 @@
 import 'swiper/css'
 import 'swiper/css/pagination'
+import '../../styles/base/main.scss'
 import '/styles/pages/oneHotel.scss';
 import '../../styles/pages/tourRequest.scss'
 import { Navigation, Pagination } from 'swiper/modules'
@@ -11,6 +12,7 @@ import {getListHotel} from '../api/service/listHotel.js'
 
 
 import hotDealsCard from '../../html/components/home/hotDealsCard.html';
+
 const params = new URLSearchParams(window.location.search);
 const hotelId = params.get('id');
 
