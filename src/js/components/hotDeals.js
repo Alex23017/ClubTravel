@@ -50,8 +50,8 @@ export function sliderInit() {
 const data = await getListHotel()
 function onHotelClick(e) {
     const id = e.currentTarget.dataset.id;
-    window.location.href = `/ClubTravel/html/pages/oneHotel.html?id=${id}`;
-    // window.location.href = `/html/pages/oneHotel.html?id=${id}`;
+    // window.location.href = `/ClubTravel/html/pages/oneHotel.html?id=${id}`;
+    window.location.href = `/html/pages/oneHotel.html?id=${id}`;
 
 }
 
