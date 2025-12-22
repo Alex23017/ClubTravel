@@ -2,363 +2,385 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
 
-        <link rel="icon" href="/ClubTravel/assets/favicon.png" type="png">
-    <script type="module" crossorigin="" src="/ClubTravel/js/oneHotelOffer.js"></script>
-    <script type="module" crossorigin="" src="/ClubTravel/js/api.js"></script>
-    <script type="module" crossorigin="" src="/ClubTravel/js/authorization2.js"></script>
-    <link rel="stylesheet" crossorigin="" href="/ClubTravel/css/oneHotelOffer.css">
-    <link rel="stylesheet" crossorigin="" href="/ClubTravel/css/authorization.css">
+  <noscript>
+
+  </noscript>
+
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    /> -->
+
+    <noscript>
+
+
+  </noscript>
+        <link rel="icon" href="/assets/favicon.png" type="png">
+    <script type="module" crossorigin="" src="/js/authorization.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/js/oneHotelOffer.js">
+    <link rel="stylesheet" crossorigin="" href="/css/oneHotelOffer.css">
+    <link rel="stylesheet" crossorigin="" href="/css/authorization.css">
   </head>
   <body class="loading">
-    <div class="preload loading">
-    
-      <div class="loader">
-        <svg class="loader__svg">
-          <use xlink:href="#icon-preloadIcon"></use>
-        </svg>
-        <p>Загружаем туры</p>
-        <div class="dot__body">
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-    
-        </div>
-    
-      </div>
-    </div>    <header data-component="header" id="header">
-      <div class="topbar">
-        <ul class="topbar__list">
-          <li class="topbar__items">
-            <a href="/ClubTravel/html/pages/404.html" class="topbar__link">
-              Страховки
-            </a>
-            <a href="/ClubTravel/html/pages/authorization.html?tab=authorization" class="topbar__link">
-              Визы
-            </a>
-            <a href="/ClubTravel/html/pages/contacts.html" class="topbar__link">
-              Контакты
-            </a>
-          </li>
-        </ul>
-        <div class="topbar__contact">
-          <div class="phone__body">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADhSURBVHgBzZGhD4JAGMXvGI1O16zdbsdsIQkMCn+AWf4FCGehkLXb6djJ0hkUwHfOQ8Z0Oyz6yr297f1u3/cR8mtRYRhju6ZpDO7xMs/zzjIARRhRfoSKYhBJ9QBKaTHwumT/BYCygb+RqQBVVVNRbtt2/w3giqfE/KnrusVkgGmaJWZP8PsGF1lMBnDZts1Pl+EifhiGUouk4yCOY62u60PXdRrGCSzLypHpyAJkHJrzMZEnbwECUlWVD7tC6YLC8lnu5TiO8REgFEXRGuXtuCwNGIH4YmeAzeFPGOFI/kJ3z3NfY1iX9/QAAAAASUVORK5CYII=" alt="phone" class="phone__body-img">
-            <p class="phone__body-text">+372 6 130 633</p>
-          </div>
-          <div class="email__body">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADwSURBVHgBzZI9DoJAEIWXhYQQe6y15gDWcgp6IZTUHsCeCojWcgqtpbbXWnr+CsC3JBA0ECCa6GuYmZ3vMftDyK/F1YHruupYiOf5SNf1S2MAWOM4TiMTVJalb5qmT1lCKZVROMHkOASynqIoAoRyxbYWlDzPz5IkbRDfOtgrQLYWYAuLukhbDXNMcsiyTDUMw8JENppD1CPEexjvBEFQYWIjl2tIeP8NGjTP89Yw80VR3DKDJEmWaZq+gL0G9TQwsuI4ZucyQ74C3NnYZ1AJ8ODVUvKhvmOA/YZkonDID/ZtnrLjOMpYGNfJnvKd/IWeS3lcRxKmxoMAAAAASUVORK5CYII=" alt="email" class="email__body-img">
-            <p class="email__body-text">contact@email.ee</p>
-          </div>
-    
-        </div>
-        <div class="profile__body">
-    
-          <svg class="profile__body-img">
-            <use xlink:href="#icon-profile"></use>
-          </svg>
-    
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAE4SURBVHgB3ZSxUoNAEIb/u0ljxyPgG8TRwrcIPoFY2BOHXl5AwxtEWxrQ55AJjTU01PoCZN1DYBglDIFLkXwzO+zt3u3e3S4HHDui1+tsDEhYPGsBwhwgs7QTEkiRsRbh6eJ1XALnw4KUa9YM9JNBCG9XItm5ZBn7HDwcEFxhgugFTux1OUVHcI939IhRkI/ny+XuBA+xzaY1prDd3sC/iurhnysau/MWqm6qOSpmjeP63sbnu4npGJidLfj7r+iqqKRJwuZArQQm9DGvlXaRCXopY0scmHaCDPpIuhIk0EdWK02bBkHwVhSFBQ3keR65rlvqTZGJSP0cKYa9P31kQojzetBcERu/+XOH6Xi9Xj7JisYz7KlRE2l/VtgHXmCzpAMCf7GMb44qUciyaQVNK9st/TbHCfMDuuQUlEwTNycAAAAASUVORK5CYII=" alt="flag" class="profile__body-img profile__body-img--flag">
-        </div>
-      </div>
-      <a class="link__logo" href="/ClubTravel/">
-        <div class="logo">
-          <img src="data:image/webp;base64,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" alt="logo" class="logo__img">
-          <img src="data:image/png;base64,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" alt="backgroundLogo" class="logo__background">
-        </div>
-      </a>
-    
-      <nav class="nav">
-        <ul class="nav__list">
-          <div class="burger">
-            <svg class="burger__img">
-              <use xlink:href="#icon-burger"></use>
+      <div class="wrapper">
+        <div class="preload loading">
+        
+          <div class="loader">
+            <svg class="loader__svg">
+              <use xlink:href="#icon-preloadIcon"></use>
             </svg>
+            <p>Загружаем туры</p>
+            <div class="dot__body">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+        
+            </div>
+        
           </div>
-    
-          <svg class="profile__body-img profile__body-img--none">
-            <use xlink:href="#icon-profile"></use>
-          </svg>
-    
-          <div class="burger__menu">
-            <div class="burger__body">
-              <a href="" class="nav__link">
-                Поиск тура
-              </a>
-              <a href="" class="nav__link">
-                Направления
-              </a>
-              <a href="/ClubTravel/html/pages/company.html" class="nav__link nav__link--company">
-                <svg class="sale">
-                  <use xlink:href="#icon-sale"></use>
-                </svg>
-    
-                кампании
-              </a>
-              <a href="/ClubTravel/html/pages/hotdeals.html" class="nav__link nav__link--sale">
-                <svg class="clock">
-                  <use xlink:href="#icon-clock"></use>
-                </svg>
-    
-                Горящие предложения
-              </a>
-              <a href="" class="nav__link">
-                Запрос тура
-              </a>
-              <a href="" class="nav__link">
-                авиабилеты
-              </a>
+        </div>        <header data-component="header" id="header">
+          <div class="topbar">
+            <ul class="topbar__list">
+              <li class="topbar__items">
+                <a href="/ClubTravel/html/pages/404.html" class="topbar__link">
+                  Страховки
+                </a>
+                <a href="/ClubTravel/html/pages/authorization.html?tab=authorization" class="topbar__link">
+                  Визы
+                </a>
+                <a href="/ClubTravel/html/pages/contacts.html" class="topbar__link">
+                  Контакты
+                </a>
+              </li>
+            </ul>
+            <div class="topbar__contact">
+              <div class="phone__body">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADhSURBVHgBzZGhD4JAGMXvGI1O16zdbsdsIQkMCn+AWf4FCGehkLXb6djJ0hkUwHfOQ8Z0Oyz6yr297f1u3/cR8mtRYRhju6ZpDO7xMs/zzjIARRhRfoSKYhBJ9QBKaTHwumT/BYCygb+RqQBVVVNRbtt2/w3giqfE/KnrusVkgGmaJWZP8PsGF1lMBnDZts1Pl+EifhiGUouk4yCOY62u60PXdRrGCSzLypHpyAJkHJrzMZEnbwECUlWVD7tC6YLC8lnu5TiO8REgFEXRGuXtuCwNGIH4YmeAzeFPGOFI/kJ3z3NfY1iX9/QAAAAASUVORK5CYII=" alt="phone" class="phone__body-img">
+                <p class="phone__body-text">+372 6 130 633</p>
+              </div>
+              <div class="email__body">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADwSURBVHgBzZI9DoJAEIWXhYQQe6y15gDWcgp6IZTUHsCeCojWcgqtpbbXWnr+CsC3JBA0ECCa6GuYmZ3vMftDyK/F1YHruupYiOf5SNf1S2MAWOM4TiMTVJalb5qmT1lCKZVROMHkOASynqIoAoRyxbYWlDzPz5IkbRDfOtgrQLYWYAuLukhbDXNMcsiyTDUMw8JENppD1CPEexjvBEFQYWIjl2tIeP8NGjTP89Yw80VR3DKDJEmWaZq+gL0G9TQwsuI4ZucyQ74C3NnYZ1AJ8ODVUvKhvmOA/YZkonDID/ZtnrLjOMpYGNfJnvKd/IWeS3lcRxKmxoMAAAAASUVORK5CYII=" alt="email" class="email__body-img">
+                <p class="email__body-text">contact@email.ee</p>
+              </div>
+        
+            </div>
+            <div class="profile__body">
+        
+              <svg class="profile__body-img">
+                <use xlink:href="#icon-profile"></use>
+              </svg>
+        
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAE4SURBVHgB3ZSxUoNAEIb/u0ljxyPgG8TRwrcIPoFY2BOHXl5AwxtEWxrQ55AJjTU01PoCZN1DYBglDIFLkXwzO+zt3u3e3S4HHDui1+tsDEhYPGsBwhwgs7QTEkiRsRbh6eJ1XALnw4KUa9YM9JNBCG9XItm5ZBn7HDwcEFxhgugFTux1OUVHcI939IhRkI/ny+XuBA+xzaY1prDd3sC/iurhnysau/MWqm6qOSpmjeP63sbnu4npGJidLfj7r+iqqKRJwuZArQQm9DGvlXaRCXopY0scmHaCDPpIuhIk0EdWK02bBkHwVhSFBQ3keR65rlvqTZGJSP0cKYa9P31kQojzetBcERu/+XOH6Xi9Xj7JisYz7KlRE2l/VtgHXmCzpAMCf7GMb44qUciyaQVNK9st/TbHCfMDuuQUlEwTNycAAAAASUVORK5CYII=" alt="flag" class="profile__body-img profile__body-img--flag">
             </div>
           </div>
-    
-          <li class="nav__items">
-            <a href="/ClubTravel/html/pages/resultSearch.html" class="nav__link">
-              Поиск тура
-            </a>
-            <a href="" class="nav__link ">
-    
-              Направления
-            </a>
-            <a href="/ClubTravel/html/pages/company.html" class="nav__link nav__link--company">
-              <svg class="sale">
-                <use xlink:href="#icon-sale"></use>
+          <a class="link__logo" href="/ClubTravel/">
+            <div class="logo">
+              <img src="data:image/webp;base64,UklGRvIHAABXRUJQVlA4IOYHAADwIwCdASpSAHIAPpE+mUglo6KhLBR8yLASCWwAy2UVev25d4nzba5/c+JQMf3I5LvUJ+lvYA/VHpe+YD9hP1E95P/Sesb/GeoB/Wv9j1nXoj/tH6dns1fuH6Xd0K5Xk+8z3djcqx8t5waVyap5IfrTgSNOldNlT49RRcmAIVbK6OfU0RZP3gi07/yEXt3GICRRqfQyZeHqNX50ZO7jLIMLgVNHuHyhb1toXoKomQzL2QTSB4IWE+b9AblC96tf2Otz7xSSwBlKgIEXYVt3uZuj9ioF44nGe2ol4BUrJB56lBiaee7yhiXpH7G61NnYbGOPflYzTOs6Gq/Gek3yX0Nvwr6PC73n+bug6yZRQyrJnI6IUwJ8cA+Sf38JribQrXsqxX+W4wOumAD+/XZ56RaJFp4VJivZ9nkQvf5QPH+dPBmxvs6w7i0uK1CsmsHtU5ECzblZAul0VAo46hjsfQsaB231Ut1zRshpXBw9bcF6kjOvXuhwlnUJS7MrDIjjcAiNKHploz1MyyL3V6Tti5WQavjNfasC1kIiP1KyoiVjK0mi3icknVl/HlCOG4IFy07L8BMUZXyIN3eHm4u5Dps3dHZMax4rIOo+ZvIEKH1MIWLp2E4Pp3IU5jSb3+miwRsEkar8JoKDZw7Bbxfhl3VlWKXLdIrWN4QaJ1KdaNCTrS6MH9fjLvuf6Dq2h6576/SmoqfHUkfcRARAdMaiNyPSmUynAKHFiCRgDpAeuNWC1k/BHghfFAIG2PrB8DR2PfxKZx9P+6cKGb1KOVHJtrkGv4ESx4rEP9am7uq/NL/okfJAomc2OtD2NWV/c4pR6VeIp1b9D02zZ+38PJVwRtLA7Ji38W2TNjXGC/+Mg9ifVd9Cc85K0kqrLEOdae0no7QkRdTiUD3pREw7z5iEa1eJf0CoifJOA3tstz8us+SdcYQOgOA66/BYfzZLM9bMCrFJ92jEUNLMBkPPlkkCaqCJV2UL56CZ/X/tKvERWbvQSPky7ZKEUlCj2MNWhdKnxSHf0XjZmcK5tvS4shCsuGjwiZltRPAyDmhoWB6I/+l58VqbeV2UP7c8XAOOow3DYLxMUgcKQO9CDD829eI34u3F5qgSRVuNproK/hU2k+d/rBfPQgJ5VaKhpy5ol0WECWhO5B6hmnOsXt+QWMIFgLT6R18l4SFrDTiF/JUD8D5qSykNRH2Hmsoi++sat5+pgChEttcXSTtITd8yj1t5K9KwOjDHSo0wDNKVciwcZU89C8RYdIkBARoQRwCvDUj4monM0WuqLRuVpWOCdvaYPLJO9ZxOlju6aUZ5cvvgyscutxdzcNQXb8sPjbMziMe1SVK8yiBFGy2oHVhKXTWWej1fC3q7zVRhLucFFghN1CkPxmNG+K+fX9UyE7Bg8Te+EewOyt2nqQIugc9Egx96e/qMd6HHWhh9NnBFRt24ERI3KWZkljwXcC18cU0Dqk2m8FXXi8CeylZKZsqnwILMtBTPwl0FqSgh3dfSj6NFQACeG70YuJODHzDTsMsGcdBxBdNqXmkkHnSLdxvn7FInXMrEXsAqn+LcR/Yh7UwaErBkXpjWjRxR1jHE4ij5+N/gZkl/rGgXl4E1SHzaOOi0ObSe5ycgD2RL+YYnh7jd3+5qlFEBvUx+TGIsHRWFRy97sKBMRf0OjNI5IAiZpy90dGNo9pOuFhoul/ei0MjcQOusiiKXzR9RmJvo0thETarTcfi8M/HY15i/BwiybbXTAn0pHZU1iES0lgAw7k4hknNiPT+M/O19fvpx90lge0Z2a3UnZ7PN5efo3KYdv59/wglINAISQDDa3H+x614HUguyWP7MKblEi1NhwaEJ3SCRI05M9wZB5C80CDsnGRGpSLAeINGfwKRZrOLSK+hTnqBgZt+pV71qxjIp8GbCmftOP7gPMH8GteNNm5viRx9F80WAfx4mxoBjgpPzIzuTm/N8jHy6V6aQKZfmk6kGOYoZBXa82xtoFDSaPtq7q9hM2SI/G7fF1mADt3v+Zx/IYP2oScxPsD4h06qggIQjfeyLKDK8YtnB66KdatZWqKJm5G5+mmN2APG5e2TtGzoW0Bx/dT6v0fGWKFTy1C3VCCSsPFa8/i7isXiLa3yjuMOmMHdBrKMI7c6qzEqiwlXX7b0M9UdWJx+5vKuedqcglFmBT7G/qpCHXJ0KB60qlVLEnjU870hPIJQ3wrUgckRWIwNkdY4S9kekhbsz4+oPzD0ThaVp15zGuMZCDvpWT4npxcnrZeRm5h38XdYnGkxnEa0BOH5ivzDkoL8xetOjNEAvJsrrcQ9O/0aXxCea/mKjXvVTeKyfsTfZoROkvqqgatVl4x/YolOBh8RqGQoX7OcaldHufDPOx0VbTsLzYbpzLMHb7DUGjsAF8NENnDOOVBsbZACr+ZpAoc41ciwxodsqT9/seeAfdvhGiBx7pQEtrA35qIpu38B1tt9EsdX2o9hhJRxeAFPWDcths2P/LYG/xKtQKDDqXVv3ho2/+H3gChXOFhMaP2NBjHnoVIcO4YNAFW67qLtW0shhmqPnoLj5iKPxrJcLtZdDb5F1VMfjOQCgoTe3o2cpOT8/UKhiQFw3bUhhtEXDuIOQkHHnmInbrg1pdJ375wLbBWtAYzR6yR7C3vvoNw9gP1227STT25kHYhEMsY9qTchYyn6gDSkdaJvp0biAAAA=" alt="logo" class="logo__img">
+              <img src="data:image/png;base64,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" alt="backgroundLogo" class="logo__background">
+            </div>
+          </a>
+        
+          <nav class="nav">
+            <ul class="nav__list">
+              <div class="burger">
+                <svg class="burger__img">
+                  <use xlink:href="#icon-burger"></use>
+                </svg>
+              </div>
+        
+              <svg class="profile__body-img profile__body-img--none">
+                <use xlink:href="#icon-profile"></use>
               </svg>
-    
-              кампании
-            </a>
-            <a href="/ClubTravel/html/pages/hotdeals.html" class="nav__link nav__link--sale">
-              <svg class="clock">
-                <use xlink:href="#icon-clock"></use>
-              </svg>
-              Горящие предложения
-            </a>
-            <a href="/ClubTravel/html/pages/tourRequest.html" class="nav__link nav__link-request">
-              Запрос тура
-            </a>
-            <a href="" class="nav__link">
-              авиабилеты
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <a class="link__logo--mob" href="/ClubTravel/">
-        <div class="logo">
-    
-          <img src="data:image/webp;base64,UklGRrwFAABXRUJQVlA4WAoAAAAQAAAALwAAQgAAQUxQSJ0CAAABoFZre9DKeiXEQSMBB8XBOQ6KA+qAOmAcMA5wMHFwkRAHNw7e5wckUBRExATo2ndJ86/unADy627wuc9yxPs2Y6XEu4QK8100V8ptQj7icRfFfNTdRprKnbpxXtIGLuEO/VwAG7BJr2/1CTDN+fWN8IdLc7wsZq7+XNQVfBWfS7rCNz8XxIwbDAbbFfM+lzHtNubIAP2ZD82m7oYc2mJua7c5ntoWvsChXUJTxqcMdsUGGFsG6j4yHNhUTWpZG6q2wRwajIHQkC8AAxjAxmBetUDdFbDBO2PAmLnWN1QNGGMwx4a19nsOMK3GAP9qwykb4/0RBsx/1wEGY4x3YCDVfi+xwQZjY9tNXZttDg02YGwDLLXQVjW22Zu9Yawp1Vwxe2PqNs+GqVbfGcyxbVzU2De4yRya46VFqdZoqNkY6Jr6Fh/VbY6T2lMDbjP2UTzRlYa6d42zzr7PGOOmHE5pPnE6R1349xul037t2zRfl6MO03xC73JRCjou6xnF5YoyqhrIp6Tneub/KajeXyLFIZXKNj/VPJJOvOfdPjyfz+dD9dAPUdLM2hD6uTDWmn+lmGGTPplZUujHec0AOV4RNykzr5uGvDEqzoVqijrZb0Fakgbyh9fAC56xcJiX8aHG9xQkTfSKzFrJeRxIgudCmbpH4qXWri+M0mdj1MKPEnP8Q44qPDZGaYAoKRx9ygo/ejOxRIo0A5ROWngsrAqJrCEOJUmKM68FulimjpxZpK5AjpJC7mKmLLAqJ9ikmLeiTAk5BxUgSoqvp+px/Olg0kZhVcxLTgNsGy/pDZOu7OFHeiSmmEukZIBFkp5PXTpAJykzFV5K7HPcXT2ADmCSYlrjOAV9czpKMOmeA3kX55duU3Y3jtDfS1NJ4TYAVlA4IPgCAACQEQCdASowAEMAPpE6lkeloyIhMzOaqLASCWwAv+lBfsGqL9280Ckf0HRAeSpyr40v9p7ANst5gP2J/Xb3j/7N+x3uz/zPqAf1DqG/QR/ar04fYz/cr9svaVaMi2VBobuvX8gmCPnHp6K0FvIuxsn45XI04PhWCvQ/X3EwjeL/gat3/F8jg2RtV6u5axyPtIocZnPGWAD++vf//64f//W6f//rK5wshMOMZXGHBSFEdPrHJ9N7Jc+VoguJumG05dSK/dGbqFc0mE0yFmO3EszE3QPUYocru7eEmurviH61mbWV/kN5RGa2BIf9gOb+QiseOtYPGx+JpzVsnFc4cS1FAqitn9onSuW/lyZLa/s1ubmwR9Kt4mY6ee+mPa+HTs5A/6eKzJg7TH/WNhHrFwnuyl5Faulf+GUvaPeOky27ZEgMsUwewm6ta2iN8e2H2msZGKcK5tdQGEhb8fJ8emwvxvkFCsObzSy0H6zaOZvnWLNqgXbYSHBdg+sVGWov1OckUlFnkXF+rbGGaSInPOyf9xZ+tRN/YnvAnPTtq3dHIqkQ4fr/TGMr/2aZ/UHSL6es8RXbvHk2LU4r+ODpz8pDjUB7H2VGTi4ayuIHAzF3wIWCtsiupmTZ2auZUOYcyx6rJdjmRmTEfYYAjnlgCQUyAx9o7Dk7tNtjLsyv+Qf6Ou10cI3KfhkSq/9nse09Wcg4gMmpZBg5MZnkwnR+MWPr/z2MUysCVrYJ9p8q+N6KAOvov71jLzM/e+yv6wOHnkKTjYuq455DZZVruoKzRB7f2stPMCBCMDjSbjA3yITkba1vfwq2sDcLSzqCgeplIqUwKDkMd87sY5Yc9d3uhvYn3PIHxrgxEgyPJ6EmM+tmUDS6jkxGsDTD2JSONEUc+42+v98wgBucGeq69MvXJopNZD2vA/uGLH4grXVJwgDnW3bbDZdiyN2ggn2+gzmiivX8L2fp8GbkV8dcH+ZjeC4tPExLdueDgou1j/NJUlhX/sMFZXYAAAAA" alt="logo" class="logo__img--mob">
-          <img src="data:image/png;base64,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" alt="backgroundLogo" class="logo__background--mob">
-        </div>
-      </a>
-    </header>
-    <section class="content"> 
-        <form class="content__item  authorization" id="loginForm">
-            <div class="content__cover">
-            <img src="/ClubTravel/assets/authorization-bg.webp" alt="">
-        </div>
-        <div class="content__wrapper">
-            <div class="card">
-                <div class="card__title">
-                    Войдите используя соц. сети
+        
+              <div class="burger__menu">
+                <div class="burger__body">
+                  <a href="" class="nav__link">
+                    Поиск тура
+                  </a>
+                  <a href="" class="nav__link">
+                    Направления
+                  </a>
+                  <a href="/ClubTravel/html/pages/company.html" class="nav__link nav__link--company">
+                    <svg class="sale">
+                      <use xlink:href="#icon-sale"></use>
+                    </svg>
+        
+                    кампании
+                  </a>
+                  <a href="/ClubTravel/html/pages/hotdeals.html" class="nav__link nav__link--sale">
+                    <svg class="clock">
+                      <use xlink:href="#icon-clock"></use>
+                    </svg>
+        
+                    Горящие предложения
+                  </a>
+                  <a href="" class="nav__link">
+                    Запрос тура
+                  </a>
+                  <a href="" class="nav__link">
+                    авиабилеты
+                  </a>
                 </div>
-                <div class="card__social">
-                    <button type="button" class="card__facebuce">Войти с помощью Facebook</button>
-                    <button type="button" class="card__google">Войти с помощью Google</button>
-                </div>
-                <div class="card__line">
-                    <span></span>
-         или 
-        <span></span>
-                </div>
-                <div class="card__label">
-                    E-mail
-                </div>
-                <input type="text" id="identifier" name="identifier" class="card__input">
-                <div class="card__label" style="margin-top: -2px;">
-                    Пароль 
-                    <button type="button" data-tab="reset" class="tab">Забыли пароль?</button>
-                </div>
-                <input type="password" id="passwordLogin" name="password" class="card__input">
-                <div class="card__btns">
-                    <button data-tab="register" type="button" class="card__registration tab">
-                        Регистрация
-                    </button>
-                    <button type="submit" class="card__login">
-                        Вход
-                    </button>
-                </div>
+              </div>
+        
+              <li class="nav__items">
+                <a href="/ClubTravel/html/pages/resultSearch.html" class="nav__link">
+                  Поиск тура
+                </a>
+                <a href="" class="nav__link ">
+        
+                  Направления
+                </a>
+                <a href="/ClubTravel/html/pages/company.html" class="nav__link nav__link--company">
+                  <svg class="sale">
+                    <use xlink:href="#icon-sale"></use>
+                  </svg>
+        
+                  кампании
+                </a>
+                <a href="/ClubTravel/html/pages/hotdeals.html" class="nav__link nav__link--sale">
+                  <svg class="clock">
+                    <use xlink:href="#icon-clock"></use>
+                  </svg>
+                  Горящие предложения
+                </a>
+                <a href="/ClubTravel/html/pages/tourRequest.html" class="nav__link nav__link-request">
+                  Запрос тура
+                </a>
+                <a href="" class="nav__link">
+                  авиабилеты
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <a class="link__logo--mob" href="/ClubTravel/">
+            <div class="logo">
+        
+              <img src="data:image/webp;base64,UklGRrwFAABXRUJQVlA4WAoAAAAQAAAALwAAQgAAQUxQSJ0CAAABoFZre9DKeiXEQSMBB8XBOQ6KA+qAOmAcMA5wMHFwkRAHNw7e5wckUBRExATo2ndJ86/unADy627wuc9yxPs2Y6XEu4QK8100V8ptQj7icRfFfNTdRprKnbpxXtIGLuEO/VwAG7BJr2/1CTDN+fWN8IdLc7wsZq7+XNQVfBWfS7rCNz8XxIwbDAbbFfM+lzHtNubIAP2ZD82m7oYc2mJua7c5ntoWvsChXUJTxqcMdsUGGFsG6j4yHNhUTWpZG6q2wRwajIHQkC8AAxjAxmBetUDdFbDBO2PAmLnWN1QNGGMwx4a19nsOMK3GAP9qwykb4/0RBsx/1wEGY4x3YCDVfi+xwQZjY9tNXZttDg02YGwDLLXQVjW22Zu9Yawp1Vwxe2PqNs+GqVbfGcyxbVzU2De4yRya46VFqdZoqNkY6Jr6Fh/VbY6T2lMDbjP2UTzRlYa6d42zzr7PGOOmHE5pPnE6R1349xul037t2zRfl6MO03xC73JRCjou6xnF5YoyqhrIp6Tneub/KajeXyLFIZXKNj/VPJJOvOfdPjyfz+dD9dAPUdLM2hD6uTDWmn+lmGGTPplZUujHec0AOV4RNykzr5uGvDEqzoVqijrZb0Fakgbyh9fAC56xcJiX8aHG9xQkTfSKzFrJeRxIgudCmbpH4qXWri+M0mdj1MKPEnP8Q44qPDZGaYAoKRx9ygo/ejOxRIo0A5ROWngsrAqJrCEOJUmKM68FulimjpxZpK5AjpJC7mKmLLAqJ9ikmLeiTAk5BxUgSoqvp+px/Olg0kZhVcxLTgNsGy/pDZOu7OFHeiSmmEukZIBFkp5PXTpAJykzFV5K7HPcXT2ADmCSYlrjOAV9czpKMOmeA3kX55duU3Y3jtDfS1NJ4TYAVlA4IPgCAACQEQCdASowAEMAPpE6lkeloyIhMzOaqLASCWwAv+lBfsGqL9280Ckf0HRAeSpyr40v9p7ANst5gP2J/Xb3j/7N+x3uz/zPqAf1DqG/QR/ar04fYz/cr9svaVaMi2VBobuvX8gmCPnHp6K0FvIuxsn45XI04PhWCvQ/X3EwjeL/gat3/F8jg2RtV6u5axyPtIocZnPGWAD++vf//64f//W6f//rK5wshMOMZXGHBSFEdPrHJ9N7Jc+VoguJumG05dSK/dGbqFc0mE0yFmO3EszE3QPUYocru7eEmurviH61mbWV/kN5RGa2BIf9gOb+QiseOtYPGx+JpzVsnFc4cS1FAqitn9onSuW/lyZLa/s1ubmwR9Kt4mY6ee+mPa+HTs5A/6eKzJg7TH/WNhHrFwnuyl5Faulf+GUvaPeOky27ZEgMsUwewm6ta2iN8e2H2msZGKcK5tdQGEhb8fJ8emwvxvkFCsObzSy0H6zaOZvnWLNqgXbYSHBdg+sVGWov1OckUlFnkXF+rbGGaSInPOyf9xZ+tRN/YnvAnPTtq3dHIqkQ4fr/TGMr/2aZ/UHSL6es8RXbvHk2LU4r+ODpz8pDjUB7H2VGTi4ayuIHAzF3wIWCtsiupmTZ2auZUOYcyx6rJdjmRmTEfYYAjnlgCQUyAx9o7Dk7tNtjLsyv+Qf6Ou10cI3KfhkSq/9nse09Wcg4gMmpZBg5MZnkwnR+MWPr/z2MUysCVrYJ9p8q+N6KAOvov71jLzM/e+yv6wOHnkKTjYuq455DZZVruoKzRB7f2stPMCBCMDjSbjA3yITkba1vfwq2sDcLSzqCgeplIqUwKDkMd87sY5Yc9d3uhvYn3PIHxrgxEgyPJ6EmM+tmUDS6jkxGsDTD2JSONEUc+42+v98wgBucGeq69MvXJopNZD2vA/uGLH4grXVJwgDnW3bbDZdiyN2ggn2+gzmiivX8L2fp8GbkV8dcH+ZjeC4tPExLdueDgou1j/NJUlhX/sMFZXYAAAAA" alt="logo" class="logo__img--mob">
+              <img src="data:image/png;base64,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" alt="backgroundLogo" class="logo__background--mob">
             </div>
-            <div class="content__link">
-               <a href="">Политика конфиденциальности</a> 
-               <a href="">Политика использования</a>
-            </div>
-        </div>
-        </form>
-        <form class="content__item register" id="registerForm">
-            <div class="content__cover cover-regist">
-            <img src="/ClubTravel/assets/authorization-bg.webp" alt="">
-        </div>
-            <div class="content__wrapper wrapper-refistration">
-            <div class="card card-registration">
-                <div class="card__title">
-                    Зарегистрируйтесь используя соц. сети
-                </div>
-                <div class="card__social">
-                    <button type="button" class="card__facebuce">Войти с помощью Facebook</button>
-                    <button type="button" class="card__google">Войти с помощью Google</button>
-                </div>
-                <div class="card__line">
-                    <span></span>
-         или 
-        <span></span>
-                </div>
-                <div class="card__label">
-                    E-mail
-                </div>
-                <input type="email" id="email" name="email" class="card__input">
-                <div class="card__label">
-                    Пароль
-                </div>
-                <input type="password" id="password" name="password" class="card__input">
-                <div class="card__label">
-                    Повторите пароль
-                </div>
-                <input type="password" name="passwordRepeat" class="card__input">
-                <div class="card__btns">
-                    <button data-tab="authorization" type="button" class="card__registration tab">
-                      Вход  
-                    </button>
-                    <button type="submit" class="card__login">
-                        Регистрация
-                    </button>
-                </div>
-                
-            </div>
-            <div class="content__link">
-               <a href="">Политика конфиденциальности</a> 
-               <a href="">Политика использования</a>
-            </div>
-        </div>
-        </form>
-        <div class="content__item  reset">
-            <div class="content__cover cover-reset">
-                <img src="/ClubTravel/assets/authorization-bg.webp" alt="">
+          </a>
+        </header>    
+        <section class="content"> 
+            <form class="content__item  authorization" id="loginForm">
+                <div class="content__cover">
+                <!-- <img fetchpriority="high"
+          loading="eager"
+          decoding="async" src="/img/authorization/authorization-bg.webp" alt=""> -->
+          <picture>
+                            <source srcset="/assets/authorization-bg-mobile.webp 1x, /assets/authorization-bg-mobile.webp 2x" media="(max-width: 768px)">
+        
+                            <source srcset="/assets/authorization-bg.webp 1x, /assets/authorization-bg.webp 2x">
+        
+                            <img src="/assets/authorization-bg.webp" alt="bg" width="1367" height="800" fetchpriority="high" decoding="async">
+                        </picture>
             </div>
             <div class="content__wrapper">
-                <div class="card card-reset">
+                <div class="card">
                     <div class="card__title">
-                        Мы отправим специальную ссылку на указанный электронный адрес, перейдя по которой вы сможете задать новый пароль.
+                        Войдите используя соц. сети
                     </div>
-                    <div class="card__label">
-                    E-mail
+                    <div class="card__social">
+                        <button type="button" class="card__facebuce">Войти с помощью Facebook</button>
+                        <button type="button" class="card__google">Войти с помощью Google</button>
+                    </div>
+                    <div class="card__line">
+                        <span></span>
+             или 
+            <span></span>
+                    </div>
+                    <label for="identifier" class="card__label">
+                        E-mail
+                    </label>
+                    <input type="text" id="identifier" name="identifier" class="card__input">
+                    <label for="passwordLogin" class="card__label" style="margin-top: -2px;">
+                        Пароль 
+                        <button type="button" data-tab="reset" class="tab">Забыли пароль?</button>
+                    </label>
+                    <input type="password" id="passwordLogin" name="password" class="card__input">
+                    <div class="card__btns">
+                        <button data-tab="register" type="button" class="card__registration tab">
+                            Регистрация
+                        </button>
+                        <button type="submit" class="card__login">
+                            Вход
+                        </button>
+                    </div>
                 </div>
-                <input type="text" class="card__input" id="emailReset">
-                 
-                    <button type="button" id="reset" class="card__reset">
-                        отправить
-                    </button>
-               
+                <div class="content__link">
+                   <a href="">Политика конфиденциальности</a> 
+                   <a href="">Политика использования</a>
                 </div>
             </div>
-        </div>
-         <form class="content__item newPassword" id="newPasswordForm">
-            <div class="content__cover cover-regist">
-            <img src="/ClubTravel/assets/authorization-bg.webp" alt="">
-        </div>
-            <div class="content__wrapper wrapper-refistration">
-            <div class="card card-registration">
-                <div class="card__title">
-                    новий пароль
+            </form>
+            <form class="content__item register" id="registerForm">
+                <div class="content__cover cover-regist">
+                <img src="/assets/authorization-bg.webp" alt="">
+            </div>
+                <div class="content__wrapper wrapper-refistration">
+                <div class="card card-registration">
+                    <div class="card__title">
+                        Зарегистрируйтесь используя соц. сети
+                    </div>
+                    <div class="card__social">
+                        <button type="button" class="card__facebuce">Войти с помощью Facebook</button>
+                        <button type="button" class="card__google">Войти с помощью Google</button>
+                    </div>
+                    <div class="card__line">
+                        <span></span>
+             или 
+            <span></span>
+                    </div>
+                    <laber for="email" class="card__label">
+                        E-mail
+                    </laber>
+                    <input type="email" id="email" name="email" class="card__input">
+                    <label for="password" class="card__label">
+                        Пароль
+                    </label>
+                    <input type="password" id="password" name="password" class="card__input">
+                    <label for="passwordRepeat" class="card__label">
+                        Повторите пароль
+                    </label>
+                    <input type="password" name="passwordRepeat" class="card__input">
+                    <div class="card__btns">
+                        <button data-tab="authorization" type="button" class="card__registration tab">
+                          Вход  
+                        </button>
+                        <button type="submit" class="card__login">
+                            Регистрация
+                        </button>
+                    </div>
+                    
                 </div>
-                
-                <div class="card__line">
-                    <span></span>
-         или 
-        <span></span>
+                <div class="content__link">
+                   <a href="">Политика конфиденциальности</a> 
+                   <a href="">Политика использования</a>
                 </div>
-                <div class="card__label">
-                    Пароль
+            </div>
+            </form>
+            <div class="content__item  reset">
+                <div class="content__cover cover-reset">
+                    <img src="/assets/authorization-bg.webp" alt="">
                 </div>
-                <input type="password" id="newPassword" name="password" class="card__input">
-                <div class="card__label">
-                    Повторите пароль
-                </div>
-                <input type="password" id="passwordRepeat" name="passwordRepeat" class="card__input">
-                <div class="card__btns">
-                    <button type="submit" class="card__registration">
-                      Змінити пароль 
-                    </button>
+                <div class="content__wrapper">
+                    <div class="card card-reset">
+                        <div class="card__title">
+                            Мы отправим специальную ссылку на указанный электронный адрес, перейдя по которой вы сможете задать новый пароль.
+                        </div>
+                        <div class="card__label">
+                        E-mail
+                    </div>
+                    <input type="text" class="card__input" id="emailReset">
+                     
+                        <button type="button" id="reset" class="card__reset">
+                            отправить
+                        </button>
                    
+                    </div>
                 </div>
-                
             </div>
-            <div class="content__link">
-               <a href="">Политика конфиденциальности</a> 
-               <a href="">Политика использования</a>
+             <form class="content__item newPassword" id="newPasswordForm">
+                <div class="content__cover cover-regist">
+                <img src="/assets/authorization-bg.webp" alt="">
             </div>
-        </div>
-        </form>
-    </section>
-    <footer data-component="footer" id="footer">
-      <div class="footer__body">
-        <div class="footer__popular">
-          <h3 class="footer__popular-title">Популярные направления</h3>
-          <div class="footer__country">
-            <div class="footer__country__column footer__country__column--first">
-              <p>Египет</p>
-              <p>АОЭ</p>
-              <p>Тайланд</p>
-              <p>Болгария</p>
-              <p>Тенерифе</p>
+                <div class="content__wrapper wrapper-refistration">
+                <div class="card card-registration">
+                    <div class="card__title">
+                        новий пароль
+                    </div>
+                    
+                    <div class="card__label">
+                        Пароль
+                    </div>
+                    <input type="password" id="newPassword" name="password" class="card__input">
+                    <div class="card__label">
+                        Повторите пароль
+                    </div>
+                    <input type="password" id="passwordRepeat" name="passwordRepeat" class="card__input">
+                    <div class="card__btns">
+                        <button type="submit" class="card__registration">
+                          Змінити пароль 
+                        </button>
+                       
+                    </div>
+                    
+                </div>
+                <div class="content__link">
+                   <a href="">Политика конфиденциальности</a> 
+                   <a href="">Политика использования</a>
+                </div>
             </div>
-            <div class="footer__country__column footer__country__column--second">
-              <p>Бали</p>
-              <p>Грузия</p>
-              <p>Греция</p>
-              <p>Турция</p>
-              <p>Кипр</p>
+            </form>
+        </section>    
+        <footer data-component="footer" id="footer">
+          <div class="footer__body">
+            <div class="footer__popular">
+              <h3 class="footer__popular-title">Популярные направления</h3>
+              <div class="footer__country">
+                <div class="footer__country__column footer__country__column--first">
+                  <p>Египет</p>
+                  <p>АОЭ</p>
+                  <p>Тайланд</p>
+                  <p>Болгария</p>
+                  <p>Тенерифе</p>
+                </div>
+                <div class="footer__country__column footer__country__column--second">
+                  <p>Бали</p>
+                  <p>Грузия</p>
+                  <p>Греция</p>
+                  <p>Турция</p>
+                  <p>Кипр</p>
+                </div>
+              </div>
+        
+            </div>
+            <div class="footer__contact">
+              <h3 class="footer__contact-title">Контакты</h3>
+              <h4 class="footer__contact-subtitle">Clubs Travel OÜ</h4>
+              <div class="footer__open">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHQSURBVHgB3ZU/LzxBGMe/8+z9flkUrhEkyKlsqZGgONtdofASvATVRVRyJReF0stQ6sa5cIhEebollyAUp3DZ4OYxu3I4c3bX0fCtNjsz38+Tef4M8NslohbdVddG494Bk6MsDIJF+uWUuqKmuIOwqrK4f9oVwF2ZcZRCDszpKAMNrRPE7mcgq6P58rSrzef1p404Cdgs2BnLjuKiXDuPBYTmjDl8UYKR6QRpA7j52UkFzqFLBZDx7OC1V768bf2j9xsUcWTkpfVKgZrYjdqjnv7n3NWMbQCC6GMTmkRCezQGHAMAhoMfkoI1YQCUxf34MfGQAdDXM5TobAqevoZ65B4h0iYggYI8ybWKR3bPVlyyTUBcVFpKqIVsfmYJjQdHblQk9fibusnMDtajxABQ07pGEukqeQX5dtpS1rkZCb0Gm3o7+FjFu+wnAjEW9ajwPy4Rmmdv3y319lWTXJMp1T6vmOuyeHxqAGRB+kS0g2+KoNqS3zaLvHLtdnx6RDAhgy7ELGSpeHj4KSCEHNS8biCB+V7xwCjdju9BCJkdvmMSuvmEHeNcp9TTdmnt6KTTcuSTGcjNT+kh+M8JR0mr23UxhGUdVF7vTVUWPB9/Vs80cLwc/w6FDgAAAABJRU5ErkJggg==" alt="clock" class="footer__open-img" loading="lazy">
+                <p class="footer__open-text">Пн-Пт 9:30-18:00, Сб 11:00-15:00</p>
+              </div>
+              <div class="footer__location">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHPSURBVHgB5VQ9TwJBEJ3Zw3ixsvMrMZKYWHqdH5i4nYU/wtLWRltiqSaEv2BpZ2u3YNQjUkAHHUZMsMNG7vjYcTnBcLgHq6ExvuRyud2Z92bfzB7AXweOC+BJboPnbUqgdSCc/cySNda2XqEzLURa1H8twI+3HYmwByDtiBCPtSkjUjk3isOKJD9JbEqU+wAUg2jEiOFqfHv5rXL/XNMFMC15ks8qS3bBEKqQPZ5csY0FoOFzjS0egXS7DyAN+2533hc2dFQxfUUwBzSwQFRnLf9SpAsBMU86OdmYORwsAkE66pUBoxMQzYc+kUp98i7EaaHOiIqhHOxNmJHABKEXGPIYgTn8iH9VGAwBg7VwjtROkbYHTLKyRBpsmi2n/AN+vFXufshGc10ZFxoC6qC5ADAqqSaHpwJJjW5/jb6lWG0saql0i+LMrTCCJzCFskek3YqxQG9HgCGYpFw0TQSMT0FQEhePhR8LBJjxrlWINyqEtbybUfvWqM1KpubFE4sdAlzV7ROhyKby5VEcYy+aOM+5WqtUY28vHjLj8s1u8rBV3X+T37wySbVMggKrdpZe1PQ7QVUtvBLpfG1iAoHIXbUeTyz5klg1m3KL8G/wAS7CxWsRUDz2AAAAAElFTkSuQmCC" alt="location" class="footer__location-img" loading="lazy">
+                <p class="footer__location-text">Narva mnt 7D, Tallinn (корпус B) 4 этаж</p>
+              </div>
+              <div class="footer__phone">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHUSURBVHgB7ZQ9b9RAEIbfHV+IhSJxBcUlkYgtRUoKJCgducAFSHT8BOho0yDoopQEirSUKfkHlDYfwelSgHQUSBsQyAXFIQGyw+1MHCeXcy6+u3y4zCNL3pmd3XdnZ3eBS8agykawEtj493cRaLSYzByEWqSwET6PNc5Jo2xwmj2GspqA5B8d+AR38p/GOaFjlkizIsYJloMmahFQ0qkKMhPZLdQhQKx+VwUpJR7qEMinSqqCRFSMWgRI2oMBzHjz7sXHCHUIHBxHSo8cipP3L+MtXAA64TDcnzC/B8FTz0GdApiy43IWzOrBRY6pNejQke66/owRqPnCoWBLY9dx70581lGnizOihnUET7xHrDDXj+SEsquvw/Xw6K4Ez5bus8ECMXZgJsNy39AMejj35tti/t/MZ7YPFaaEzKLr38j05vckr02QPyN+kSGhJVbXc5dmpx1/5pfe/PlnbAbFClduNzmdfAhRgzXQ+2sYNu7tWrzaaxNGEK5ud8jONojpy0CXM2KYLhsWxqCjJM235JPrz2aicL2/ZdUIuP3tw4+vPZtwSsK1rbjIxiAa9igWKzZmp2yPrMEogmXPMVd4wRKaZpJrh3VKaTd9Fa5vd3DJadkDNs2rA8ExIVIAAAAASUVORK5CYII=" alt="phone" class="footer__phone-img" loading="lazy">
+                <div class="footer__number">
+                  <p class="footer__phone-text">+372 555 60 310</p>
+                  <span> | </span>
+                  <p class="footer__phone-text">+372 61 30 633</p>
+                </div>
+              </div>
+              <div class="footer__email">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAF5SURBVHgB7ZS/T8JAFMffXYkcTqy6yIabbm1jIrfhhn+C/4GJpqgTcRQcYGTkT2Bku4rRogujI5txq4uemL6zra0YCOGXRgc+U9/r3ff7Xu7dASz5a0j8wc/MTfRIAQAZLIIiLgVii8pNNwhpnEeE/MLiAUSlkWA+DunAWaXDhPKa/iIXZkUpl/ahEUVs1CBCVO67lKXqCogD02oDOnT1qS6qTm/434gBPzb34RlYu3zboilZm9BNL6i6Xb5rAWQYt4yD4QWJ4QRqags0meVHui3OO0EXNV7UDQQt9+2MpH9m4vrS6YRFFXcMfO3n/JFhEw0iGCZIftcydfqebIiycHhp+8GTyRxRJE37snlV7br8xMgAAkfwNsbojDX4JJiIFXnILdOv9FG0L3rNsOISZ/zU3ENU+mDQ5zGIQOILvaxlubVuA0UX5VshnrpJTGUQEnQDyhcOAjX1Ngq/zNJgFgMq4adQg9v/ZUAVtOZ65EaRFDQblvwbPgBdOY7ZZQIjQQAAAABJRU5ErkJggg==" alt="email" class="footer__email-img" loading="lazy">
+                <p class="footer__email-text">info@clubstravel.ee</p>
+              </div>
             </div>
           </div>
+          <div class="footer__imdb">
+            <div class="footer__instagram">
+              <img src="data:image/webp;base64,UklGRqYBAABXRUJQVlA4WAoAAAAQAAAAHwAAHwAAQUxQSLIAAAABgBXbdhRrG7gCEgFtAAMIABsYQECwcW0QATFwZGW4/Yb/iJgA/k3bFm0lu5ZLmjqaIo+J3BTaPqNH61WSfGBav8hNkvW2GS/FJW1QJW1LtwHkR/65FXEBKQGX+isF9iq9B9wxiVPdHQtxqL0XPKKQNUw8v8Gh9l7wCBl77yAr5IazSu8OT4wuICXgUpBKArBbYZKX4poc2Myq9fCowjC3mJZGnC2iHczmZ80Ti7YtGv8mVlA4IM4AAAAwBwCdASogACAAPoE2k0elLyGhN/qoAeAQCWwAnTKEfR+Z8Qa63AozCv9ZuCS6jP0AP0A9KoIQiR20UE8dTeg72kAA/uhUvWKiwTLxBivETNwZslWM+/3q5Km4U51+BwbhxsOJIHzKZ+AHQT6y9NEJ5kw9/7f86Hf8W54GuMGXe49b5e+i8rvi390T3+uUB+dw2Oyo/vP/AUNaDMr01Vc9ayMsa9anGU5uBEhky3pR974pn630Uj6D2OOnxEZLpzgH9MsBzr0On/pWCUnQAA==" alt="instagram" class="footer__instagram-icon" loading="lazy">
+              <p class="footer__instagram-text">@booking.clubstravel.ee</p>
+            </div>
+            <img src="/assets/IMDb.webp" alt="IMDb" class="footer__imdb-img" loading="lazy">
+          </div>
+        
+        </footer>
+        <div class="footer__mob">
+          <p class="footer__mob-text">©2020 Clubstravel. All Rights Reserved</p>
+        </div>      </div>
     
-        </div>
-        <div class="footer__contact">
-          <h3 class="footer__contact-title">Контакты</h3>
-          <h4 class="footer__contact-subtitle">Clubs Travel OÜ</h4>
-          <div class="footer__open">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHQSURBVHgB3ZU/LzxBGMe/8+z9flkUrhEkyKlsqZGgONtdofASvATVRVRyJReF0stQ6sa5cIhEebollyAUp3DZ4OYxu3I4c3bX0fCtNjsz38+Tef4M8NslohbdVddG494Bk6MsDIJF+uWUuqKmuIOwqrK4f9oVwF2ZcZRCDszpKAMNrRPE7mcgq6P58rSrzef1p404Cdgs2BnLjuKiXDuPBYTmjDl8UYKR6QRpA7j52UkFzqFLBZDx7OC1V768bf2j9xsUcWTkpfVKgZrYjdqjnv7n3NWMbQCC6GMTmkRCezQGHAMAhoMfkoI1YQCUxf34MfGQAdDXM5TobAqevoZ65B4h0iYggYI8ybWKR3bPVlyyTUBcVFpKqIVsfmYJjQdHblQk9fibusnMDtajxABQ07pGEukqeQX5dtpS1rkZCb0Gm3o7+FjFu+wnAjEW9ajwPy4Rmmdv3y319lWTXJMp1T6vmOuyeHxqAGRB+kS0g2+KoNqS3zaLvHLtdnx6RDAhgy7ELGSpeHj4KSCEHNS8biCB+V7xwCjdju9BCJkdvmMSuvmEHeNcp9TTdmnt6KTTcuSTGcjNT+kh+M8JR0mr23UxhGUdVF7vTVUWPB9/Vs80cLwc/w6FDgAAAABJRU5ErkJggg==" alt="clock" class="footer__open-img" loading="lazy">
-            <p class="footer__open-text">Пн-Пт 9:30-18:00, Сб 11:00-15:00</p>
-          </div>
-          <div class="footer__location">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHPSURBVHgB5VQ9TwJBEJ3Zw3ixsvMrMZKYWHqdH5i4nYU/wtLWRltiqSaEv2BpZ2u3YNQjUkAHHUZMsMNG7vjYcTnBcLgHq6ExvuRyud2Z92bfzB7AXweOC+BJboPnbUqgdSCc/cySNda2XqEzLURa1H8twI+3HYmwByDtiBCPtSkjUjk3isOKJD9JbEqU+wAUg2jEiOFqfHv5rXL/XNMFMC15ks8qS3bBEKqQPZ5csY0FoOFzjS0egXS7DyAN+2533hc2dFQxfUUwBzSwQFRnLf9SpAsBMU86OdmYORwsAkE66pUBoxMQzYc+kUp98i7EaaHOiIqhHOxNmJHABKEXGPIYgTn8iH9VGAwBg7VwjtROkbYHTLKyRBpsmi2n/AN+vFXufshGc10ZFxoC6qC5ADAqqSaHpwJJjW5/jb6lWG0saql0i+LMrTCCJzCFskek3YqxQG9HgCGYpFw0TQSMT0FQEhePhR8LBJjxrlWINyqEtbybUfvWqM1KpubFE4sdAlzV7ROhyKby5VEcYy+aOM+5WqtUY28vHjLj8s1u8rBV3X+T37wySbVMggKrdpZe1PQ7QVUtvBLpfG1iAoHIXbUeTyz5klg1m3KL8G/wAS7CxWsRUDz2AAAAAElFTkSuQmCC" alt="location" class="footer__location-img" loading="lazy">
-            <p class="footer__location-text">Narva mnt 7D, Tallinn (корпус B) 4 этаж</p>
-          </div>
-          <div class="footer__phone">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHUSURBVHgB7ZQ9b9RAEIbfHV+IhSJxBcUlkYgtRUoKJCgducAFSHT8BOho0yDoopQEirSUKfkHlDYfwelSgHQUSBsQyAXFIQGyw+1MHCeXcy6+u3y4zCNL3pmd3XdnZ3eBS8agykawEtj493cRaLSYzByEWqSwET6PNc5Jo2xwmj2GspqA5B8d+AR38p/GOaFjlkizIsYJloMmahFQ0qkKMhPZLdQhQKx+VwUpJR7qEMinSqqCRFSMWgRI2oMBzHjz7sXHCHUIHBxHSo8cipP3L+MtXAA64TDcnzC/B8FTz0GdApiy43IWzOrBRY6pNejQke66/owRqPnCoWBLY9dx70581lGnizOihnUET7xHrDDXj+SEsquvw/Xw6K4Ez5bus8ECMXZgJsNy39AMejj35tti/t/MZ7YPFaaEzKLr38j05vckr02QPyN+kSGhJVbXc5dmpx1/5pfe/PlnbAbFClduNzmdfAhRgzXQ+2sYNu7tWrzaaxNGEK5ud8jONojpy0CXM2KYLhsWxqCjJM235JPrz2aicL2/ZdUIuP3tw4+vPZtwSsK1rbjIxiAa9igWKzZmp2yPrMEogmXPMVd4wRKaZpJrh3VKaTd9Fa5vd3DJadkDNs2rA8ExIVIAAAAASUVORK5CYII=" alt="phone" class="footer__phone-img" loading="lazy">
-            <div class="footer__number">
-              <p class="footer__phone-text">+372 555 60 310</p>
-              <span> | </span>
-              <p class="footer__phone-text">+372 61 30 633</p>
-            </div>
-          </div>
-          <div class="footer__email">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAF5SURBVHgB7ZS/T8JAFMffXYkcTqy6yIabbm1jIrfhhn+C/4GJpqgTcRQcYGTkT2Bku4rRogujI5txq4uemL6zra0YCOGXRgc+U9/r3ff7Xu7dASz5a0j8wc/MTfRIAQAZLIIiLgVii8pNNwhpnEeE/MLiAUSlkWA+DunAWaXDhPKa/iIXZkUpl/ahEUVs1CBCVO67lKXqCogD02oDOnT1qS6qTm/434gBPzb34RlYu3zboilZm9BNL6i6Xb5rAWQYt4yD4QWJ4QRqags0meVHui3OO0EXNV7UDQQt9+2MpH9m4vrS6YRFFXcMfO3n/JFhEw0iGCZIftcydfqebIiycHhp+8GTyRxRJE37snlV7br8xMgAAkfwNsbojDX4JJiIFXnILdOv9FG0L3rNsOISZ/zU3ENU+mDQ5zGIQOILvaxlubVuA0UX5VshnrpJTGUQEnQDyhcOAjX1Ngq/zNJgFgMq4adQg9v/ZUAVtOZ65EaRFDQblvwbPgBdOY7ZZQIjQQAAAABJRU5ErkJggg==" alt="email" class="footer__email-img" loading="lazy">
-            <p class="footer__email-text">info@clubstravel.ee</p>
-          </div>
-        </div>
-      </div>
-      <div class="footer__imdb">
-        <div class="footer__instagram">
-          <img src="data:image/webp;base64,UklGRqYBAABXRUJQVlA4WAoAAAAQAAAAHwAAHwAAQUxQSLIAAAABgBXbdhRrG7gCEgFtAAMIABsYQECwcW0QATFwZGW4/Yb/iJgA/k3bFm0lu5ZLmjqaIo+J3BTaPqNH61WSfGBav8hNkvW2GS/FJW1QJW1LtwHkR/65FXEBKQGX+isF9iq9B9wxiVPdHQtxqL0XPKKQNUw8v8Gh9l7wCBl77yAr5IazSu8OT4wuICXgUpBKArBbYZKX4poc2Myq9fCowjC3mJZGnC2iHczmZ80Ti7YtGv8mVlA4IM4AAAAwBwCdASogACAAPoE2k0elLyGhN/qoAeAQCWwAnTKEfR+Z8Qa63AozCv9ZuCS6jP0AP0A9KoIQiR20UE8dTeg72kAA/uhUvWKiwTLxBivETNwZslWM+/3q5Km4U51+BwbhxsOJIHzKZ+AHQT6y9NEJ5kw9/7f86Hf8W54GuMGXe49b5e+i8rvi390T3+uUB+dw2Oyo/vP/AUNaDMr01Vc9ayMsa9anGU5uBEhky3pR974pn630Uj6D2OOnxEZLpzgH9MsBzr0On/pWCUnQAA==" alt="instagram" class="footer__instagram-icon" loading="lazy">
-          <p class="footer__instagram-text">@booking.clubstravel.ee</p>
-        </div>
-        <img src="/ClubTravel/assets/IMDb.webp" alt="IMDb" class="footer__imdb-img" loading="lazy">
-      </div>
-    
-    </footer>
-    <div class="footer__mob">
-      <p class="footer__mob-text">©2020 Clubstravel. All Rights Reserved</p>
-    </div>    
+    <!-- <script type="module" src="/js/main.js"></script> -->
+    <!-- <script type="module" src="/js/pages/authorization.js"></script> -->
+
+
+
 
   
 
