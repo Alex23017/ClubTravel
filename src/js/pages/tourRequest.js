@@ -1,5 +1,7 @@
-import "../../styles/base/main.scss"
+// import '../../styles/base/main.scss'
 import '../../styles/pages/tourRequest.scss'
+import { addUserConsultation } from '../api/service/offerConsultation';
+
 
 const tabs = document.querySelectorAll('.tab__name');
 const contents = document.querySelectorAll('.tab__item');
@@ -82,3 +84,48 @@ category.addEventListener('click', (e) => {
         }
     });
 });
+
+async function createdNewConsultation(event){
+  event.preventDefault()
+ 
+  const date = document.getElementById('data');
+  const direction = document.getElementById('direction');
+  const guests = document.getElementById('guests');
+  const tourTime = document.getElementById('tourTime');
+  const rating = document.querySelectorAll('.tab__category-item.active').length;
+  const desiredPrice = document.getElementById('desiredPrice');
+  const nutrition = document.getElementById('nutrition');
+  const wishes = document.getElementById('wishes');
+  const name = document.getElementById('name');
+  const phone = document.getElementById('phone');
+  const email = document.getElementById('email');
+
+
+
+  
+  const newConsultation = {
+      direction: direction.textContent,
+      date: date.textContent,
+      tourTime: tourTime.textContent,
+      guests: guests.textContent,
+      desiredPrice: desiredPrice.value,
+      nutrition: nutrition.textContent,
+      rating: rating,
+      wishes: wishes.value,
+      name: name.value,
+      phone: phone.value,
+      email: email.value
+  };
+  console.log('SEND:', newConsultation);
+
+  try {
+          await addUserConsultation(newConsultation);
+          console.log('консультація додана');
+      } catch (err) {
+          console.log('error:', err);
+      }
+  
+  
+  
+}
+document.getElementById('consultationForm').addEventListener('submit', createdNewConsultation)

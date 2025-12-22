@@ -1,26 +1,46 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preload" href="../../styles/pages/authorization.scss" as="style" onload="this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="../../styles/pages/authorization.scss">
+  </noscript>
+
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../../styles/base/main.scss" />
-        <link rel="icon" href="../../img/header/favicon.png" type="png" />
+    /> -->
+    <link rel="stylesheet" href="../../styles/base/main.scss">
+    <noscript>
+        <link rel="stylesheet" href="../../styles/base/main.scss">
+
+  </noscript>
+        <link rel="icon" href="../../img/header/favicon.png" type="png" rel="preload">
   </head>
   <body class="loading">
-    {{>preload}}
-    {{>header}}
+      <div class="wrapper">
+        {{>preload}}
+        {{>header}}
+    
+        {{>authorizationContent}}
+    
+        {{> footer}}
+      </div>
+    
+    <!-- <script type="module" src="/js/main.js"></script> -->
+    <!-- <script type="module" src="/js/pages/authorization.js"></script> -->
+     <script type="module" src="/js/main.js"></script>
 
-    {{>authorizationContent}}
+     <script type="module">
+      window.addEventListener('DOMContentLoaded', () => {
+        import('../../js/pages/authorization.js');
+      });
+    </script>
 
-    {{> footer}}
-    <script type="module" src="/js/main.js"></script>
-    <script type="module" src="/js/pages/authorization.js"></script>
   </body>
 </html>

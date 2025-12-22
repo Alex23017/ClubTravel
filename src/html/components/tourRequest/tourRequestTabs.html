@@ -4,14 +4,14 @@
         <div class="tab__name">Предпочтения</div>
         <div class="tab__name">Контакты</div>
     </div>
-    <div class="tab__content">
+    <form class="tab__content" id="consultationForm">
         <div class="tab__item active">
             <div class="tab__item-content">
                 <label class="tab__label">Направление</label>
 
                 <div class="dropdown" data-dropdown>
-                    <button type="submit" class="dropdown__header" data-dropdown-button>
-                        <span class="dropdown__value">Болгария > Золотые пески</span>
+                    <button type="button" class="dropdown__header" data-dropdown-button>
+                        <span id="direction" class="dropdown__value">Болгария > Золотые пески</span>
                         <svg class="dropdown__icon">
                           <use xlink:href="#icon-arrowDown"></use>
                         </svg>
@@ -24,8 +24,8 @@
                 <label class="tab__label">Дата вылета</label>
 
                 <div class="dropdown" data-dropdown>
-                    <button type="submit" class="dropdown__header" data-dropdown-button>
-                        <span class="dropdown__value">25.06.2020 - 10.07.2020</span>
+                    <button type="button" class="dropdown__header" data-dropdown-button>
+                        <span id="data" class="dropdown__value">25.06.2020 - 10.07.2020</span>
                         <svg class="dropdown__icon">
                           <use xlink:href="#icon-arrowDown"></use>
                         </svg>
@@ -38,8 +38,8 @@
                 <label class="tab__label">Гости</label>
 
                 <div class="dropdown" data-dropdown>
-                    <button type="submit" class="dropdown__header" data-dropdown-button>
-                        <span class="dropdown__value">Взрослых: 2; детей: 5</span>
+                    <button type="button" class="dropdown__header" data-dropdown-button>
+                        <span id="guests" class="dropdown__value">Взрослых: 2; детей: 5</span>
                         <svg class="dropdown__icon">
                           <use xlink:href="#icon-arrowDown"></use>
                         </svg>
@@ -71,7 +71,7 @@
                           <use xlink:href="#icon-minus"></use>
                     </svg>
                 </button>
-                <span class="counter__value">12</span>
+                <span id="tourTime" class="counter__value">12</span>
                 <button type="button" class="counter__btn counter__btn-plus">
                     <svg>
                           <use xlink:href="#icon-plus"></use>
@@ -86,11 +86,11 @@
         <div class="tab__item ">
             <div class="tab__item-content">
                 <div class="tab__label">Желаемая цена на одного человека (€)</div>
-            <input type="text" class="tab__item-input">
+            <input id="desiredPrice" type="text" class="tab__item-input">
             <div class="tab__label">Питание</div>
             <div class="dropdown" data-dropdown>
-                    <button type="submit" class="dropdown__header" data-dropdown-button>
-                        <span class="dropdown__value">Завтрак</span>
+                    <button type="button" class="dropdown__header" data-dropdown-button>
+                        <span id="nutrition" class="dropdown__value">Завтрак</span>
                         <svg class="dropdown__icon">
                           <use xlink:href="#icon-arrowDown"></use>
                         </svg>
@@ -122,7 +122,7 @@
                 </svg>
             </div>
             <div class="tab__label">Пожелания</div>
-            <textarea class="tab__textarea"></textarea>
+            <textarea id="wishes" class="tab__textarea"></textarea>
             </div>
             <button type="button" class="tab__next">
                  дальше                        
@@ -131,13 +131,13 @@
         <div class="tab__item">
             <div class="tab__item-content">
             <div class="tab__label">Имя</div>
-            <input type="text" class="tab__item-input">
+            <input id="name" type="text" class="tab__item-input">
             <div class="tab__label">Телефон</div>
-            <input type="text" class="tab__item-input">
+            <input id="phone" type="phone" class="tab__item-input" required>
             <div class="tab__label">Эл. почта</div>
-            <input type="text" class="tab__item-input">
+            <input id="email" type="email" class="tab__item-input" required>
             </div>
             <button type="submit" class="tab__finish"> подобрать тур</button>
         </div>
-    </div>
+    </form>
 </div>

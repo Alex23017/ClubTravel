@@ -19,7 +19,7 @@ const partialDirs = [
 
 export default defineConfig({
   root: 'src',
-  base: '/ClubTravel/',
+  // base: '/ClubTravel/',
   appType: 'mpa',
   plugins: [
     hulakPlugins({

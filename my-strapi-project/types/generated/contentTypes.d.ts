@@ -603,6 +603,39 @@ export interface ApiListHotelListHotel extends Struct.CollectionTypeSchema {
   }
 }
 
+export interface ApiOfferConsultationOfferConsultation extends Struct.CollectionTypeSchema {
+  collectionName: 'offer_consultations'
+  info: {
+    displayName: 'offer Consultation'
+    pluralName: 'offer-consultations'
+    singularName: 'offer-consultation'
+  }
+  options: {
+    draftAndPublish: true
+  }
+  attributes: {
+    createdAt: Schema.Attribute.DateTime
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
+    date: Schema.Attribute.Text
+    desiredPrice: Schema.Attribute.String
+    direction: Schema.Attribute.String
+    email: Schema.Attribute.Text
+    guests: Schema.Attribute.String
+    locale: Schema.Attribute.String & Schema.Attribute.Private
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::offer-consultation.offer-consultation'> &
+      Schema.Attribute.Private
+    name: Schema.Attribute.String
+    nutrition: Schema.Attribute.String
+    phone: Schema.Attribute.Text
+    publishedAt: Schema.Attribute.DateTime
+    rating: Schema.Attribute.Integer
+    tourTime: Schema.Attribute.Text
+    updatedAt: Schema.Attribute.DateTime
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private
+    wishes: Schema.Attribute.Text
+  }
+}
+
 export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
   collectionName: 'orders'
   info: {
@@ -1150,6 +1183,7 @@ declare module '@strapi/strapi' {
       'api::hot-deal.hot-deal': ApiHotDealHotDeal
       'api::hotel.hotel': ApiHotelHotel
       'api::list-hotel.list-hotel': ApiListHotelListHotel
+      'api::offer-consultation.offer-consultation': ApiOfferConsultationOfferConsultation
       'api::order.order': ApiOrderOrder
       'api::reset-pass.reset-pass': ApiResetPassResetPass
       'api::result-search.result-search': ApiResultSearchResultSearch
