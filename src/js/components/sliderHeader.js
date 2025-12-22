@@ -1,36 +1,38 @@
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-
-import { Navigation, Pagination } from 'swiper/modules'
-import Swiper from 'swiper'
-
 if (document.querySelector('[data-component="sliderHeader"]')) {
   import('/styles/components/sliderHeader.scss')
   import('/styles/base/reset.scss')
 }
 
-const slider = document.querySelector('.mySwiper')
+async function sliderInit() {
+  const slider = document.querySelector('.mySwiper')
+  if (!slider) return
+  const [{ default: Swiper }, { Navigation, Pagination }] = await Promise.all([
+    import('swiper'),
+    import('swiper/modules'),
+  ])
 
-if (slider) {
-  new Swiper('.mySwiper', {
-    modules: [Navigation, Pagination],
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 20,
-    preloadImages: false, 
-    lazy: {
-      loadPrevNext: true, 
-    },
+  await import('swiper/css')
+  await import('swiper/css/pagination')
 
-    navigation: {
-      nextEl: '.swiper-header-next',
-      prevEl: '.swiper-header-prev',
-    },
+  if (slider) {
+    new Swiper('.mySwiper', {
+      modules: [Navigation, Pagination],
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 20,
+      preloadImages: true,
+      lazy: false,
 
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-  })
+      navigation: {
+        nextEl: '.swiper-header-next',
+        prevEl: '.swiper-header-prev',
+      },
+
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    })
+  }
 }
+sliderInit()

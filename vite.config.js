@@ -34,7 +34,7 @@ export default defineConfig({
     }),
     createHtmlPlugin({
       minify: false,
-      inject: false, 
+      inject: false,
     }),
 
     svgSpritePlugin({
@@ -62,7 +62,6 @@ export default defineConfig({
       usePolling: true,
     },
   },
-
 
   build: {
     minify: 'esbuild',

@@ -1,26 +1,20 @@
 <div data-component='sliderHeader' class='slider__header'>
-  <img class='vector__home' src='/img/header/homeVector.png' alt='vectorHome' loading='lazy' />
+  <img class='vector__home' src='/img/header/homeVector.webp' alt='vectorHome' loading='lazy' />
   <div class='swiper mySwiper'>
     <div class='swiper-wrapper'>
       <div class='swiper-slide'>
         <img
           class='hero__slider-img'
-          src='/img/header/heroSlider.jpg'
+          src='/img/header/heroSlider.webp'
           alt='hero'
-          loading='lazy'
+          loading='eager'
           width='600'
           height='300'
+          fetchpriority='high'
         />
       </div>
       <div class='swiper-slide'>
-        <img
-          class='hero__slider-img'
-          src='/img/header/heroSlider.jpg'
-          alt='hero'
-          loading='lazy'
-          width='600'
-          height='300'
-        />
+        <img class='hero__slider-img' src='/img/header/heroSlider.webp' alt='hero' loading='lazy'/>
       </div>
     </div>
     <div class='swiper-button-next swiper-header-next'></div>

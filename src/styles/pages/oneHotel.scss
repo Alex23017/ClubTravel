@@ -1,27 +1,27 @@
-@use "../base/variables" as *;
-@use "../base/mixins" as *;
-@use "../components/hotDeals.scss" as *;
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+@use '../components/hotDeals.scss' as *;
 
-body{
-    @include huge{
-        padding: 0 20%;
-    }
+body {
+  @include huge {
+    padding: 0 20%;
+  }
 
-    @include big{
-        padding:  0 15%;
-    }
+  @include big {
+    padding: 0 15%;
+  }
 
-    @include desktop{
-        padding: 0 10%;
-    }
+  @include desktop {
+    padding: 0 10%;
+  }
 
-    @include laptop{
-        padding: 0;
-    }
+  @include laptop {
+    padding: 0;
+  }
 
-    @include phone{
-        padding: 0;
-    }
+  @include phone {
+    padding: 0;
+  }
 }
 
 // .hero{
@@ -50,11 +50,11 @@ body{
     box-sizing: border-box;
     background: rgb(255, 255, 255, 1);
 
-    @include tablet{
+    @include tablet {
       left: 40px;
     }
 
-    @include phone{
+    @include phone {
       top: -92px;
       left: 18px;
       width: 300px;
@@ -74,7 +74,7 @@ body{
     font-weight: 700;
     color: var(--text, rgb(34, 34, 34, 1));
 
-    @include phone{
+    @include phone {
       gap: 9px;
     }
   }
@@ -91,7 +91,7 @@ body{
       width: 100%;
       height: 100%;
 
-      use{
+      use {
         width: 100%;
         height: 100%;
       }
@@ -102,16 +102,13 @@ body{
     display: flex;
     gap: 4px;
     margin-top: -11px;
-  
   }
 
-  &__card-star{
-      width: 18px;
-      height: 18px;
-      color: $orange;
+  &__card-star {
+    width: 18px;
+    height: 18px;
+    color: $orange;
   }
-
-  
 
   &__card-location {
     display: flex;
@@ -124,7 +121,7 @@ body{
     font-weight: 400;
     color: var(--text, rgb(34, 34, 34, 1));
 
-    @include phone{
+    @include phone {
       margin-top: -3px;
     }
   }
@@ -135,7 +132,7 @@ body{
     margin-top: 19px;
     padding-left: 2px;
 
-    @include phone{
+    @include phone {
       gap: 5px;
       margin-top: 8px;
     }
@@ -145,7 +142,6 @@ body{
     display: flex;
     gap: 69px;
     padding: 40px 100px 22px;
-    
 
     // @include huge{
     //   padding: 40px 20%
@@ -155,31 +151,28 @@ body{
     //   padding:40px 15%;
     // }
 
-    @include laptop{
-        padding: 40px 100px 22px;
-
-      
+    @include laptop {
+      padding: 40px 100px 22px;
     }
 
-    @include table-big{
+    @include table-big {
       gap: 40px;
       padding: 40px 60px;
     }
 
-    @include tablet{
+    @include tablet {
       gap: 20px;
       padding: 40px 20px;
     }
 
-    @include tablet-mini{
+    @include tablet-mini {
       flex-direction: column-reverse;
     }
 
-    @include phone{
+    @include phone {
       flex-direction: column-reverse;
       gap: 32px;
       padding: 0;
-
     }
   }
 
@@ -197,57 +190,55 @@ body{
     //   padding:0 15%;
     // }
 
-    @include laptop{
-    padding: 0 100px 0 97px;
-      
+    @include laptop {
+      padding: 0 100px 0 97px;
     }
 
-    @include table-big{
-      padding: 0 60px
+    @include table-big {
+      padding: 0 60px;
     }
 
-    @include tablet{
+    @include tablet {
       gap: 5px;
       padding: 0 5px;
     }
 
-    @include tablet-mini{
+    @include tablet-mini {
       flex-direction: column;
       gap: 30px;
       margin-top: 25px;
-      padding: 0 20px;;
+      padding: 0 20px;
     }
 
-    @include phone{
+    @include phone {
       flex-direction: column;
       gap: 63px;
       margin-top: 25px;
       padding: 0;
-      
     }
   }
 
-  &__gallery-main{
+  &__gallery-main {
     width: 100%;
     height: 499px;
 
-    img{
+    img {
       width: 100%;
       height: 100%;
       border-radius: 8px;
       object-fit: cover;
     }
 
-    @include table-big{
+    @include table-big {
       height: 80%;
     }
 
-    @include tablet{
+    @include tablet {
       height: 60%;
     }
   }
 
-  &__gallery-item{
+  &__gallery-item {
     width: 100%;
     // height: 100%;
     height: 97px;
@@ -256,15 +247,15 @@ body{
       height: 130px;
     }
 
-    @include tablet{
+    @include tablet {
       height: 75px;
     }
 
-    @include phone{
+    @include phone {
       height: 43px;
     }
 
-    img{
+    img {
       width: 100%;
       height: 100%;
       border-radius: 8px;
@@ -272,17 +263,17 @@ body{
     }
   }
 
-  &__gallery{
+  &__gallery {
     @media (width >= 1750px) {
       width: 70%;
     }
 
-    @include phone{
+    @include phone {
       padding: 0 23px 0 17px;
     }
   }
 
-  &__offer{
+  &__offer {
     max-width: 371px;
     // width: 30%;
     min-width: 371px;
@@ -293,20 +284,20 @@ body{
     background: rgb(255, 255, 255, 1);
     box-shadow: 0 5px 10px 0 rgb(0, 0, 0, 0.1);
 
-    @include tablet{
+    @include tablet {
       max-width: 300px;
       min-width: 300px;
       padding: 10px;
     }
 
-    @include tablet-mini{
+    @include tablet-mini {
       max-width: 100%;
       min-width: 100%;
       margin-top: -40px;
       border-radius: none;
     }
 
-    @include phone{
+    @include phone {
       max-width: 100%;
       min-width: 100%;
       margin-top: 0;
@@ -314,17 +305,17 @@ body{
       border-radius: none;
     }
 
-    input{
-        width: 100%;
-        height: 42px;
-        border: 1px solid rgb(226, 226, 226);
-        border-radius: 6px;
-        box-sizing: border-box;
-        background: rgb(255, 255, 255);
+    input {
+      width: 100%;
+      height: 42px;
+      border: 1px solid rgb(226, 226, 226);
+      border-radius: 6px;
+      box-sizing: border-box;
+      background: rgb(255, 255, 255);
     }
   }
 
-  &__offer-title{
+  &__offer-title {
     display: flex;
     justify-content: space-between;
     margin-bottom: 24px;
@@ -333,8 +324,8 @@ body{
     line-height: 27px;
     font-weight: 400;
     color: rgb(34, 34, 34, 1);
-    
-    button{
+
+    button {
       font-family: $Open;
       font-size: 14px;
       line-height: 19px;
@@ -343,60 +334,18 @@ body{
     }
   }
 
-  &__offer-date{
+  &__offer-date {
     display: flex;
     align-items: center;
     gap: 17px;
 
-    svg{
+    svg {
       width: 18px;
       height: 18px;
-      color:$colorGrean;
+      color: $colorGrean;
     }
 
-    span{
-    font-family: $Open;
-    font-size: 16px;
-    line-height: 22px;
-    font-weight: 400;
-      color: rgb(34, 34, 34, 1);
-    }
-  }
-
-  &__offer-raise{
-    display: flex;
-    align-items: center;
-    gap: 17px;
-    margin-top: 15px;
-
-    svg{
-      width: 18px;
-      height: 18px;
-      color:$colorGrean;
-    }
-
-    span{
-    font-family: $Open;
-    font-size: 16px;
-    line-height: 22px;
-    font-weight: 400;
-      color: rgb(34, 34, 34, 1);
-    }
-  }
-
-  &__offer-food{
-    display: flex;
-    align-items: center;
-    gap: 17px;
-    margin-top: 18px;
-
-    svg{
-      width: 18px;
-      height: 18px;
-      color:$colorGrean;
-    }
-
-    span{
+    span {
       font-family: $Open;
       font-size: 16px;
       line-height: 22px;
@@ -405,28 +354,70 @@ body{
     }
   }
 
-  &__offer-houses{
+  &__offer-raise {
     display: flex;
     align-items: center;
     gap: 17px;
     margin-top: 15px;
 
-    svg{
+    svg {
       width: 18px;
       height: 18px;
-      color:$colorGrean;
+      color: $colorGrean;
     }
 
-    span{
-    font-family: $Open;
-    font-size: 16px;
-    line-height: 22px;
-    font-weight: 400;
+    span {
+      font-family: $Open;
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 400;
       color: rgb(34, 34, 34, 1);
     }
   }
 
-  &__offer-price{
+  &__offer-food {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    margin-top: 18px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+      color: $colorGrean;
+    }
+
+    span {
+      font-family: $Open;
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 400;
+      color: rgb(34, 34, 34, 1);
+    }
+  }
+
+  &__offer-houses {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    margin-top: 15px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+      color: $colorGrean;
+    }
+
+    span {
+      font-family: $Open;
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 400;
+      color: rgb(34, 34, 34, 1);
+    }
+  }
+
+  &__offer-price {
     margin-top: 25px;
     font-family: $Open;
     font-size: 24px;
@@ -434,7 +425,7 @@ body{
     font-weight: 400;
   }
 
-  &__offer-description{
+  &__offer-description {
     margin-top: 8px;
     font-family: $Open;
     font-size: 12px;
@@ -443,19 +434,19 @@ body{
     color: rgb(153, 153, 153, 1);
   }
 
-  &__offer-people{
+  &__offer-people {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
     margin-top: 2px;
 
-    @include phone{
-          margin-top: 10px;
-    margin-left: -6px;
+    @include phone {
+      margin-top: 10px;
+      margin-left: -6px;
     }
   }
 
-  &__offer-item{
+  &__offer-item {
     padding: 2px 10px;
     border: 1px solid rgb(226, 226, 226, 1);
     border-radius: 6px;
@@ -467,10 +458,9 @@ body{
     color: var(--text, rgb(34, 34, 34, 1));
     background: rgb(255, 255, 255, 1);
     box-shadow: 0 2px 3px 0 rgb(0, 0, 0, 0.1);
-
   }
 
-  &__offer-total{
+  &__offer-total {
     display: flex;
     margin-top: 31px;
     font-family: $Open;
@@ -478,12 +468,12 @@ body{
     line-height: 33px;
     font-weight: 400;
 
-    @include phone{
-          margin-top: 30px;
-    margin-left: -6px;
+    @include phone {
+      margin-top: 30px;
+      margin-left: -6px;
     }
 
-    span{
+    span {
       margin-top: -4px;
       margin-left: 8px;
       font-size: 24px;
@@ -491,7 +481,7 @@ body{
     }
   }
 
-  &__offer-button{
+  &__offer-button {
     cursor: pointer;
     width: 100%;
     margin-top: 11px;
@@ -506,40 +496,38 @@ body{
     text-transform: uppercase;
     background: var(--primary, rgb(246, 133, 33, 1));
 
-    @include phone{
-          margin-top: 10px;
-    margin-left: -4px;
+    @include phone {
+      margin-top: 10px;
+      margin-left: -4px;
     }
-
-    
   }
 
   &__offer-policy {
-  display: flex;
-  margin-top: 17px;
-  font-family: $Open;
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: 400;
-  color: rgb(153, 153, 153, 1);
+    display: flex;
+    margin-top: 17px;
+    font-family: $Open;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: rgb(153, 153, 153, 1);
 
-  svg {
-    flex-shrink: 0;
-    width: 18px;
-    height: 18px;
-    margin-right: 8px;
-  }
+    svg {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      margin-right: 8px;
+    }
 
-  div {
-    flex: 1;
+    div {
+      flex: 1;
 
-    span{
-      color: rgb(85, 85, 85, 1);
+      span {
+        color: rgb(85, 85, 85, 1);
+      }
     }
   }
-  }
 
-  &__title{
+  &__title {
     font-family: $Open;
     font-size: 18px;
     line-height: 25px;
@@ -547,7 +535,7 @@ body{
     color: rgb(34, 34, 34, 1);
   }
 
-  &__description{
+  &__description {
     margin-top: 16px;
     font-family: $Open;
     font-size: 14px;
@@ -556,36 +544,34 @@ body{
     color: rgb(85, 85, 85, 1);
   }
 
-  &__info-list{
+  &__info-list {
     display: flex;
     gap: 76px;
     margin-top: 47px;
 
-    @include phone{
+    @include phone {
       flex-direction: column;
       gap: 32px;
-      
     }
-
   }
 
-  &__column{
+  &__column {
     display: flex;
     flex-direction: column;
     gap: 32px;
   }
 
-  &__info-wrapper{
-    @include phone{
-      padding: 0 23px 0 17px; 
+  &__info-wrapper {
+    @include phone {
+      padding: 0 23px 0 17px;
     }
   }
 
-  &__info-item{
+  &__info-item {
     max-width: 292px;
   }
 
-  &__info-title{
+  &__info-title {
     font-family: $Open;
     font-size: 18px;
     line-height: 25px;
@@ -593,7 +579,7 @@ body{
     color: rgb(34, 34, 34, 1);
   }
 
-  &__info-text{
+  &__info-text {
     margin-top: 16px;
     font-family: $Open;
     font-size: 14px;
@@ -602,7 +588,7 @@ body{
     color: rgb(85, 85, 85, 1);
   }
 
-  &__info-ul{
+  &__info-ul {
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -620,7 +606,7 @@ body{
     }
 
     li::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 12px;
       left: 0;
@@ -628,62 +614,60 @@ body{
       height: 1px;
       background: #999;
     }
-
   }
 
   &__advantages {
     margin-top: 26px;
-        padding: 19px 10px 25px 22px;
-  border: 3px solid var(--primary, rgb(246, 133, 33, 1));
-  border-radius: 8px;
+    padding: 19px 10px 25px 22px;
+    border: 3px solid var(--primary, rgb(246, 133, 33, 1));
+    border-radius: 8px;
     box-sizing: border-box;
-  background: rgb(255, 255, 255, 1);
+    background: rgb(255, 255, 255, 1);
 
-  @include phone{
-    margin-top: 0;
-    margin-right: 29px;
-        margin-left: 11px;
-        padding: 15px 10px 20px 17px
-  }
+    @include phone {
+      margin-top: 0;
+      margin-right: 29px;
+      margin-left: 11px;
+      padding: 15px 10px 20px 17px;
+    }
   }
 
-  &__advantages-list{
+  &__advantages-list {
     display: flex;
     flex-direction: column;
     gap: 14px;
     margin-top: 23px;
 
-    @include phone{
+    @include phone {
       margin-top: 12px;
-
     }
   }
 
-  &__advantages-item{
+  &__advantages-item {
     display: flex;
     align-items: center;
     gap: 12px;
 
-    @include phone{
+    @include phone {
       align-items: start;
     }
 
-    svg{
+    svg {
       width: 24px;
       height: 24px;
     }
-     font-family: $Open;
+    font-family: $Open;
     font-size: 16px;
     line-height: 22px;
     font-weight: 700;
     color: var(--text, rgb(34, 34, 34, 1));
 
-    @include phone{
+    @include phone {
       font-size: 14px;
     }
   }
 
-  &__contact{
+  &__contact {
     width: 371px;
     height: auto;
     margin-top: 47px;
@@ -692,39 +676,37 @@ body{
     background: rgb(255, 255, 255, 1);
     box-shadow: 0 5px 10px 0 rgb(0, 0, 0, 0.1);
 
-    svg{
+    svg {
       width: 24px;
       height: 24px;
       color: $colorGrean;
     }
 
-    @include tablet-mini{
+    @include tablet-mini {
       margin-right: auto;
       margin-left: auto;
     }
 
-    @include phone{
+    @include phone {
       width: 100%;
-     margin-top: 64px;
-     padding: 15px 15px 23px;
+      margin-top: 64px;
+      padding: 15px 15px 23px;
     }
   }
 
-  &__advantages-title{
+  &__advantages-title {
     font-family: $Open;
     font-size: 18px;
     line-height: 25px;
     font-weight: 400;
     color: var(--text, rgb(34, 34, 34, 1));
 
-    @include phone{
+    @include phone {
       font-size: 16px;
     }
   }
 
-
-
-  &__contact-title{
+  &__contact-title {
     font-family: $Open;
     font-size: 18px;
     line-height: 25px;
@@ -732,19 +714,19 @@ body{
     color: rgb(34, 34, 34, 1);
   }
 
-  &__contact-name{
+  &__contact-name {
     margin-top: 18px;
     font-family: $Open;
     font-size: 16px;
     line-height: 25px;
     font-weight: 400;
 
-    b{
+    b {
       font-size: 18px;
     }
   }
 
-  &__contact-img{
+  &__contact-img {
     width: 100%;
     height: auto;
     margin-top: 14px;
@@ -753,7 +735,7 @@ body{
   &__contact-phone,
   &__contact-email,
   &__contact-message,
-  &__contact-time{
+  &__contact-time {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -765,41 +747,39 @@ body{
     color: rgb(34, 34, 34, 1);
   }
 
-  &__contact-time{
+  &__contact-time {
     font-size: 14px;
   }
 
-  &__similar{
-      position: relative;
-      padding: 70px 77px 50px 97px;
+  &__similar {
+    position: relative;
+    padding: 70px 77px 50px 97px;
 
-      @include phone{
+    @include phone {
       padding: 59px 13px 0 7px;
-        
-      }
     }
+  }
 
-    &__similar-title{
-      font-family: $Open;
-      font-size: 26px;
-      line-height: 35px;
-      letter-spacing: 0.6px;
-      font-weight: 400;
-      color: rgb(34, 34, 34, 1);
-      text-align: center;
-      text-transform: uppercase;
+  &__similar-title {
+    font-family: $Open;
+    font-size: 26px;
+    line-height: 35px;
+    letter-spacing: 0.6px;
+    font-weight: 400;
+    color: rgb(34, 34, 34, 1);
+    text-align: center;
+    text-transform: uppercase;
+  }
 
-    }
-
-  &__similar-list{
+  &__similar-list {
     display: flex;
     gap: 26px;
     margin-top: 40px;
 
-    .swiper-slide{
+    .swiper-slide {
       width: 380px;
 
-      @include phone{
+      @include phone {
         width: 100% !important;
         margin-top: 0;
       }
@@ -807,10 +787,10 @@ body{
   }
 }
 
-.hotel__card-pin{
-    width: 10px;
-    height: 14px;
-  }
+.hotel__card-pin {
+  width: 10px;
+  height: 14px;
+}
 
 .guests {
   position: relative;
@@ -820,19 +800,18 @@ body{
   margin-top: 32px;
   background-color: white;
 
-  @include phone{
+  @include phone {
     margin-top: 22px;
     margin-left: -4px;
   }
 
-  label{
-font-family: $Open;
-font-size: 16px;
-line-height: 22px;
-font-weight: 400;
+  label {
+    font-family: $Open;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
     color: rgb(85, 85, 85, 1);
   }
- 
 }
 
 .dropdown {
@@ -858,9 +837,8 @@ font-weight: 400;
   }
 
   @include phone {
-        padding: 8px 5px 7px 14px;
+    padding: 8px 5px 7px 14px;
     font-size: 10px;
-
   }
 }
 
@@ -868,33 +846,37 @@ font-weight: 400;
   position: relative;
   z-index: 2;
   width: 100%;
-    font-family: $Open;
-    font-size: 16px;
-    line-height: 22px;
-    font-weight: 400;
+  font-family: $Open;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
   color: rgb(34, 34, 34, 1);
   text-align: start;
 }
 
-.swiper-button-next{
-      right: 23px !important;
+.swiper-button-next {
+  right: 23px !important;
 }
 
 .swiper-button-prev {
   left: 23px !important;
+  svg {
+    transform: rotate(180deg);
+  }
 }
 
-.swiper__hotdeals-next, .swiper__hotdeals-prev{
-    top: 44.5%;
-    width: 48px;
-    height: 48px;
-    padding: 16px;
-    border-radius: 50px;
-    color: green;
-    background: rgb(0, 128, 0, 0.2);
+.swiper__hotdeals-next,
+.swiper__hotdeals-prev {
+  position: absolute;
+  top: 44.5%;
+  width: 48px;
+  height: 48px;
+  padding: 16px;
+  border-radius: 50px;
+  color: green;
+  background: rgb(0, 128, 0, 0.2);
 
-    @include phone{
-      background: rgb(255, 255, 255, 1);
-    }
+  @include phone {
+    background: rgb(255, 255, 255, 1);
+  }
 }
-

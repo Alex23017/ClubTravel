@@ -47,7 +47,7 @@
   max-width: 100%;
   height: 250px;
   border-top-left-radius: 10px;
-  border-top-right-radius:10px;
+  border-top-right-radius: 10px;
 }
 .winter__footer {
   display: flex;
@@ -148,7 +148,7 @@
 }
 
 @media (max-width: 600px) {
-  .winter__header{
+  .winter__header {
     gap: 14px;
     margin-block-end: 39px;
   }
@@ -172,7 +172,6 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     position: relative;
-   
   }
   .winter__town-text {
     margin-inline-start: 2px;
@@ -190,9 +189,10 @@
   .wintertours {
     .swiper__winter-next,
     .swiper__winter-prev {
+      z-index: 50;
       display: block;
       position: absolute;
-      top: 42.6%;
+      top: 38.5%;
       width: 48px;
       height: 48px;
       padding: 18px;
@@ -200,9 +200,16 @@
       border-radius: 100%;
       background-color: $colorWhite;
       color: $colorGreen;
+      svg {
+          margin-top: -3px;
+      }
     }
     .swiper__winter-prev {
       left: 22px !important;
+      svg {
+        transform: rotate(180deg);
+       
+      }
     }
   }
 }

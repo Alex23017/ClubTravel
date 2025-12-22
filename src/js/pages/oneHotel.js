@@ -14,7 +14,6 @@ import hotDealsCard from '../../html/components/home/hotDealsCard.html';
 const params = new URLSearchParams(window.location.search);
 const hotelId = params.get('id');
 
-console.log('Hotel ID:', hotelId);
 
 const dataHotel = await getHotelById(hotelId)
 export function renderHotelOffers() {

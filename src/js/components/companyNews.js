@@ -4,47 +4,56 @@ if (document.querySelector('[data-component="companyNews"]')) {
 }
 import 'swiper/css'
 import 'swiper/css/pagination'
-import { Navigation, Pagination } from 'swiper/modules'
-import Swiper from 'swiper'
 import companyCard from '../../html/components/home/companyCard.html'
 import { getCompanyNews } from '../api/service/companyNews.js'
 
-function sliderInit() {
+async function sliderInit() {
   const slider = document.querySelector('.mySwiperNews')
+  if (!slider) return
 
-  if (slider) {
-    new Swiper('.mySwiperNews', {
-      modules: [Navigation, Pagination],
-      loop: true,
-      slidesPerView: 3,
-      spaceBetween: 28,
+ 
+  const [{ default: Swiper }, { Navigation, Pagination }] = await Promise.all([
+    import('swiper'),
+    import('swiper/modules'),
+  ])
 
-      navigation: {
-        nextEl: '.swiper__news-next',
-        prevEl: '.swiper__news-prev',
-      },
+  await import('swiper/css')
+  await import('swiper/css/pagination')
 
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
+  new Swiper(slider, {
+    modules: [Navigation, Pagination],
+    loop: true,
+    slidesPerView: 3,
+    spaceBetween: 28,
+    speed: 600,
+
+    navigation: {
+      nextEl: '.swiper__news-next',
+      prevEl: '.swiper__news-prev',
+    },
+
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 0,
       },
-      breakpoints: {
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 0,
-        },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 28,
-        },
-        1200: {
-          slidesPerView: 3,
-          spaceBetween: 28,
-        },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 28,
       },
-    })
-  }
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 28,
+      },
+    },
+  })
 }
+
 const data = await getCompanyNews()
 
 export function renderOffer() {
