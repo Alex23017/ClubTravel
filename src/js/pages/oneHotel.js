@@ -1,7 +1,7 @@
 import 'swiper/css'
 import 'swiper/css/pagination'
 import '../../styles/base/main.scss'
-import '/styles/pages/oneHotel.scss';
+import '../../styles/pages/oneHotel.scss';
 import '../../styles/pages/tourRequest.scss'
 import { Navigation, Pagination } from 'swiper/modules'
 import OfferCard from '../../html/components/oneHotel/oneHotelOffer.html';
