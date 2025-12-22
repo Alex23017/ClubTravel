@@ -1,7 +1,6 @@
 import { API_VARIABLES } from '../variables.js'
 import { getPublicResource } from '../api'
-import { skeleton } from '../../main.js'
-
+import { skeleton } from '../../components/skeleton.js';
 export async function getCompanyNews() {
   try {
     const res = await getPublicResource(`${API_VARIABLES.BASE_URL}/api/company-news?populate=*`)

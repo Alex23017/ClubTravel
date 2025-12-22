@@ -1,6 +1,7 @@
 import { API_VARIABLES } from '../variables.js';
 import { getPublicResource } from '../api';
-import { skeleton } from '../../main.js';
+import { skeleton } from '../../components/skeleton.js';
+
 
 
 
