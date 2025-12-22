@@ -15,11 +15,12 @@ const partialDirs = [
   path.resolve(__dirname, 'src/html/components/resultSearch'),
   path.resolve(__dirname, 'src/html/components/authorization'),
   path.resolve(__dirname, 'src/html/components/profile'),
+  path.resolve(__dirname, 'src/html/components/skeleton'),
 ]
 
 export default defineConfig({
   root: 'src',
-  base: '/ClubTravel/',
+  // base: '/ClubTravel/',
   appType: 'mpa',
   plugins: [
     hulakPlugins({
