@@ -130,8 +130,10 @@
 .company__news {
   .swiper__news-next,
   .swiper__news-prev {
+    position: absolute;
+    z-index: 50;
     top: 10%;
-    top: 41.5%;
+    top: 38%;
     width: 48px;
     height: 48px;
     background: rgba(0, 128, 0, 0.2);
@@ -141,6 +143,9 @@
     &:active {
       transform: translateY(2px);
     }
+    svg {
+      margin-top: -3px;
+    }
   }
 }
 
@@ -149,6 +154,9 @@
 }
 .company__news .swiper__news-prev {
   left: 10px;
+  svg {
+    transform: rotate(180deg);
+  }
 }
 
 .company__footer {
@@ -241,7 +249,6 @@
   .hotdeals__subtitle.company__subtitle {
     padding-inline-start: 12px;
     line-height: 130%;
- 
   }
   .news__img {
     border: inherit;
@@ -252,7 +259,7 @@
     top: 30px;
   }
   .company__news .swiper__news-next {
-    top: 56%;
+    top: 52.5%;
     width: 48px;
     height: 48px;
     padding: 18px;
@@ -260,7 +267,7 @@
     background-color: $colorWhite;
   }
   .company__news .swiper__news-prev {
-    top: 56%;
+    top: 52.5%;
     width: 48px;
     height: 48px;
     padding: 18px;

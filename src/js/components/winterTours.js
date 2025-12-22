@@ -3,11 +3,6 @@ if (document.querySelector('[data-component="winterTours"]')) {
   import('/styles/base/reset.scss')
 }
 
-import 'swiper/css'
-import 'swiper/css/pagination'
-
-import { Navigation, Pagination } from 'swiper/modules'
-import Swiper from 'swiper'
 if (document.querySelector('[data-component="hotDeals"]')) {
   import('/styles/components/hotDeals.scss')
   import('/styles/base/reset.scss')
@@ -15,44 +10,50 @@ if (document.querySelector('[data-component="hotDeals"]')) {
 import { getWinterTours } from '../api/service/winterTours.js'
 import winterToursCard from '../../html/components/home/winterToursCard.html'
 
-function sliderInit() {
+async function sliderInit() {
   const slider = document.querySelector('.mySwiperWinterTours')
+  if (!slider) return
+  const [{ default: Swiper }, { Navigation, Pagination }] = await Promise.all([
+    import('swiper'),
+    import('swiper/modules'),
+  ])
 
-  if (slider) {
-    new Swiper('.mySwiperWinterTours', {
-      modules: [Navigation, Pagination],
-      loop: true,
-      slidesPerView: 4,
-      spaceBetween: 25,
+  await import('swiper/css')
+  await import('swiper/css/pagination')
 
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
+  new Swiper('.mySwiperWinterTours', {
+    modules: [Navigation, Pagination],
+    loop: true,
+    slidesPerView: 4,
+    spaceBetween: 25,
+
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper__winter-next',
+      prevEl: '.swiper__winter-prev',
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 15,
       },
-        navigation: {
-        nextEl: '.swiper__winter-next',
-        prevEl: '.swiper__winter-prev',
+      500: {
+        slidesPerView: 2,
+        spaceBetween: 28,
       },
-      breakpoints: {
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 15,
-        },
-        500: {
-          slidesPerView: 2,
-          spaceBetween: 28,
-        },
-        768: {
-          slidesPerView: 3,
-          spaceBetween: 28,
-        },
-        1200: {
-          slidesPerView: 4,
-          spaceBetween: 20,
-        },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 28,
       },
-    })
-  }
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
+    },
+  })
 }
 const data = await getWinterTours()
 
