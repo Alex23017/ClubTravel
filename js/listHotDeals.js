@@ -1,5 +1,5 @@
 const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["css/listHotDeals.css","css/reset.css"])))=>i.map(i=>d[i]);
-import{_}from"./main2.js";import{g as f}from"./listHotel.js";/* empty css             *//* empty css     */import"./variables.js";import"./api.js";import"./skeleton.js";document.querySelector('[data-component="listHotDeals"]')&&(_(()=>Promise.resolve({}),__vite__mapDeps([0])),_(()=>Promise.resolve({}),__vite__mapDeps([1])));const h=await f();function g(s){const t=s.target.closest(".href__button-select");if(!t)return;const e=t.dataset.id;e&&(window.location.href=`/ClubTravel/html/pages/oneHotel.html?id=${e}`)}const a=document.querySelector(".hotdeals__render"),n=document.querySelector(".hotdeals__render-mob");a&&a.addEventListener("click",g);function y(){if(!a||!n)return;const s=t=>{let e="";for(let l=0;l<t;l++)e+='<svg class="hotdeals__category-star"><use xlink: href = "#icon-star-shiny" ></ ></svg > ';return e};h.forEach(t=>{const e=t.img[0].url,l=t.openList.map(o=>{const v=(o.openListSelect||[]).map(i=>`
+import{_}from"./main2.js";import{g as h}from"./listHotel.js";/* empty css             *//* empty css     */import"./variables.js";import"./api.js";import"./skeleton.js";document.querySelector('[data-component="listHotDeals"]')&&(_(()=>Promise.resolve({}),__vite__mapDeps([0])),_(()=>Promise.resolve({}),__vite__mapDeps([1])));const n=await h();function g(s){const t=s.target.closest(".href__button-select");if(!t)return;const e=t.dataset.id;e&&(window.location.href=`/ClubTravel/html/pages/oneHotel.html?id=${e}`)}const a=document.querySelector(".hotdeals__render"),d=document.querySelector(".hotdeals__render-mob");a&&a.addEventListener("click",g);function y(){if(!n||!a||!d)return;const s=t=>{let e="";for(let l=0;l<t;l++)e+='<svg class="hotdeals__category-star"><use xlink: href = "#icon-star-shiny" ></ ></svg > ';return e};n.forEach(t=>{const e=t.img[0].url,l=t.openList.map(o=>{const f=(o.openListSelect||[]).map(i=>`
         <div class="list__select">
           <div class="list__select-hotel">
             <p class="list__hotel">→ ${i.hotel}</p>
@@ -21,7 +21,7 @@ import{_}from"./main2.js";import{g as f}from"./listHotel.js";/* empty css       
             <p class="list__button-select" data-default="Выбрать">Выбрать</p>
           </div>
 
-          ${v}
+          ${f}
 
           <div class="list__body-hotel">
             <p class="list__hotel">${o.hotel}</p>
@@ -69,7 +69,7 @@ import{_}from"./main2.js";import{g as f}from"./listHotel.js";/* empty css       
         </div>
       </div>
 
-    `,u=`
+    `,v=`
       <div class="list__container">
       <img src=${e} alt="card">
       <p>${t.title}</p>
@@ -79,6 +79,6 @@ import{_}from"./main2.js";import{g as f}from"./listHotel.js";/* empty css       
     </svg>
     </div>
       </div>
-    `;a.insertAdjacentHTML("beforeend",c),n.insertAdjacentHTML("beforeend",u)})}y();document.querySelectorAll(".list__container");const d=document.querySelectorAll(".list__button"),p=document.querySelectorAll(".list__button-close");p&&p.forEach(s=>{s.addEventListener("click",()=>{const t=s.closest(".list__container");t&&t.classList.remove("active"),s.classList.remove("active")})});d&&d.forEach(s=>{s.addEventListener("click",()=>{const t=s.closest(".list__container");t&&(t.classList.toggle("active"),s.classList.toggle("active")),s.classList.contains("active")?(s.textContent="Закрыть",s.style.color="black"):(s.textContent="Открыть",s.style.color="")})});const r=document.querySelectorAll(".list__button-select"),m=document.querySelectorAll(".list__body-close");r.forEach(s=>s.dataset.default=s.textContent);r.forEach(s=>{s.addEventListener("click",()=>{r.forEach(c=>{c.classList.remove("active"),c.innerHTML=c.dataset.default}),document.querySelector(".list__body-category").classList.toggle("open"),s.classList.add("active"),s.innerHTML=`<span>Открыть предложения</span>  <svg class='list__arrow-close'>
+    `;a.insertAdjacentHTML("beforeend",c),d.insertAdjacentHTML("beforeend",v)})}y();document.querySelectorAll(".list__container");const p=document.querySelectorAll(".list__button"),u=document.querySelectorAll(".list__button-close");u&&u.forEach(s=>{s.addEventListener("click",()=>{const t=s.closest(".list__container");t&&t.classList.remove("active"),s.classList.remove("active")})});p&&p.forEach(s=>{s.addEventListener("click",()=>{const t=s.closest(".list__container");t&&(t.classList.toggle("active"),s.classList.toggle("active")),s.classList.contains("active")?(s.textContent="Закрыть",s.style.color="black"):(s.textContent="Открыть",s.style.color="")})});const r=document.querySelectorAll(".list__button-select"),m=document.querySelectorAll(".list__body-close");r.forEach(s=>s.dataset.default=s.textContent);r.forEach(s=>{s.addEventListener("click",()=>{r.forEach(c=>{c.classList.remove("active"),c.innerHTML=c.dataset.default}),document.querySelector(".list__body-category").classList.toggle("open"),s.classList.add("active"),s.innerHTML=`<span>Открыть предложения</span>  <svg class='list__arrow-close'>
             <use xlink:href='#icon-arrowClose'></use>
             </svg>`;const t=s.closest(".list__open");if(!t)return;t.querySelectorAll(".list__body-select").forEach(c=>c.classList.remove("active"));const l=s.closest(".list__body-select");l&&l.classList.add("active")})});m.forEach(s=>{s.addEventListener("click",()=>{const t=s.closest(".list__body-select");t&&t.classList.remove("active"),document.querySelectorAll(".list__body-category").forEach(e=>e.classList.remove("open")),r.forEach(e=>{e.classList.remove("active"),e.innerHTML=e.dataset.default})})});
