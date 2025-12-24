@@ -92,7 +92,7 @@ export function renderOffer() {
            <div class="price__title"><p>Стоимость</p></div>
             <div class="price__info"><p>${open.priceOpen}€/чел</p></div>
           </div>
-         <div class="link__info"><p data-id='${item.documentId}'>Выбрать</p></div>
+         <div class="link__info"><p> data-id='${item.documentId}'>Выбрать</p></div>
         </div>
       </div>
     `
