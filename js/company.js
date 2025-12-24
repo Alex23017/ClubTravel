@@ -1,1 +1,1 @@
-import"./oneHotelOffer.js";import"./main2.js";import"./authorization2.js";/* empty css           *//* empty css            */import{g as r,r as m}from"./companyNews2.js";import"./api.js";/* empty css       *//* empty css          */import"./variables.js";import"./skeleton.js";await r();m();
+import"./main2.js";import"./authorization2.js";/* empty css           *//* empty css            */import{g as r,r as m}from"./companyNews2.js";import"./api.js";/* empty css       *//* empty css          */import"./variables.js";import"./skeleton.js";await r();m();
