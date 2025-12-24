@@ -4,7 +4,7 @@ export async function sendRessetPassword(email) {
   console.log(email)
 
   await axios
-    .post('https://dedicated-star-3092d214b1.strapiapp.com/api/auth/forgot-password', {
+    .post('https://natural-blessing-879c2058f8.strapiapp.com/api/auth/forgot-password', {
       email: `${email}`,
     })
     .then(response => {

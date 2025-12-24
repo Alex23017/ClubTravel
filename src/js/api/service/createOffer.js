@@ -5,7 +5,7 @@ export async function addUserOrder(userId, newOrder) {
 
   try {
     const res = await axios.post(
-      'https://dedicated-star-3092d214b1.strapiapp.com/api/orders',
+      'https://natural-blessing-879c2058f8.strapiapp.com/api/orders',
       { data: newOrder },
       {
         headers: {

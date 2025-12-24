@@ -46,7 +46,7 @@ async function register(event) {
     return
   }
 
-  const res = await postPublicResource('https://dedicated-star-3092d214b1.strapiapp.com/api/auth/local/register', {
+  const res = await postPublicResource('https://natural-blessing-879c2058f8.strapiapp.com/api/auth/local/register', {
     username: jsonData.email,
     email: jsonData.email,
     password: jsonData.password,
@@ -71,7 +71,7 @@ async function login(event) {
   const data = Object.fromEntries(formData)
 
   try {
-    const res = await postPublicResource('https://dedicated-star-3092d214b1.strapiapp.com/api/auth/local', {
+    const res = await postPublicResource('https://natural-blessing-879c2058f8.strapiapp.com/api/auth/local', {
       identifier: data.identifier,
       password: data.password,
     })
