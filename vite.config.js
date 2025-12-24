@@ -71,7 +71,7 @@ export default defineConfig({
       input: {
         main: path.resolve(__dirname, 'src/index.html'),
         hotdeals: path.resolve(__dirname, 'src/html/pages/hotdeals.html'),
-        nofFOunt: path.resolve(__dirname, 'src/html/pages/404.html'),
+        notFount: path.resolve(__dirname, 'src/html/pages/404.html'),
         authorization: path.resolve(__dirname, 'src/html/pages/authorization.html'),
         company: path.resolve(__dirname, 'src/html/pages/company.html'),
         contacts: path.resolve(__dirname, 'src/html/pages/contacts.html'),
