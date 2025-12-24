@@ -9,7 +9,6 @@ const tabFromUrl = params.get('tab')
 
 // Перевірка чи юзей залогінений якщо так - переходим в кабінет
 document.addEventListener('DOMContentLoaded', () => {
-  
   function isLoggedIn() {
     return localStorage.getItem('Logged') === 'true'
   }
@@ -47,7 +46,7 @@ async function register(event) {
     return
   }
 
-  const res = await postPublicResource('https://deserving-apparel-f938801c39.strapiapp.com/api/auth/local/register', {
+  const res = await postPublicResource('https://dedicated-star-3092d214b1.strapiapp.com/api/auth/local/register', {
     username: jsonData.email,
     email: jsonData.email,
     password: jsonData.password,
@@ -58,7 +57,6 @@ async function register(event) {
     return
   }
 
-  
   window.location.replace('/ClubTravel/html/pages/authorization.html?tab=authorization')
 }
 if (registerForm) {
@@ -73,7 +71,7 @@ async function login(event) {
   const data = Object.fromEntries(formData)
 
   try {
-    const res = await postPublicResource('https://deserving-apparel-f938801c39.strapiapp.com/api/auth/local', {
+    const res = await postPublicResource('https://dedicated-star-3092d214b1.strapiapp.com/api/auth/local', {
       identifier: data.identifier,
       password: data.password,
     })
