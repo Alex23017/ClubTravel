@@ -35,10 +35,20 @@ function sliderInit() {
 }
 const data = await getResultSearch()
 
-export function renderOffer() {
-  const container = document.querySelector('.result__container')
-  if (!container) return
+function onSelectHotelClick(e) {
+  const btn = e.target.closest('.button__search-select')
+  if (!btn) return
+  const id = btn.dataset.id
+  if (!id) return
+  window.location.href = `/ClubTravel/html/pages/oneHotel.html?id=${id}`
+}
 
+const container = document.querySelector('.result__container')
+if (container) {
+  container.addEventListener('click', onSelectHotelClick)
+}
+
+export function renderOffer() {
   const getStarsHtml = category => {
     let stars = ''
     for (let i = 0; i < category; i++) {
@@ -82,7 +92,7 @@ export function renderOffer() {
            <div class="price__title"><p>Стоимость</p></div>
             <div class="price__info"><p>${open.priceOpen}€/чел</p></div>
           </div>
-         <div class="link__info"><a href="">Выбрать</a></div>
+         <div class="link__info"><p class='button__search-select' data-id='${item.documentId}'>Выбрать</p></div>
         </div>
       </div>
     `

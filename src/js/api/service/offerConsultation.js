@@ -6,7 +6,7 @@ export async function addUserConsultation(newOrder) {
 
   try {
     const res = await axios.post(
-    //   'https://deserving-apparel-f938801c39.strapiapp.com/api/offer-consultation',
+    //   'https://dedicated-star-3092d214b1.strapiapp.com/api/offer-consultation',
       'http://localhost:1337/api/offer-consultations',
 
       { data: newOrder },
