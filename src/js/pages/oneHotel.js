@@ -1,37 +1,46 @@
 import 'swiper/css'
 import 'swiper/css/pagination'
 import '../../styles/base/main.scss'
-import '../../styles/pages/oneHotel.scss';
+import '../../styles/pages/oneHotel.scss'
 import '../../styles/pages/tourRequest.scss'
 import { Navigation, Pagination } from 'swiper/modules'
-import OfferCard from '../../html/components/oneHotel/oneHotelOffer.html';
+import OfferCard from '../../html/components/oneHotel/oneHotelOffer.html'
 import Swiper from 'swiper'
-import { addUserOrder } from '../api/service/createOffer.js';
-import {getHotelById} from '../api/service/hotels';
-import {getListHotel} from '../api/service/listHotel.js'
+import { addUserOrder } from '../api/service/createOffer.js'
+import { getHotelById, getHotelByIdSearch } from '../api/service/hotels'
+import { getListHotel } from '../api/service/listHotel.js'
 
+import hotDealsCard from '../../html/components/home/hotDealsCard.html'
 
-import hotDealsCard from '../../html/components/home/hotDealsCard.html';
+const params = new URLSearchParams(window.location.search)
+const hotelId = params.get('id')
 
-const params = new URLSearchParams(window.location.search);
-const hotelId = params.get('id');
+let dataHotel = null
+let dataSearch = null
 
+if (hotelId) {
+  dataHotel = await getHotelById(hotelId)
+  if (!dataHotel) {
+    dataSearch = await getHotelByIdSearch(hotelId)
+  }
+}
 
-const dataHotel = await getHotelById(hotelId)
 export function renderHotelOffers() {
-    const container = document.querySelector('.hotel__offer');
-    if (!container) return;
-    // console.log(dataHotel);
-    
-    const offerCard = OfferCard({
+  const container = document.querySelector('.hotel__offer')
+  if (!container) return
+
+  const source = dataHotel || dataSearch
+
+  if (!source) return
+
+  const offerCard = OfferCard({
     night: 7,
-    from: dataHotel.from,
-    food: dataHotel.food,
-    houses: dataHotel.houses,
-    prices: dataHotel.price,
-    })
-    return container.appendChild(offerCard)
-    ;
+    from: source.from ?? source.town,
+    food: source.food ?? 'Завтраки',
+    houses: source.package ?? 'Стандарт',
+    prices: source.price ?? source.price,
+  })
+  return container.appendChild(offerCard)
 }
 
 const data = await getListHotel()
@@ -98,42 +107,41 @@ export function renderOffer() {
 
     container.appendChild(offerCard)
   })
-
-
 }
-renderHotelOffers()
-sliderInit()
-renderOffer()
 
+renderHotelOffers()
+renderOffer()
+sliderInit()
 
 async function createOffer() {
+  const number = Date.now()
+  const date = new Date().toISOString()
 
-    const number = Date.now(); 
-    const date = new Date().toISOString(); 
+  const userId = localStorage.getItem('userId')
 
-    const userId = localStorage.getItem('userId');
+  if (!userId) {
+    console.log('не авторизований користувач')
+    window.location.href = '/ClubTravel/html/pages/authorization.html?tab=authorization'
+    return
+  }
 
-    if (!userId) {
-        console.log('не авторизований користувач');
-         window.location.href = '/ClubTravel/html/pages/authorization.html?tab=authorization'
-        return;
-    }
+  const newOrder = {
+    orderNumber: number,
+    orderPrice: 679,
+    orderStatus: false,
+    orderDate: date,
+    users_permissions_user: userId,
+  }
 
-    const newOrder = {
-                    orderNumber: number,
-                    orderPrice: 679,
-                    orderStatus: false,
-                    orderDate: date,
-                    users_permissions_user: userId,
-    };
-
-    try {
-        await addUserOrder(userId, newOrder);
-        console.log('замовлення додано');
-    } catch (err) {
-        console.log('error:', err);
-    }
+  try {
+    await addUserOrder(userId, newOrder)
+    console.log('замовлення додано')
+  } catch (err) {
+    console.log('error:', err)
+  }
 }
 
-const btn = document.querySelector('.hotel__offer-button');
-btn.addEventListener('click', createOffer);
+const btn = document.querySelector('.hotel__offer-button')
+if (btn) {
+  btn.addEventListener('click', createOffer)
+}

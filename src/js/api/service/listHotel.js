@@ -1,6 +1,6 @@
 import { API_VARIABLES } from '../variables.js'
 import { getPublicResource } from '../api'
-import { skeleton } from '../../components/skeleton.js';
+import { skeleton } from '../../components/skeleton.js'
 export async function getListHotel() {
   try {
     const res = await getPublicResource(
@@ -12,6 +12,8 @@ export async function getListHotel() {
 
     return res.data
   } catch (error) {
-    console.error('Error fetching list hotels:', error)
+    if (error.res && error.res.status === 404) {
+      return null
+    }
   }
 }

@@ -5,6 +5,7 @@ if (document.querySelector('[data-component="hotDeals"]')) {
 import { getListHotel } from '../api/service/listHotel.js'
 import hotDealsCard from '../../html/components/home/hotDealsCard.html'
 
+
 export async function sliderInit() {
   const slider = document.querySelector('.mySwiperHotDeals')
   if (!slider) return
@@ -52,6 +53,7 @@ export async function sliderInit() {
 const data = await getListHotel()
 function onHotelClick(e) {
   const id = e.currentTarget.dataset.id
+  if (!id) return null
   window.location.href = `/ClubTravel/html/pages/oneHotel.html?id=${id}`
 }
 

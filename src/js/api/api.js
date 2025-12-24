@@ -41,14 +41,17 @@ export async function getPublicResource(url) {
       headers: {
         'Content-Type': 'application/json',
       },
+      validateStatus: status => status < 500,
     })
+    if (res.status === 404) {
+      return null
+    }
     return res.data
   } catch (error) {
     const status = error.response?.status || 'NO_STATUS'
     throw new Error(`Could not fetch ${url}, status: ${status}`)
   }
 }
-
 
 export async function postPublicResource(url, data = {}) {
   try {

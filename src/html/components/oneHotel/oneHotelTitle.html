@@ -1,9 +1,10 @@
 <div class="hotel__card-wrapper">
-    <div class="hotel__card-name">
-      {{name}}
+  <div class="hotel__card-name">
+    <p>{{name}}</p>
+
     <div class="hotel__card-more">
       <svg>
-        <use xlink:href='#icon-plus-shiny'></use>
+        <use xlink:href="#icon-plus-shiny"></use>
       </svg>
     </div>
     <div class="hotel__card-stars">
@@ -11,10 +12,9 @@
     </div>
   </div>
   <div class="hotel__card-location">
-   
     <svg class="hotel__card-pin">
-        <use xlink:href='#icon-pin-grean'></use>
-      </svg>
-      {{address}}
+      <use xlink:href="#icon-pin-grean"></use>
+    </svg>
+    {{address}}
   </div>
 </div>

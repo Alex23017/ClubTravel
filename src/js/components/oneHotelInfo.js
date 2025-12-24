@@ -1,5 +1,5 @@
+import { getHotelById, getHotelByIdSearch } from '../api/service/hotels'
 import OneHotelInfo from '../../html/components/oneHotel/oneHotelInfo.html'
-import { getHotelById } from '../api/service/hotels';
 // const dataHotel = {
 //   hotelName: 'AMBASSADOR',
 //   address: 'Болгария, Золотые Пески',
@@ -80,46 +80,55 @@ import { getHotelById } from '../api/service/hotels';
 //     infoText: 'Гостиница находится в южной части курортного комплекса «Золотые пески» в нескольких минутах ходьбы от моря.',
 //   },
 
-
-
 // };
-const params = new URLSearchParams(window.location.search);
-const hotelId = params.get('id');
-const dataHotel = await getHotelById(hotelId);
- function  renderInfo(data) {
-  
-  
-  const container = document.querySelector('.hotel__info');
-  if (!container) return;
-  const lists = data.serviceLists.list;
-  const leftList = lists.slice(0, 3);
-  const rightList = lists.slice(3);
+const params = new URLSearchParams(window.location.search)
+const hotelId = params.get('id')
+
+let dataHotel = null
+let dataSearch = null
+
+if (hotelId) {
+  dataHotel = await getHotelById(hotelId)
+  if (!dataHotel) {
+    dataSearch = await getHotelByIdSearch(hotelId)
+  }
+}
+
+function renderInfo() {
+  const container = document.querySelector('.hotel__info')
+  if (!container) return
+
+  const source = dataHotel || dataSearch
+  if (!source) return
+
+  const lists = source.serviceLists?.list ?? []
+  const leftList = lists.slice(0, 3)
+  const rightList = lists.slice(3)
 
   function createInfoBlocks(list) {
-    return list.map(item => {
-      const ul = item.subServices.map(li => `<li>${li.name}</li>`).join('');
-      return `
+    return list
+      .map(item => {
+        const ul = item.subServices?.map(li => `<li>${li.name}</li>`).join('') ?? ''
+        return `
           <div class="hotel__info-item">
-            <div class="hotel__info-title">${item.title}</div>
+            <div class="hotel__info-title">${item.title ?? ''}</div>
             <ul class="hotel__info-ul">${ul}</ul>
           </div>
-        `;
-    })
-      .join('');
+        `
+      })
+      .join('')
   }
-  
-    const hotelInfo = OneHotelInfo({
-      title: data.serviceLists.position.name ,
-      description: data.serviceLists.position.description,
-      itemTitle: data.serviceLists.listPosition.name,
-      itemDescription: data.serviceLists.listPosition.description,
-      leftList: createInfoBlocks(leftList),
-      rightList: createInfoBlocks(rightList),
-  
-  
-    })
-    
-    container.appendChild(hotelInfo)
 
+  const hotelInfo = OneHotelInfo({
+    title: source.serviceLists?.position?.name ?? source.tittle ?? 'Без назви',
+    description: source.serviceLists?.position?.description ?? source.description ?? 'Опис відсутній',
+    itemTitle: source.serviceLists?.listPosition?.name ?? source.tittle ?? '',
+    itemDescription: source.serviceLists?.listPosition?.description ?? '',
+    leftList: createInfoBlocks(leftList),
+    rightList: createInfoBlocks(rightList),
+  })
+
+  container.appendChild(hotelInfo)
 }
-renderInfo(dataHotel);
+
+renderInfo()

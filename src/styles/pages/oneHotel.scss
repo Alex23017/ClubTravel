@@ -33,9 +33,9 @@ body {
 //         }
 //     }
 // }
-  picture{
-    height: 100%;
-  }
+picture {
+  height: 100%;
+}
 
 .hotel {
   position: relative;
@@ -76,6 +76,13 @@ body {
     line-height: 35px;
     font-weight: 700;
     color: var(--text, rgb(34, 34, 34, 1));
+
+    p {
+      white-space: nowrap;
+      max-width: 182px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
 
     @include phone {
       gap: 9px;

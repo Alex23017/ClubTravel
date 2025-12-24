@@ -1,31 +1,38 @@
-
 import OneHotelTitle from '../../html/components/oneHotel/oneHotelTitle.html'
-import { getHotelById } from '../api/service/hotels';
+import { getHotelById, getHotelByIdSearch } from '../api/service/hotels'
 
-const params = new URLSearchParams(window.location.search);
-const hotelId = params.get('id');
+const params = new URLSearchParams(window.location.search)
+const hotelId = params.get('id')
 
+let dataHotel = null
+let dataSearch = null
 
-const dataHotel = await getHotelById(hotelId);
-function renderCard(data) {
+if (hotelId) {
+  dataHotel = await getHotelById(hotelId)
+  if (!dataHotel) {
+    dataSearch = await getHotelByIdSearch(hotelId)
+  }
+}
 
-  const container = document.querySelector('.hotel__card');
-
-  if (!container) return;
-  let stars = '';
-  for (let i = 1; i < 3; i++) {
+function renderCard() {
+  const container = document.querySelector('.hotel__card')
+  if (!container) return
+  const source = dataHotel || dataSearch
+  if (!source) return
+  const starCount = source.stars ?? source.rating ?? 0
+  let stars = ''
+  for (let i = 0; i < starCount; i++) {
     stars += ` <svg class="hotel__card-star">
         <use xlink:href='#icon-star-shiny'></use>
-      </svg>`;
-  } 
-  
+      </svg>`
+  }
+
   const oneHotelTitle = OneHotelTitle({
-    name:data.from,
+    name: source.from ?? source.tittle,
     stars: stars,
-    address:data.location,
-    
-  }) 
-  container.appendChild(oneHotelTitle);
+    address: source.location ?? source.town,
+  })
+  container.appendChild(oneHotelTitle)
   // return container.innerHTML = `
   //    <div class="hotel__card-name">
   //     ${data.hotelName}
@@ -39,7 +46,7 @@ function renderCard(data) {
   //   </div>
   // </div>
   // <div class="hotel__card-location">
-   
+
   //   <svg class="hotel__card-pin">
   //       <use xlink:href='#icon-pin-grean'></use>
   //     </svg>
@@ -47,9 +54,5 @@ function renderCard(data) {
   // </div>
   // `;
 }
-renderCard(dataHotel);
 
-
-
-
-
+renderCard()
