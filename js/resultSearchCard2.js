@@ -29,7 +29,7 @@ import{_ as l}from"./main2.js";/* empty css       *//* empty css          */impo
            <div class="price__title"><p>Стоимость</p></div>
             <div class="price__info"><p>${r.priceOpen}€/чел</p></div>
           </div>
-         <div class="link__info"><p data-id="${s.documentId}>Выбрать</p></div>
+         <div class="link__info"><p data-id='${s.documentId}'>Выбрать</p></div>
         </div>
       </div>
     `).join(""),p=`
