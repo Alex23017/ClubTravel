@@ -1,9 +1,12 @@
-// import '../../styles/base/main.scss'
+import '../main.js'
+import '../pages/authorization.js'
 import '../../styles/pages/tourRequest.scss'
 import { addUserConsultation } from '../api/service/offerConsultation';
 
 
-const tabs = document.querySelectorAll('.tab__name');
+document.addEventListener('DOMContentLoaded', function() {
+    
+   const tabs = document.querySelectorAll('.tab__name');
 const contents = document.querySelectorAll('.tab__item');
 const nextBtn = document.querySelectorAll('.tab__next');
 const category = document.querySelector('.tab__category');
@@ -92,7 +95,7 @@ async function createdNewConsultation(event){
   const direction = document.getElementById('direction');
   const guests = document.getElementById('guests');
   const tourTime = document.getElementById('tourTime');
-  const rating = document.querySelectorAll('.tab__category-item.active').length;
+  let rating;
   const desiredPrice = document.getElementById('desiredPrice');
   const nutrition = document.getElementById('nutrition');
   const wishes = document.getElementById('wishes');
@@ -101,7 +104,11 @@ async function createdNewConsultation(event){
   const email = document.getElementById('email');
 
 
-
+if(document.querySelectorAll('.tab__category-item.active').length <= 0){
+  rating = 0;
+}else{
+  rating = document.querySelectorAll('.tab__category-item.active').length;
+}
   
   const newConsultation = {
       direction: direction.textContent,
@@ -129,3 +136,5 @@ async function createdNewConsultation(event){
   
 }
 document.getElementById('consultationForm').addEventListener('submit', createdNewConsultation)
+});
+
