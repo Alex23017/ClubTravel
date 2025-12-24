@@ -35,10 +35,20 @@ function sliderInit() {
 }
 const data = await getResultSearch()
 
-export function renderOffer() {
-  const container = document.querySelector('.result__container')
-  if (!container) return
+function onSelectHotelClick(e) {
+  const btn = e.target.closest('.href__button-select')
+  if (!btn) return
+  const id = btn.dataset.id
+  if (!id) return
+  window.location.href = `/ClubTravel/html/pages/oneHotel.html?id=${id}`
+}
 
+const container = document.querySelector('.result__container')
+if (container) {
+  container.addEventListener('click', onSelectHotelClick)
+}
+
+export function renderOffer() {
   const getStarsHtml = category => {
     let stars = ''
     for (let i = 0; i < category; i++) {
