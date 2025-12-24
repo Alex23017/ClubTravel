@@ -36,7 +36,7 @@ function sliderInit() {
 const data = await getResultSearch()
 
 function onSelectHotelClick(e) {
-  const btn = e.target.closest('.href__button-select')
+  const btn = e.target.closest('.button__search-select')
   if (!btn) return
   const id = btn.dataset.id
   if (!id) return
@@ -92,7 +92,7 @@ export function renderOffer() {
            <div class="price__title"><p>Стоимость</p></div>
             <div class="price__info"><p>${open.priceOpen}€/чел</p></div>
           </div>
-         <div class="link__info"><p data-id='${item.documentId}'>Выбрать</p></div>
+         <div class="link__info"><p class='button__search-select' data-id='${item.documentId}'>Выбрать</p></div>
         </div>
       </div>
     `
