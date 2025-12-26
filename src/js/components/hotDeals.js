@@ -54,7 +54,7 @@ const data = await getListHotel()
 function onHotelClick(e) {
   const id = e.currentTarget.dataset.id
   if (!id) return null
-  window.location.href = `/ClubTravel/html/pages/oneHotel.html?id=${id}`
+  window.location.href = `/ClubTravel/html/pages/oneHotel.html?id=${id}&type=hotel`
 }
 
 export function renderOffer() {

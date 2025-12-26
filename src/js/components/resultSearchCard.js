@@ -40,7 +40,7 @@ function onSelectHotelClick(e) {
   if (!btn) return
   const id = btn.dataset.id
   if (!id) return
-  window.location.href = `/ClubTravel/html/pages/oneHotel.html?id=${id}`
+  window.location.href = `/ClubTravel/html/pages/oneHotel.html?id=${id}&type=search`
 }
 
 const container = document.querySelector('.result__container')

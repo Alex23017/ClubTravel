@@ -87,11 +87,13 @@ const hotelId = params.get('id')
 let dataHotel = null
 let dataSearch = null
 
-if (hotelId) {
+const type = params.get('type')
+
+if (type === 'hotel') {
   dataHotel = await getHotelById(hotelId)
-  if (!dataHotel) {
-    dataSearch = await getHotelByIdSearch(hotelId)
-  }
+}
+if (type === 'search') {
+  dataSearch = await getHotelByIdSearch(hotelId)
 }
 
 function renderInfo() {

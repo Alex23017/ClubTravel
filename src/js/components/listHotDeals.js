@@ -14,7 +14,7 @@ function onSelectHotelClick(e) {
   const id = btn.dataset.id
   if (!id) return
   // window.location.href = `/ClubTravel/html/pages/oneHotel.html?id=${id}`
-  window.location.href = `/ClubTravel/html/pages/oneHotel.html?id=${id}`
+  window.location.href = `/ClubTravel/html/pages/oneHotel.html?id=${id}&type=hotel`
 }
 const container = document.querySelector('.hotdeals__render')
 const containerMob = document.querySelector('.hotdeals__render-mob')

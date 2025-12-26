@@ -12,17 +12,18 @@ import { getListHotel } from '../api/service/listHotel.js'
 
 import hotDealsCard from '../../html/components/home/hotDealsCard.html'
 
-const params = new URLSearchParams(window.location.search)
-const hotelId = params.get('id')
-
 let dataHotel = null
 let dataSearch = null
 
-if (hotelId) {
+const params = new URLSearchParams(window.location.search)
+const hotelId = params.get('id')
+const type = params.get('type')
+
+if (type === 'hotel') {
   dataHotel = await getHotelById(hotelId)
-  if (!dataHotel) {
-    dataSearch = await getHotelByIdSearch(hotelId)
-  }
+}
+if (type === 'search') {
+  dataSearch = await getHotelByIdSearch(hotelId)
 }
 
 export function renderHotelOffers() {
