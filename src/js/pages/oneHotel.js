@@ -82,6 +82,9 @@ export function sliderInit() {
     })
   }
 }
+export let ADULT_PRICE;
+const CHILD_COEF = 0.5
+
 export function renderOffer() {
   const container = document.querySelector('.hotdeals__container')
   if (!container) return
@@ -105,19 +108,47 @@ export function renderOffer() {
       priceCount: item.priceCount,
       stars: getStars,
     })
-
+    ADULT_PRICE = item.price;
     container.appendChild(offerCard)
   })
 }
+
+
+
+
+
+
 
 renderHotelOffers()
 renderOffer()
 sliderInit()
 
+const adultInput = document.getElementById('old')
+const childInput = document.getElementById('child')
+const priceEl = document.getElementById('price')
+function sumPrice(){
+  const adults = Number(adultInput.value) || 0
+  const children = Number(childInput.value) || 0
+  
+  
+  
+  const total =adults * ADULT_PRICE +children * ADULT_PRICE * CHILD_COEF
+  return total;
+}
+function updatePrice() {
+  const res = sumPrice();
+
+  priceEl.innerHTML = `${res}€`
+  
+}
+if(adultInput){
+  adultInput.addEventListener('input', updatePrice)
+  childInput.addEventListener('input', updatePrice)
+}
 async function createOffer() {
   const number = Date.now()
   const date = new Date().toISOString()
-
+  const price = sumPrice();
   const userId = localStorage.getItem('userId')
 
   if (!userId) {
@@ -128,7 +159,7 @@ async function createOffer() {
 
   const newOrder = {
     orderNumber: number,
-    orderPrice: 679,
+    orderPrice: price,
     orderStatus: false,
     orderDate: date,
     users_permissions_user: userId,
@@ -137,6 +168,7 @@ async function createOffer() {
   try {
     await addUserOrder(userId, newOrder)
     console.log('замовлення додано')
+    window.location.href = '/ClubTravel/'
   } catch (err) {
     console.log('error:', err)
   }

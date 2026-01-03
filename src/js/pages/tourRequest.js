@@ -128,6 +128,7 @@ if(document.querySelectorAll('.tab__category-item.active').length <= 0){
   try {
           await addUserConsultation(newConsultation);
           console.log('консультація додана');
+          window.location.href = '/ClubTravel/'
       } catch (err) {
           console.log('error:', err);
       }

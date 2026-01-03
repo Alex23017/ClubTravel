@@ -37,18 +37,20 @@
 действительна при размещении в двухместном номере. Цена зависит от количества мест и может измениться.
 </div>
 <div class="guests">
-  <label for="guests">Количество отдыхающих</label>
-   <label for="old" class="label">Взрослих</label>
-  <input id="old" name="old" type="text">
-  <label for="child" class="label">детей</label>
-  <input id="child" name="child" type="text">
+  <label>Количество отдыхающих</label>
+
+  <label for="old">Взрослых</label>
+  <input id="old" name="old" type="number" min="1" value="1">
+
+  <label for="child">Детей</label>
+  <input id="child" name="child" type="number" min="0" value="0">
 </div>
+
 <div class="hotel__offer-total">
   Общая стоимость тура:
-<span>
-  <b id="price">1 429€</b>
-</span>
+  <span><b id="price">{{prices}}€</b></span>
 </div>
+
 <button type="button" class="hotel__offer-button button-primary">
   Бронировать
 </button>

@@ -78,10 +78,10 @@ picture {
     color: var(--text, rgb(34, 34, 34, 1));
 
     p {
-      white-space: nowrap;
-      max-width: 182px;
-      text-overflow: ellipsis;
       overflow: hidden;
+      max-width: 182px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     @include phone {
@@ -318,6 +318,7 @@ picture {
     input {
       width: 100%;
       height: 42px;
+      padding-left: 10px;
       border: 1px solid rgb(226, 226, 226);
       border-radius: 6px;
       box-sizing: border-box;
@@ -870,6 +871,7 @@ picture {
 
 .swiper-button-prev {
   left: 23px !important;
+
   svg {
     transform: rotate(180deg);
   }
