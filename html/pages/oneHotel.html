@@ -12,7 +12,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </noscript>
 
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/fancybox/dist/jquery.fancybox.css" as="style" onload="this.rel='stylesheet'">
+    <!-- <link rel="preload" href="https://cdn.jsdelivr.net/npm/fancybox/dist/jquery.fancybox.css" as="style" onload="this.rel='stylesheet'"> -->
 
     <link rel="icon" href="/ClubTravel/assets/favicon.png" type="png">
 
@@ -213,7 +213,7 @@
             
             <div class="hotel__gallery">
               <div class="hotel__gallery-main">
-                <a aria-label="hotelImg" data-fancybox="hotel" href="/img/oneHotel/hotel1.webp">
+                <a aria-label="hotelImg" data-fancybox="hotel">
             
                   <picture>
                   <source srcset="/ClubTravel/assets/hotel1-mobile.webp 1x, /ClubTravel/assets/hotel1-mobile.webp 2x" media="(max-width: 768px)">
@@ -228,25 +228,25 @@
               <div class="hotel__gallery-list">
             
                 <div class="hotel__gallery-item">
-                  <a aria-label="hotelImg" data-fancybox="hotel" href="/img/oneHotel/hotel2.webp">
+                  <a aria-label="hotelImg" data-fancybox="hotel">
                     <img src="data:image/webp;base64,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" alt="hotel">
                   </a>
                 </div>
             
                 <div class="hotel__gallery-item">
-                  <a aria-label="hotelImg" data-fancybox="hotel" href="/img/oneHotel/hotel3.webp">
+                  <a aria-label="hotelImg" data-fancybox="hotel">
                     <img src="data:image/webp;base64,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" alt="hotel">
                   </a>
                 </div>
             
                 <div class="hotel__gallery-item">
-                  <a aria-label="hotelImg" data-fancybox="hotel" href="/img/oneHotel/hotel4.webp">
+                  <a aria-label="hotelImg" data-fancybox="hotel">
                     <img src="data:image/webp;base64,UklGRoIMAABXRUJQVlA4WAoAAAAQAAAAqQAAYAAAQUxQSHYAAAABd6CgjSQ1eYwPAt7AqfqICOjRT2hzDR8L2Nba9uIV67/6V/k7YQUTMIPeCEaxAb0Zcs5M8tZE9H8CgKB8ueYKgP/ylRA7oVTzXsb2SMlZKCUHpeym1L6//z9yP5Tai1KxUUomSk5IyRY7oVRDREgCiCsyuQIAVlA4IOYLAAAwMwCdASqqAGEAPrVOoEqnJKMnK7dsaOAWiWVq5lhskUyiwDT30Oe736fev6C3no3JdsdtdPsp/B2Z4LaBz4jwd/kugPweTyPfv/gPR4BSjzz8LP5JemGkInmwGywPwx61f0P7QLA+5k1HFfS4wjUObG3D5pcFd3LOuXXTmT9GpFXbSPrT9U+A1w7V6G5+ozkyLokGk7JaZtOl4lyxVbLAiRbJdLlgg8WYFutnfPtq18wPvgFgz2s0LXWO9w94ZIjltFoQdhxZEndr7UsNLV/Xm9KkEtuLmJu4ZZ/i1wvXfrPk1hIsqtpgbhhcyIY3Ev6o64Z0Hk3ylBAKnEqsqCOtnZYIXO6CSYlbYlDTAHFBh94gVCJZl4bbthtv0FwzmaG3bhkPgN3lssSDmiTsIl33MZXboEHj8JjtKm0sUKKrZrt95tFlAaA9G7RmTfB9PedCQtazfj7mr44n/SWzJvc0PKAvg4PZ5oj4y0jIVbiIeWv1x8G2jno6WLMjTAhlr2UTgsI9sAyi3zmKwuwrBoOxsTfOs5J/dQjQYhRIbdJagg3cAPfV30Unrt0lVe5ISizT+tAeXkm/mpLLTHMHdX04nsUyldAT0XS9fk6gmXW6VeRSpA98vBeVG3USle7voTRAWN4BXhYj+8/tQeed9aBkxl4qcis1MqmdXrUOo3rzFhgjN2veYUqFUL3NqSUYLZYQlo1a7ERbc9MHVN2fLNwEcAiNwAnasVQ29soEk5jal2qRIsGaSMahRT7bsz0A6nWHtoQT37FtBt63JXnEHo7s3KExvzPcgq/yNXxOpHM34KdSNrujWlOGcMoX/3pK+vrqBiJ/V+AW9HWszSeowqcU5yb6zxhmiN/l2bqIcA/R6UcT3mx4hzwLHCUnhZEfReDPVszaZaGpmLujmxZoaLcvo1qpC5zcCQEUOvor+QXzJb1cnI8Svszp7GvL3oSXXYIr9XBvdd/02cy3MHyVscMgJ8Nq7vJZ34J13FUX+nXZ5gU9NQgzRhJbNYnhqjT7+SILFjc+XXHuPnnNDc3/bvmqp94J216CMUh4ZqFKcu0r4UIPUxWocLHFnMiQdSWDvJ/9GA2O8Ma3vyvOAOoKitu6gAkip9spl2Ovs4u+w5FY0bZSHYt2cD1fDceF4E82NuRxU2/3QjB+CqQgdYtCKGwanIkDBBTc0kGMElyH4ro+mycvGWoHKpMiyEuoIMXP1Xi4r26MlA5kvocPlT2wmFxOqHy2K83mVNXevQQksUy3X1th9gdAJkvexqZRj3f2Z7fleoP01Zzh9NcwOIBEt+kPe0JlhWz7LZD5QHzAwXq0VR4Vpb5xrjGO/rymTrdTPoZUyCxbuD3et2V/1LGx9Eb33goJxwvCX6ww2o5F0RgyDqAkdYm+azCw6yKHnlKbdvulVx1jOyZqAbmV6cQTebpavwztCDqEARVF9uv6WyWEvhmXg3uwG9jjmGeim2/u5TKm2RzpZiIMEZeUUuu4yMyVaw6/TsNyLOlHJYa4pIMePWxpzz/cHev1OW5K/NYP7b0r7L7PLegwsCYfMdHbTqfT7I3+rwtpRPSiv/GMFEPDfglbdIHafMdo6M9fproo89wyL3z4Qx3GG7rboz7XGXWL+t3F0Y7kFfaNcWfkVkuIME8R5/RnaEAFVIzWDy2i8Nr5MtODiFlDRkq2TpvipPVjh7905jYnSjBDjKkH8V5ZEEGWb1Ykw8qeMMGqGiQdONcMCc7S0d4xoWOXW5XymQFCc++qIpHimOLQXo5T8kFYZMN4/OVZNAwj7pOm9RcVY64zM/97yD1QnAag+UAmm+0fK64wxBMxz43xBcitJS9ocgWuTbX5k8jJtUNfKqnLaSUBbXBUn7qi/bf60GcF1Ll9zieQqTQDsIxgliZmtkCdKmHJSZvFPc/h/dGn8qZqvphGUtNuWo6CkcDo76oEGsYnSReuLhndeBORtLN+e8uJJDhV6GqHCbxcEs7r8u/Ch1Sh9GHExgnr6ote81YLdINzjCGeOCK5FtEFlz/BpX5Rd4l5xDq6GzLD8pBY1KIOae0OxlGGcsjjJ7vqVkXVqP5FSfztPI3gaQq60Su5XltxwWoi1NMRr5awGESz/fGCGV6YF9/XRpPnpVtAu3U1qCj1kxA6/f2xJFH7wjduuj/5APT57tpKm7dOIQN6RV5tS2YH1dG28nikCl4qGPtPqqRTqNPlvc30l6vF7Raa9n4zsHeMz5id+S62rR0YC/mp7syzMwDAReJrk7r5dNUjoij87VzcEx5VGl9tN6xs0Q2M6jaXz28Ip2L02ge90lpe+ZR0DCTxcoYd5LOtgtm5U7t8N1JsaV2DdKGt6haUe7RRC3FFZ6JpEyq28or6KwklnEQtrhvwiIdf6Uq6hCEBFYTGNTKNuJQVXao5EGAKDJLHQqq7kLspP72Y3uE5draXEkmJZOWQ9PFI1IqkEZXv0rGRxoo/zrlga61TcxZ9yqjuQKsR0IYKLS5iw/6d5TqoNlDyPA0W23RZk/TXcmWspt25M21bnILZiQlJRrsBJ3LHLrtBrQdh7HVL1qeSc3DJS5ggSZxUpWebXwm1/VJHAqq+BfdZ19j0/1xEdMehn5B3x/4g5ebRz84t3GSkX7d6yGgrryrmmks+tkdWluMBvUyP+hqhDylXJsqMTSTy7EquCaowKI2PjUTKDIvCHhhNecp4AnZn0zkQF1QcfZYwAzdXGXQRWoFoiglzYbUPqexcxPXBwalKTACv54eblKtxsgYhKhI38qj46FbLgkttUvS3n3vkJINDIw57F+YZHuxyemCwII4UbgYI79x1KeZRQ30zWr3JNrgTQKWishoQeBW45+BNYXqDpZJfwn9dQQHV4cXnAUj1wmxpVpKOUbCGNECmKPfRB09q5u/doaEW2IKSIUS7Cg86B672DoIBBrs56BCRL7nqu7MM+ewza2PWSvfEUTmd3LnlXqpl8oc+aWH0NQYHfQE7bgmitlDSHytA63nBZI5T+0dXspKjVskjocBedpBnpJsTwWXaqHl3tU/mZ54v9A0z948Tt+y3mpFumPt35YkA73BVkWi4htz49Dg2+WnLcnzdj78HoRehnDrrGF/kAdbBwfQQJjchZYR0pFzam+B1xHs+vao/jxu24G/8mN09RH+tqm78LDKzj5cTS+UrA1qpfh22xhZ2uYnPrm8rKTt+4xNHtffwfGzM5CUG7Sj74hS4mQjX5E/BKvmOiEFhWxAVaK7E/XLK53q8o7gnr6uFvOBY17XwD4Ejc0WTFKb//PNouGXMY8YaDk9OtkP4oR+f+8i/kahvHb4F/GJlgXfpGqylS0DhIQynILQ/Rg5rdACeCggzT4kKcTNBiznvhx9jFKgRq9BCQka2dKhWmI1dVNUAMPkOy+veB05F5EArx/OXq/VMP7mAWCZwyAVuOfsMtx4GvKNfAV9FqHJ1Pd/NiFPIh8aTj6xMWb1Zwf+NEPPqZeEt0XFa6mpX3FtzSgmtErKo5Ts3HK2BfKFxPdQlHau38UUcnscZGBX/eZAbNqiLHwJmq0l9EW3IHRG4xRDOCP2iUCaQTcoSIWY1H+EEBdLSD3ttHE6vVE0iXcmZxjNGOwkHFVYcj5QP1Ealng8POZqsIMNlONwac4qkec4VN9p6eunsEczygLpYuHZlJ5evZXP7td2n743v30Kt+/1VXYqNYh8aVXSq/z0cw4vnDyWiSfpqpBRlgt6vNGMnmOeCbEvLvW5vHIjkkJFZqj+zLLnU9XOwONqbppIE9v9gOsYnBJSvcyUwpIIwa1AquJHpLFvgnGeE18Dn3B8pthfsAMtgSJoFs1qwJLrGW0GaSayBouC3LYgXtWbqQDXWR5cM1FNySZyM0arCQK/mWXkt1Qx5sSqGMHxG1/GK0UTCqwZWL2Pu5zT9JF602tLZicc72SZxAqpQgUSp8TTO1yQwK91iai868cqCFoBO5WONB8jgzd7WQznFItYGsHIFz0AP0fvgqCWzMTI5wXSmv+zf0v2hwmYp0RygPPCJmRDdztxXnGpJuRHXHzmJYDQA7SJviBFZoP/auQBccu/62EAA" alt="hotel">
                   </a>
                 </div>
             
                 <div class="hotel__gallery-item">
-                  <a aria-label="hotelImg" data-fancybox="hotel" href="/img/oneHotel/hotel5.webp">
+                  <a aria-label="hotelImg" data-fancybox="hotel">
                     <img src="data:image/webp;base64,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" alt="hotel">
                   </a>
                 </div>
@@ -292,18 +292,20 @@
 действительна при размещении в двухместном номере. Цена зависит от количества мест и может измениться.
 </div>
 <div class="guests">
-  <label for="guests">Количество отдыхающих</label>
-   <label for="old" class="label">Взрослих</label>
-  <input id="old" name="old" type="text">
-  <label for="child" class="label">детей</label>
-  <input id="child" name="child" type="text">
+  <label>Количество отдыхающих</label>
+
+  <label for="old">Взрослых</label>
+  <input id="old" name="old" type="number" min="1" value="1">
+
+  <label for="child">Детей</label>
+  <input id="child" name="child" type="number" min="0" value="0">
 </div>
+
 <div class="hotel__offer-total">
   Общая стоимость тура:
-<span>
-  <b id="price">1 429€</b>
-</span>
+  <span><b id="price">€</b></span>
 </div>
+
 <button type="button" class="hotel__offer-button button-primary">
   Бронировать
 </button>
@@ -509,7 +511,7 @@
       </div>    </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script> -->
 
   
 
