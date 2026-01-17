@@ -7,7 +7,7 @@ export async function addUserConsultation(newOrder) {
   try {
     const res = await axios.post(
       //
-      'https://natural-blessing-879c2058f8.strapiapp.com/api/offer-consultations',
+      'https://favorable-horses-250ddbd43e.strapiapp.com/api/offer-consultations',
 
       { data: newOrder },
       {
